@@ -8,9 +8,9 @@ import java.net.InetSocketAddress;
 
 public class SunHttpServer {
 
-    public SunHttpServer(int port){
+    public SunHttpServer(int port, int maxConnectionNum){
         try {
-            HttpServer server = HttpServer.create(new InetSocketAddress(port),0);
+            HttpServer server = HttpServer.create(new InetSocketAddress(port), maxConnectionNum);
             server.createContext("/", new SunSimpleHttpHandler());
             server.start();
             Logger.info("HttpServer has started to listen at " + server.getAddress().getPort());

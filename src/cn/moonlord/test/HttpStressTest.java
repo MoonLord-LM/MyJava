@@ -30,7 +30,7 @@ public class HttpStressTest {
     }
 
     public static void test2() throws InterruptedException {
-        new SunHttpServer(90);
+        new SunHttpServer(90,64);
 
         new HttpStressClient(64,"http://127.0.0.1:90", 10000);
         Thread.sleep(20000);
