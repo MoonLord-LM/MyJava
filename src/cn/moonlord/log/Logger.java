@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Logger {
 
-    public static boolean infoEnabled = true;
+    public static boolean infoEnabled = false;
 
     public static void info(Object message) {
         if(infoEnabled == false){
