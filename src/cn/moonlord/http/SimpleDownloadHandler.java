@@ -9,6 +9,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class SimpleDownloadHandler implements Runnable {
 
@@ -16,6 +17,7 @@ public class SimpleDownloadHandler implements Runnable {
     private String refererURL;
     private String fileSavePath;
     private byte[] fileBytes;
+    private AtomicInteger errorCount;
 
     public byte[] getFileBytes(){
         return fileBytes;
@@ -25,12 +27,15 @@ public class SimpleDownloadHandler implements Runnable {
         this.downloadURL = downloadURL;
         this.refererURL = refererURL;
         this.fileSavePath = fileSavePath;
+        this.errorCount = new AtomicInteger(0);
     }
 
     @Override
     public void run() {
         try {
             URLConnection connection = (new URL(downloadURL)).openConnection();
+            connection.setConnectTimeout(60 * 1000 * ( 1 + errorCount.get() ) );
+            connection.setReadTimeout(60 * 1000 * ( 1 + errorCount.get() ) );
             connection.setRequestProperty("Referer", refererURL);
             InputStream inputStream = connection.getInputStream();
             FileOutputStream outputStream = new FileOutputStream(fileSavePath);
@@ -55,6 +60,13 @@ public class SimpleDownloadHandler implements Runnable {
             }
         } catch (Exception e) {
             Logger.warn(e);
+            if(errorCount.incrementAndGet() < 5){
+                Logger.warn("error count is " + errorCount.get() + ", retry downloading");
+                this.run();
+            }
+            else{
+                Logger.warn("error count is " + errorCount.get() + ", abort downloading");
+            }
         }
     }
 
