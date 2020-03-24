@@ -1,5 +1,6 @@
 package cn.moonlord.test;
 
+import cn.moonlord.http.HttpStressClient;
 import cn.moonlord.socket.bio.SingleThreadServerSocket;
 import cn.moonlord.socket.bio.ThreadPoolServerSocket;
 import cn.moonlord.socket.bio.UnlimitedThreadServerSocket;
