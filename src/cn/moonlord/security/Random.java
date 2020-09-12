@@ -1,22 +1,21 @@
 package cn.moonlord.security;
 
 import java.security.SecureRandom;
-import java.util.Base64;
 
 public class Random {
 
-    public static byte[] generateBytes(int byteLength) {
+    public static byte[] generate(int bitLength) {
+        byte[] buffer = new byte[bitLength / Byte.SIZE];
         SecureRandom random = new SecureRandom();
-        byte[] buffer = new byte[byteLength];
         random.nextBytes(buffer);
         return buffer;
     }
 
-    public static String generateBase64String(int byteLength) {
+    public static String generateBase64String(int bitLength) {
+        byte buffer[] = new byte[bitLength / Byte.SIZE];
         SecureRandom random = new SecureRandom();
-        byte buffer[] = new byte[byteLength];
         random.nextBytes(buffer);
-        return Base64.getEncoder().encodeToString(buffer);
+        return Base64.encode(buffer);
     }
 
 }
