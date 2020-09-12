@@ -10,8 +10,8 @@ public class Aes {
     private static final String AES_KEY_ALGORITHM = "AES";
     private static final String AES_CIPHER_INSTANCE = "AES/GCM/NoPadding";
 
-    private final static int GCM_KEY_LENGTH = 256;
-    private final static int GCM_IV_LENGTH = 256;
+    private final static int GCM_KEY_LENGTH = 128;
+    private final static int GCM_IV_LENGTH = 128;
 
     public static byte[] generateKey() {
         return Random.generate(GCM_KEY_LENGTH);
