@@ -10,14 +10,14 @@ public class Aes {
     private static final String AES_KEY_ALGORITHM = "AES";
     private static final String AES_CIPHER_INSTANCE = "AES/GCM/NoPadding";
 
-    private final static int GCM_KEY_LENGTH = 128;
-    private final static int GCM_IV_LENGTH = 128;
+    private final static int GCM_KEY_LENGTH = 256;
+    private final static int GCM_IV_LENGTH = 256;
 
     public static byte[] generateKey() {
         return Random.generate(GCM_KEY_LENGTH);
     }
 
-    public static String generateKeyString() {
+    public static String generateKeyBase64String() {
         return Base64.encode(generateKey());
     }
 
@@ -25,8 +25,8 @@ public class Aes {
         return new SecretKeySpec(key, AES_KEY_ALGORITHM);
     }
 
-    public static SecretKeySpec getSecretKey(String keyString) {
-        return getSecretKey(Base64.decode(keyString));
+    public static SecretKeySpec getSecretKey(String keyBase64String) {
+        return getSecretKey(Base64.decode(keyBase64String));
     }
 
     public static byte[] encrypt(byte[] sourceBytes, SecretKeySpec encryptKey) throws Exception {
@@ -47,8 +47,8 @@ public class Aes {
         return encrypt(sourceBytes, getSecretKey(encryptKeyBytes));
     }
 
-    public static byte[] encrypt(byte[] sourceBytes, String encryptKeyString) throws Exception {
-        return encrypt(sourceBytes, getSecretKey(encryptKeyString));
+    public static byte[] encrypt(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
+        return encrypt(sourceBytes, getSecretKey(encryptKeyBase64String));
     }
 
     public static String encryptBase64String(byte[] sourceBytes, SecretKeySpec encryptKey) throws Exception {
@@ -59,8 +59,8 @@ public class Aes {
         return Base64.encode(encrypt(sourceBytes, encryptKeyBytes));
     }
 
-    public static String encryptBase64String(byte[] sourceBytes, String encryptKeyString) throws Exception {
-        return Base64.encode(encrypt(sourceBytes, encryptKeyString));
+    public static String encryptBase64String(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
+        return Base64.encode(encrypt(sourceBytes, encryptKeyBase64String));
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, SecretKeySpec decryptKey) throws Exception {
@@ -76,8 +76,8 @@ public class Aes {
         return decrypt(encryptedBytes, getSecretKey(decryptKeyBytes));
     }
 
-    public static byte[] decrypt(byte[] encryptedBytes, String decryptKeyString) throws Exception {
-        return decrypt(encryptedBytes, getSecretKey(decryptKeyString));
+    public static byte[] decrypt(byte[] encryptedBytes, String decryptKeyBase64String) throws Exception {
+        return decrypt(encryptedBytes, getSecretKey(decryptKeyBase64String));
     }
 
     public static byte[] decryptBase64String(String encryptedBase64String, SecretKeySpec decryptKey) throws Exception {
@@ -88,8 +88,8 @@ public class Aes {
         return decrypt(Base64.decode(encryptedBase64String), decryptKeyBytes);
     }
 
-    public static byte[] decryptBase64String(String encryptedBase64String, String decryptKeyString) throws Exception {
-        return decrypt(Base64.decode(encryptedBase64String), decryptKeyString);
+    public static byte[] decryptBase64String(String encryptedBase64String, String decryptKeyBase64String) throws Exception {
+        return decrypt(Base64.decode(encryptedBase64String), decryptKeyBase64String);
     }
 
 }
