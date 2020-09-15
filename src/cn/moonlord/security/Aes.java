@@ -10,11 +10,12 @@ public class Aes {
     private static final String AES_KEY_ALGORITHM = "AES";
     private static final String AES_CIPHER_INSTANCE = "AES/GCM/NoPadding";
 
-    private final static int GCM_KEY_LENGTH = 128;
+    private final static int AES_KEY_LENGTH = 256;
+    private final static int GCM_TAG_LENGTH = 128;
     private final static int GCM_IV_LENGTH = 96;
 
     public static byte[] generateKey() {
-        return Random.generate(GCM_KEY_LENGTH);
+        return Random.generate(AES_KEY_LENGTH);
     }
 
     public static String generateKeyBase64String() {
@@ -31,7 +32,7 @@ public class Aes {
 
     public static byte[] encrypt(byte[] sourceBytes, SecretKeySpec encryptKey) throws Exception {
         byte[] iv = Random.generate(GCM_IV_LENGTH);
-        GCMParameterSpec ivSpec = new GCMParameterSpec(GCM_KEY_LENGTH, iv);
+        GCMParameterSpec ivSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
 
         Cipher cipher = Cipher.getInstance(AES_CIPHER_INSTANCE);
         cipher.init(Cipher.ENCRYPT_MODE, encryptKey, ivSpec);
@@ -66,7 +67,7 @@ public class Aes {
     public static byte[] decrypt(byte[] encryptedBytes, SecretKeySpec decryptKey) throws Exception {
         byte[] iv = Arrays.copyOfRange(encryptedBytes, 0, GCM_IV_LENGTH / Byte.SIZE);
         Cipher cipher = Cipher.getInstance(AES_CIPHER_INSTANCE);
-        GCMParameterSpec ivSpec = new GCMParameterSpec(GCM_KEY_LENGTH, iv);
+        GCMParameterSpec ivSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
         cipher.init(Cipher.DECRYPT_MODE, decryptKey, ivSpec);
         byte[] decryptedSource = cipher.doFinal(encryptedBytes, iv.length, encryptedBytes.length - iv.length);
         return decryptedSource;
