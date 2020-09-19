@@ -39,7 +39,7 @@ public class SecurityTest {
         Logger.info("privateKey: " + privateKey.length);
         Logger.info("publicKey: " + publicKey.length);
         byte[] encryptedByPrivateKey = Rsa.encrypt(source.getBytes(), Rsa.getPrivateKey(privateKey));
-        Logger.info("encryptedPrivateKey: " + encryptedByPrivateKey.length);
+        Logger.info("encryptedByPrivateKey: " + encryptedByPrivateKey.length);
         byte[] decryptedByPublicKey = Rsa.decrypt(encryptedByPrivateKey, Rsa.getPublicKey(publicKey));
         Logger.info("decryptedByPublicKey: " + new String(decryptedByPublicKey));
     }
