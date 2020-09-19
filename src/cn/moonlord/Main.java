@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Hello World");
         SecurityTest.test1();
         SecurityTest.test2();
+        SecurityTest.test3();
     }
 
 }

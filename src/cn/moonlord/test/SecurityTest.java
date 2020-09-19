@@ -1,10 +1,8 @@
 package cn.moonlord.test;
 
 import cn.moonlord.log.Logger;
-import cn.moonlord.security.Aes;
-import cn.moonlord.security.Base64;
-import cn.moonlord.security.Hash;
-import cn.moonlord.security.Random;
+import cn.moonlord.security.*;
+import java.security.KeyPair;
 
 public class SecurityTest {
 
@@ -30,6 +28,20 @@ public class SecurityTest {
         Logger.info("result1: " + result1.length);
         byte[] result2 = Aes.decryptBase64String(encrypted2, key);
         Logger.info("result2: " + result2.length);
+    }
+
+    public static void test3() throws Exception {
+        String source = "This is a secret";
+        Logger.info("source: " + source);
+        KeyPair keyPair = Rsa.generateKeyPair();
+        byte[] privateKey = keyPair.getPrivate().getEncoded();
+        byte[] publicKey = keyPair.getPublic().getEncoded();
+        Logger.info("privateKey: " + privateKey.length);
+        Logger.info("publicKey: " + publicKey.length);
+        byte[] encryptedByPrivateKey = Rsa.encrypt(source.getBytes(), Rsa.getPrivateKey(privateKey));
+        Logger.info("encryptedPrivateKey: " + encryptedByPrivateKey.length);
+        byte[] decryptedByPublicKey = Rsa.decrypt(encryptedByPrivateKey, Rsa.getPublicKey(publicKey));
+        Logger.info("decryptedByPublicKey: " + new String(decryptedByPublicKey));
     }
 
 }

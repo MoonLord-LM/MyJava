@@ -8,7 +8,7 @@ public class Hash {
     private static final String SHA256 = "SHA-256";
     private static final String SHA512 = "SHA-512";
 
-    public static String byte2Hex(byte[] bytes) {
+    private static String byte2Hex(byte[] bytes) {
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < bytes.length; i++) {
             String temp = Integer.toHexString(bytes[i] & 0xFF);
