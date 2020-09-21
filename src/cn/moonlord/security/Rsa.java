@@ -8,6 +8,7 @@ import java.security.spec.X509EncodedKeySpec;
 public class Rsa {
 
     private static final String RSA_KEY_ALGORITHM = "RSA";
+    private static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPPADDING";
 
     private final static int RSA_KEY_LENGTH = 4096;
 
@@ -58,54 +59,58 @@ public class Rsa {
         return getPublicKey(Base64.decode(keyBase64String));
     }
 
-    public static byte[] encrypt(byte[] sourceBytes, Key encryptKey) throws Exception{
-        Cipher cipher = Cipher.getInstance(RSA_KEY_ALGORITHM);
+    public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) throws Exception{
+        Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
         cipher.init(Cipher.ENCRYPT_MODE, encryptKey);
         byte[] encryptedResult = cipher.doFinal(sourceBytes);
         return encryptedResult;
     }
 
-    public static String encryptBase64String(byte[] sourceBytes, Key encryptKey) throws Exception {
-        return Base64.encode(encrypt(sourceBytes, encryptKey));
-    }
-
-    public static byte[] encryptByPrivateKey(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
-        return encrypt(sourceBytes, getPrivateKey(encryptKeyBytes));
-    }
-
-    public static byte[] encryptByPublicKey(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
+    public static byte[] encrypt(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
         return encrypt(sourceBytes, getPublicKey(encryptKeyBytes));
     }
 
-    public static byte[] encryptByPrivateKey(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
-        return encrypt(sourceBytes, getPrivateKey(encryptKeyBase64String));
-    }
-
-    public static byte[] encryptByPublicKey(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
+    public static byte[] encrypt(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
         return encrypt(sourceBytes, getPublicKey(encryptKeyBase64String));
     }
 
-    public static String encryptBase64StringByPrivateKey(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
-        return Base64.encode(encryptByPrivateKey(sourceBytes, encryptKeyBytes));
+    public static String encryptBase64String(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
+        return Base64.encode(encrypt(sourceBytes, encryptKey));
     }
 
-    public static String encryptBase64StringByPublicKey(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
-        return Base64.encode(encryptByPublicKey(sourceBytes, encryptKeyBytes));
+    public static String encryptBase64String(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
+        return Base64.encode(encrypt(sourceBytes, encryptKeyBytes));
     }
 
-    public static String encryptBase64StringByPrivateKey(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
-        return Base64.encode(encryptByPrivateKey(sourceBytes, encryptKeyBase64String));
+    public static String encryptBase64String(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
+        return Base64.encode(encrypt(sourceBytes, encryptKeyBase64String));
     }
 
-    public static String encryptBase64StringByPublicKey(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
-        return Base64.encode(encryptByPublicKey(sourceBytes, encryptKeyBase64String));
-    }
-
-    public static byte[] decrypt(byte[] encryptedBytes, Key decryptKey) throws Exception {
-        Cipher cipher = Cipher.getInstance(RSA_KEY_ALGORITHM);
+    public static byte[] decrypt(byte[] encryptedBytes, PrivateKey decryptKey) throws Exception {
+        Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
         cipher.init(Cipher.DECRYPT_MODE, decryptKey);
         byte[] decryptedResult = cipher.doFinal(encryptedBytes);
         return decryptedResult;
+    }
+
+    public static byte[] decrypt(byte[] sourceBytes, byte[] decryptKeyBytes) throws Exception {
+        return decrypt(sourceBytes, getPrivateKey(decryptKeyBytes));
+    }
+
+    public static byte[] decrypt(byte[] sourceBytes, String decryptKeyBase64String) throws Exception {
+        return decrypt(sourceBytes, getPrivateKey(decryptKeyBase64String));
+    }
+
+    public static byte[] decryptBase64String(String encryptedBase64String, PrivateKey decryptKey) throws Exception {
+        return decrypt(Base64.decode(encryptedBase64String), decryptKey);
+    }
+
+    public static byte[] decryptBase64String(String encryptedBase64String, byte[] decryptKeyBytes) throws Exception {
+        return decrypt(Base64.decode(encryptedBase64String), decryptKeyBytes);
+    }
+
+    public static byte[] decryptBase64String(String encryptedBase64String, String decryptKeyBase64String) throws Exception {
+        return decrypt(Base64.decode(encryptedBase64String), decryptKeyBase64String);
     }
 
 }

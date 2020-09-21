@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Aes {
 
     private static final String AES_KEY_ALGORITHM = "AES";
-    private static final String AES_CIPHER_INSTANCE = "AES/GCM/NoPadding";
+    private static final String AES_CIPHER_INSTANCE = "AES/GCM/NOPADDING";
 
     private final static int AES_KEY_LENGTH = 256;
     private final static int GCM_TAG_LENGTH = 128;
