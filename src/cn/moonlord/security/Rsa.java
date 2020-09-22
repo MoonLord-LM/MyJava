@@ -1,6 +1,7 @@
 package cn.moonlord.security;
 
 import javax.crypto.Cipher;
+import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
@@ -59,7 +60,7 @@ public class Rsa {
         return getPublicKey(Base64.decode(keyBase64String));
     }
 
-    public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) throws Exception{
+    public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
         Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
         cipher.init(Cipher.ENCRYPT_MODE, encryptKey);
         byte[] encryptedResult = cipher.doFinal(sourceBytes);
@@ -74,16 +75,46 @@ public class Rsa {
         return encrypt(sourceBytes, getPublicKey(encryptKeyBase64String));
     }
 
-    public static String encryptBase64String(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
+    public static byte[] encrypt(String sourceString, PublicKey encryptKey) throws Exception {
+        byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
+        return encrypt(sourceBytes, encryptKey);
+    }
+
+    public static byte[] encrypt(String sourceString, byte[] encryptKeyBytes) throws Exception {
+        byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
+        return encrypt(sourceBytes, encryptKeyBytes);
+    }
+
+    public static byte[] encrypt(String sourceString, String encryptKeyBase64String) throws Exception {
+        byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
+        return encrypt(sourceBytes, encryptKeyBase64String);
+    }
+
+    public static String encryptToBase64String(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
         return Base64.encode(encrypt(sourceBytes, encryptKey));
     }
 
-    public static String encryptBase64String(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
+    public static String encryptToBase64String(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
         return Base64.encode(encrypt(sourceBytes, encryptKeyBytes));
     }
 
-    public static String encryptBase64String(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
+    public static String encryptToBase64String(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
         return Base64.encode(encrypt(sourceBytes, encryptKeyBase64String));
+    }
+
+    public static String encryptToBase64String(String sourceString, PublicKey encryptKey) throws Exception {
+        byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
+        return encryptToBase64String(sourceBytes, encryptKey);
+    }
+
+    public static String encryptToBase64String(String sourceString, byte[] encryptKeyBytes) throws Exception {
+        byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
+        return encryptToBase64String(sourceBytes, encryptKeyBytes);
+    }
+
+    public static String encryptToBase64String(String sourceString, String encryptKeyBase64String) throws Exception {
+        byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
+        return encryptToBase64String(sourceBytes, encryptKeyBase64String);
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, PrivateKey decryptKey) throws Exception {
@@ -93,24 +124,48 @@ public class Rsa {
         return decryptedResult;
     }
 
-    public static byte[] decrypt(byte[] sourceBytes, byte[] decryptKeyBytes) throws Exception {
-        return decrypt(sourceBytes, getPrivateKey(decryptKeyBytes));
+    public static byte[] decrypt(byte[] encryptedBytes, byte[] decryptKeyBytes) throws Exception {
+        return decrypt(encryptedBytes, getPrivateKey(decryptKeyBytes));
     }
 
-    public static byte[] decrypt(byte[] sourceBytes, String decryptKeyBase64String) throws Exception {
-        return decrypt(sourceBytes, getPrivateKey(decryptKeyBase64String));
+    public static byte[] decrypt(byte[] encryptedBytes, String decryptKeyBase64String) throws Exception {
+        return decrypt(encryptedBytes, getPrivateKey(decryptKeyBase64String));
     }
 
-    public static byte[] decryptBase64String(String encryptedBase64String, PrivateKey decryptKey) throws Exception {
+    public static String decryptString(byte[] encryptedBytes, PrivateKey decryptKey) throws Exception {
+        return new String(decrypt(encryptedBytes, decryptKey));
+    }
+
+    public static String decryptString(byte[] encryptedBytes, byte[] decryptKeyBytes) throws Exception {
+        return new String(decrypt(encryptedBytes, decryptKeyBytes));
+    }
+
+    public static String decryptString(byte[] encryptedBytes, String decryptKeyBase64String) throws Exception {
+        return new String(decrypt(encryptedBytes, decryptKeyBase64String));
+    }
+
+    public static byte[] decryptFromBase64String(String encryptedBase64String, PrivateKey decryptKey) throws Exception {
         return decrypt(Base64.decode(encryptedBase64String), decryptKey);
     }
 
-    public static byte[] decryptBase64String(String encryptedBase64String, byte[] decryptKeyBytes) throws Exception {
+    public static byte[] decryptFromBase64String(String encryptedBase64String, byte[] decryptKeyBytes) throws Exception {
         return decrypt(Base64.decode(encryptedBase64String), decryptKeyBytes);
     }
 
-    public static byte[] decryptBase64String(String encryptedBase64String, String decryptKeyBase64String) throws Exception {
+    public static byte[] decryptFromBase64String(String encryptedBase64String, String decryptKeyBase64String) throws Exception {
         return decrypt(Base64.decode(encryptedBase64String), decryptKeyBase64String);
+    }
+
+    public static String decryptStringFromBase64String(String encryptedBase64String, PrivateKey decryptKey) throws Exception {
+        return new String(decryptFromBase64String(encryptedBase64String, decryptKey));
+    }
+
+    public static String decryptStringFromBase64String(String encryptedBase64String, byte[] decryptKeyBytes) throws Exception {
+        return new String(decryptFromBase64String(encryptedBase64String, decryptKeyBytes));
+    }
+
+    public static String decryptStringFromBase64String(String encryptedBase64String, String decryptKeyBase64String) throws Exception {
+        return new String(decryptFromBase64String(encryptedBase64String, decryptKeyBase64String));
     }
 
 }

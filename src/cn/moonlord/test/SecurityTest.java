@@ -24,11 +24,11 @@ public class SecurityTest {
         Logger.info("key: " + key);
         byte[] encrypted1 = Aes.encrypt(source, key);
         Logger.info("encrypted1: " + Base64.encode(encrypted1));
-        String encrypted2 = Aes.encryptBase64String(source, key);
+        String encrypted2 = Aes.encryptToBase64String(source, key);
         Logger.info("encrypted2: " + encrypted2);
         byte[] result1 = Aes.decrypt(encrypted1, key);
         Logger.info("result1: " + result1.length);
-        byte[] result2 = Aes.decryptBase64String(encrypted2, key);
+        byte[] result2 = Aes.decryptFromBase64String(encrypted2, key);
         Logger.info("result2: " + result2.length);
     }
 
