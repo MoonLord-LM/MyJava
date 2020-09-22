@@ -12,10 +12,7 @@ public class Random {
     }
 
     public static String generateBase64String(int bitLength) {
-        byte buffer[] = new byte[bitLength / Byte.SIZE];
-        SecureRandom random = new SecureRandom();
-        random.nextBytes(buffer);
-        return Base64.encode(buffer);
+        return Base64.encode(generate(bitLength));
     }
 
 }
