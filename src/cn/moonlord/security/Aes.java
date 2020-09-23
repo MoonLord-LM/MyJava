@@ -113,15 +113,15 @@ public class Aes {
     }
 
     public static String decryptString(byte[] encryptedBytes, SecretKeySpec decryptKey) throws Exception {
-        return new String(decrypt(encryptedBytes, decryptKey));
+        return new String(decrypt(encryptedBytes, decryptKey), StandardCharsets.UTF_8);
     }
 
     public static String decryptString(byte[] encryptedBytes, byte[] decryptKeyBytes) throws Exception {
-        return new String(decrypt(encryptedBytes, decryptKeyBytes));
+        return new String(decrypt(encryptedBytes, decryptKeyBytes), StandardCharsets.UTF_8);
     }
 
     public static String decryptString(byte[] encryptedBytes, String decryptKeyBase64String) throws Exception {
-        return new String(decrypt(encryptedBytes, decryptKeyBase64String));
+        return new String(decrypt(encryptedBytes, decryptKeyBase64String), StandardCharsets.UTF_8);
     }
 
     public static byte[] decryptFromBase64String(String encryptedBase64String, SecretKeySpec decryptKey) throws Exception {
@@ -137,15 +137,15 @@ public class Aes {
     }
 
     public static String decryptStringFromBase64String(String encryptedBase64String, SecretKeySpec decryptKey) throws Exception {
-        return new String(decryptFromBase64String(encryptedBase64String, decryptKey));
+        return new String(decryptFromBase64String(encryptedBase64String, decryptKey), StandardCharsets.UTF_8);
     }
 
     public static String decryptStringFromBase64String(String encryptedBase64String, byte[] decryptKeyBytes) throws Exception {
-        return new String(decryptFromBase64String(encryptedBase64String, decryptKeyBytes));
+        return new String(decryptFromBase64String(encryptedBase64String, decryptKeyBytes), StandardCharsets.UTF_8);
     }
 
     public static String decryptStringFromBase64String(String encryptedBase64String, String decryptKeyBase64String) throws Exception {
-        return new String(decryptFromBase64String(encryptedBase64String, decryptKeyBase64String));
+        return new String(decryptFromBase64String(encryptedBase64String, decryptKeyBase64String), StandardCharsets.UTF_8);
     }
 
 }
