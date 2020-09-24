@@ -5,6 +5,7 @@ import cn.moonlord.security.*;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.Arrays;
 
 public class SecurityTest {
 
@@ -18,7 +19,7 @@ public class SecurityTest {
     }
 
     public static void test2() throws Exception {
-        byte[] source = new byte[] { 0x00, 0x01, 0x10, 0x11, 0x00 };
+        byte[] source = new byte[10000];
         Logger.info("source: " + source.length);
         String key = Aes.generateKeyBase64String();
         Logger.info("key: " + key);
@@ -33,7 +34,7 @@ public class SecurityTest {
     }
 
     public static void test3() throws Exception {
-        String source = "This is a secret";
+        String source = "This is a secret" + Arrays.toString(new byte[100]);
         Logger.info("source: " + source);
         KeyPair keyPair = Rsa.generateKeyPair();
         PrivateKey privateKey = Rsa.getPrivateKey(keyPair.getPrivate().getEncoded());
@@ -45,9 +46,9 @@ public class SecurityTest {
         byte[] encrypted2 = Rsa.encrypt(source.getBytes(), publicKey);
         Logger.info("encrypted2: " + encrypted2.length + " " + encrypted2);
         byte[] result1 = Rsa.decrypt(encrypted1, privateKey);
-        Logger.info("result1: " + new String(result1));
+        Logger.info("result1: " + result1.length);
         byte[] result2 = Rsa.decrypt(encrypted2, privateKey);
-        Logger.info("result2: " + new String(result2));
+        Logger.info("result2: " + result1.length);
     }
 
 }

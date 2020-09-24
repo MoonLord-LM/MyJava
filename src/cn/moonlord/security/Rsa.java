@@ -12,11 +12,11 @@ import java.security.spec.X509EncodedKeySpec;
 public class Rsa {
 
     private static final String RSA_KEY_ALGORITHM = "RSA";
-    private static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPWithSHA-512AndMGF1Padding";
+    private static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPPadding";
 
     private static final String OAEP_DIGEST_ALGORITHM = "SHA-512";
     private static final String MGF1_NAME = "MGF1";
-    private static final String MGF1_DIGEST_ALGORITHM = "SHA-1";
+    private static final String MGF1_DIGEST_ALGORITHM = "SHA-512";
 
     private final static int RSA_KEY_LENGTH = 4096;
 
