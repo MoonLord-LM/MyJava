@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class Aes {
 
     private static final String AES_KEY_ALGORITHM = "AES";
-    private static final String AES_CIPHER_INSTANCE = "AES/GCM/NOPADDING";
+    private static final String AES_CIPHER_INSTANCE = "AES_256/GCM/NoPadding";
 
     private final static int AES_KEY_LENGTH = 256;
     private final static int GCM_TAG_LENGTH = 128;
@@ -33,10 +33,10 @@ public class Aes {
 
     public static byte[] encrypt(byte[] sourceBytes, SecretKeySpec encryptKey) throws Exception {
         byte[] iv = Random.generate(GCM_IV_LENGTH);
-        GCMParameterSpec ivSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
+        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
 
         Cipher cipher = Cipher.getInstance(AES_CIPHER_INSTANCE);
-        cipher.init(Cipher.ENCRYPT_MODE, encryptKey, ivSpec);
+        cipher.init(Cipher.ENCRYPT_MODE, encryptKey, gcmSpec);
         byte[] encryptedSource = cipher.doFinal(sourceBytes);
 
         byte[] encryptedResult = new byte[iv.length + encryptedSource.length];
