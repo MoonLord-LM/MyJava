@@ -98,8 +98,8 @@ public class Aes {
     public static byte[] decrypt(byte[] encryptedBytes, SecretKeySpec decryptKey) throws Exception {
         byte[] iv = Arrays.copyOfRange(encryptedBytes, 0, GCM_IV_LENGTH / Byte.SIZE);
         Cipher cipher = Cipher.getInstance(AES_CIPHER_INSTANCE);
-        GCMParameterSpec ivSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
-        cipher.init(Cipher.DECRYPT_MODE, decryptKey, ivSpec);
+        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
+        cipher.init(Cipher.DECRYPT_MODE, decryptKey, gcmSpec);
         byte[] decryptedSource = cipher.doFinal(encryptedBytes, iv.length, encryptedBytes.length - iv.length);
         return decryptedSource;
     }
