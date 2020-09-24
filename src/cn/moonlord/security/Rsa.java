@@ -1,15 +1,22 @@
 package cn.moonlord.security;
 
 import javax.crypto.Cipher;
+import javax.crypto.spec.OAEPParameterSpec;
+import javax.crypto.spec.PSource;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
+import java.security.spec.MGF1ParameterSpec;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
 public class Rsa {
 
     private static final String RSA_KEY_ALGORITHM = "RSA";
-    private static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPPADDING";
+    private static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPWithSHA-512AndMGF1Padding";
+
+    private static final String OAEP_DIGEST_ALGORITHM = "SHA-512";
+    private static final String MGF1_NAME = "MGF1";
+    private static final String MGF1_DIGEST_ALGORITHM = "SHA-1";
 
     private final static int RSA_KEY_LENGTH = 4096;
 
@@ -61,8 +68,10 @@ public class Rsa {
     }
 
     public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
+        MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+        OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
         Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
-        cipher.init(Cipher.ENCRYPT_MODE, encryptKey);
+        cipher.init(Cipher.ENCRYPT_MODE, encryptKey, oaepSpec);
         byte[] encryptedResult = cipher.doFinal(sourceBytes);
         return encryptedResult;
     }
@@ -118,8 +127,10 @@ public class Rsa {
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, PrivateKey decryptKey) throws Exception {
+        MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+        OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
         Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
-        cipher.init(Cipher.DECRYPT_MODE, decryptKey);
+        cipher.init(Cipher.DECRYPT_MODE, decryptKey, oaepSpec);
         byte[] decryptedResult = cipher.doFinal(encryptedBytes);
         return decryptedResult;
     }

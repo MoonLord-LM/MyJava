@@ -23,9 +23,9 @@ public class SecurityTest {
         String key = Aes.generateKeyBase64String();
         Logger.info("key: " + key);
         byte[] encrypted1 = Aes.encrypt(source, key);
-        Logger.info("encrypted1: " + Base64.encode(encrypted1));
+        Logger.info("encrypted1: " + Base64.encode(encrypted1).length() + " " + Base64.encode(encrypted1));
         String encrypted2 = Aes.encryptToBase64String(source, key);
-        Logger.info("encrypted2: " + encrypted2);
+        Logger.info("encrypted2: " + encrypted2.length() + " " + encrypted2);
         byte[] result1 = Aes.decrypt(encrypted1, key);
         Logger.info("result1: " + result1.length);
         byte[] result2 = Aes.decryptFromBase64String(encrypted2, key);
