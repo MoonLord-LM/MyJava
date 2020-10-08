@@ -4,6 +4,7 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidAlgorithmParameterException;
 import java.util.Arrays;
 
 public class Aes {
@@ -32,6 +33,10 @@ public class Aes {
     }
 
     public static byte[] encrypt(byte[] sourceBytes, SecretKeySpec encryptKey) throws Exception {
+        if(encryptKey.getEncoded().length != AES_KEY_LENGTH  / Byte.SIZE){
+            throw new InvalidAlgorithmParameterException("encrypt key length is not match, the length should be " + AES_KEY_LENGTH);
+        }
+
         byte[] iv = Random.generate(GCM_IV_LENGTH);
         GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
 

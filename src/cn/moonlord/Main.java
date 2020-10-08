@@ -6,9 +6,10 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello World");
-        SecurityTest.test1();
-        SecurityTest.test2();
-        SecurityTest.test3();
+        //SecurityTest.test1();
+        //SecurityTest.test2();
+        //SecurityTest.test3();
+        SecurityTest.test4();
     }
 
 }

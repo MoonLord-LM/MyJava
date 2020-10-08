@@ -51,4 +51,21 @@ public class SecurityTest {
         Logger.info("result2: " + result1.length);
     }
 
+    public static void test4() throws Exception {
+        String source = "This is a secret" + Arrays.toString(new byte[512]);
+        Logger.info("source: " + source);
+        long startTime = System.currentTimeMillis();
+        byte[] key1 = Pbkdf2.generate(source, new byte[64]);
+        long endTime = System.currentTimeMillis();
+        Logger.info("key:1 " + key1.length + " " + key1 + " time: " + (endTime - startTime));
+        startTime = System.currentTimeMillis();
+        byte[] key2 = Pbkdf2.generate(source, new byte[64], 100000);
+        endTime = System.currentTimeMillis();
+        Logger.info("key2: " + key2.length + " " + key2 + " time: " + (endTime - startTime));
+        startTime = System.currentTimeMillis();
+        byte[] key3 = Pbkdf2.generate(source, new byte[32], 100000);
+        endTime = System.currentTimeMillis();
+        Logger.info("key3: " + key3.length + " " + key3 + " time: " + (endTime - startTime));
+    }
+
 }

@@ -68,6 +68,10 @@ public class Rsa {
     }
 
     public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
+        if(encryptKey.getEncoded().length != RSA_KEY_LENGTH  / Byte.SIZE){
+            throw new InvalidAlgorithmParameterException("encrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
+        }
+
         MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
         OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
         Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
