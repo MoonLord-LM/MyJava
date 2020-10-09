@@ -59,13 +59,28 @@ public class SecurityTest {
         long endTime = System.currentTimeMillis();
         Logger.info("key:1 " + key1.length + " " + key1 + " time: " + (endTime - startTime));
         startTime = System.currentTimeMillis();
-        byte[] key2 = Pbkdf2.generate(source, new byte[64], 100000);
+        byte[] key2 = Pbkdf2.generate(source, new byte[64], 10000);
         endTime = System.currentTimeMillis();
         Logger.info("key2: " + key2.length + " " + key2 + " time: " + (endTime - startTime));
         startTime = System.currentTimeMillis();
         byte[] key3 = Pbkdf2.generate(source, new byte[32], 100000);
         endTime = System.currentTimeMillis();
         Logger.info("key3: " + key3.length + " " + key3 + " time: " + (endTime - startTime));
+    }
+
+    public static void test5() throws Exception {
+        byte[] component1 = Random.generate(512);
+        System.out.println("component1: " + Base64.encode(component1));
+        String hash = Hash.SHA512(component1);
+        System.out.println("hash: " + hash);
+        byte[] component2 = Random.generate(512);
+        System.out.println("component2: " + Base64.encode(component2));
+        byte[] salt = Random.generate(512);
+        System.out.println("salt: " + Base64.encode(salt));
+        byte[] password = Xor.compute(component1, component2);
+        System.out.println("password: " + Base64.encode(password));
+        byte[] rootKey = Pbkdf2.generate(Hex.encode(password), salt, 10000);
+        System.out.println("rootKey: " + Base64.encode(rootKey));
     }
 
 }
