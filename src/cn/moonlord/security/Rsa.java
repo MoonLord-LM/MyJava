@@ -68,7 +68,7 @@ public class Rsa {
     }
 
     public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
-        if(encryptKey.getEncoded().length != RSA_KEY_LENGTH  / Byte.SIZE){
+        if(encryptKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
             throw new InvalidAlgorithmParameterException("encrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
         }
 
