@@ -5,8 +5,8 @@ import java.security.MessageDigest;
 
 public class Hash {
 
-    private static final String SHA256 = "SHA-256";
-    private static final String SHA512 = "SHA-512";
+    public static final String SHA256 = "SHA-256";
+    public static final String SHA512 = "SHA-512";
 
     public static String SHA256(byte[] sourceBytes) throws Exception {
         MessageDigest messageDigest = MessageDigest.getInstance(SHA256);
