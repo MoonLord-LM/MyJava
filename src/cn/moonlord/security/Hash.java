@@ -10,7 +10,7 @@ public class Hash {
 
     public static String SHA256(byte[] sourceBytes) throws Exception {
         MessageDigest messageDigest = MessageDigest.getInstance(SHA256);
-        byte digest[] = messageDigest.digest(sourceBytes);
+        byte[] digest = messageDigest.digest(sourceBytes);
         return Hex.encode(digest);
     }
 
@@ -20,7 +20,7 @@ public class Hash {
 
     public static String SHA512(byte[] sourceBytes) throws Exception {
         MessageDigest messageDigest = MessageDigest.getInstance(SHA512);
-        byte digest[] = messageDigest.digest(sourceBytes);
+        byte[] digest= messageDigest.digest(sourceBytes);
         return Hex.encode(digest);
     }
 
