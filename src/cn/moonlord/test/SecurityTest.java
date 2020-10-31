@@ -14,8 +14,8 @@ public class SecurityTest {
         Logger.info("Random.generateBase64String(256): " + Random.generateBase64String(256));
 
         byte[] source = new byte[] { 0x00, 0x01, 0x10, 0x11, 0x00 };
-        Logger.info("SHA256: " + Hash.SHA256(source));
-        Logger.info("SHA512: " + Hash.SHA512(source));
+        Logger.info("SHA256: " + Hash.sha256(source));
+        Logger.info("SHA512: " + Hash.sha512(source));
     }
 
     public static void test2() throws Exception {
@@ -71,7 +71,7 @@ public class SecurityTest {
     public static void test5() throws Exception {
         byte[] component1 = Random.generate(512);
         System.out.println("component1: " + Base64.encode(component1));
-        String hash = Hash.SHA512(component1);
+        String hash = Hash.sha512(component1);
         System.out.println("hash: " + hash);
         byte[] component2 = Random.generate(512);
         System.out.println("component2: " + Base64.encode(component2));

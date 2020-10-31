@@ -6,7 +6,7 @@ import java.security.SecureRandom;
 public class Random {
 
     private final static long MAX_BYTE_LENGTH = Integer.MAX_VALUE;
-    private final static long MAX_BIT_LENGTH = MAX_BYTE_LENGTH * (long) Byte.SIZE;
+    private final static long MAX_BIT_LENGTH = MAX_BYTE_LENGTH * Byte.SIZE;
 
     public static byte[] generateBytes(int byteLength) {
         byte[] buffer = new byte[byteLength];
@@ -35,7 +35,7 @@ public class Random {
         if(bitLength > MAX_BIT_LENGTH){
             throw new InvalidAlgorithmParameterException("random generate bit length should not larger than " + MAX_BIT_LENGTH);
         }
-        int byteCount = Long.valueOf(bitLength / (long) Byte.SIZE).intValue();
+        int byteCount = Long.valueOf(bitLength / Byte.SIZE).intValue();
         return generateBytes(byteCount);
     }
 
