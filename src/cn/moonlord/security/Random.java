@@ -5,8 +5,8 @@ import java.security.SecureRandom;
 
 public class Random {
 
-    private final static long MAX_BYTE_LENGTH = Integer.MAX_VALUE;
-    private final static long MAX_BIT_LENGTH = MAX_BYTE_LENGTH * Byte.SIZE;
+    private static final long MAX_BYTE_LENGTH = Integer.MAX_VALUE;
+    private static final long MAX_BIT_LENGTH = MAX_BYTE_LENGTH * Byte.SIZE;
 
     public static byte[] generateBytes(int byteLength) {
         byte[] buffer = new byte[byteLength];

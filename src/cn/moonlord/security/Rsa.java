@@ -18,9 +18,9 @@ public class Rsa {
     private static final String MGF1_NAME = "MGF1";
     private static final String MGF1_DIGEST_ALGORITHM = "SHA-512";
 
-    private final static int RSA_KEY_LENGTH = 4096;
-    private final static int SOURCE_BLOCK_SIZE = 382;
-    private final static int ENCRYPTED_BLOCK_SIZE = 512;
+    private static final int RSA_KEY_LENGTH = 4096;
+    private static final int SOURCE_BLOCK_SIZE = 382;
+    private static final int ENCRYPTED_BLOCK_SIZE = 512;
 
     public static KeyPair generateKeyPair() throws Exception {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA_KEY_ALGORITHM);

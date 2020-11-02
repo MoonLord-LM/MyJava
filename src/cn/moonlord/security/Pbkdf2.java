@@ -9,9 +9,9 @@ public class Pbkdf2 {
 
     private static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA512";
 
-    private final static int OUTPUT_KEY_MIN_LENGTH = 256;
-    private final static int SALT_MIN_LENGTH = 256;
-    public static final int ITERATION_MIN_COUNT = 10000;
+    private static final int OUTPUT_KEY_MIN_LENGTH = 256;
+    private static final int SALT_MIN_LENGTH = 256;
+    private static final int ITERATION_MIN_COUNT = 10000;
 
     public static byte[] generate(char[] password, byte[] salt, int iterationCount, int outputKeyLength) throws Exception {
         if(outputKeyLength < OUTPUT_KEY_MIN_LENGTH){
