@@ -19,6 +19,8 @@ public class Rsa {
     private static final String MGF1_DIGEST_ALGORITHM = "SHA-512";
 
     private final static int RSA_KEY_LENGTH = 4096;
+    private final static int SOURCE_BLOCK_SIZE = 382;
+    private final static int ENCRYPTED_BLOCK_SIZE = 512;
 
     public static KeyPair generateKeyPair() throws Exception {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA_KEY_ALGORITHM);
@@ -72,11 +74,23 @@ public class Rsa {
             throw new InvalidAlgorithmParameterException("encrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
         }
 
-        MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
-        OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
-        Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
-        cipher.init(Cipher.ENCRYPT_MODE, encryptKey, oaepSpec);
-        byte[] encryptedResult = cipher.doFinal(sourceBytes);
+        int blockCount = sourceBytes.length / SOURCE_BLOCK_SIZE;
+        blockCount = blockCount + (sourceBytes.length % SOURCE_BLOCK_SIZE == 0 ? 0 : 1);
+        blockCount = blockCount + (sourceBytes.length == 0 ? 1 : 0);
+        byte[] encryptedResult = new byte[blockCount * ENCRYPTED_BLOCK_SIZE];
+        int encryptedOffset = 0;
+        int sourceOffset = 0;
+
+        while(sourceOffset == 0 || sourceOffset < sourceBytes.length){
+            int sourceLength = Math.min(sourceBytes.length - sourceOffset, SOURCE_BLOCK_SIZE);
+            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
+            Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
+            cipher.init(Cipher.ENCRYPT_MODE, encryptKey, oaepSpec);
+            cipher.doFinal(sourceBytes, sourceOffset, sourceLength, encryptedResult, encryptedOffset);
+            sourceOffset += SOURCE_BLOCK_SIZE;
+            encryptedOffset += ENCRYPTED_BLOCK_SIZE;
+        }
         return encryptedResult;
     }
 
@@ -131,11 +145,28 @@ public class Rsa {
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, PrivateKey decryptKey) throws Exception {
-        MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
-        OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
-        Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
-        cipher.init(Cipher.DECRYPT_MODE, decryptKey, oaepSpec);
-        byte[] decryptedResult = cipher.doFinal(encryptedBytes);
+        if(decryptKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
+            throw new InvalidAlgorithmParameterException("decrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
+        }
+
+        int blockCount = encryptedBytes.length / ENCRYPTED_BLOCK_SIZE;
+        byte[] buffer = new byte[blockCount * SOURCE_BLOCK_SIZE + ENCRYPTED_BLOCK_SIZE];
+        int sourceLength = 0;
+        int sourceOffset = 0;
+        int encryptedOffset = 0;
+
+        while(encryptedOffset < encryptedBytes.length) {
+            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
+            Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
+            cipher.init(Cipher.DECRYPT_MODE, decryptKey, oaepSpec);
+            sourceLength =  sourceLength + cipher.doFinal(encryptedBytes, encryptedOffset, ENCRYPTED_BLOCK_SIZE, buffer, sourceOffset);
+            encryptedOffset += ENCRYPTED_BLOCK_SIZE;
+            sourceOffset += SOURCE_BLOCK_SIZE;
+        }
+
+        byte[] decryptedResult = new byte[sourceLength];
+        System.arraycopy(buffer, 0, decryptedResult, 0, sourceLength);
         return decryptedResult;
     }
 

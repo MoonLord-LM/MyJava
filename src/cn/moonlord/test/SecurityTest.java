@@ -5,6 +5,7 @@ import cn.moonlord.security.*;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.interfaces.RSAPublicKey;
 import java.util.Arrays;
 
 public class SecurityTest {
@@ -24,7 +25,7 @@ public class SecurityTest {
         String key = Aes.generateKeyBase64String();
         Logger.info("key: " + key);
         byte[] encrypted1 = Aes.encrypt(source, key);
-        Logger.info("encrypted1: " + Base64.encode(encrypted1).length() + " " + Base64.encode(encrypted1));
+        Logger.info("encrypted1: " + encrypted1.length + " " + Base64.encode(encrypted1));
         String encrypted2 = Aes.encryptToBase64String(source, key);
         Logger.info("encrypted2: " + encrypted2.length() + " " + encrypted2);
         byte[] result1 = Aes.decrypt(encrypted1, key);
@@ -34,21 +35,24 @@ public class SecurityTest {
     }
 
     public static void test3() throws Exception {
-        String source = "This is a secret" + Arrays.toString(new byte[100]);
-        Logger.info("source: " + source);
+        String source1 = "";
+        String source2 = "This is a secret" + Arrays.toString(new byte[10000]);
+        Logger.info("source1: " + source1.length() + " " + source1);
+        Logger.info("source2: " + source2.length() + " " + source2);
         KeyPair keyPair = Rsa.generateKeyPair();
         PrivateKey privateKey = Rsa.getPrivateKey(keyPair.getPrivate().getEncoded());
         PublicKey publicKey = Rsa.getPublicKey(keyPair.getPublic().getEncoded());
         Logger.info("privateKey: " + privateKey.getEncoded().length);
         Logger.info("publicKey: " + publicKey.getEncoded().length);
-        byte[] encrypted1 = Rsa.encrypt(source.getBytes(), publicKey);
+        Logger.info("((RSAPublicKey)publicKey).getPublicExponent(): " + ((RSAPublicKey)publicKey).getPublicExponent().toString());
+        byte[] encrypted1 = Rsa.encrypt(source1.getBytes(), publicKey);
         Logger.info("encrypted1: " + encrypted1.length + " " + encrypted1);
-        byte[] encrypted2 = Rsa.encrypt(source.getBytes(), publicKey);
+        byte[] encrypted2 = Rsa.encrypt(source2.getBytes(), publicKey);
         Logger.info("encrypted2: " + encrypted2.length + " " + encrypted2);
         byte[] result1 = Rsa.decrypt(encrypted1, privateKey);
         Logger.info("result1: " + result1.length);
         byte[] result2 = Rsa.decrypt(encrypted2, privateKey);
-        Logger.info("result2: " + result1.length);
+        Logger.info("result2: " + result2.length);
     }
 
     public static void test4() throws Exception {
