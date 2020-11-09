@@ -18,13 +18,13 @@ public class Hex {
     }
 
     public static byte[] decode(String sourceString) throws Exception {
-        int bytesLength = sourceString.length() / 2;
         if(sourceString == null || sourceString.length() == 0){
             throw new InvalidAlgorithmParameterException("decode source string must not be empty");
         }
         if(sourceString.length() % 2 == 1){
             throw new InvalidAlgorithmParameterException("decode source string length must be a multiple of 2");
         }
+        int bytesLength = sourceString.length() / 2;
         byte[] tmp = new BigInteger(sourceString, HEX_RADIX).toByteArray();
         if(tmp.length > bytesLength){
             byte[] buffer = new byte[bytesLength];
