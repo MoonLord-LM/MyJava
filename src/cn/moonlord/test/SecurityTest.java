@@ -4,6 +4,7 @@ import cn.moonlord.log.Logger;
 import cn.moonlord.security.*;
 import javafx.beans.binding.Bindings;
 
+import java.nio.charset.StandardCharsets;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -16,19 +17,54 @@ public class SecurityTest {
         Logger.info("Random.generateBytes(256).length: " + Random.generate(256).length);
         Logger.info("Random.generateBase64String(256): " + Random.generateBase64String(256));
 
-        byte[] source = new byte[] { 0x00, 0x01, 0x10, 0x11, 0x10, 0x11, 0x11, 0x11, 0x11, 0x00, 0x11, 0x00, 0x11, 0x11, 0x11, 0x10 };
+        byte[] source = "12313123123122323125".getBytes(StandardCharsets.UTF_8);
         String sha256 = Hash.sha256(source);
         Logger.info("SHA256: " + sha256.length() + " " + sha256);
         byte[] sha256Bytes = Hex.decode(sha256);
         Logger.info("sha256 Hex.decode: " + sha256Bytes.length + " " + sha256Bytes);
         String sha256Hex = Hex.encode(sha256Bytes);
         Logger.info("sha256Hex: " + sha256Hex.length() + " " + sha256Hex);
+
+        source = "12313123123122323125".getBytes(StandardCharsets.UTF_8);
         String sha512 = Hash.sha512(source);
         Logger.info("SHA512: " + sha512.length() + " " + sha512);
         byte[] sha512Bytes = Hex.decode(sha512);
         Logger.info("sha512Bytes: " + sha512Bytes.length + " " + sha512Bytes);
         String sha512Hex = Hex.encode(sha512Bytes);
         Logger.info("sha512Hex: " + sha512Hex.length() + " " + sha512Hex);
+
+        String sourceString = "0000000000";
+        byte[] hexEncode = Hex.decode(sourceString);
+        String hexDecode = Hex.encode(hexEncode);
+        if(!hexDecode.equals(sourceString)){
+            Logger.info("sourceString: " + sourceString.length() + " " + sourceString);
+            Logger.info("hexDecode: " + hexDecode.length() + " " + hexDecode);
+        }
+
+        sourceString = "ffffffffff";
+        hexEncode = Hex.decode(sourceString);
+        hexDecode = Hex.encode(hexEncode);
+        if(!hexDecode.equals(sourceString)){
+            Logger.info("sourceString: " + sourceString.length() + " " + sourceString);
+            Logger.info("hexDecode: " + hexDecode.length() + " " + hexDecode);
+        }
+
+        for (int i = 0; i < 1024 * 64; i++) {
+            sourceString = Hash.sha256(""+ i);
+            hexEncode = Hex.decode(sourceString);
+            hexDecode = Hex.encode(hexEncode);
+            if(!hexDecode.equals(sourceString)){
+                Logger.info("sourceString: " + sourceString.length() + " " + sourceString);
+                Logger.info("hexDecode: " + hexDecode.length() + " " + hexDecode);
+            }
+            sourceString = Hash.sha512(""+ i);
+            hexEncode = Hex.decode(sourceString);
+            hexDecode = Hex.encode(hexEncode);
+            if(!hexDecode.equals(sourceString)){
+                Logger.info("sourceString: " + sourceString.length() + " " + sourceString);
+                Logger.info("hexDecode: " + hexDecode.length() + " " + hexDecode);
+            }
+        }
     }
 
     public static void test2() throws Exception {
