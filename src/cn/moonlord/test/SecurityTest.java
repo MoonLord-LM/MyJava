@@ -2,6 +2,8 @@ package cn.moonlord.test;
 
 import cn.moonlord.log.Logger;
 import cn.moonlord.security.*;
+import javafx.beans.binding.Bindings;
+
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -14,9 +16,19 @@ public class SecurityTest {
         Logger.info("Random.generateBytes(256).length: " + Random.generate(256).length);
         Logger.info("Random.generateBase64String(256): " + Random.generateBase64String(256));
 
-        byte[] source = new byte[] { 0x00, 0x01, 0x10, 0x11, 0x00 };
-        Logger.info("SHA256: " + Hash.sha256(source));
-        Logger.info("SHA512: " + Hash.sha512(source));
+        byte[] source = new byte[] { 0x00, 0x01, 0x10, 0x11, 0x10, 0x11, 0x11, 0x11, 0x11, 0x00, 0x11, 0x00, 0x11, 0x11, 0x11, 0x10 };
+        String sha256 = Hash.sha256(source);
+        Logger.info("SHA256: " + sha256.length() + " " + sha256);
+        byte[] sha256Bytes = Hex.decode(sha256);
+        Logger.info("sha256 Hex.decode: " + sha256Bytes.length + " " + sha256Bytes);
+        String sha256Hex = Hex.encode(sha256Bytes);
+        Logger.info("sha256Hex: " + sha256Hex.length() + " " + sha256Hex);
+        String sha512 = Hash.sha512(source);
+        Logger.info("SHA512: " + sha512.length() + " " + sha512);
+        byte[] sha512Bytes = Hex.decode(sha512);
+        Logger.info("sha512Bytes: " + sha512Bytes.length + " " + sha512Bytes);
+        String sha512Hex = Hex.encode(sha512Bytes);
+        Logger.info("sha512Hex: " + sha512Hex.length() + " " + sha512Hex);
     }
 
     public static void test2() throws Exception {
