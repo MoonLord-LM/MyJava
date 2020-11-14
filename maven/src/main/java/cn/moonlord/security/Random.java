@@ -1,49 +1,48 @@
 package cn.moonlord.security;
 
-import java.security.InvalidAlgorithmParameterException;
 import java.security.SecureRandom;
 
 public class Random {
 
-    private static final long MAX_BYTE_LENGTH = Integer.MAX_VALUE;
-    private static final long MAX_BIT_LENGTH = MAX_BYTE_LENGTH * Byte.SIZE;
-
     public static byte[] generateBytes(int byteLength) {
+        if(byteLength <= 0){
+            throw new IllegalArgumentException("Random generateBytes error, byteLength must be larger than 0");
+        }
         byte[] buffer = new byte[byteLength];
         SecureRandom random = new SecureRandom();
         random.nextBytes(buffer);
         return buffer;
     }
 
-    public static byte[] generateBytes(long byteLength) throws Exception {
-        if(byteLength > MAX_BYTE_LENGTH){
-            throw new InvalidAlgorithmParameterException("random generate byte length should not larger than " + MAX_BYTE_LENGTH);
+    public static byte[] generateBytes(long byteLength) {
+        if(byteLength > Integer.MAX_VALUE){
+            throw new IllegalArgumentException("Random generateBytes error, byteLength must not be larger than " + Integer.MAX_VALUE);
         }
         int byteCount = Long.valueOf(byteLength).intValue();
-        byte[] buffer = new byte[byteCount];
-        SecureRandom random = new SecureRandom();
-        random.nextBytes(buffer);
-        return buffer;
+        return generateBytes(byteCount);
     }
 
     public static byte[] generate(int bitLength) {
+        if(bitLength % Byte.SIZE != 0){
+            throw new IllegalArgumentException("Random generate error, bitLength must be a multiple of " + Byte.SIZE);
+        }
         int byteCount = bitLength / Byte.SIZE;
         return generateBytes(byteCount);
     }
 
-    public static byte[] generate(long bitLength) throws Exception {
-        if(bitLength > MAX_BIT_LENGTH){
-            throw new InvalidAlgorithmParameterException("random generate bit length should not larger than " + MAX_BIT_LENGTH);
+    public static byte[] generate(long bitLength) {
+        if(bitLength > (long) Integer.MAX_VALUE * (long) Byte.SIZE){
+            throw new IllegalArgumentException("Random generate error, bitLength must not be larger than " + ((long) Integer.MAX_VALUE * (long) Byte.SIZE));
         }
-        int byteCount = Long.valueOf(bitLength / Byte.SIZE).intValue();
-        return generateBytes(byteCount);
+        int bitCount = Long.valueOf(bitLength).intValue();
+        return generate(bitCount);
     }
 
     public static String generateBase64String(int bitLength) {
         return Base64.encode(generate(bitLength));
     }
 
-    public static String generateBase64String(long bitLength) throws Exception {
+    public static String generateBase64String(long bitLength) {
         return Base64.encode(generate(bitLength));
     }
 

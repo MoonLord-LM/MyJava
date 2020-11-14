@@ -16,11 +16,11 @@ public class Aes {
     private static final int GCM_TAG_LENGTH = 128;
     private static final int GCM_IV_LENGTH = 96;
 
-    public static byte[] generateKey() {
+    public static byte[] generateKey() throws Exception {
         return Random.generate(AES_KEY_LENGTH);
     }
 
-    public static String generateKeyBase64String() {
+    public static String generateKeyBase64String() throws Exception {
         return Base64.encode(generateKey());
     }
 
