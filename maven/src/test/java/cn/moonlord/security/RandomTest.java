@@ -11,7 +11,7 @@ public class RandomTest {
         Random.generateBytes(1);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_1001() throws Exception {
+    public void test_1001() {
         Random.generateBytes(0);
     }
 
@@ -20,11 +20,11 @@ public class RandomTest {
         Random.generateBytes(1024);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_2001() throws Exception {
+    public void test_2001() {
         Random.generateBytes((long) Integer.MAX_VALUE + 1);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_2002() throws Exception {
+    public void test_2002() {
         Random.generateBytes(0);
     }
 
@@ -33,11 +33,11 @@ public class RandomTest {
         Random.generate(1024);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_3001() throws Exception {
+    public void test_3001() {
         Random.generate(1);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_3003() throws Exception {
+    public void test_3003() {
         Random.generate(0);
     }
 
@@ -46,15 +46,15 @@ public class RandomTest {
         Random.generate(8L);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_4001() throws Exception {
+    public void test_4001() {
         Random.generate(1L);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_4002() throws Exception {
+    public void test_4002() {
         Random.generate((long) Integer.MAX_VALUE * (long) Byte.SIZE + 1);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_4003() throws Exception {
+    public void test_4003() {
         Random.generate(0L);
     }
 
@@ -63,11 +63,11 @@ public class RandomTest {
         Random.generateBase64String(1024);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_5001() throws Exception {
+    public void test_5001() {
         Random.generateBase64String(1);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_5003() throws Exception {
+    public void test_5003() {
         Random.generateBase64String(0);
     }
 
@@ -76,15 +76,15 @@ public class RandomTest {
         Random.generateBase64String(8L);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_6001() throws Exception {
+    public void test_6001() {
         Random.generateBase64String(1L);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_6002() throws Exception {
+    public void test_6002() {
         Random.generateBase64String((long) Integer.MAX_VALUE * (long) Byte.SIZE + 1);
     }
     @Test(expected= IllegalArgumentException.class)
-    public void test_6003() throws Exception {
+    public void test_6003() {
         Random.generateBase64String(0L);
     }
 
