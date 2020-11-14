@@ -58,4 +58,34 @@ public class RandomTest {
         Random.generate(0L);
     }
 
+    @Test
+    public void test_5000() {
+        Random.generateBase64String(1024);
+    }
+    @Test(expected= IllegalArgumentException.class)
+    public void test_5001() throws Exception {
+        Random.generateBase64String(1);
+    }
+    @Test(expected= IllegalArgumentException.class)
+    public void test_5003() throws Exception {
+        Random.generateBase64String(0);
+    }
+
+    @Test
+    public void test_6000() {
+        Random.generateBase64String(8L);
+    }
+    @Test(expected= IllegalArgumentException.class)
+    public void test_6001() throws Exception {
+        Random.generateBase64String(1L);
+    }
+    @Test(expected= IllegalArgumentException.class)
+    public void test_6002() throws Exception {
+        Random.generateBase64String((long) Integer.MAX_VALUE * (long) Byte.SIZE + 1);
+    }
+    @Test(expected= IllegalArgumentException.class)
+    public void test_6003() throws Exception {
+        Random.generateBase64String(0L);
+    }
+
 }
