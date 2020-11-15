@@ -17,6 +17,18 @@ public class Xor {
     }
 
     public static byte[] merge(byte[] source1, byte[] source2) {
+        if(source1 == null){
+            throw new IllegalArgumentException("Xor merge error, source1 must not be null");
+        }
+        if(source1.length == 0){
+            throw new IllegalArgumentException("Xor merge error, source1 must not be empty");
+        }
+        if(source2 == null){
+            throw new IllegalArgumentException("Xor merge error, source2 must not be null");
+        }
+        if(source2.length == 0){
+            throw new IllegalArgumentException("Xor merge error, source2 must not be empty");
+        }
         if(source1.length != source2.length){
             throw new IllegalArgumentException("Xor merge error, source1.length [" + source1.length + "] must be equal with source2.length [" + source2.length + "]");
         }
