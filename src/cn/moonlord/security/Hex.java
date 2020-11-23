@@ -2,6 +2,7 @@ package cn.moonlord.security;
 
 import java.math.BigInteger;
 import java.security.InvalidAlgorithmParameterException;
+import java.util.Locale;
 
 public class Hex {
 
@@ -14,7 +15,7 @@ public class Hex {
             throw new InvalidAlgorithmParameterException("encode source bytes must not be empty");
         }
         long paddingLength = sourceBytes.length * 2;
-        return String.format("%" + PADDING_ZERO + paddingLength + "x", new BigInteger(1, sourceBytes));
+        return String.format("%" + PADDING_ZERO + paddingLength + "x", new BigInteger(1, sourceBytes), Locale.ROOT);
     }
 
     public static byte[] decode(String sourceString) throws Exception {
