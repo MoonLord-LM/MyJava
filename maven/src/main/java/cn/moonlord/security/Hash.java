@@ -18,6 +18,16 @@ public class Hash {
         return sha256(sourceString.getBytes(StandardCharsets.UTF_8));
     }
 
+    public static byte[] sha256ToBytes(byte[] sourceBytes) throws Exception {
+        MessageDigest messageDigest = MessageDigest.getInstance(SHA256);
+        byte[] digest = messageDigest.digest(sourceBytes);
+        return digest;
+    }
+
+    public static byte[] sha256ToBytes(String sourceString) throws Exception {
+        return sha256ToBytes(sourceString.getBytes(StandardCharsets.UTF_8));
+    }
+
     public static String sha512(byte[] sourceBytes) throws Exception {
         MessageDigest messageDigest = MessageDigest.getInstance(SHA512);
         byte[] digest= messageDigest.digest(sourceBytes);
@@ -26,6 +36,16 @@ public class Hash {
 
     public static String sha512(String sourceString) throws Exception {
         return sha512(sourceString.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static byte[] sha512ToBytes(byte[] sourceBytes) throws Exception {
+        MessageDigest messageDigest = MessageDigest.getInstance(SHA512);
+        byte[] digest= messageDigest.digest(sourceBytes);
+        return digest;
+    }
+
+    public static byte[] sha512ToBytes(String sourceString) throws Exception {
+        return sha512ToBytes(sourceString.getBytes(StandardCharsets.UTF_8));
     }
 
 }
