@@ -20,8 +20,7 @@ public class Hash {
 
     public static byte[] sha256ToBytes(byte[] sourceBytes) throws Exception {
         MessageDigest messageDigest = MessageDigest.getInstance(SHA256);
-        byte[] digest = messageDigest.digest(sourceBytes);
-        return digest;
+        return messageDigest.digest(sourceBytes);
     }
 
     public static byte[] sha256ToBytes(String sourceString) throws Exception {
@@ -40,8 +39,7 @@ public class Hash {
 
     public static byte[] sha512ToBytes(byte[] sourceBytes) throws Exception {
         MessageDigest messageDigest = MessageDigest.getInstance(SHA512);
-        byte[] digest= messageDigest.digest(sourceBytes);
-        return digest;
+        return messageDigest.digest(sourceBytes);
     }
 
     public static byte[] sha512ToBytes(String sourceString) throws Exception {
