@@ -16,6 +16,12 @@ public class HashTest {
             byte[] source = new byte[]{(byte) 0x00, (byte) 0x11, (byte) 0x22, (byte) 0x33};
             byte[] result = Hash.sha256(source);
             Assert.assertEquals("success_1", 32, result.length);
+            Assert.assertEquals("success_1", (byte) 0xAA, result[0]);
+            Assert.assertEquals("success_1", (byte) 0xFA, result[1]);
+            Assert.assertEquals("success_1", (byte) 0x37, result[2]);
+            Assert.assertEquals("success_1", (byte) 0xF3, result[29]);
+            Assert.assertEquals("success_1", (byte) 0xF2, result[30]);
+            Assert.assertEquals("success_1", (byte) 0x5D, result[31]);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -30,6 +36,12 @@ public class HashTest {
             String source = "00112233";
             byte[] result = Hash.sha256(source);
             Assert.assertEquals("success_1", 32, result.length);
+            Assert.assertEquals("success_1", (byte) 0x32, result[0]);
+            Assert.assertEquals("success_1", (byte) 0xB4, result[1]);
+            Assert.assertEquals("success_1", (byte) 0xF5, result[2]);
+            Assert.assertEquals("success_1", (byte) 0x23, result[29]);
+            Assert.assertEquals("success_1", (byte) 0x8B, result[30]);
+            Assert.assertEquals("success_1", (byte) 0x94, result[31]);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -44,6 +56,7 @@ public class HashTest {
             byte[] source = new byte[]{(byte) 0x00, (byte) 0x11, (byte) 0x22, (byte) 0x33};
             String result = Hash.sha256Hex(source);
             Assert.assertEquals("success_1", 64, result.length());
+            Assert.assertEquals("success_1", "aafa373bf008a855815ecb37d8bd52f6a8157cb5833c58edde6d530dbcf3f25d", result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -58,6 +71,7 @@ public class HashTest {
             String source = "00112233";
             String result = Hash.sha256Hex(source);
             Assert.assertEquals("success_1", 64, result.length());
+            Assert.assertEquals("success_1", "32b4f576fc607b3ed0a1516e772567e52f31093263c548b9c716725877238b94", result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -72,6 +86,12 @@ public class HashTest {
             byte[] source = new byte[]{(byte) 0x00, (byte) 0x11, (byte) 0x22, (byte) 0x33};
             byte[] result = Hash.sha512(source);
             Assert.assertEquals("success_1", 64, result.length);
+            Assert.assertEquals("success_1", (byte) 0xFA, result[0]);
+            Assert.assertEquals("success_1", (byte) 0x54, result[1]);
+            Assert.assertEquals("success_1", (byte) 0xA4, result[2]);
+            Assert.assertEquals("success_1", (byte) 0x1B, result[61]);
+            Assert.assertEquals("success_1", (byte) 0x45, result[62]);
+            Assert.assertEquals("success_1", (byte) 0x36, result[63]);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -86,6 +106,12 @@ public class HashTest {
             String source = "00112233";
             byte[] result = Hash.sha512(source);
             Assert.assertEquals("success_1", 64, result.length);
+            Assert.assertEquals("success_1", (byte) 0xC2, result[0]);
+            Assert.assertEquals("success_1", (byte) 0x25, result[1]);
+            Assert.assertEquals("success_1", (byte) 0x8F, result[2]);
+            Assert.assertEquals("success_1", (byte) 0x7C, result[61]);
+            Assert.assertEquals("success_1", (byte) 0xAE, result[62]);
+            Assert.assertEquals("success_1", (byte) 0xC0, result[63]);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -100,6 +126,7 @@ public class HashTest {
             byte[] source = new byte[]{(byte) 0x00, (byte) 0x11, (byte) 0x22, (byte) 0x33};
             String result = Hash.sha512Hex(source);
             Assert.assertEquals("success_1", 128, result.length());
+            Assert.assertEquals("success_1", "fa54a45b24841a39ca6a3bab95d29ffdba8561b93d94f06f734a7a09c2370b79b2dd3b4efaf01eb3899206594e41cb5844031410d8ceee5ca4aa79c5461b4536", result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -114,6 +141,7 @@ public class HashTest {
             String source = "00112233";
             String result = Hash.sha512Hex(source);
             Assert.assertEquals("success_1", 128, result.length());
+            Assert.assertEquals("success_1", "c2258f74cbf18ef88d75d3c4b5920b1a9b5217ea66bc977c704b49815af7f71dc86e3ecf7c305bad4563fc84235ce509b3e579f390a089fbf3ce2f27247caec0", result);
         }
 
         @Test(expected = IllegalArgumentException.class)
