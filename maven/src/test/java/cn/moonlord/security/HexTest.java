@@ -50,18 +50,49 @@ public class HexTest {
 
     public static class decode {
         @Test
+        public void success_1() {
+            byte[] result = Hex.decode("00dd11ee22ff");
+            Assert.assertEquals("success_1", 6, result.length);
+            Assert.assertEquals("success_1", (byte) 0x00, result[0]);
+            Assert.assertEquals("success_1", (byte) 0xDD, result[1]);
+            Assert.assertEquals("success_1", (byte) 0x11, result[2]);
+            Assert.assertEquals("success_1", (byte) 0xEE, result[3]);
+            Assert.assertEquals("success_1", (byte) 0x22, result[4]);
+            Assert.assertEquals("success_1", (byte) 0xFF, result[5]);
+        }
+
+        @Test
+        public void success_2() {
+            byte[] result = Hex.decode("000000000000");
+            Assert.assertEquals("success_1", 6, result.length);
+            Assert.assertEquals("success_1", (byte) 0x00, result[0]);
+            Assert.assertEquals("success_1", (byte) 0x00, result[1]);
+            Assert.assertEquals("success_1", (byte) 0x00, result[2]);
+            Assert.assertEquals("success_1", (byte) 0x00, result[3]);
+            Assert.assertEquals("success_1", (byte) 0x00, result[4]);
+            Assert.assertEquals("success_1", (byte) 0x00, result[5]);
+        }
+
+        @Test
         public void performance_1() throws DecoderException {
             String source = Hex.encode(new byte[1024 * 1024 * 100]);
-            logger.info("begin decode");
-            for (int i = 0; i < 5; i++) {
+            logger.info("begin performance_1");
+            long beginTime = System.currentTimeMillis();
+            for (int i = 0; i < 10; i++) {
                 Hex.decode(source);
             }
-            logger.info("end decode");
-            logger.info("begin codec");
-            for (int i = 0; i < 5; i++) {
+            long endTime = System.currentTimeMillis();
+            long costTime = endTime - beginTime;
+            logger.info("end performance_1, cost time: {} ms", costTime);
+            logger.info("begin compare");
+            beginTime = System.currentTimeMillis();
+            for (int i = 0; i < 10; i++) {
                 org.apache.commons.codec.binary.Hex.decodeHex(source);
             }
-            logger.info("end codec");
+            endTime = System.currentTimeMillis();
+            long compareTime = endTime - beginTime;
+            logger.info("end compare, compare time: {} ms", compareTime);
+            Assert.assertTrue(costTime < compareTime);
         }
 
         @Test(expected = IllegalArgumentException.class)
