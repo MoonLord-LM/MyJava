@@ -8,4 +8,5 @@
 
 #### 1. 对比 Apache Commons Codec 进行性能测试
 
-
+###### TODO Hash 不同的实现的性能对比
+###### TODO Hex 支持空数组
