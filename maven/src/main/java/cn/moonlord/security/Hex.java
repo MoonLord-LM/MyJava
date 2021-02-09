@@ -14,8 +14,8 @@ public class Hex {
     static {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                UNSIGNED_BYTE_MAPPING_HEX_CHARS_1[i * 16 + j] = HEX_CHARS.get(i).charValue();
-                UNSIGNED_BYTE_MAPPING_HEX_CHARS_2[i * 16 + j] = HEX_CHARS.get(j).charValue();
+                UNSIGNED_BYTE_MAPPING_HEX_CHARS_1[i * 16 + j] = HEX_CHARS.get(i);
+                UNSIGNED_BYTE_MAPPING_HEX_CHARS_2[i * 16 + j] = HEX_CHARS.get(j);
             }
         }
     }
@@ -30,12 +30,12 @@ public class Hex {
         if(sourceBytes.length > Integer.MAX_VALUE / 2){
             throw new IllegalArgumentException("Hex encode error, sourceBytes length must not be larger than " + ( Integer.MAX_VALUE / 2 ));
         }
-        byte[] result = new byte[sourceBytes.length * 2];
+        char[] result = new char[sourceBytes.length * 2];
         for (int i = 0; i < sourceBytes.length; i++) {
             result[i * 2] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_1[Byte.toUnsignedInt(sourceBytes[i])];
             result[i * 2 + 1] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_2[Byte.toUnsignedInt(sourceBytes[i])];
         }
-        return new String(result, StandardCharsets.UTF_8);
+        return new String(result);
     }
 
     public static byte[] decode(String sourceString) {
@@ -51,8 +51,8 @@ public class Hex {
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         byte[] result = new byte[sourceString.length() / 2];
         for (int i = 0; i < result.length; i++) {
-            int firstDigitIndex = (byte) HEX_CHARS.indexOf((char) sourceBytes[i * 2]);
-            int secondDigitIndex = (byte) HEX_CHARS.indexOf((char) sourceBytes[i * 2 + 1]);
+            int firstDigitIndex = HEX_CHARS.indexOf((char) sourceBytes[i * 2]);
+            int secondDigitIndex = HEX_CHARS.indexOf((char) sourceBytes[i * 2 + 1]);
             if(firstDigitIndex == -1 || secondDigitIndex == -1){
                 throw new IllegalArgumentException("Hex decode error, sourceString must only contain hexadecimal characters");
             }
