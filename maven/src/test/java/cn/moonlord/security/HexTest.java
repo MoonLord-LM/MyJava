@@ -39,15 +39,17 @@ public class HexTest {
             }
             long endTime = System.currentTimeMillis();
             long costTime = endTime - beginTime;
+            logger.info("[Hex.encode] cost time: {} ms", costTime);
             beginTime = System.currentTimeMillis();
             for (int i = 0; i < 16; i++) {
                 org.apache.commons.codec.binary.Hex.encodeHexString(source);
             }
             endTime = System.currentTimeMillis();
             long compareTime = endTime - beginTime;
+            logger.info("[Hex.encodeHexString] compare time: {} ms", compareTime);
             Assert.assertTrue(costTime < compareTime);
-            double ratio = ( (double) compareTime - (double) costTime ) / (double) compareTime;
-            String improvement = Math.round(((1 / ratio) - 1) * 100) + "%";
+            double ratio = ( ( 1 / (double) costTime ) -  ( 1 / (double) compareTime ) ) / ( 1 / (double) compareTime );
+            String improvement = Math.round(ratio * 100) + "%";
             logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", improvement);
         }
 
@@ -106,15 +108,17 @@ public class HexTest {
             }
             long endTime = System.currentTimeMillis();
             long costTime = endTime - beginTime;
+            logger.info("[Hex.decode] cost time: {} ms", costTime);
             beginTime = System.currentTimeMillis();
             for (int i = 0; i < 16; i++) {
                 org.apache.commons.codec.binary.Hex.decodeHex(source);
             }
             endTime = System.currentTimeMillis();
             long compareTime = endTime - beginTime;
+            logger.info("[Hex.decodeHex] compare time: {} ms", compareTime);
             Assert.assertTrue(costTime < compareTime);
-            double ratio = ( (double) compareTime - (double) costTime ) / (double) compareTime;
-            String improvement = Math.round(((1 / ratio) - 1) * 100) + "%";
+            double ratio = ( ( 1 / (double) costTime ) -  ( 1 / (double) compareTime ) ) / ( 1 / (double) compareTime );
+            String improvement = Math.round(ratio * 100) + "%";
             logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", improvement);
         }
 

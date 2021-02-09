@@ -8,15 +8,14 @@ public class Hex {
 
     private static final List<Character> HEX_CHARS = Arrays.asList('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' );
 
-    private static final byte[][] UNSIGNED_BYTE_MAPPING_HEX_CHARS = new byte[256][2];
+    private static final char[] UNSIGNED_BYTE_MAPPING_HEX_CHARS_1 = new char[256];
+    private static final char[] UNSIGNED_BYTE_MAPPING_HEX_CHARS_2 = new char[256];
 
     static {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                UNSIGNED_BYTE_MAPPING_HEX_CHARS[i * 16 + j] = new byte[]{
-                        (byte) HEX_CHARS.get(i).charValue(),
-                        (byte) HEX_CHARS.get(j).charValue()
-                };
+                UNSIGNED_BYTE_MAPPING_HEX_CHARS_1[i * 16 + j] = HEX_CHARS.get(i).charValue();
+                UNSIGNED_BYTE_MAPPING_HEX_CHARS_2[i * 16 + j] = HEX_CHARS.get(j).charValue();
             }
         }
     }
@@ -33,8 +32,8 @@ public class Hex {
         }
         byte[] result = new byte[sourceBytes.length * 2];
         for (int i = 0; i < sourceBytes.length; i++) {
-            byte[] mappingBytes = UNSIGNED_BYTE_MAPPING_HEX_CHARS[Byte.toUnsignedInt(sourceBytes[i])];
-            System.arraycopy(mappingBytes, 0, result, i * 2,2);
+            result[i * 2] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_1[Byte.toUnsignedInt(sourceBytes[i])];
+            result[i * 2 + 1] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_2[Byte.toUnsignedInt(sourceBytes[i])];
         }
         return new String(result, StandardCharsets.UTF_8);
     }
