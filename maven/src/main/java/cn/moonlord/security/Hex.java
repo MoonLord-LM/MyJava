@@ -51,8 +51,8 @@ public class Hex {
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         byte[] result = new byte[sourceString.length() / 2];
         for (int i = 0; i < result.length; i++) {
-            int firstDigitIndex = HEX_CHARS.indexOf((char) sourceBytes[i * 2]);
-            int secondDigitIndex = HEX_CHARS.indexOf((char) sourceBytes[i * 2 + 1]);
+            byte firstDigitIndex = (byte) HEX_CHARS.indexOf((char) sourceBytes[i * 2]);
+            byte secondDigitIndex = (byte) HEX_CHARS.indexOf((char) sourceBytes[i * 2 + 1]);
             if(firstDigitIndex == -1 || secondDigitIndex == -1){
                 throw new IllegalArgumentException("Hex decode error, sourceString must only contain hexadecimal characters");
             }

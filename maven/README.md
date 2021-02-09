@@ -8,4 +8,5 @@
 
 #### 1. 对比 Apache Commons Codec 进行性能测试
 
+###### TODO Hex 性能优化，增加映射
 ###### TODO Hash 性能对比 DigestUtils
