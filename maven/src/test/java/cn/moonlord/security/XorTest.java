@@ -108,8 +108,8 @@ public class XorTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_5() {
-            byte[] source1 = new byte[1];
-            byte[] source2 = new byte[2];
+            byte[] source1 = new byte[2];
+            byte[] source2 = new byte[3];
             Xor.merge(source1, source2);
         }
     }

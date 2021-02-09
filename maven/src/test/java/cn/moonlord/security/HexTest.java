@@ -144,7 +144,7 @@ public class HexTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_5() {
-            String source = "!@";
+            String source = "!@#$";
             byte[] result = Hex.decode(source);
         }
     }
