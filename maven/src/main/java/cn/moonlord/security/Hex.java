@@ -1,6 +1,5 @@
 package cn.moonlord.security;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,8 +31,9 @@ public class Hex {
         }
         char[] result = new char[sourceBytes.length * 2];
         for (int i = 0; i < sourceBytes.length; i++) {
-            result[i * 2] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_1[Byte.toUnsignedInt(sourceBytes[i])];
-            result[i * 2 + 1] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_2[Byte.toUnsignedInt(sourceBytes[i])];
+            int mappingIndex = Byte.toUnsignedInt(sourceBytes[i]);
+            result[i * 2] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_1[mappingIndex];
+            result[i * 2 + 1] = UNSIGNED_BYTE_MAPPING_HEX_CHARS_2[mappingIndex];
         }
         return new String(result);
     }
@@ -48,11 +48,11 @@ public class Hex {
         if(sourceString.length() % 2 == 1){
             throw new IllegalArgumentException("Hex decode error, sourceString length must be a multiple of 2");
         }
-        byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
+        char[] sourceChars = sourceString.toCharArray();
         byte[] result = new byte[sourceString.length() / 2];
         for (int i = 0; i < result.length; i++) {
-            byte firstDigitIndex = (byte) HEX_CHARS.indexOf((char) sourceBytes[i * 2]);
-            byte secondDigitIndex = (byte) HEX_CHARS.indexOf((char) sourceBytes[i * 2 + 1]);
+            int firstDigitIndex = HEX_CHARS.indexOf(sourceChars[i * 2]);
+            int secondDigitIndex = HEX_CHARS.indexOf(sourceChars[i * 2 + 1]);
             if(firstDigitIndex == -1 || secondDigitIndex == -1){
                 throw new IllegalArgumentException("Hex decode error, sourceString must only contain hexadecimal characters");
             }

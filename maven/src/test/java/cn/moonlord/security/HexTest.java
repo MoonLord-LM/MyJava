@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.nio.charset.StandardCharsets;
+
 @SpringBootTest
 @RunWith(Enclosed.class)
 public class HexTest {
@@ -31,6 +33,13 @@ public class HexTest {
         }
 
         @Test
+        public void success_3() {
+            byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
+            String result = Hex.encode(source);
+            Assert.assertEquals("success_3", "e6b58be8af95", result);
+        }
+
+        @Test
         public void performance_1() {
             byte[] source = new byte[1024 * 1024 * 16];
             long beginTime = System.currentTimeMillis();
@@ -47,7 +56,7 @@ public class HexTest {
             endTime = System.currentTimeMillis();
             long compareTime = endTime - beginTime;
             logger.info("[Hex.encodeHexString] compare time: {} ms", compareTime);
-            Assert.assertTrue(costTime < compareTime);
+            Assert.assertTrue("performance_1", costTime < compareTime);
             double ratio = ( ( 1 / (double) costTime ) -  ( 1 / (double) compareTime ) ) / ( 1 / (double) compareTime );
             String improvement = Math.round(ratio * 100) + "%";
             logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", improvement);
@@ -90,13 +99,20 @@ public class HexTest {
         @Test
         public void success_2() {
             byte[] result = Hex.decode("000000000000");
-            Assert.assertEquals("success_1", 6, result.length);
-            Assert.assertEquals("success_1", (byte) 0x00, result[0]);
-            Assert.assertEquals("success_1", (byte) 0x00, result[1]);
-            Assert.assertEquals("success_1", (byte) 0x00, result[2]);
-            Assert.assertEquals("success_1", (byte) 0x00, result[3]);
-            Assert.assertEquals("success_1", (byte) 0x00, result[4]);
-            Assert.assertEquals("success_1", (byte) 0x00, result[5]);
+            Assert.assertEquals("success_2", 6, result.length);
+            Assert.assertEquals("success_2", (byte) 0x00, result[0]);
+            Assert.assertEquals("success_2", (byte) 0x00, result[1]);
+            Assert.assertEquals("success_2", (byte) 0x00, result[2]);
+            Assert.assertEquals("success_2", (byte) 0x00, result[3]);
+            Assert.assertEquals("success_2", (byte) 0x00, result[4]);
+            Assert.assertEquals("success_2", (byte) 0x00, result[5]);
+        }
+
+        @Test
+        public void success_3() {
+            byte[] result = Hex.decode("E6B58BE8AF95");
+            String resultString = new String(result, StandardCharsets.UTF_8);
+            Assert.assertEquals("success_3", "测试", resultString);
         }
 
         @Test
@@ -116,7 +132,7 @@ public class HexTest {
             endTime = System.currentTimeMillis();
             long compareTime = endTime - beginTime;
             logger.info("[Hex.decodeHex] compare time: {} ms", compareTime);
-            Assert.assertTrue(costTime < compareTime);
+            Assert.assertTrue("performance_1", costTime < compareTime);
             double ratio = ( ( 1 / (double) costTime ) -  ( 1 / (double) compareTime ) ) / ( 1 / (double) compareTime );
             String improvement = Math.round(ratio * 100) + "%";
             logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", improvement);
@@ -143,13 +159,13 @@ public class HexTest {
         @Test(expected = IllegalArgumentException.class)
         public void error_4() {
             String source = "GH";
-            byte[] result = Hex.decode(source);
+            Hex.decode(source);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_5() {
             String source = "!@#$";
-            byte[] result = Hex.decode(source);
+            Hex.decode(source);
         }
     }
 
