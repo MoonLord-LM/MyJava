@@ -110,7 +110,7 @@ public class HexTest {
 
         @Test
         public void success_3() {
-            byte[] result = Hex.decode("E6B58BE8AF95");
+            byte[] result = Hex.decode("e6b58be8af95");
             String resultString = new String(result, StandardCharsets.UTF_8);
             Assert.assertEquals("success_3", "测试", resultString);
         }
