@@ -1,13 +1,14 @@
 package cn.moonlord;
 
 import cn.moonlord.security.*;
-import cn.moonlord.security.Base64;
 import org.apache.commons.io.FileUtils;
-import sun.security.util.ArrayUtil;
 
-import java.io.*;
+import java.io.File;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -65,7 +66,7 @@ public class Main {
                 error.flush();
                 System.exit(0);
             }
-            keyComponentHash = Hash.sha512(answer.getBytes(StandardCharsets.UTF_8));
+            keyComponentHash = Hex.encode(Hash.sha512(answer.getBytes(StandardCharsets.UTF_8)));
             FileUtils.write(KEY_COMPONENT_HASH_FILE, keyComponentHash, StandardCharsets.UTF_8);
         }
         if(keyComponentHash.length() != KEY_COMPONENT_HASH_LENGTH){
@@ -83,10 +84,10 @@ public class Main {
         for (int i = 1; i < KEY_ITERATION_COUNT; i++) {
             System.arraycopy(tmpHash, 0, tmpInput, 0, tmpHash.length);
             System.arraycopy(beginHash, 0, tmpInput, beginHash.length, beginHash.length);
-            tmpHash = Hash.sha512ToBytes(tmpInput);
+            tmpHash = Hash.sha512(tmpInput);
             System.arraycopy(tmpHash, 0, allHash, i * tmpHash.length, tmpHash.length);
         }
-        byte[] allHashHash = Hash.sha512ToBytes(allHash);
+        byte[] allHashHash = Hash.sha512(allHash);
         String finalHash = Hex.encode(allHashHash);
         writer.println("finalHash: " + finalHash.length() + " " + finalHash);
         writer.flush();
