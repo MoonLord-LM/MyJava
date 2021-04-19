@@ -25,8 +25,7 @@ public class Rsa {
     public static KeyPair generateKeyPair() throws Exception {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA_KEY_ALGORITHM);
         keyPairGenerator.initialize(RSA_KEY_LENGTH);
-        KeyPair keyPair = keyPairGenerator.generateKeyPair();
-        return keyPair;
+        return keyPairGenerator.generateKeyPair();
     }
 
     public static PrivateKey getPrivateKey(KeyPair keyPair) {

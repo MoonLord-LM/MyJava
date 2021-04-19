@@ -41,7 +41,7 @@ public class HexTest {
 
         @Test
         public void performance_1() {
-            byte[] source = new byte[1024 * 1024 * 16];
+            byte[] source = Random.generateBytes(1024 * 1024 * 16);
             long beginTime = System.currentTimeMillis();
             for (int i = 0; i < 16; i++) {
                 Hex.encode(source);
@@ -117,7 +117,7 @@ public class HexTest {
 
         @Test
         public void performance_1() throws Exception {
-            String source = Hex.encode(new byte[1024 * 1024 * 16]);
+            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 16));
             long beginTime = System.currentTimeMillis();
             for (int i = 0; i < 16; i++) {
                 Hex.decode(source);

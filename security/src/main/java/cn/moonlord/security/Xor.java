@@ -30,7 +30,7 @@ public class Xor {
             throw new IllegalArgumentException("Xor merge error, source2 must not be empty");
         }
         if(source1.length != source2.length){
-            throw new IllegalArgumentException("Xor merge error, source1.length [" + source1.length + "] must be equal with source2.length [" + source2.length + "]");
+            throw new IllegalArgumentException("Xor merge error, the length of source1 [" + source1.length + "] must be equal with the length of source2 [" + source2.length + "]");
         }
         byte[] result = new byte[source1.length];
         for (int i = 0; i < result.length; i++) {

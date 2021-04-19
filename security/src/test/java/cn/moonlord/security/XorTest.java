@@ -34,9 +34,9 @@ public class XorTest {
 
         @Test
         public void success_4() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xFF};
+            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xAA};
             byte result = Xor.sum(source);
-            Assert.assertEquals("success_4", (byte) 0xFF, result);
+            Assert.assertEquals("success_4", (byte) 0xAA, result);
         }
 
         @Test
@@ -70,14 +70,15 @@ public class XorTest {
 
         @Test
         public void success_2() {
-            byte[] source1 = new byte[]{(byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF};
-            byte[] source2 = new byte[]{(byte) 0x00, (byte) 0xFF, (byte) 0x00, (byte) 0xFF};
+            byte[] source1 = new byte[]{(byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0x00};
+            byte[] source2 = new byte[]{(byte) 0x00, (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0xAA};
             byte[] result = Xor.merge(source1, source2);
             Assert.assertEquals("success_2", source1.length, result.length);
             Assert.assertEquals("success_2", (byte) 0xFF, result[0]);
             Assert.assertEquals("success_2", (byte) 0xFF, result[1]);
             Assert.assertEquals("success_2", (byte) 0x00, result[2]);
             Assert.assertEquals("success_2", (byte) 0x00, result[3]);
+            Assert.assertEquals("success_2", (byte) 0xAA, result[4]);
         }
 
         @Test(expected = IllegalArgumentException.class)
