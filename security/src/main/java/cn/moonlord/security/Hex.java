@@ -6,8 +6,6 @@ public class Hex {
 
     private static final int MAX_BYTE_SIZE = Integer.MAX_VALUE / 2;
 
-    private static final int MAX_STRING_SIZE = MAX_BYTE_SIZE * 2;
-
     private static final char[] HEX_CHARS = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
     private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR = new char[512];
@@ -58,9 +56,6 @@ public class Hex {
         }
         if(sourceString.length() == 0){
             throw new IllegalArgumentException("Hex decode error, sourceString must not be empty");
-        }
-        if(sourceString.length() > MAX_STRING_SIZE){
-            throw new IllegalArgumentException("Hex encode error, the length of sourceString [" + sourceString.length() + "] must not be larger than " + MAX_STRING_SIZE);
         }
         if(sourceString.length() % 2 != 0){
             throw new IllegalArgumentException("Hex decode error, the length of sourceString [" + sourceString.length() + "] must be a multiple of 2");
