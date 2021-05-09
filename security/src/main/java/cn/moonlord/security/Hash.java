@@ -7,6 +7,7 @@ import java.security.NoSuchAlgorithmException;
 public class Hash {
 
     public static final String SHA256 = "SHA-256";
+
     public static final String SHA512 = "SHA-512";
 
     public static byte[] sha256(byte[] sourceBytes) {
