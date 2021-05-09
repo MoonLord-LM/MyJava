@@ -2,44 +2,51 @@ package cn.moonlord.test;
 
 public abstract class PerformanceCompare implements Runnable {
 
-    public abstract void testMethod();
+    public abstract void testMethod() throws Exception;
 
-    public abstract void compareMethod();
+    public abstract void compareMethod() throws Exception;
 
     public abstract void onCompleted();
 
-    private final int numberOfRuns;
+    private int numberOfRuns = 1;
 
-    private long testMethodRunTime;
+    private long testMethodRunTime = 0;
 
-    private long compareMethodRunTime;
+    private long compareMethodRunTime = 0;
 
-    private String improvementRadio;
+    private String improvementRadio = "0%";
 
-    public PerformanceCompare(int numberOfRuns){
+    public PerformanceCompare() { }
+
+    public PerformanceCompare(int numberOfRuns) {
         this.numberOfRuns = numberOfRuns;
     }
 
     @Override
     public void run() {
-        long beginTime = System.currentTimeMillis();
-        for (int i = 0; i < numberOfRuns; i++) {
-            testMethod();
+        try {
+            long beginTime = System.currentTimeMillis();
+            for (int i = 0; i < numberOfRuns; i++) {
+                testMethod();
+            }
+            long endTime = System.currentTimeMillis();
+            testMethodRunTime = endTime - beginTime;
+
+            beginTime = System.currentTimeMillis();
+            for (int i = 0; i < numberOfRuns; i++) {
+                compareMethod();
+            }
+            endTime = System.currentTimeMillis();
+            compareMethodRunTime = endTime - beginTime;
+
+            double ratio = ((1 / (double) testMethodRunTime) - (1 / (double) compareMethodRunTime)) / (1 / (double) compareMethodRunTime);
+            improvementRadio = Math.round(ratio * 100) + "%";
+
+            onCompleted();
         }
-        long endTime = System.currentTimeMillis();
-        testMethodRunTime = endTime - beginTime;
-
-        beginTime = System.currentTimeMillis();
-        for (int i = 0; i < numberOfRuns; i++) {
-            compareMethod();
+        catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        endTime = System.currentTimeMillis();
-        compareMethodRunTime = endTime - beginTime;
-
-        double ratio = ( ( 1 / (double) testMethodRunTime ) -  ( 1 / (double) compareMethodRunTime ) ) / ( 1 / (double) compareMethodRunTime );
-        improvementRadio = Math.round(ratio * 100) + "%";
-
-        onCompleted();
     }
 
     public void startInNewThread(){
