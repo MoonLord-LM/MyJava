@@ -1,6 +1,5 @@
 package cn.moonlord.security;
 
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -10,17 +9,28 @@ public class Hash {
 
     public static final String SHA512 = "SHA-512";
 
+    private static MessageDigest messageDigestSHA256;
+
+    private static MessageDigest messageDigestSHA512;
+
+    static {
+        init();
+    }
+
+    public static void init(){
+        try {
+            messageDigestSHA256 = MessageDigest.getInstance(SHA256);
+            messageDigestSHA512 = MessageDigest.getInstance(SHA512);
+        } catch (NoSuchAlgorithmException e){
+            throw new RuntimeException(e);
+        }
+    }
+
     public static byte[] sha256(byte[] sourceBytes) {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hash sha256 error, sourceBytes must not be null");
         }
-        MessageDigest messageDigest;
-        try {
-            messageDigest = MessageDigest.getInstance(SHA256);
-        } catch (NoSuchAlgorithmException e){
-            throw new RuntimeException(e);
-        }
-        return messageDigest.digest(sourceBytes);
+        return messageDigestSHA256.digest(sourceBytes);
     }
 
     public static String sha256Hex(byte[] sourceBytes) {
@@ -31,13 +41,7 @@ public class Hash {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hash sha512 error, sourceBytes must not be null");
         }
-        MessageDigest messageDigest;
-        try {
-            messageDigest = MessageDigest.getInstance(SHA512);
-        } catch (NoSuchAlgorithmException e){
-            throw new RuntimeException(e);
-        }
-        return messageDigest.digest(sourceBytes);
+        return messageDigestSHA512.digest(sourceBytes);
     }
 
     public static String sha512Hex(byte[] sourceBytes) {
