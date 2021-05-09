@@ -14,9 +14,9 @@ import java.nio.charset.StandardCharsets;
 @RunWith(Enclosed.class)
 public class HexTest {
 
-    public static class encode {
+    public static Logger logger = LoggerFactory.getLogger(HexTest.class);
 
-        public static Logger logger = LoggerFactory.getLogger(encode.class);
+    public static class encode {
 
         @Test
         public void success_1() {
@@ -81,8 +81,6 @@ public class HexTest {
     }
 
     public static class decode {
-
-        public static Logger logger = LoggerFactory.getLogger(decode.class);
 
         @Test
         public void success_1() {
