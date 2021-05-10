@@ -57,8 +57,8 @@ public class HexTest {
                 public void onCompleted() {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[Hex.encodeHexString] compare time: {} ms", getCompareMethodRunTime());
-                    logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", getImprovementRadio());
-                    Assert.assertTrue("performance_1", getTestMethodRunTime() < getCompareMethodRunTime());
+                    logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", getImprovement());
+                    Assert.assertTrue("performance_1", isImproved());
                 }
             }.run();
         }
@@ -79,8 +79,8 @@ public class HexTest {
                 public void onCompleted() {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[Hex.encode] compare time: {} ms", getCompareMethodRunTime());
-                    logger.info("[Hex.encode] of this project is {} faster than [Hex.encode] of Spring Security", getImprovementRadio());
-                    Assert.assertTrue("performance_2", getTestMethodRunTime() < getCompareMethodRunTime());
+                    logger.info("[Hex.encode] of this project is {} faster than [Hex.encode] of Spring Security", getImprovement());
+                    Assert.assertTrue("performance_2", isImproved());
                 }
             }.run();
         }
@@ -152,8 +152,8 @@ public class HexTest {
                 public void onCompleted() {
                     logger.info("[Hex.decode] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[Hex.decodeHex] compare time: {} ms", getCompareMethodRunTime());
-                    logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", getImprovementRadio());
-                    Assert.assertTrue("performance_1", getTestMethodRunTime() < getCompareMethodRunTime());
+                    logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", getImprovement());
+                    Assert.assertTrue("performance_1", isImproved());
                 }
             }.run();
         }
@@ -174,8 +174,8 @@ public class HexTest {
                 public void onCompleted() {
                     logger.info("[Hex.decode] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[Hex.decode] compare time: {} ms", getCompareMethodRunTime());
-                    logger.info("[Hex.decode] of this project is {} faster than [Hex.decode] of Spring Security", getImprovementRadio());
-                    Assert.assertTrue("performance_2", getTestMethodRunTime() < getCompareMethodRunTime());
+                    logger.info("[Hex.decode] of this project is {} faster than [Hex.decode] of Spring Security", getImprovement());
+                    Assert.assertTrue("performance_2", isImproved());
                 }
             }.run();
         }

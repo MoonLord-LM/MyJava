@@ -14,7 +14,11 @@ public abstract class PerformanceCompare implements Runnable {
 
     private long compareMethodRunTime = 0;
 
-    private String improvementRadio = "0%";
+    private long improvementPercentage = 0;
+
+    private String improvement = "" + improvementPercentage + "%";
+
+    private boolean isImproved = false;
 
     public PerformanceCompare() { }
 
@@ -40,7 +44,9 @@ public abstract class PerformanceCompare implements Runnable {
             compareMethodRunTime = endTime - beginTime;
 
             double ratio = ((1 / (double) testMethodRunTime) - (1 / (double) compareMethodRunTime)) / (1 / (double) compareMethodRunTime);
-            improvementRadio = Math.round(ratio * 100) + "%";
+            improvementPercentage = Math.round(ratio * 100);
+            improvement = "" + improvementPercentage + "%";
+            isImproved = testMethodRunTime < compareMethodRunTime;
 
             onCompleted();
         }
@@ -65,8 +71,16 @@ public abstract class PerformanceCompare implements Runnable {
         return compareMethodRunTime;
     }
 
-    public String getImprovementRadio() {
-        return improvementRadio;
+    public Long getImprovementPercentage() {
+        return improvementPercentage;
+    }
+
+    public String getImprovement() {
+        return improvement;
+    }
+
+    public Boolean isImproved() {
+        return isImproved;
     }
 
 }
