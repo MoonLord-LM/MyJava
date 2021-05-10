@@ -9,28 +9,17 @@ public class Hash {
 
     public static final String SHA512 = "SHA-512";
 
-    private static MessageDigest messageDigestSHA256;
-
-    private static MessageDigest messageDigestSHA512;
-
-    static {
-        init();
-    }
-
-    public static void init(){
-        try {
-            messageDigestSHA256 = MessageDigest.getInstance(SHA256);
-            messageDigestSHA512 = MessageDigest.getInstance(SHA512);
-        } catch (NoSuchAlgorithmException e){
-            throw new RuntimeException(e);
-        }
-    }
-
     public static byte[] sha256(byte[] sourceBytes) {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hash sha256 error, sourceBytes must not be null");
         }
-        return messageDigestSHA256.digest(sourceBytes);
+        MessageDigest messageDigest;
+        try {
+            messageDigest =  MessageDigest.getInstance(SHA256);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+        return messageDigest.digest(sourceBytes);
     }
 
     public static String sha256Hex(byte[] sourceBytes) {
@@ -41,7 +30,13 @@ public class Hash {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hash sha512 error, sourceBytes must not be null");
         }
-        return messageDigestSHA512.digest(sourceBytes);
+        MessageDigest messageDigest;
+        try {
+            messageDigest =  MessageDigest.getInstance(SHA512);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+        return messageDigest.digest(sourceBytes);
     }
 
     public static String sha512Hex(byte[] sourceBytes) {
