@@ -2,7 +2,6 @@ package cn.moonlord.security;
 
 import cn.moonlord.test.PerformanceCompare;
 import org.apache.commons.codec.DecoderException;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -74,7 +73,7 @@ public class HexTest {
                 }
                 @Override
                 public void compareMethod() {
-                    org.springframework.security.crypto.codec.Hex.encode(source);
+                    new String(org.springframework.security.crypto.codec.Hex.encode(source));
                 }
                 @Override
                 public void onCompleted() {

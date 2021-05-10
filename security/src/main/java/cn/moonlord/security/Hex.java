@@ -42,10 +42,11 @@ public class Hex {
             throw new IllegalArgumentException("Hex encode error, the length of sourceBytes [" + sourceBytes.length + "] must not be larger than " + MAX_BYTE_SIZE);
         }
         char[] result = new char[sourceBytes.length * 2];
-        for (int i = 0; i < sourceBytes.length; i++) {
-            int mappingIndex = ( Byte.toUnsignedInt(sourceBytes[i]) ) * 2;
-            result[i * 2] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex];
-            result[i * 2 + 1] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex + 1];
+        int resultIndex = 0;
+        for (byte sourceByte : sourceBytes) {
+            int mappingIndex = Byte.toUnsignedInt(sourceByte) * 2;
+            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex++];
+            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex];
         }
         return new String(result);
     }

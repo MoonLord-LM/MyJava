@@ -1,6 +1,5 @@
 package cn.moonlord.security;
 
-import cn.moonlord.test.PerformanceCompare;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Assert;
 import org.junit.Test;
@@ -62,28 +61,6 @@ public class HashTest {
             Assert.assertEquals("success_2", compare, result);
         }
 
-        @Test
-        public void performance_1() {
-            byte[] source = Random.generateBytes(1024 * 1024 * 16);
-            new PerformanceCompare(16) {
-                @Override
-                public void testMethod() {
-                    Hash.sha256Hex(source);
-                }
-                @Override
-                public void compareMethod() {
-                    DigestUtils.sha256Hex(source);
-                }
-                @Override
-                public void onCompleted() {
-                    logger.info("[Hash.sha256Hex] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[DigestUtils.sha256Hex] compare time: {} ms", getCompareMethodRunTime());
-                    logger.info("[Hash.sha256Hex] of this project is {} faster than [DigestUtils.sha256Hex] of Apache Commons Codec", getImprovementRadio());
-                    Assert.assertTrue("performance_1", getTestMethodRunTime() < getCompareMethodRunTime());
-                }
-            }.run();
-        }
-
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
             Hash.sha256Hex((byte[]) null);
@@ -134,28 +111,6 @@ public class HashTest {
             Assert.assertEquals("success_2", 128, result.length());
             Assert.assertEquals("success_2", "fa54a45b24841a39ca6a3bab95d29ffdba8561b93d94f06f734a7a09c2370b79b2dd3b4efaf01eb3899206594e41cb5844031410d8ceee5ca4aa79c5461b4536", result);
             Assert.assertEquals("success_2", compare, result);
-        }
-
-        @Test
-        public void performance_1() {
-            byte[] source = Random.generateBytes(1024 * 1024 * 16);
-            new PerformanceCompare(16) {
-                @Override
-                public void testMethod() {
-                    Hash.sha512Hex(source);
-                }
-                @Override
-                public void compareMethod() {
-                    DigestUtils.sha512Hex(source);
-                }
-                @Override
-                public void onCompleted() {
-                    logger.info("[Hash.sha512Hex] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[DigestUtils.sha512Hex] compare time: {} ms", getCompareMethodRunTime());
-                    logger.info("[Hash.sha512Hex] of this project is {} faster than [DigestUtils.sha512Hex] of Apache Commons Codec", getImprovementRadio());
-                    Assert.assertTrue("performance_1", getTestMethodRunTime() < getCompareMethodRunTime());
-                }
-            }.run();
         }
 
         @Test(expected = IllegalArgumentException.class)
