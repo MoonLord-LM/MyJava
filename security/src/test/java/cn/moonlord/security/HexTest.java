@@ -44,7 +44,7 @@ public class HexTest {
         @Test
         public void performance_1() {
             byte[] source = Random.generateBytes(1024 * 1024 * 16);
-            new PerformanceCompare(16) {
+            new PerformanceCompare(32) {
                 @Override
                 public void testMethod() {
                     Hex.encode(source);
@@ -66,7 +66,7 @@ public class HexTest {
         @Test
         public void performance_2() {
             byte[] source = Random.generateBytes(1024 * 1024 * 16);
-            new PerformanceCompare(16) {
+            new PerformanceCompare(32) {
                 @Override
                 public void testMethod() {
                     Hex.encode(source);
