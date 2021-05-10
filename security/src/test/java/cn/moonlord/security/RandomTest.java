@@ -4,11 +4,15 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @RunWith(Enclosed.class)
 public class RandomTest {
+
+    public static Logger logger = LoggerFactory.getLogger(RandomTest.class);
 
     public static class generate {
         @Test
