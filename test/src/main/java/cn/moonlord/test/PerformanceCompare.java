@@ -6,7 +6,7 @@ public abstract class PerformanceCompare implements Runnable {
 
     public abstract void compareMethod() throws Exception;
 
-    public abstract void onCompleted();
+    public abstract void onCompleted() throws Exception;
 
     private int numberOfRuns = 1;
 
