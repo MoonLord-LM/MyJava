@@ -21,3 +21,6 @@ https://www.oracle.com/java/technologies/javase-jce-all-downloads.html
 |  Hex.decode  | Hex.decodeHex  |  Apache Commons Codec  |  300%  |
 |  Hex.encode  | Hex.encode  |  Spring Security  |  10%  |
 |  Hex.decode  | Hex.decode  |  Spring Security  |  300%  |
+
+## TODO
+XChaCha20-Poly1305
