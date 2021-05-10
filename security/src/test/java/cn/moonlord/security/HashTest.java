@@ -36,7 +36,7 @@ public class HashTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Hash.sha256((byte[]) null);
+            Hash.sha256(null);
         }
     }
 
@@ -63,7 +63,7 @@ public class HashTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Hash.sha256Hex((byte[]) null);
+            Hash.sha256Hex(null);
         }
     }
 
@@ -88,7 +88,7 @@ public class HashTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Hash.sha512((byte[]) null);
+            Hash.sha512(null);
         }
     }
 
@@ -115,7 +115,7 @@ public class HashTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Hash.sha512Hex((byte[]) null);
+            Hash.sha512Hex(null);
         }
     }
 
