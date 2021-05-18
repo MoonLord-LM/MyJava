@@ -1,5 +1,7 @@
 package cn.moonlord.security;
 
+import cn.moonlord.test.PerformanceCompare;
+import org.apache.commons.codec.DecoderException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -14,9 +16,9 @@ import java.nio.charset.StandardCharsets;
 @RunWith(Enclosed.class)
 public class HexTest {
 
-    public static class encode {
+    public static Logger logger = LoggerFactory.getLogger(HexTest.class);
 
-        public static Logger logger = LoggerFactory.getLogger(encode.class);
+    public static class encode {
 
         @Test
         public void success_1() {
@@ -42,24 +44,45 @@ public class HexTest {
         @Test
         public void performance_1() {
             byte[] source = Random.generateBytes(1024 * 1024 * 16);
-            long beginTime = System.currentTimeMillis();
-            for (int i = 0; i < 16; i++) {
-                Hex.encode(source);
-            }
-            long endTime = System.currentTimeMillis();
-            long costTime = endTime - beginTime;
-            logger.info("[Hex.encode] cost time: {} ms", costTime);
-            beginTime = System.currentTimeMillis();
-            for (int i = 0; i < 16; i++) {
-                org.apache.commons.codec.binary.Hex.encodeHexString(source);
-            }
-            endTime = System.currentTimeMillis();
-            long compareTime = endTime - beginTime;
-            logger.info("[Hex.encodeHexString] compare time: {} ms", compareTime);
-            Assert.assertTrue("performance_1", costTime < compareTime);
-            double ratio = ( ( 1 / (double) costTime ) -  ( 1 / (double) compareTime ) ) / ( 1 / (double) compareTime );
-            String improvement = Math.round(ratio * 100) + "%";
-            logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", improvement);
+            new PerformanceCompare(32) {
+                @Override
+                public void testMethod() {
+                    Hex.encode(source);
+                }
+                @Override
+                public void compareMethod() {
+                    org.apache.commons.codec.binary.Hex.encodeHexString(source);
+                }
+                @Override
+                public void onCompleted() {
+                    logger.info("[Hex.encode] cost time: {} ms", getTestMethodRunTime());
+                    logger.info("[Hex.encodeHexString] compare time: {} ms", getCompareMethodRunTime());
+                    logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", getImprovement());
+                    Assert.assertTrue("performance_1", isImproved());
+                }
+            }.run();
+        }
+
+        @Test
+        public void performance_2() {
+            byte[] source = Random.generateBytes(1024 * 1024 * 16);
+            new PerformanceCompare(32) {
+                @Override
+                public void testMethod() {
+                    Hex.encode(source);
+                }
+                @Override
+                public void compareMethod() {
+                    new String(org.springframework.security.crypto.codec.Hex.encode(source));
+                }
+                @Override
+                public void onCompleted() {
+                    logger.info("[Hex.encode] cost time: {} ms", getTestMethodRunTime());
+                    logger.info("[Hex.encode] compare time: {} ms", getCompareMethodRunTime());
+                    logger.info("[Hex.encode] of this project is {} faster than [Hex.encode] of Spring Security", getImprovement());
+                    Assert.assertTrue("performance_2", isImproved());
+                }
+            }.run();
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -81,8 +104,6 @@ public class HexTest {
     }
 
     public static class decode {
-
-        public static Logger logger = LoggerFactory.getLogger(decode.class);
 
         @Test
         public void success_1() {
@@ -118,24 +139,45 @@ public class HexTest {
         @Test
         public void performance_1() throws Exception {
             String source = Hex.encode(Random.generateBytes(1024 * 1024 * 16));
-            long beginTime = System.currentTimeMillis();
-            for (int i = 0; i < 16; i++) {
-                Hex.decode(source);
-            }
-            long endTime = System.currentTimeMillis();
-            long costTime = endTime - beginTime;
-            logger.info("[Hex.decode] cost time: {} ms", costTime);
-            beginTime = System.currentTimeMillis();
-            for (int i = 0; i < 16; i++) {
-                org.apache.commons.codec.binary.Hex.decodeHex(source);
-            }
-            endTime = System.currentTimeMillis();
-            long compareTime = endTime - beginTime;
-            logger.info("[Hex.decodeHex] compare time: {} ms", compareTime);
-            Assert.assertTrue("performance_1", costTime < compareTime);
-            double ratio = ( ( 1 / (double) costTime ) -  ( 1 / (double) compareTime ) ) / ( 1 / (double) compareTime );
-            String improvement = Math.round(ratio * 100) + "%";
-            logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", improvement);
+            new PerformanceCompare(16) {
+                @Override
+                public void testMethod() {
+                    Hex.decode(source);
+                }
+                @Override
+                public void compareMethod() throws DecoderException {
+                    org.apache.commons.codec.binary.Hex.decodeHex(source);
+                }
+                @Override
+                public void onCompleted() {
+                    logger.info("[Hex.decode] cost time: {} ms", getTestMethodRunTime());
+                    logger.info("[Hex.decodeHex] compare time: {} ms", getCompareMethodRunTime());
+                    logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", getImprovement());
+                    Assert.assertTrue("performance_1", isImproved());
+                }
+            }.run();
+        }
+
+        @Test
+        public void performance_2() throws Exception {
+            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 16));
+            new PerformanceCompare(16) {
+                @Override
+                public void testMethod() {
+                    Hex.decode(source);
+                }
+                @Override
+                public void compareMethod() throws DecoderException {
+                    org.springframework.security.crypto.codec.Hex.decode(source);
+                }
+                @Override
+                public void onCompleted() {
+                    logger.info("[Hex.decode] cost time: {} ms", getTestMethodRunTime());
+                    logger.info("[Hex.decode] compare time: {} ms", getCompareMethodRunTime());
+                    logger.info("[Hex.decode] of this project is {} faster than [Hex.decode] of Spring Security", getImprovement());
+                    Assert.assertTrue("performance_2", isImproved());
+                }
+            }.run();
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -164,7 +206,7 @@ public class HexTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_5() {
-            String source = "!@#$";
+            String source = "A!@#$";
             Hex.decode(source);
         }
     }

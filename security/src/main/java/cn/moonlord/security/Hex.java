@@ -8,8 +8,7 @@ public class Hex {
 
     private static final char[] HEX_CHARS = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-    private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR_1 = new char[256];
-    private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR_2 = new char[256];
+    private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR = new char[512];
 
     private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[128];
 
@@ -20,8 +19,9 @@ public class Hex {
     public static void init(){
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                UNSIGNED_BYTE_TO_HEX_CHAR_1[i * 16 + j] = HEX_CHARS[i];
-                UNSIGNED_BYTE_TO_HEX_CHAR_2[i * 16 + j] = HEX_CHARS[j];
+                int mappingIndex = (i * 16 + j) * 2;
+                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex] = HEX_CHARS[i];
+                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex + 1] = HEX_CHARS[j];
             }
         }
         Arrays.fill(HEX_CHAR_TO_UNSIGNED_BYTE, (byte) 0xFF);
@@ -42,10 +42,11 @@ public class Hex {
             throw new IllegalArgumentException("Hex encode error, the length of sourceBytes [" + sourceBytes.length + "] must not be larger than " + MAX_BYTE_SIZE);
         }
         char[] result = new char[sourceBytes.length * 2];
-        for (int i = 0; i < sourceBytes.length; i++) {
-            int mappingIndex = Byte.toUnsignedInt(sourceBytes[i]);
-            result[i * 2] = UNSIGNED_BYTE_TO_HEX_CHAR_1[mappingIndex];
-            result[i * 2 + 1] = UNSIGNED_BYTE_TO_HEX_CHAR_2[mappingIndex];
+        int resultIndex = 0;
+        for (byte sourceByte : sourceBytes) {
+            int mappingIndex = Byte.toUnsignedInt(sourceByte) * 2;
+            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex++];
+            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex];
         }
         return new String(result);
     }
