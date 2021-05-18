@@ -1,5 +1,7 @@
 # MyJava
-MyJava
+My Java Demo Projects
+
+[![Java CI with Maven](https://github.com/MoonLord-LM/MyJava/actions/workflows/maven.yml/badge.svg)](https://github.com/MoonLord-LM/MyJava/actions/workflows/maven.yml)
 
 ## 笔记
 
