@@ -26,3 +26,5 @@ https://www.oracle.com/java/technologies/javase-jce-all-downloads.html
 
 ## TODO
 XChaCha20-Poly1305
+https://doc.libsodium.org/secret-key_cryptography/aead#tldr-which-one-should-i-use
+
