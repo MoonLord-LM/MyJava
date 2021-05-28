@@ -1,10 +1,24 @@
 # MyJava
 MyJava
 
+
+
 ## 笔记
 
-#### 1. 低版本的 JDK（< 8u161） 不支持 AES-GCM-256 等高强度算法的问题：  
+#### 1. 低版本的 JDK（< 8u161）不支持 AES-GCM-256 等高强度算法的问题：
 https://www.oracle.com/java/technologies/javase-jce-all-downloads.html  
+
+#### 2. 常用的 AEAD（Authenticated Encryption with Associated Data）算法：
+AEAD 在内部同时实现加密和认证  
+常用的 AEAD 算法：AES-256-GCM（分组）、XChaCha20-IETF-Poly1305（流）  
+https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B  
+
+|  算法  |  密钥长度 bit  |  随机数长度 bit  |  分组长度 bit  |  校验值长度 bit  |
+|  ----  | ----  | ----  | ----  | ----  |
+|  AES-256-GCM  |  256  |  96  |  128  |  128  |
+|  XChaCha20-IETF-Poly1305  |  256  |  192  |  512  |  128  |
+
+
 
 ## 说明
 
@@ -21,6 +35,8 @@ https://www.oracle.com/java/technologies/javase-jce-all-downloads.html
 |  Hex.decode  | Hex.decodeHex  |  Apache Commons Codec  |  300%  |
 |  Hex.encode  | Hex.encode  |  Spring Security  |  10%  |
 |  Hex.decode  | Hex.decode  |  Spring Security  |  300%  |
+
+
 
 ## TODO
 XChaCha20-Poly1305

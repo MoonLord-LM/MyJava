@@ -16,7 +16,7 @@ public class Hex {
         init();
     }
 
-    public static void init(){
+    public static synchronized void init(){
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 int mappingIndex = (i * 16 + j) * 2;

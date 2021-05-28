@@ -137,7 +137,7 @@ public class HexTest {
         }
 
         @Test
-        public void performance_1() throws Exception {
+        public void performance_1() {
             String source = Hex.encode(Random.generateBytes(1024 * 1024 * 16));
             new PerformanceCompare(16) {
                 @Override
@@ -159,7 +159,7 @@ public class HexTest {
         }
 
         @Test
-        public void performance_2() throws Exception {
+        public void performance_2() {
             String source = Hex.encode(Random.generateBytes(1024 * 1024 * 16));
             new PerformanceCompare(16) {
                 @Override
