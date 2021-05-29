@@ -24,6 +24,13 @@ public class ProviderTest {
         }
     }
 
+    public static class showAllElements {
+        @Test
+        public void success_1() {
+            logger.info("showAllElements" + "\r\n" + Provider.showAllElements() + "\r\n");
+        }
+    }
+
     public static class showAllMessageDigests {
         @Test
         public void success_1() {
@@ -51,18 +58,25 @@ public class ProviderTest {
             logger.info("showAesCiphers" + "\r\n" + Provider.showAesCiphers() + "\r\n");
         }
 
+        @Test()
+        public void success_2() throws NoSuchPaddingException, NoSuchAlgorithmException {
+            Provider.init();
+            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").toString());
+            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getAlgorithm());
+            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getProvider().getName());
+            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getProvider().getInfo());
+        }
+
         @Test(expected = NoSuchAlgorithmException.class)
         public void error_1() throws NoSuchPaddingException, NoSuchAlgorithmException {
-            Provider.init();
-            Cipher cipher2 = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            logger.info("test：" + cipher2.getAlgorithm());
+            Provider.destroy();
+            logger.info("showAesCiphers" + "\r\n" + Cipher.getInstance("AES/CBC/PKCS7Padding").getAlgorithm());
         }
 
         @Test(expected = NoSuchAlgorithmException.class)
         public void error_2() throws NoSuchPaddingException, NoSuchAlgorithmException {
             Provider.init();
-            Cipher cipher1 = Cipher.getInstance("XChaCha20-IETF-Poly1305");
-            logger.info("test：" + cipher1.getAlgorithm());
+            logger.info("showAesCiphers" + "\r\n" + Cipher.getInstance("XChaCha20-IETF-Poly1305").getAlgorithm());
         }
     }
 

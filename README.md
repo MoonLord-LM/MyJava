@@ -10,8 +10,12 @@ My Java Demo Projects
 #### 1. 低版本的 JDK（< 8u161）不支持 AES-GCM-256 等高强度算法的问题：
 https://www.oracle.com/java/technologies/javase-jce-all-downloads.html  
 
+#### 1. JDK 只有 AES/CBC/PKCS5Padding 而没有 AES/CBC/PKCS7Padding 的问题：
+历史命名问题，实际上 PKCS5Padding 和 PKCS7Padding 是同一种填充算法  
+https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding  
+
 #### 2. 常用的 AEAD（Authenticated Encryption with Associated Data）算法：
-AEAD 在内部同时实现加密和认证  
+AEAD 算法，在内部逻辑中，同时实现了加解密和认证  
 常用的 AEAD 算法：AES-256-GCM（分组）、XChaCha20-IETF-Poly1305（流）  
 https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B  
 

@@ -22,6 +22,15 @@ public class Provider {
         Security.addProvider(new BouncyCastleProvider());
     }
 
+    public synchronized static void destroy() {
+        java.security.Provider[] providers = Security.getProviders();
+        for (java.security.Provider provider: providers) {
+            if(provider instanceof BouncyCastleProvider) {
+                Security.removeProvider(provider.getName());
+            }
+        }
+    }
+
     public static String showAllProviders() {
         StringBuilder result = new StringBuilder();
         java.security.Provider[] providers = Security.getProviders();
@@ -29,6 +38,21 @@ public class Provider {
             java.security.Provider provider = providers[i];
             result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] " + provider.getInfo());
             result.append("\r\n");
+        }
+        return result.toString();
+    }
+
+    public static String showAllElements() {
+        StringBuilder result = new StringBuilder();
+        java.security.Provider[] providers = Security.getProviders();
+        for (int i = 0; i < providers.length; i++) {
+            java.security.Provider provider = providers[i];
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+                String key = (String) e.nextElement();
+                result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
+                result.append(key + "  -  " + provider.get(key));
+                result.append("\r\n");
+            }
         }
         return result.toString();
     }
