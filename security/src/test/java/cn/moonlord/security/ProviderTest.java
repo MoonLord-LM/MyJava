@@ -70,13 +70,13 @@ public class ProviderTest {
         @Test(expected = NoSuchAlgorithmException.class)
         public void error_1() throws NoSuchPaddingException, NoSuchAlgorithmException {
             Provider.destroy();
-            logger.info("showAesCiphers" + "\r\n" + Cipher.getInstance("AES/CBC/PKCS7Padding").getAlgorithm());
+            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getAlgorithm());
         }
 
         @Test(expected = NoSuchAlgorithmException.class)
         public void error_2() throws NoSuchPaddingException, NoSuchAlgorithmException {
             Provider.init();
-            logger.info("showAesCiphers" + "\r\n" + Cipher.getInstance("XChaCha20-IETF-Poly1305").getAlgorithm());
+            logger.info(Cipher.getInstance("XChaCha20-IETF-Poly1305").getAlgorithm());
         }
     }
 
