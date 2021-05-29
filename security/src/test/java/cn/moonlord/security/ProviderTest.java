@@ -72,9 +72,31 @@ public class ProviderTest {
             Provider.destroy();
             logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getAlgorithm());
         }
+    }
+
+    public static class showChaChaCiphers {
+        @Test
+        public void success_1() {
+            logger.info("showChaChaCiphers" + "\r\n" + Provider.showChaChaCiphers() + "\r\n");
+        }
+
+        @Test()
+        public void success_2() throws NoSuchPaddingException, NoSuchAlgorithmException {
+            Provider.init();
+            logger.info(Cipher.getInstance("ChaCha20-Poly1305").toString());
+            logger.info(Cipher.getInstance("ChaCha20-Poly1305").getAlgorithm());
+            logger.info(Cipher.getInstance("ChaCha20-Poly1305").getProvider().getName());
+            logger.info(Cipher.getInstance("ChaCha20-Poly1305").getProvider().getInfo());
+        }
 
         @Test(expected = NoSuchAlgorithmException.class)
-        public void error_2() throws NoSuchPaddingException, NoSuchAlgorithmException {
+        public void error_3() throws NoSuchPaddingException, NoSuchAlgorithmException {
+            Provider.init();
+            logger.info(Cipher.getInstance("ChaCha20-IETF-Poly1305").getAlgorithm());
+        }
+
+        @Test(expected = NoSuchAlgorithmException.class)
+        public void error_4() throws NoSuchPaddingException, NoSuchAlgorithmException {
             Provider.init();
             logger.info(Cipher.getInstance("XChaCha20-IETF-Poly1305").getAlgorithm());
         }

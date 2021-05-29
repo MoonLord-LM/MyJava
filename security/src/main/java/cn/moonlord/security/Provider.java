@@ -137,12 +137,10 @@ public class Provider {
             for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("Cipher.".toUpperCase(Locale.ROOT))) {
-                    if (key.toUpperCase(Locale.ROOT).contains("AES".toUpperCase(Locale.ROOT))) {
-                        if (!key.toUpperCase(Locale.ROOT).contains("With".toUpperCase(Locale.ROOT))) {
-                            result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
-                            result.append(key.substring("Cipher.".length()) + "  -  " + provider.get(key));
-                            result.append("\r\n");
-                        }
+                    if (key.toUpperCase(Locale.ROOT).contains("ChaCha".toUpperCase(Locale.ROOT))) {
+                        result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
+                        result.append(key.substring("Cipher.".length()) + "  -  " + provider.get(key));
+                        result.append("\r\n");
                     }
                 }
             }

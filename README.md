@@ -22,7 +22,7 @@ https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B
 |  算法  |  密钥长度 bit  |  随机数长度 bit  |  分组长度 bit  |  校验值长度 bit  |
 |  ----  | ----  | ----  | ----  | ----  |
 |  AES-256-GCM  |  256  |  96  |  128  |  128  |
-|  XChaCha20-IETF-Poly1305  |  256  |  192  |  512  |  128  |
+|  ChaCha20-Poly1305-IETF  |  256  |  96  |  512  |  128  |
 
 
 
@@ -45,6 +45,8 @@ https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B
 
 
 ## TODO
-XChaCha20-Poly1305
-https://doc.libsodium.org/secret-key_cryptography/aead#tldr-which-one-should-i-use
+ChaCha20-Poly1305-IETF  
+https://doc.libsodium.org/secret-key_cryptography/aead#tldr-which-one-should-i-use  
+https://stackoverflow.com/questions/57312178/chacha20-poly1305-calculates-wrong-mac  
+
 
