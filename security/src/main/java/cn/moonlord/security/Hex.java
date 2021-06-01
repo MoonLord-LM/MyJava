@@ -35,9 +35,6 @@ public class Hex {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hex encode error, sourceBytes must not be null");
         }
-        if(sourceBytes.length == 0){
-            throw new IllegalArgumentException("Hex encode error, sourceBytes must not be empty");
-        }
         if(sourceBytes.length > MAX_BYTE_SIZE){
             throw new IllegalArgumentException("Hex encode error, the length of sourceBytes [" + sourceBytes.length + "] must not be larger than " + MAX_BYTE_SIZE);
         }
@@ -54,9 +51,6 @@ public class Hex {
     public static byte[] decode(String sourceString) {
         if(sourceString == null){
             throw new IllegalArgumentException("Hex decode error, sourceString must not be null");
-        }
-        if(sourceString.length() == 0){
-            throw new IllegalArgumentException("Hex decode error, sourceString must not be empty");
         }
         if(sourceString.length() % 2 != 0){
             throw new IllegalArgumentException("Hex decode error, the length of sourceString [" + sourceString.length() + "] must be a multiple of 2");

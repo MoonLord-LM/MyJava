@@ -22,28 +22,35 @@ public class HexTest {
 
         @Test
         public void success_1() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF};
+            byte[] source = new byte[0];
             String result = Hex.encode(source);
-            Assert.assertEquals("success_1", "00dd11ee22ff", result);
+            Assert.assertEquals("success_1", "", result);
         }
 
         @Test
         public void success_2() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
+            byte[] source = new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF};
             String result = Hex.encode(source);
-            Assert.assertEquals("success_2", "000000000000", result);
+            Assert.assertEquals("success_2", "00dd11ee22ff", result);
         }
 
         @Test
         public void success_3() {
+            byte[] source = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
+            String result = Hex.encode(source);
+            Assert.assertEquals("success_3", "000000000000", result);
+        }
+
+        @Test
+        public void success_4() {
             byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
             String result = Hex.encode(source);
-            Assert.assertEquals("success_3", "e6b58be8af95", result);
+            Assert.assertEquals("success_4", "e6b58be8af95", result);
         }
 
         @Test
         public void performance_1() {
-            byte[] source = Random.generateBytes(1024 * 1024 * 16);
+            byte[] source = Random.generateBytes(1024 * 1024 * 64);
             new PerformanceCompare(32) {
                 @Override
                 public void testMethod() {
@@ -66,7 +73,7 @@ public class HexTest {
 
         @Test
         public void performance_2() {
-            byte[] source = Random.generateBytes(1024 * 1024 * 16);
+            byte[] source = Random.generateBytes(1024 * 1024 * 64);
             new PerformanceCompare(32) {
                 @Override
                 public void testMethod() {
@@ -93,12 +100,6 @@ public class HexTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            byte[] source = new byte[0];
-            Hex.encode(source);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_3() {
             byte[] source = new byte[Integer.MAX_VALUE / 2 + 1];
             Hex.encode(source);
         }
@@ -108,38 +109,44 @@ public class HexTest {
 
         @Test
         public void success_1() {
-            byte[] result = Hex.decode("00dd11ee22ff");
-            Assert.assertEquals("success_1", 6, result.length);
-            Assert.assertEquals("success_1", (byte) 0x00, result[0]);
-            Assert.assertEquals("success_1", (byte) 0xDD, result[1]);
-            Assert.assertEquals("success_1", (byte) 0x11, result[2]);
-            Assert.assertEquals("success_1", (byte) 0xEE, result[3]);
-            Assert.assertEquals("success_1", (byte) 0x22, result[4]);
-            Assert.assertEquals("success_1", (byte) 0xFF, result[5]);
+            byte[] result = Hex.decode("");
+            Assert.assertEquals("success_1", 0, result.length);
         }
 
         @Test
         public void success_2() {
-            byte[] result = Hex.decode("000000000000");
+            byte[] result = Hex.decode("00dd11ee22ff");
             Assert.assertEquals("success_2", 6, result.length);
             Assert.assertEquals("success_2", (byte) 0x00, result[0]);
-            Assert.assertEquals("success_2", (byte) 0x00, result[1]);
-            Assert.assertEquals("success_2", (byte) 0x00, result[2]);
-            Assert.assertEquals("success_2", (byte) 0x00, result[3]);
-            Assert.assertEquals("success_2", (byte) 0x00, result[4]);
-            Assert.assertEquals("success_2", (byte) 0x00, result[5]);
+            Assert.assertEquals("success_2", (byte) 0xDD, result[1]);
+            Assert.assertEquals("success_2", (byte) 0x11, result[2]);
+            Assert.assertEquals("success_2", (byte) 0xEE, result[3]);
+            Assert.assertEquals("success_2", (byte) 0x22, result[4]);
+            Assert.assertEquals("success_2", (byte) 0xFF, result[5]);
         }
 
         @Test
         public void success_3() {
+            byte[] result = Hex.decode("000000000000");
+            Assert.assertEquals("success_3", 6, result.length);
+            Assert.assertEquals("success_3", (byte) 0x00, result[0]);
+            Assert.assertEquals("success_3", (byte) 0x00, result[1]);
+            Assert.assertEquals("success_3", (byte) 0x00, result[2]);
+            Assert.assertEquals("success_3", (byte) 0x00, result[3]);
+            Assert.assertEquals("success_3", (byte) 0x00, result[4]);
+            Assert.assertEquals("success_3", (byte) 0x00, result[5]);
+        }
+
+        @Test
+        public void success_4() {
             byte[] result = Hex.decode("e6b58be8af95");
             String resultString = new String(result, StandardCharsets.UTF_8);
-            Assert.assertEquals("success_3", "测试", resultString);
+            Assert.assertEquals("success_4", "测试", resultString);
         }
 
         @Test
         public void performance_1() {
-            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 16));
+            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 64));
             new PerformanceCompare(16) {
                 @Override
                 public void testMethod() {
@@ -162,7 +169,7 @@ public class HexTest {
 
         @Test
         public void performance_2() {
-            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 16));
+            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 64));
             new PerformanceCompare(16) {
                 @Override
                 public void testMethod() {
@@ -191,24 +198,18 @@ public class HexTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            String source = "";
-            Hex.decode(source);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_3() {
             String source = "123";
             Hex.decode(source);
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void error_4() {
+        public void error_3() {
             String source = "GH";
             Hex.decode(source);
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void error_5() {
+        public void error_4() {
             String source = "A!@#$";
             Hex.decode(source);
         }
