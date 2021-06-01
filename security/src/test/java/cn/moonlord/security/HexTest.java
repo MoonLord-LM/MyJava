@@ -59,6 +59,7 @@ public class HexTest {
                     logger.info("[Hex.encodeHexString] compare time: {} ms", getCompareMethodRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", getImprovement());
                     Assert.assertTrue("performance_1", isImproved());
+                    Assert.assertTrue("performance_1", getImprovementPercentage() > 30L );
                 }
             }.run();
         }
@@ -80,7 +81,7 @@ public class HexTest {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[Hex.encode] compare time: {} ms", getCompareMethodRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encode] of Spring Security", getImprovement());
-                    Assert.assertTrue("performance_2", isImproved());
+                    Assert.assertTrue("performance_2", getImprovementPercentage() > -10L );
                 }
             }.run();
         }
@@ -154,6 +155,7 @@ public class HexTest {
                     logger.info("[Hex.decodeHex] compare time: {} ms", getCompareMethodRunTime());
                     logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", getImprovement());
                     Assert.assertTrue("performance_1", isImproved());
+                    Assert.assertTrue("performance_1", getImprovementPercentage() > 30L );
                 }
             }.run();
         }
@@ -167,7 +169,7 @@ public class HexTest {
                     Hex.decode(source);
                 }
                 @Override
-                public void compareMethod() throws DecoderException {
+                public void compareMethod() {
                     org.springframework.security.crypto.codec.Hex.decode(source);
                 }
                 @Override
@@ -176,6 +178,7 @@ public class HexTest {
                     logger.info("[Hex.decode] compare time: {} ms", getCompareMethodRunTime());
                     logger.info("[Hex.decode] of this project is {} faster than [Hex.decode] of Spring Security", getImprovement());
                     Assert.assertTrue("performance_2", isImproved());
+                    Assert.assertTrue("performance_2", getImprovementPercentage() > 70L );
                 }
             }.run();
         }

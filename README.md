@@ -34,18 +34,18 @@ https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B
 每一个方法，在测试类中创建一个对应的静态内部类  
 每一个测试用例，在静态内部类中创建一个对应的测试方法
 
-#### 2. 对比 Apache Commons Codec、Spring Security 进行性能测试
-|  本工程函数  |  对比函数  |  开源库  |  性能提升  |
+#### 2. 部分函数，对比 Apache Commons Codec、Spring Security 进行性能测试
+|  本工程函数  |  对比函数  |  开源库  |  性能比例  |
 |  ----  | ----  | ----  | ----  |
-|  Hex.encode  | Hex.encodeHexString  |  Apache Commons Codec  |  30%  |
-|  Hex.decode  | Hex.decodeHex  |  Apache Commons Codec  |  300%  |
-|  Hex.encode  | Hex.encode  |  Spring Security  |  10%  |
-|  Hex.decode  | Hex.decode  |  Spring Security  |  300%  |
+|  Hex.encode  | Hex.encodeHexString  |  Apache Commons Codec  |  \> +30%  |
+|  Hex.encode  | Hex.encode  |  Spring Security  |  \> -10%  |
+|  Hex.decode  | Hex.decodeHex  |  Apache Commons Codec  |  \> +30%  |
+|  Hex.decode  | Hex.decode  |  Spring Security  |  \> +70%  |
 
 
 
 ## TODO
-ChaCha20-Poly1305-IETF  
+ChaCha20-Poly1305  
 https://doc.libsodium.org/secret-key_cryptography/aead#tldr-which-one-should-i-use  
 https://stackoverflow.com/questions/57312178/chacha20-poly1305-calculates-wrong-mac  
 
