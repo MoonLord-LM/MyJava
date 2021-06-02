@@ -87,11 +87,22 @@ public class AesTest {
         @Test
         public void success_1() {
             byte[] source = new byte[0];
-            String key = Aes.generateKeyBase64String();
-            String result = Base64.encode(Aes.encrypt(source, key));
+            byte[] key = Aes.generateKeyBytes();
+            byte[] result = Aes.encrypt(source, key);
             logger.info("source" + " [ " + source.length + " ] " + " [ " + Arrays.toString(source) + " ] ");
-            logger.info("key" + " [ " + key.length() + " ] " + " [ " + key + " ] ");
-            logger.info("result" + " [ " + result.length() + " ] " + " [ " + result + " ] ");
+            logger.info("key" + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
+            logger.info("result" + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
+            Assert.assertEquals("success_1", 28, result.length);
+        }
+
+        @Test
+        public void success_2() {
+            byte[] source = new byte[1024];
+            for (int i = 0; i < source.length; i++) {
+                byte[] result = Aes.encrypt(Arrays.copyOfRange(source, 0, i), Aes.generateKeyBytes());
+                logger.info("encrypt " + " [ " + (i + 1) + " ] bytes to " + " [ " + result.length + " ]  bytes length " + " [ " + Base64.encode(result) + " ] ");
+                Assert.assertEquals("success_2", (i + 28), result.length);
+            }
         }
 
         @Test(expected = IllegalArgumentException.class)
