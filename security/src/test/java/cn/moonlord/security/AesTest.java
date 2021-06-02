@@ -129,7 +129,10 @@ public class AesTest {
     public static class decrypt {
         @Test
         public void success_1() {
-            Aes.decrypt(new byte[0], Aes.generateKey());
+            String source = "Bq3mORrbjFvklrGN0p8tk56t/Q8nPxrwWvccsg==";
+            String key = "FA2AWG9YgCE8k+ypI+EDuUcJEi4H3bp3BQbQHkc0tJQ=";
+            byte[] result = Aes.decrypt(Base64.decode(source), key);
+            Assert.assertEquals("success_1", 0, result.length);
         }
 
         @Test(expected = IllegalArgumentException.class)
