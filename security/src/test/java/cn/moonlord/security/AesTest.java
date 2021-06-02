@@ -80,4 +80,46 @@ public class AesTest {
         }
     }
 
+    public static class encrypt {
+        @Test
+        public void success_1() {
+            Aes.getSecretKey(Aes.generateKeyBytes());
+        }
+
+        @Test
+        public void success_2() {
+            Aes.getSecretKey(Aes.generateKeyBase64String());
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_1() throws Exception {
+            Aes.encrypt((byte[]) null, Aes.generateKey());
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_2() {
+            Aes.getSecretKey(new byte[0]);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_3() {
+            Aes.getSecretKey(new byte[]{(byte) 0x00, (byte) 0x11, (byte) 0x22, (byte) 0x33});
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_4() {
+            Aes.getSecretKey((String) null);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_5() {
+            Aes.getSecretKey("");
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_6() {
+            Aes.getSecretKey("AAAAAAAA");
+        }
+    }
+
 }
