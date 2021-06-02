@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 @SpringBootTest
@@ -89,7 +90,7 @@ public class AesTest {
             byte[] source = new byte[0];
             byte[] key = Aes.generateKeyBytes();
             byte[] result = Aes.encrypt(source, key);
-            logger.info("source" + " [ " + source.length + " ] " + " [ " + Arrays.toString(source) + " ] ");
+            logger.info("source" + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
             logger.info("key" + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
             logger.info("result" + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
             Assert.assertEquals("success_1", 28, result.length);
@@ -97,11 +98,22 @@ public class AesTest {
 
         @Test
         public void success_2() {
+            byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
+            byte[] key = Aes.generateKeyBytes();
+            byte[] result = Aes.encrypt(source, key);
+            logger.info("source" + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
+            logger.info("key" + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
+            logger.info("result" + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
+            Assert.assertEquals("success_2", 34, result.length);
+        }
+
+        @Test
+        public void success_3() {
             byte[] source = new byte[1024];
             for (int i = 0; i <= source.length; i++) {
                 byte[] result = Aes.encrypt(Arrays.copyOfRange(source, 0, i), Aes.generateKeyBytes());
                 logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length " + " [ " + Base64.encode(result) + " ] ");
-                Assert.assertEquals("success_2", (i + 28), result.length);
+                Assert.assertEquals("success_3", (i + 28), result.length);
             }
         }
 
@@ -137,10 +149,12 @@ public class AesTest {
 
         @Test
         public void success_2() {
-            String source = "Bq3mORrbjFvklrGN0p8tk56t/Q8nPxrwWvccsg==";
-            String key = "FA2AWG9YgCE8k+ypI+EDuUcJEi4H3bp3BQbQHkc0tJQ=";
+            String source = "mXAvu1G1+boW/U11+cCYc9RwTABpEsbCGzb9zFZy8vJiuw==";
+            String key = "UpBpV8RICneB0uuBTOTUCP13u7OuQ2Q+tsdi5dpAYiY=";
             byte[] result = Aes.decrypt(Base64.decode(source), key);
-            Assert.assertEquals("success_2", 0, result.length);
+            String resultString = new String(result, StandardCharsets.UTF_8);
+            Assert.assertEquals("success_2", 6, result.length);
+            Assert.assertEquals("success_2", "测试", resultString);
         }
 
         @Test(expected = IllegalArgumentException.class)
