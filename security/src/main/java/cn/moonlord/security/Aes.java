@@ -19,12 +19,16 @@ public class Aes {
 
     private static final int GCM_IV_LENGTH = 96;
 
-    public static byte[] generateKey() {
+    public static SecretKeySpec generateKey() {
+        return new SecretKeySpec(generateKeyBytes(), AES_KEY_ALGORITHM);
+    }
+
+    public static byte[] generateKeyBytes() {
         return Random.generate(AES_KEY_LENGTH);
     }
 
     public static String generateKeyBase64String() {
-        return Base64.encode(generateKey());
+        return Base64.encode(generateKeyBytes());
     }
 
     public static SecretKeySpec getSecretKey(byte[] keyBytes) {
