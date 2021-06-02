@@ -8,15 +8,15 @@ import java.util.Arrays;
 
 public class Aes {
 
-    private static final String AES_KEY_ALGORITHM = "AES";
+    public static final String AES_KEY_ALGORITHM = "AES";
 
-    private static final String AES_CIPHER_INSTANCE = "AES_256/GCM/NoPadding";
+    public static final String AES_CIPHER_INSTANCE = "AES_256/GCM/NoPadding";
 
-    private static final int AES_KEY_LENGTH = 256;
+    public static final int AES_KEY_LENGTH = 256;
 
-    private static final int GCM_TAG_LENGTH = 128;
+    public static final int GCM_TAG_LENGTH = 128;
 
-    private static final int GCM_IV_LENGTH = 96;
+    public static final int GCM_IV_LENGTH = 96;
 
     public static SecretKeySpec generateKey() {
         return new SecretKeySpec(generateKeyBytes(), AES_KEY_ALGORITHM);
