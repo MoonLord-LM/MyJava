@@ -152,7 +152,7 @@ public class AesTest {
             String source = "mXAvu1G1+boW/U11+cCYc9RwTABpEsbCGzb9zFZy8vJiuw==";
             String key = "UpBpV8RICneB0uuBTOTUCP13u7OuQ2Q+tsdi5dpAYiY=";
             byte[] result = Aes.decrypt(Base64.decode(source), key);
-            String resultString = Aes.decryptString(Base64.decode(source), key);
+            String resultString = new String(result, StandardCharsets.UTF_8);
             Assert.assertEquals("success_2", 6, result.length);
             Assert.assertEquals("success_2", "测试", resultString);
         }
