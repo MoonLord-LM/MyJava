@@ -98,9 +98,9 @@ public class AesTest {
         @Test
         public void success_2() {
             byte[] source = new byte[1024];
-            for (int i = 0; i < source.length; i++) {
+            for (int i = 0; i <= source.length; i++) {
                 byte[] result = Aes.encrypt(Arrays.copyOfRange(source, 0, i), Aes.generateKeyBytes());
-                logger.info("encrypt " + " [ " + (i + 1) + " ] bytes to " + " [ " + result.length + " ]  bytes length " + " [ " + Base64.encode(result) + " ] ");
+                logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length " + " [ " + Base64.encode(result) + " ] ");
                 Assert.assertEquals("success_2", (i + 28), result.length);
             }
         }
