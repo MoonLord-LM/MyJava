@@ -80,16 +80,21 @@ public class Rsa {
         return getPublicKey(Base64.decode(keyBase64String));
     }
 
-    public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) throws Exception {
+    public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) {
         if(encryptKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
-            throw new InvalidAlgorithmParameterException("encrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
+            throw new IllegalArgumentException("encrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
         }
 
-        MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
-        OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
-        Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
-        cipher.init(Cipher.ENCRYPT_MODE, encryptKey, oaepSpec);
-        return cipher.doFinal(sourceBytes);
+        try {
+            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
+            Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
+            cipher.init(Cipher.ENCRYPT_MODE, encryptKey, oaepSpec);
+            return cipher.doFinal(sourceBytes);
+        }
+        catch (Exception e) {
+            throw new IllegalArgumentException("Rsa encrypt error, error message: " + e.getMessage(), e);
+        }
     }
 
     public static byte[] encrypt(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
@@ -100,7 +105,7 @@ public class Rsa {
         return encrypt(sourceBytes, getPublicKey(encryptKeyBase64String));
     }
 
-    public static byte[] encrypt(String sourceString, PublicKey encryptKey) throws Exception {
+    public static byte[] encrypt(String sourceString, PublicKey encryptKey) {
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         return encrypt(sourceBytes, encryptKey);
     }
@@ -115,16 +120,21 @@ public class Rsa {
         return encrypt(sourceBytes, encryptKeyBase64String);
     }
 
-    public static byte[] decrypt(byte[] encryptedBytes, PrivateKey decryptKey) throws Exception {
+    public static byte[] decrypt(byte[] encryptedBytes, PrivateKey decryptKey) {
         if(decryptKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
-            throw new InvalidAlgorithmParameterException("decrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
+            throw new IllegalArgumentException("decrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
         }
 
-        MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
-        OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
-        Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
-        cipher.init(Cipher.DECRYPT_MODE, decryptKey, oaepSpec);
-        return cipher.doFinal(encryptedBytes);
+        try {
+            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
+            Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
+            cipher.init(Cipher.DECRYPT_MODE, decryptKey, oaepSpec);
+            return cipher.doFinal(encryptedBytes);
+        }
+        catch (Exception e) {
+            throw new IllegalArgumentException("Rsa encrypt error, error message: " + e.getMessage(), e);
+        }
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, byte[] decryptKeyBytes) throws Exception {
@@ -135,7 +145,7 @@ public class Rsa {
         return decrypt(encryptedBytes, getPrivateKey(decryptKeyBase64String));
     }
 
-    public static String decryptString(byte[] encryptedBytes, PrivateKey decryptKey) throws Exception {
+    public static String decryptString(byte[] encryptedBytes, PrivateKey decryptKey) {
         return new String(decrypt(encryptedBytes, decryptKey), StandardCharsets.UTF_8);
     }
 

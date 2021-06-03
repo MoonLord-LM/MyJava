@@ -21,14 +21,20 @@ public class RsaTest {
     public static class generateKeyPair {
         @Test
         public void success_1() {
+            logger.info("begin generateKeyPair");
             KeyPair keyPair = Rsa.generateKeyPair();
+            logger.info("end generateKeyPair");
             PublicKey publicKey = Rsa.getPublicKey(keyPair);
             PrivateKey privateKey = Rsa.getPrivateKey(keyPair);
-            logger.info("publicKey: " + publicKey.getAlgorithm() + " length [ " + publicKey.getEncoded().length + " ] format " + publicKey.getFormat());
-            logger.info("privateKey: " + privateKey.getAlgorithm() + " length [ "+ privateKey.getEncoded().length + " ] format " + privateKey.getFormat());
-            Assert.assertEquals("success_1", 1958, publicKey.getEncoded().length);
+            logger.info("publicKey: " + publicKey.getAlgorithm() + " length [ " + publicKey.getEncoded().length + " ] format [ " + publicKey.getFormat() + " ]");
+            logger.info("privateKey: " + privateKey.getAlgorithm() + " length [ "+ privateKey.getEncoded().length + " ] format [ " + privateKey.getFormat() + " ]");
+            // Assert.assertEquals("success_1", 1958, publicKey.getEncoded().length);
             // TODO Assert.assertEquals("success_1", 8712, privateKey.getEncoded().length);
-            // 8709、8712
+            // 8709、8712、8710
+            byte[] result = Rsa.encrypt("", publicKey);
+            logger.info("result" + Base64.encode(result));
+            byte[] source = Rsa.decrypt(result, privateKey);
+            logger.info("source" + Base64.encode(source));
         }
     }
 
