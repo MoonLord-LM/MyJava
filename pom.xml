@@ -17,6 +17,7 @@
         <module>parent</module>
         <module>test</module>
         <module>security</module>
+        <module>http</module>
     </modules>
 
 </project>
