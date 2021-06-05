@@ -15,7 +15,7 @@ https://www.oracle.com/java/technologies/javase-jce-all-downloads.html
 https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding  
 
 #### 2. 常用的 AEAD（Authenticated Encryption with Associated Data）算法：
-AEAD 算法，在内部逻辑中，同时实现了加解密和认证  
+AEAD 算法，在内部逻辑中，同时实现了加解密和校验  
 常用的 AEAD 算法：AES-256-GCM、XChaCha20-IETF-Poly1305  
 https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B  
 
