@@ -34,20 +34,6 @@ public class Rsa {
         }
     }
 
-    public static PrivateKey getPrivateKey(KeyPair keyPair) {
-        if(keyPair == null){
-            throw new IllegalArgumentException("Rsa getPrivateKey error, keyPair must not be null");
-        }
-        PrivateKey privateKey = keyPair.getPrivate();
-        if(privateKey == null){
-            throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be null");
-        }
-        if(privateKey.getEncoded() == null){
-            throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be empty");
-        }
-        return keyPair.getPrivate();
-    }
-
     public static PublicKey getPublicKey(KeyPair keyPair) {
         if(keyPair == null){
             throw new IllegalArgumentException("Rsa getPublicKey error, keyPair must not be null");
@@ -62,36 +48,58 @@ public class Rsa {
         return publicKey;
     }
 
-    public static byte[] getPrivateKeyBytes(KeyPair keyPair) {
-        return getPrivateKey(keyPair).getEncoded();
+    public static PrivateKey getPrivateKey(KeyPair keyPair) {
+        if(keyPair == null){
+            throw new IllegalArgumentException("Rsa getPrivateKey error, keyPair must not be null");
+        }
+        PrivateKey privateKey = keyPair.getPrivate();
+        if(privateKey == null){
+            throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be null");
+        }
+        if(privateKey.getEncoded() == null){
+            throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be empty");
+        }
+        return keyPair.getPrivate();
     }
 
     public static byte[] getPublicKeyBytes(KeyPair keyPair) {
         return getPublicKey(keyPair).getEncoded();
     }
 
-    public static String getPrivateKeyBase64String(KeyPair keyPair) {
-        return Base64.encode(getPrivateKeyBytes(keyPair));
+    public static byte[] getPrivateKeyBytes(KeyPair keyPair) {
+        return getPrivateKey(keyPair).getEncoded();
     }
 
     public static String getPublicKeyBase64String(KeyPair keyPair) {
         return Base64.encode(getPublicKeyBytes(keyPair));
     }
 
-    public static PrivateKey getPrivateKey(byte[] key) throws Exception {
-        return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePrivate(new PKCS8EncodedKeySpec(key));
+    public static String getPrivateKeyBase64String(KeyPair keyPair) {
+        return Base64.encode(getPrivateKeyBytes(keyPair));
     }
 
-    public static PublicKey getPublicKey(byte[] key) throws Exception {
-        return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePublic(new X509EncodedKeySpec(key));
+    public static PublicKey getPublicKey(byte[] key) {
+        try {
+            return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePublic(new X509EncodedKeySpec(key));
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Rsa getPublicKey error, error message: " + e.getMessage(), e);
+        }
     }
 
-    public static PrivateKey getPrivateKey(String keyBase64String) throws Exception {
-        return getPrivateKey(Base64.decode(keyBase64String));
+    public static PrivateKey getPrivateKey(byte[] key) {
+        try {
+            return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePrivate(new PKCS8EncodedKeySpec(key));
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Rsa getPrivateKey error, error message: " + e.getMessage(), e);
+        }
     }
 
-    public static PublicKey getPublicKey(String keyBase64String) throws Exception {
+    public static PublicKey getPublicKey(String keyBase64String) {
         return getPublicKey(Base64.decode(keyBase64String));
+    }
+
+    public static PrivateKey getPrivateKey(String keyBase64String) {
+        return getPrivateKey(Base64.decode(keyBase64String));
     }
 
     public static byte[] encrypt(byte[] sourceBytes, PublicKey encryptKey) {
