@@ -119,11 +119,11 @@ public class Rsa {
         }
     }
 
-    public static byte[] encrypt(byte[] sourceBytes, byte[] encryptKeyBytes) throws Exception {
+    public static byte[] encrypt(byte[] sourceBytes, byte[] encryptKeyBytes) {
         return encrypt(sourceBytes, getPublicKey(encryptKeyBytes));
     }
 
-    public static byte[] encrypt(byte[] sourceBytes, String encryptKeyBase64String) throws Exception {
+    public static byte[] encrypt(byte[] sourceBytes, String encryptKeyBase64String) {
         return encrypt(sourceBytes, getPublicKey(encryptKeyBase64String));
     }
 
@@ -132,12 +132,12 @@ public class Rsa {
         return encrypt(sourceBytes, encryptKey);
     }
 
-    public static byte[] encrypt(String sourceString, byte[] encryptKeyBytes) throws Exception {
+    public static byte[] encrypt(String sourceString, byte[] encryptKeyBytes) {
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         return encrypt(sourceBytes, encryptKeyBytes);
     }
 
-    public static byte[] encrypt(String sourceString, String encryptKeyBase64String) throws Exception {
+    public static byte[] encrypt(String sourceString, String encryptKeyBase64String) {
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         return encrypt(sourceBytes, encryptKeyBase64String);
     }
@@ -159,11 +159,11 @@ public class Rsa {
         }
     }
 
-    public static byte[] decrypt(byte[] encryptedBytes, byte[] decryptKeyBytes) throws Exception {
+    public static byte[] decrypt(byte[] encryptedBytes, byte[] decryptKeyBytes) {
         return decrypt(encryptedBytes, getPrivateKey(decryptKeyBytes));
     }
 
-    public static byte[] decrypt(byte[] encryptedBytes, String decryptKeyBase64String) throws Exception {
+    public static byte[] decrypt(byte[] encryptedBytes, String decryptKeyBase64String) {
         return decrypt(encryptedBytes, getPrivateKey(decryptKeyBase64String));
     }
 
@@ -171,11 +171,11 @@ public class Rsa {
         return new String(decrypt(encryptedBytes, decryptKey), StandardCharsets.UTF_8);
     }
 
-    public static String decryptString(byte[] encryptedBytes, byte[] decryptKeyBytes) throws Exception {
+    public static String decryptString(byte[] encryptedBytes, byte[] decryptKeyBytes) {
         return new String(decrypt(encryptedBytes, decryptKeyBytes), StandardCharsets.UTF_8);
     }
 
-    public static String decryptString(byte[] encryptedBytes, String decryptKeyBase64String) throws Exception {
+    public static String decryptString(byte[] encryptedBytes, String decryptKeyBase64String) {
         return new String(decrypt(encryptedBytes, decryptKeyBase64String), StandardCharsets.UTF_8);
     }
 
