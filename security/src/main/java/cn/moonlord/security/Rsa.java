@@ -82,12 +82,12 @@ public class Rsa {
         return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePrivate(new PKCS8EncodedKeySpec(key));
     }
 
-    public static PrivateKey getPrivateKey(String keyBase64String) throws Exception {
-        return getPrivateKey(Base64.decode(keyBase64String));
-    }
-
     public static PublicKey getPublicKey(byte[] key) throws Exception {
         return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePublic(new X509EncodedKeySpec(key));
+    }
+
+    public static PrivateKey getPrivateKey(String keyBase64String) throws Exception {
+        return getPrivateKey(Base64.decode(keyBase64String));
     }
 
     public static PublicKey getPublicKey(String keyBase64String) throws Exception {
