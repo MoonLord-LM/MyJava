@@ -70,12 +70,28 @@ public class Rsa {
         return getPrivateKey(keyPair).getEncoded();
     }
 
+    public static byte[] getPublicKeyBytes(PublicKey publicKey) {
+        return publicKey.getEncoded();
+    }
+
+    public static byte[] getPrivateKeyBytes(PrivateKey privateKey) {
+        return privateKey.getEncoded();
+    }
+
     public static String getPublicKeyBase64String(KeyPair keyPair) {
         return Base64.encode(getPublicKeyBytes(keyPair));
     }
 
     public static String getPrivateKeyBase64String(KeyPair keyPair) {
         return Base64.encode(getPrivateKeyBytes(keyPair));
+    }
+
+    public static String getPublicKeyBase64String(PublicKey publicKey) {
+        return Base64.encode(getPublicKeyBytes(publicKey));
+    }
+
+    public static String getPrivateKeyBase64String(PrivateKey privateKey) {
+        return Base64.encode(getPrivateKeyBytes(privateKey));
     }
 
     public static PublicKey getPublicKey(byte[] key) {
