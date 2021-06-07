@@ -35,7 +35,7 @@ public class RsaTest {
     public static class generateKeyPair {
         @Test
         public void success_1() {
-            new Performance(32) {
+            new Performance(1) {
                 @Override
                 public void onStarted() {
                     logger.info("begin generateKeyPair");
@@ -52,12 +52,12 @@ public class RsaTest {
 
             privateKey = Rsa.getPrivateKey(keyPair);
             publicKey = Rsa.getPublicKey(keyPair);
-            logger.info("privateKey: " + privateKey.getAlgorithm() + " length [ "+ privateKey.getEncoded().length + " ] format [ " + privateKey.getFormat() + " ]");
-            logger.info("publicKey: " + publicKey.getAlgorithm() + " length [ " + publicKey.getEncoded().length + " ] format [ " + publicKey.getFormat() + " ]");
-            logger.info("privateKey: " + Arrays.toString(privateKey.getEncoded()));
-            logger.info("publicKey: " + Arrays.toString(publicKey.getEncoded()));
-            logger.info("privateKey: " + Base64.encode(privateKey.getEncoded()));
-            logger.info("publicKey: " + Base64.encode(publicKey.getEncoded()));
+            logger.info("generateKeyPair, privateKey: " + privateKey.getAlgorithm() + " length [ "+ privateKey.getEncoded().length + " ] format [ " + privateKey.getFormat() + " ]");
+            logger.info("generateKeyPair, publicKey: " + publicKey.getAlgorithm() + " length [ " + publicKey.getEncoded().length + " ] format [ " + publicKey.getFormat() + " ]");
+            logger.info("generateKeyPair, privateKeyBytes: " + Arrays.toString(privateKey.getEncoded()));
+            logger.info("generateKeyPair, publicKeyBytes: " + Arrays.toString(publicKey.getEncoded()));
+            logger.info("generateKeyPair, privateKeyBase64String: " + Base64.encode(privateKey.getEncoded()));
+            logger.info("generateKeyPair, publicKeyBase64String: " + Base64.encode(publicKey.getEncoded()));
             // Assert.assertEquals("success_1", 1958, publicKey.getEncoded().length);
             // TODO Assert.assertEquals("success_1", 8712, privateKey.getEncoded().length);
             // 8709、8712、8710
