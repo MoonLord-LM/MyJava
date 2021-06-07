@@ -21,11 +21,11 @@ import java.util.List;
 
 public class HLSDownloader implements Runnable {
 
-    private String downloadURL;
+    private final String downloadURL;
 
-    private String refererURL;
+    private final String refererURL;
 
-    private String fileSavePath;
+    private final String fileSavePath;
 
     public HLSDownloader(String downloadURL, String refererURL, String fileSavePath){
         try {
