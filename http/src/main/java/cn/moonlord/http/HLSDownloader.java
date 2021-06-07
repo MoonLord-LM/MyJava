@@ -27,7 +27,7 @@ public class HLSDownloader implements Runnable {
 
     private final String fileSavePath;
 
-    public HLSDownloader(String downloadURL, String refererURL, String fileSavePath){
+    public HLSDownloader(String downloadURL, String refererURL, String fileSavePath) {
         try {
             this.downloadURL = new URI(downloadURL).normalize().toString();
         } catch (URISyntaxException e) {
@@ -130,7 +130,8 @@ public class HLSDownloader implements Runnable {
                 FileOutputStream resultFileOutputStreamStream = new FileOutputStream(fileSavePath + File.separator + "result.ts");
                 IOUtils.write(result, resultFileOutputStreamStream);
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
