@@ -53,6 +53,8 @@ public class Base64Test {
             Assert.assertEquals("success_3", compare2, result);
         }
 
+        // TODO
+
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
             Base64.encode(null);
