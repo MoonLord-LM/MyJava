@@ -38,14 +38,28 @@ public class Rsa {
         if(keyPair == null){
             throw new IllegalArgumentException("Rsa getPrivateKey error, keyPair must not be null");
         }
+        PrivateKey privateKey = keyPair.getPrivate();
+        if(privateKey == null){
+            throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be null");
+        }
+        if(privateKey.getEncoded() == null){
+            throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be empty");
+        }
         return keyPair.getPrivate();
     }
 
     public static PublicKey getPublicKey(KeyPair keyPair) {
         if(keyPair == null){
-            throw new IllegalArgumentException("Rsa getPrivateKey error, keyPair must not be null");
+            throw new IllegalArgumentException("Rsa getPublicKey error, keyPair must not be null");
         }
-        return keyPair.getPublic();
+        PublicKey publicKey = keyPair.getPublic();
+        if(publicKey == null){
+            throw new IllegalArgumentException("Rsa getPublicKey error, publicKey must not be null");
+        }
+        if(publicKey.getEncoded() == null){
+            throw new IllegalArgumentException("Rsa getPublicKey error, publicKey must not be empty");
+        }
+        return publicKey;
     }
 
     public static byte[] getPrivateKeyBytes(KeyPair keyPair) {
