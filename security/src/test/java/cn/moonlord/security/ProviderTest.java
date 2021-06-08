@@ -31,24 +31,31 @@ public class ProviderTest {
         }
     }
 
-    public static class showAllMessageDigests {
+    public static class showMessageDigests {
         @Test
         public void success_1() {
-            logger.info("showAllMessageDigests" + "\r\n" + Provider.showAllMessageDigests() + "\r\n");
+            logger.info("showMessageDigests" + "\r\n" + Provider.showMessageDigests() + "\r\n");
         }
     }
 
-    public static class showAllSignatures {
+    public static class showSignatures {
         @Test
         public void success_1() {
-            logger.info("showAllSignatures" + "\r\n" + Provider.showAllSignatures() + "\r\n");
+            logger.info("showSignatures" + "\r\n" + Provider.showSignatures() + "\r\n");
         }
     }
 
-    public static class showAllCiphers {
+    public static class showSecureRandoms {
         @Test
         public void success_1() {
-            logger.info("showAllCiphers" + "\r\n" + Provider.showAllCiphers() + "\r\n");
+            logger.info("showSecureRandoms" + "\r\n" + Provider.showSecureRandoms() + "\r\n");
+        }
+    }
+
+    public static class showCiphers {
+        @Test
+        public void success_1() {
+            logger.info("showCiphers" + "\r\n" + Provider.showCiphers() + "\r\n");
         }
     }
 
@@ -99,13 +106,6 @@ public class ProviderTest {
         public void error_4() throws NoSuchPaddingException, NoSuchAlgorithmException {
             Provider.init();
             logger.info(Cipher.getInstance("XChaCha20-IETF-Poly1305").getAlgorithm());
-        }
-    }
-
-    public static class showSecureRandoms {
-        @Test
-        public void success_1() {
-            logger.info("showSecureRandoms" + "\r\n" + Provider.showSecureRandoms() + "\r\n");
         }
     }
 

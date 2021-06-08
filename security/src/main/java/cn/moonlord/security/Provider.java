@@ -57,7 +57,7 @@ public class Provider {
         return result.toString();
     }
 
-    public static String showAllMessageDigests() {
+    public static String showMessageDigests() {
         StringBuilder result = new StringBuilder();
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
@@ -74,7 +74,7 @@ public class Provider {
         return result.toString();
     }
 
-    public static String showAllSignatures() {
+    public static String showSignatures() {
         StringBuilder result = new StringBuilder();
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
@@ -91,7 +91,24 @@ public class Provider {
         return result.toString();
     }
 
-    public static String showAllCiphers() {
+    public static String showSecureRandoms() {
+        StringBuilder result = new StringBuilder();
+        java.security.Provider[] providers = Security.getProviders();
+        for (int i = 0; i < providers.length; i++) {
+            java.security.Provider provider = providers[i];
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+                String key = (String) e.nextElement();
+                if (key.toUpperCase(Locale.ROOT).contains("SecureRandom.".toUpperCase(Locale.ROOT))) {
+                    result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
+                    result.append(key.substring("SecureRandom.".length()) + "  -  " + provider.get(key));
+                    result.append("\r\n");
+                }
+            }
+        }
+        return result.toString();
+    }
+
+    public static String showCiphers() {
         StringBuilder result = new StringBuilder();
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
@@ -147,23 +164,5 @@ public class Provider {
         }
         return result.toString();
     }
-
-    public static String showSecureRandoms() {
-        StringBuilder result = new StringBuilder();
-        java.security.Provider[] providers = Security.getProviders();
-        for (int i = 0; i < providers.length; i++) {
-            java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
-                String key = (String) e.nextElement();
-                if (key.toUpperCase(Locale.ROOT).contains("SecureRandom.".toUpperCase(Locale.ROOT))) {
-                    result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
-                    result.append(key.substring("SecureRandom.".length()) + "  -  " + provider.get(key));
-                    result.append("\r\n");
-                }
-            }
-        }
-        return result.toString();
-    }
-
 
 }
