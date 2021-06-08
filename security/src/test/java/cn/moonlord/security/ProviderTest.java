@@ -102,4 +102,11 @@ public class ProviderTest {
         }
     }
 
+    public static class showSecureRandoms {
+        @Test
+        public void success_1() {
+            logger.info("showSecureRandoms" + "\r\n" + Provider.showSecureRandoms() + "\r\n");
+        }
+    }
+
 }
