@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Random {
 
-    private static final List<String> SECURITY_RANDOM_INSTANCE_NAMES = Arrays.asList(
-            "HASH_DRBG", "HMAC_DRBG", "CTR_DRBG", "DRBG", "NONCEANDIV", "DEFAULT"
+    private static final List<String> SECURITY_RANDOM_ALGORITHMS = Arrays.asList(
+            "Hash_DRBG", "Hmac_DRBG", "Ctr_DRBG", "DRBG", "NonceAndIV", "Default"
     );
 
     static {
@@ -20,12 +20,12 @@ public class Random {
     }
 
     public static SecureRandom getInstance() {
-        for (String instanceName : SECURITY_RANDOM_INSTANCE_NAMES) {
+        for (String algorithm : SECURITY_RANDOM_ALGORITHMS) {
             try {
-                return SecureRandom.getInstance(instanceName);
+                return SecureRandom.getInstance(algorithm);
             } catch (NoSuchAlgorithmException ignore) { }
         }
-        throw new IllegalArgumentException("Random getInstance error, instance can not be found: " + SECURITY_RANDOM_INSTANCE_NAMES);
+        throw new IllegalArgumentException("Random getInstance error, algorithms can not be found: " + SECURITY_RANDOM_ALGORITHMS);
     }
 
     public static byte[] generate(int bitLength) {
