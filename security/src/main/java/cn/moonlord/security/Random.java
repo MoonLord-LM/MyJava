@@ -18,6 +18,9 @@ public class Random {
             "SHA1PRNG" // sun.security.provider.SecureRandom
     );
 
+    // TODO：Number of bits per request limited to 262144
+    // TODO：不超过2^48请求，补种 888 bit
+
     private static volatile SecureRandom instance = null;
 
     static {
