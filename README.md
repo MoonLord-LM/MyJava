@@ -10,11 +10,17 @@ My Java Demo Projects
 #### 1. 低版本的 JDK（< 8u161）不支持 AES-GCM-256 等高强度算法的问题：
 https://www.oracle.com/java/technologies/javase-jce-all-downloads.html  
 
-#### 1. JDK 只有 AES/CBC/PKCS5Padding 而没有 AES/CBC/PKCS7Padding 的问题：
+#### 2. JDK 只有 AES/CBC/PKCS5Padding 而没有 AES/CBC/PKCS7Padding 的问题：
 历史命名问题，实际上 PKCS5Padding 和 PKCS7Padding 是同一种填充算法  
 https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding  
 
-#### 2. 常用的 AEAD（Authenticated Encryption with Associated Data）算法：
+#### 3. 随机数算法的性能问题：
+SecureRandom.getInstanceStrong() 会获取一个当前环境上较强的随机数算法实现  
+Linux 环境上是 NativePRNGBlocking 算法，使用 /dev/random 系统接口  
+Windows 环境上是 Windows-PRNG 算法，使用 CryptGenRandom 系统接口  
+为了避免 /dev/random 阻塞导致随机数生成的阻塞，可以使用 DRBG 算法  
+
+#### 4. 常用的 AEAD（Authenticated Encryption with Associated Data）算法：
 AEAD 算法，在内部逻辑中，同时实现了加解密和校验  
 常用的 AEAD 算法：AES-256-GCM、XChaCha20-IETF-Poly1305  
 https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B  

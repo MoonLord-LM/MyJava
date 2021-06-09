@@ -8,7 +8,14 @@ import java.util.List;
 public class Random {
 
     private static final List<String> SECURITY_RANDOM_ALGORITHMS = Arrays.asList(
-            "Hash_DRBG", "Hmac_DRBG", "Ctr_DRBG", "DRBG", "NonceAndIV", "Default"
+            "DRBG", // sun.security.provider.DRBG（>= JDK 9）
+            "NonceAndIV", // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
+            "Default", // org.bouncycastle.jcajce.provider.drbg.DRBG$Default
+            "Windows-PRNG", // sun.security.mscapi.PRNG
+            "NativePRNGBlocking",
+            "NativePRNG",
+            "NativePRNGNonBlocking",
+            "SHA1PRNG" // sun.security.provider.SecureRandom
     );
 
     private static volatile SecureRandom instance = null;
@@ -28,16 +35,12 @@ public class Random {
                     instance = SecureRandom.getInstance(algorithm);
                     break;
                 }
-                catch (NoSuchAlgorithmException ignore) {
-                }
+                catch (NoSuchAlgorithmException ignore) { }
             }
+        }
+        if(instance == null) {
             throw new IllegalArgumentException("Random getInstance error, algorithms can not be found: " + SECURITY_RANDOM_ALGORITHMS);
         }
-        try {
-            byte[] seed = SecureRandom.getInstanceStrong().generateSeed(1024);
-            instance.setSeed(seed);
-        }
-        catch (NoSuchAlgorithmException ignore) { }
         return instance;
     }
 
