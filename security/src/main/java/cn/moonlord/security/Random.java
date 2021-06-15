@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Random {
 
-    private static final List<String> SECURITY_RANDOM_ALGORITHMS = Arrays.asList(
+    public static final List<String> SECURITY_RANDOM_ALGORITHMS = Arrays.asList(
             "DRBG", // sun.security.provider.DRBG（>= JDK 9）
             "NonceAndIV", // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
             "Default", // org.bouncycastle.jcajce.provider.drbg.DRBG$Default
@@ -18,33 +18,36 @@ public class Random {
             "SHA1PRNG" // sun.security.provider.SecureRandom
     );
 
-    // TODO：Number of bits per request limited to 262144
-    // TODO：不超过2^48请求，补种 888 bit
+    public static final List<String> DRBG_ALGORITHMS = Arrays.asList(
+            "DRBG", // sun.security.provider.DRBG（>= JDK 9）
+            "NonceAndIV", // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
+            "Default" // org.bouncycastle.jcajce.provider.drbg.DRBG$Default
+    );
 
-    private static volatile SecureRandom instance = null;
+    public static final int DRBG_MAX_BYTE_SIZE = 262144 / Byte.SIZE;
+
+    private static SecureRandom instance;
 
     static {
         init();
     }
 
-    public synchronized static void init(){
-        Provider.init();
+    public static SecureRandom getInstance() {
+        return instance;
     }
 
-    public static SecureRandom getInstance() {
-        if(instance == null) {
-            for (String algorithm : SECURITY_RANDOM_ALGORITHMS) {
-                try {
-                    instance = SecureRandom.getInstance(algorithm);
-                    break;
-                }
-                catch (NoSuchAlgorithmException ignore) { }
+    public synchronized static void init(){
+        Provider.init();
+        for (String algorithm : SECURITY_RANDOM_ALGORITHMS) {
+            try {
+                instance = SecureRandom.getInstance(algorithm);
+                break;
             }
+            catch (NoSuchAlgorithmException ignore) { }
         }
         if(instance == null) {
-            throw new IllegalArgumentException("Random getInstance error, none of the algorithms can be found: " + SECURITY_RANDOM_ALGORITHMS);
+            throw new IllegalArgumentException("Random init error, none of the algorithms can be found: " + SECURITY_RANDOM_ALGORITHMS);
         }
-        return instance;
     }
 
     public static byte[] generate(int bitLength) {
@@ -55,18 +58,26 @@ public class Random {
             throw new IllegalArgumentException("Random generate error, bitLength [" + bitLength + "] must be a multiple of " + Byte.SIZE);
         }
         int byteLength = bitLength / Byte.SIZE;
-        byte[] buffer = new byte[byteLength];
-        getInstance().nextBytes(buffer);
-        return buffer;
+        return generateBytes(byteLength);
     }
 
     public static byte[] generateBytes(int byteLength) {
         if(byteLength <= 0){
             throw new IllegalArgumentException("Random generateBytes error, byteLength [" + byteLength + "] must be larger than 0");
         }
-        byte[] buffer = new byte[byteLength];
-        getInstance().nextBytes(buffer);
-        return buffer;
+        byte[] result = new byte[byteLength];
+        if(byteLength > DRBG_MAX_BYTE_SIZE && DRBG_ALGORITHMS.contains(getInstance().getAlgorithm())) {
+            for (int i = 0; i <= result.length / DRBG_MAX_BYTE_SIZE; i++) {
+                byte[] buffer = new byte[DRBG_MAX_BYTE_SIZE];
+                getInstance().nextBytes(buffer);
+                int fillLength = Math.min(byteLength - i * DRBG_MAX_BYTE_SIZE, DRBG_MAX_BYTE_SIZE);
+                System.arraycopy(buffer, 0, result, i * DRBG_MAX_BYTE_SIZE, fillLength);
+            }
+        }
+        else {
+            getInstance().nextBytes(result);
+        }
+        return result;
     }
 
 }
