@@ -12,9 +12,9 @@ public class Random {
             "NonceAndIV", // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
             "Default", // org.bouncycastle.jcajce.provider.drbg.DRBG$Default
             "Windows-PRNG", // sun.security.mscapi.PRNG
-            "NativePRNGBlocking",
-            "NativePRNG",
-            "NativePRNGNonBlocking",
+            "NativePRNGBlocking", // sun.security.provider.NativePRNG$Blocking
+            "NativePRNG", // sun.security.provider.NativePRNG
+            "NativePRNGNonBlocking", // sun.security.provider.NativePRNG$NonBlocking
             "SHA1PRNG" // sun.security.provider.SecureRandom
     );
 
@@ -26,7 +26,7 @@ public class Random {
 
     public static final int DRBG_MAX_BYTE_SIZE = 262144 / Byte.SIZE;
 
-    private static SecureRandom instance;
+    private static volatile SecureRandom instance;
 
     static {
         init();
@@ -67,11 +67,12 @@ public class Random {
         }
         byte[] result = new byte[byteLength];
         if(byteLength > DRBG_MAX_BYTE_SIZE && DRBG_ALGORITHMS.contains(getInstance().getAlgorithm())) {
-            for (int i = 0; i <= result.length / DRBG_MAX_BYTE_SIZE; i++) {
+            for (int i = 0; i <= byteLength / DRBG_MAX_BYTE_SIZE; i++) {
                 byte[] buffer = new byte[DRBG_MAX_BYTE_SIZE];
                 getInstance().nextBytes(buffer);
-                int fillLength = Math.min(byteLength - i * DRBG_MAX_BYTE_SIZE, DRBG_MAX_BYTE_SIZE);
-                System.arraycopy(buffer, 0, result, i * DRBG_MAX_BYTE_SIZE, fillLength);
+                int fillPosition = i * DRBG_MAX_BYTE_SIZE;
+                int fillLength = Math.min(byteLength - fillPosition, DRBG_MAX_BYTE_SIZE);
+                System.arraycopy(buffer, 0, result, fillPosition, fillLength);
             }
         }
         else {
