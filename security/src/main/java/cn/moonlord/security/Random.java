@@ -42,7 +42,7 @@ public class Random {
             }
         }
         if(instance == null) {
-            throw new IllegalArgumentException("Random getInstance error, algorithms can not be found: " + SECURITY_RANDOM_ALGORITHMS);
+            throw new IllegalArgumentException("Random getInstance error, none of the algorithms can be found: " + SECURITY_RANDOM_ALGORITHMS);
         }
         return instance;
     }
