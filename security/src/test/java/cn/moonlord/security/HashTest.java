@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.nio.charset.StandardCharsets;
+
 @SpringBootTest
 @RunWith(Enclosed.class)
 public class HashTest {
@@ -61,6 +63,16 @@ public class HashTest {
             Assert.assertEquals("success_2", compare, result);
         }
 
+        @Test
+        public void success_3() {
+            byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
+            String result = Hash.sha256Hex(source);
+            String compare = DigestUtils.sha256Hex(source);
+            Assert.assertEquals("success_3", 64, result.length());
+            Assert.assertEquals("success_3", "6aa8f49cc992dfd75a114269ed26de0ad6d4e7d7a70d9c8afb3d7a57a88a73ed", result);
+            Assert.assertEquals("success_3", compare, result);
+        }
+
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
             Hash.sha256Hex(null);
@@ -111,6 +123,16 @@ public class HashTest {
             Assert.assertEquals("success_2", 128, result.length());
             Assert.assertEquals("success_2", "fa54a45b24841a39ca6a3bab95d29ffdba8561b93d94f06f734a7a09c2370b79b2dd3b4efaf01eb3899206594e41cb5844031410d8ceee5ca4aa79c5461b4536", result);
             Assert.assertEquals("success_2", compare, result);
+        }
+
+        @Test
+        public void success_3() {
+            byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
+            String result = Hash.sha512Hex(source);
+            String compare = DigestUtils.sha512Hex(source);
+            Assert.assertEquals("success_3", 128, result.length());
+            Assert.assertEquals("success_3", "98fb26ea83ce0f08918c967392a26ab298740aff3c18d032983b88bcee2e16d152ef372778259ebd529ed01701ff01ac4c95ed94e3a1ab9272ab98daf11f076c", result);
+            Assert.assertEquals("success_3", compare, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
