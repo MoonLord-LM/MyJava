@@ -7,21 +7,37 @@ import java.util.List;
 
 public class Random {
 
+    public static final String ALGORITHM_DRBG = "DRBG"; // sun.security.provider.DRBG（>= JDK 9）
+
+    public static final String ALGORITHM_NONCE_AND_IV = "NonceAndIV"; // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
+
+    public static final String ALGORITHM_DEFAULT = "Default"; // org.bouncycastle.jcajce.provider.drbg.DRBG$Default
+
+    public static final String ALGORITHM_WINDOWS_PRNG = "Windows-PRNG"; // sun.security.mscapi.PRNG
+
+    public static final String ALGORITHM_NATIVE_PRNG_BLOCKING = "NativePRNGBlocking"; // sun.security.provider.NativePRNG$Blocking
+
+    public static final String ALGORITHM_NATIVE_PRNG = "NativePRNG"; // sun.security.provider.NativePRNG
+
+    public static final String ALGORITHM_NATIVE_PRNG_NONBLOCKING = "NativePRNGNonBlocking"; // sun.security.provider.NativePRNG$NonBlocking
+
+    public static final String ALGORITHM_SHA1_PRNG = "SHA1PRNG"; // sun.security.provider.SecureRandom
+
     public static final List<String> SECURITY_RANDOM_ALGORITHMS = Arrays.asList(
-            "DRBG", // sun.security.provider.DRBG（>= JDK 9）
-            "NonceAndIV", // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
-            "Default", // org.bouncycastle.jcajce.provider.drbg.DRBG$Default
-            "Windows-PRNG", // sun.security.mscapi.PRNG
-            "NativePRNGBlocking", // sun.security.provider.NativePRNG$Blocking
-            "NativePRNG", // sun.security.provider.NativePRNG
-            "NativePRNGNonBlocking", // sun.security.provider.NativePRNG$NonBlocking
-            "SHA1PRNG" // sun.security.provider.SecureRandom
+            ALGORITHM_DRBG,
+            ALGORITHM_NONCE_AND_IV,
+            ALGORITHM_DEFAULT,
+            ALGORITHM_WINDOWS_PRNG,
+            ALGORITHM_NATIVE_PRNG_BLOCKING,
+            ALGORITHM_NATIVE_PRNG,
+            ALGORITHM_NATIVE_PRNG_NONBLOCKING,
+            ALGORITHM_SHA1_PRNG
     );
 
     public static final List<String> DRBG_ALGORITHMS = Arrays.asList(
-            "DRBG", // sun.security.provider.DRBG（>= JDK 9）
-            "NonceAndIV", // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
-            "Default" // org.bouncycastle.jcajce.provider.drbg.DRBG$Default
+            ALGORITHM_DRBG,
+            ALGORITHM_NONCE_AND_IV,
+            ALGORITHM_DEFAULT
     );
 
     public static final int DRBG_MAX_BYTE_SIZE = 262144 / Byte.SIZE;
@@ -30,10 +46,6 @@ public class Random {
 
     static {
         init();
-    }
-
-    public static SecureRandom getInstance() {
-        return instance;
     }
 
     public synchronized static void init(){
@@ -48,6 +60,10 @@ public class Random {
         if(instance == null) {
             throw new IllegalArgumentException("Random init error, none of the algorithms can be found: " + SECURITY_RANDOM_ALGORITHMS);
         }
+    }
+
+    public static SecureRandom getInstance() {
+        return instance;
     }
 
     public static byte[] generate(int bitLength) {
