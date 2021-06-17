@@ -1,5 +1,6 @@
 package cn.moonlord.security;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -51,6 +52,38 @@ public class PemTest {
             String result = Pem.encodeRsaPrivateKey(privateKey);
             // TODO
             logger.info("encodeRsaPrivateKey" + "\r\n" + result);
+        }
+    }
+
+    public static class decodeRsaPublicKey {
+        @Test
+        public void success_1() {
+            PublicKey result = Pem.decodeRsaPublicKey(Pem.encodePublicKey(publicKey));
+            logger.info("decodeRsaPublicKey" + "\r\n" + result);
+            Assert.assertArrayEquals("success_1", publicKey.getEncoded(), result.getEncoded());
+        }
+
+        @Test
+        public void success_2() {
+            PublicKey result = Pem.decodeRsaPublicKey(Pem.encodeRsaPublicKey(publicKey));
+            logger.info("decodeRsaPublicKey" + "\r\n" + result);
+            Assert.assertArrayEquals("success_2", publicKey.getEncoded(), result.getEncoded());
+        }
+    }
+
+    public static class decodeRsaPrivateKey {
+        @Test
+        public void success_1() {
+            PrivateKey result = Pem.decodeRsaPrivateKey(Pem.encodePrivateKey(privateKey));
+            logger.info("decodeRsaPrivateKey" + "\r\n" + result);
+            Assert.assertArrayEquals("success_1", privateKey.getEncoded(), result.getEncoded());
+        }
+
+        @Test
+        public void success_2() {
+            PrivateKey result = Pem.decodeRsaPrivateKey(Pem.encodeRsaPrivateKey(privateKey));
+            logger.info("decodeRsaPrivateKey" + "\r\n" + result);
+            Assert.assertArrayEquals("success_2", privateKey.getEncoded(), result.getEncoded());
         }
     }
 
