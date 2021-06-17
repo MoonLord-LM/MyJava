@@ -6,7 +6,7 @@ public class Base64 {
 
     public static final int MIME_CHUNK_SIZE = 76;
 
-    public static final byte[] CRLF = new byte[] {'\r', '\n'};
+    public static final byte[] MIME_LINE_SEPARATOR = new byte[] {'\r', '\n'};
 
     public static String encode(byte[] sourceBytes) {
         if(sourceBytes == null){
@@ -34,7 +34,7 @@ public class Base64 {
         if(lineLength > MIME_CHUNK_SIZE){
             throw new IllegalArgumentException("Base64 encodeMime error, lineLength [ " + lineLength + " ] must not be larger than " + MIME_CHUNK_SIZE);
         }
-        byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, CRLF).encode(sourceBytes);
+        byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, MIME_LINE_SEPARATOR).encode(sourceBytes);
         return new String(buffer,StandardCharsets.UTF_8);
     }
 

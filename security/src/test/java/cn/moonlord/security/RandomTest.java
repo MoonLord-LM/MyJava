@@ -1,5 +1,6 @@
 package cn.moonlord.security;
 
+import cn.moonlord.test.PerformanceCompare;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -31,6 +32,52 @@ public class RandomTest {
             logger.info("strong instance: " + strongInstance);
             logger.info("strong instance algorithm: " + strongInstance.getAlgorithm());
             logger.info("strong instance provider: " + strongInstance.getProvider().getName());
+        }
+
+        @Test
+        public void performance_1() {
+            SecureRandom instance = Random.getInstance();
+            SecureRandom defaultInstance = new SecureRandom();
+            new PerformanceCompare(256) {
+                @Override
+                public void testMethod() {
+                    instance.nextBytes(new byte[1024]);
+                }
+                @Override
+                public void compareMethod() {
+                    defaultInstance.nextBytes(new byte[1024]);
+                }
+                @Override
+                public void onCompleted() {
+                    logger.info("[instance] cost time: {} ms", getTestMethodRunTime());
+                    logger.info("[defaultInstance] compare time: {} ms", getCompareMethodRunTime());
+                    logger.info("[instance] is {} faster than [defaultInstance]", getImprovement());
+                    Assert.assertTrue("performance_1", isImproved());
+                }
+            }.run();
+        }
+
+        @Test
+        public void performance_2() throws Exception {
+            SecureRandom instance = Random.getInstance();
+            SecureRandom strongInstance = SecureRandom.getInstanceStrong();
+            new PerformanceCompare(256) {
+                @Override
+                public void testMethod() {
+                    instance.nextBytes(new byte[1024]);
+                }
+                @Override
+                public void compareMethod() {
+                    strongInstance.nextBytes(new byte[1024]);
+                }
+                @Override
+                public void onCompleted() {
+                    logger.info("[instance] cost time: {} ms", getTestMethodRunTime());
+                    logger.info("[strongInstance] compare time: {} ms", getCompareMethodRunTime());
+                    logger.info("[instance] is {} faster than [strongInstance]", getImprovement());
+                    Assert.assertTrue("performance_1", isImproved());
+                }
+            }.run();
         }
     }
 
