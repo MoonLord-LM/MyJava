@@ -4,11 +4,37 @@ import java.nio.charset.StandardCharsets;
 
 public class Base64 {
 
+    public static final int MIME_CHUNK_SIZE = 76;
+
+    public static final byte[] CRLF = new byte[] {'\r', '\n'};
+
     public static String encode(byte[] sourceBytes) {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Base64 encode error, sourceBytes must not be null");
         }
         byte[] buffer = java.util.Base64.getEncoder().encode(sourceBytes);
+        return new String(buffer,StandardCharsets.UTF_8);
+    }
+
+    public static String encodeUrlSafe(byte[] sourceBytes) {
+        if(sourceBytes == null){
+            throw new IllegalArgumentException("Base64 encodeUrlSafe error, sourceBytes must not be null");
+        }
+        byte[] buffer = java.util.Base64.getUrlEncoder().encode(sourceBytes);
+        return new String(buffer,StandardCharsets.UTF_8);
+    }
+
+    public static String encodeMime(byte[] sourceBytes, int lineLength) {
+        if(sourceBytes == null){
+            throw new IllegalArgumentException("Base64 encodeMime error, sourceBytes must not be null");
+        }
+        if(lineLength <= 0){
+            throw new IllegalArgumentException("Base64 encodeMime error, lineLength must be larger than 0");
+        }
+        if(lineLength > MIME_CHUNK_SIZE){
+            throw new IllegalArgumentException("Base64 encodeMime error, lineLength [ " + lineLength + " ] must not be larger than " + MIME_CHUNK_SIZE);
+        }
+        byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, CRLF).encode(sourceBytes);
         return new String(buffer,StandardCharsets.UTF_8);
     }
 
@@ -19,21 +45,18 @@ public class Base64 {
         return java.util.Base64.getDecoder().decode(sourceString.getBytes(StandardCharsets.UTF_8));
     }
 
-    public static String encode(byte[] sourceBytes, int lineLength, String lineSeparator) {
-        if(sourceBytes == null){
-            throw new IllegalArgumentException("Base64 encode error, sourceBytes must not be null");
+    public static byte[] decodeUrlSafe(String sourceString) {
+        if(sourceString == null){
+            throw new IllegalArgumentException("Base64 decodeUrlSafe error, sourceString must not be null");
         }
-        if(lineLength == 0){
-            throw new IllegalArgumentException("Base64 encode error, lineLength must be larger than 0");
+        return java.util.Base64.getUrlDecoder().decode(sourceString.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static byte[] decodeMime(String sourceString) {
+        if(sourceString == null){
+            throw new IllegalArgumentException("Base64 decodeMime error, sourceString must not be null");
         }
-        if(lineSeparator == null){
-            throw new IllegalArgumentException("Base64 encode error, lineSeparator must not be null");
-        }
-        if(lineSeparator.isEmpty()){
-            throw new IllegalArgumentException("Base64 encode error, lineSeparator must not be empty");
-        }
-        byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, lineSeparator.getBytes(StandardCharsets.UTF_8)).encode(sourceBytes);
-        return new String(buffer,StandardCharsets.UTF_8);
+        return java.util.Base64.getMimeDecoder().decode(sourceString.getBytes(StandardCharsets.UTF_8));
     }
 
 }

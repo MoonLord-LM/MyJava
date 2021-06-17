@@ -7,7 +7,7 @@ public class Pem {
 
     public static final int LINE_LENGTH = 64;
 
-    public static final String LINE_SEPARATOR = "\n";
+    public static final String LINE_SEPARATOR = "\r\n";
 
     public static final String BEGIN_PUBLIC_KEY = "-----BEGIN PUBLIC KEY-----";
 
@@ -26,19 +26,19 @@ public class Pem {
     public static final String END_RSA_PRIVATE_KEY = "-----END RSA PRIVATE KEY-----";
 
     public static String encodePublicKey(PublicKey publicKey) {
-        return BEGIN_PUBLIC_KEY + LINE_SEPARATOR + Base64.encode(publicKey.getEncoded(), LINE_LENGTH, LINE_SEPARATOR) + LINE_SEPARATOR + END_PUBLIC_KEY;
+        return BEGIN_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(publicKey.getEncoded(), LINE_LENGTH) + LINE_SEPARATOR + END_PUBLIC_KEY;
     }
 
     public static String encodePrivateKey(PrivateKey privateKey) {
-        return BEGIN_PRIVATE_KEY + LINE_SEPARATOR + Base64.encode(privateKey.getEncoded(), LINE_LENGTH, LINE_SEPARATOR) + LINE_SEPARATOR + END_PRIVATE_KEY;
+        return BEGIN_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(privateKey.getEncoded(), LINE_LENGTH) + LINE_SEPARATOR + END_PRIVATE_KEY;
     }
 
     public static String encodeRsaPublicKey(PublicKey publicKey) {
-        return BEGIN_RSA_PUBLIC_KEY + LINE_SEPARATOR + Base64.encode(publicKey.getEncoded(), LINE_LENGTH, LINE_SEPARATOR) + LINE_SEPARATOR + END_RSA_PUBLIC_KEY;
+        return BEGIN_RSA_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(publicKey.getEncoded(), LINE_LENGTH) + LINE_SEPARATOR + END_RSA_PUBLIC_KEY;
     }
 
     public static String encodeRsaPrivateKey(PrivateKey privateKey) {
-        return BEGIN_RSA_PRIVATE_KEY + LINE_SEPARATOR + Base64.encode(privateKey.getEncoded(), LINE_LENGTH, LINE_SEPARATOR) + LINE_SEPARATOR + END_RSA_PRIVATE_KEY;
+        return BEGIN_RSA_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(privateKey.getEncoded(), LINE_LENGTH) + LINE_SEPARATOR + END_RSA_PRIVATE_KEY;
     }
 
 }

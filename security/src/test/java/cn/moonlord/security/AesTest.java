@@ -157,6 +157,23 @@ public class AesTest {
             Assert.assertEquals("success_2", "测试", resultString);
         }
 
+        @Test
+        public void success_3() {
+            String source = "测试";
+            SecretKeySpec key1 = Aes.generateKey();
+            byte[] key2 = Aes.generateKeyBytes();
+            String key3 = Aes.generateKeyBase64String();
+            byte[] encrypt1 = Aes.encrypt(source, key1);
+            byte[] encrypt2 = Aes.encrypt(source, key2);
+            byte[] encrypt3 = Aes.encrypt(source, key3);
+            String result1 = Aes.decryptString(encrypt1, key1);
+            String result2 = Aes.decryptString(encrypt2, key2);
+            String result3 = Aes.decryptString(encrypt3, key3);
+            Assert.assertEquals("success_3", "测试", result1);
+            Assert.assertEquals("success_3", "测试", result2);
+            Assert.assertEquals("success_3", "测试", result3);
+        }
+
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
             Aes.decrypt(null, Aes.generateKey());
