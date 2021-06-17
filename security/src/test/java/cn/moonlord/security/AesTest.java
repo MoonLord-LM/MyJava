@@ -112,13 +112,13 @@ public class AesTest {
             byte[] source = new byte[1024];
             for (int i = 0; i <= source.length; i++) {
                 byte[] result = Aes.encrypt(Arrays.copyOfRange(source, 0, i), Aes.generateKeyBytes());
-                logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length " + " [ " + Base64.encode(result) + " ] ");
+                logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length");
                 Assert.assertEquals("success_3", (i + 28), result.length);
             }
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void error_1() throws Exception {
+        public void error_1() {
             Aes.encrypt((byte[]) null, Aes.generateKey());
         }
 
@@ -158,8 +158,8 @@ public class AesTest {
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void error_1() throws Exception {
-            Aes.decrypt((byte[]) null, Aes.generateKey());
+        public void error_1() {
+            Aes.decrypt(null, Aes.generateKey());
         }
 
         @Test(expected = IllegalArgumentException.class)
