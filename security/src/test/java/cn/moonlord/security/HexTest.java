@@ -116,25 +116,15 @@ public class HexTest {
         @Test
         public void success_2() {
             byte[] result = Hex.decode("00dd11ee22ff");
-            Assert.assertEquals("success_2", 6, result.length);
-            Assert.assertEquals("success_2", (byte) 0x00, result[0]);
-            Assert.assertEquals("success_2", (byte) 0xDD, result[1]);
-            Assert.assertEquals("success_2", (byte) 0x11, result[2]);
-            Assert.assertEquals("success_2", (byte) 0xEE, result[3]);
-            Assert.assertEquals("success_2", (byte) 0x22, result[4]);
-            Assert.assertEquals("success_2", (byte) 0xFF, result[5]);
+            byte[] compare = new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF};
+            Assert.assertArrayEquals("success_2", compare, result);
         }
 
         @Test
         public void success_3() {
             byte[] result = Hex.decode("000000000000");
-            Assert.assertEquals("success_3", 6, result.length);
-            Assert.assertEquals("success_3", (byte) 0x00, result[0]);
-            Assert.assertEquals("success_3", (byte) 0x00, result[1]);
-            Assert.assertEquals("success_3", (byte) 0x00, result[2]);
-            Assert.assertEquals("success_3", (byte) 0x00, result[3]);
-            Assert.assertEquals("success_3", (byte) 0x00, result[4]);
-            Assert.assertEquals("success_3", (byte) 0x00, result[5]);
+            byte[] compare = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
+            Assert.assertArrayEquals("success_3", compare, result);
         }
 
         @Test
