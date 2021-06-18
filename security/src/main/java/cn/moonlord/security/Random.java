@@ -17,11 +17,12 @@ public class Random {
 
     public static final String ALGORITHM_NATIVE_PRNG_BLOCKING = "NativePRNGBlocking"; // sun.security.provider.NativePRNG$Blocking
 
-    // public static final String ALGORITHM_NATIVE_PRNG = "NativePRNG"; // sun.security.provider.NativePRNG
-
-    // public static final String ALGORITHM_NATIVE_PRNG_NONBLOCKING = "NativePRNGNonBlocking"; // sun.security.provider.NativePRNG$NonBlocking
-
-    // public static final String ALGORITHM_SHA1_PRNG = "SHA1PRNG"; // sun.security.provider.SecureRandom
+    /*
+      These algorithms are not strong enough：
+          public static final String ALGORITHM_NATIVE_PRNG = "NativePRNG"; // sun.security.provider.NativePRNG
+          public static final String ALGORITHM_NATIVE_PRNG_NONBLOCKING = "NativePRNGNonBlocking"; // sun.security.provider.NativePRNG$NonBlocking
+          public static final String ALGORITHM_SHA1_PRNG = "SHA1PRNG"; // sun.security.provider.SecureRandom
+     */
 
     public static final List<String> SECURITY_RANDOM_ALGORITHMS = Arrays.asList(
             ALGORITHM_DRBG,
