@@ -11,8 +11,6 @@ import java.security.spec.X509EncodedKeySpec;
 
 public class Rsa {
 
-    private static final int SOURCE_MAX_SIZE = 1790;
-
     public static final String RSA_KEY_ALGORITHM = "RSA";
 
     public static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPPadding";
@@ -24,6 +22,10 @@ public class Rsa {
     public static final String MGF1_DIGEST_ALGORITHM = "SHA-512";
 
     public static final int RSA_KEY_LENGTH = 15360;
+
+    public static final int SOURCE_MAX_SIZE = 1790;
+
+    public static final int ENCRYPTED_SIZE = 1920;
 
     public static KeyPair generateKeyPair() {
         try {
@@ -175,6 +177,9 @@ public class Rsa {
     public static byte[] decrypt(byte[] encryptedBytes, PrivateKey privateKey) {
         if(encryptedBytes == null){
             throw new IllegalArgumentException("Rsa decrypt error, encryptedBytes must not be null");
+        }
+        if(encryptedBytes.length != ENCRYPTED_SIZE){
+            throw new IllegalArgumentException("Rsa decrypt error, the length of encryptedBytes [" + encryptedBytes.length + "] must be " + ENCRYPTED_SIZE);
         }
         if(privateKey == null){
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be null");

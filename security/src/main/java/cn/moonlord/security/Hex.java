@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class Hex {
 
-    private static final int SOURCE_MAX_SIZE = Integer.MAX_VALUE / 2;
-
     private static final char[] HEX_CHARS = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
     private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR = new char[512];
 
     private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[128];
+
+    public static final int SOURCE_MAX_SIZE = Integer.MAX_VALUE / 2;
 
     static {
         init();
