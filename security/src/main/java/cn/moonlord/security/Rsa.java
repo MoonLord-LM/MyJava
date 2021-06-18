@@ -17,7 +17,7 @@ public class Rsa {
 
     public static final String OAEP_DIGEST_ALGORITHM = "SHA-512";
 
-    public static final String MGF1_NAME = "MGF1";
+    public static final String OAEP_MGF_ALGORITHM = "MGF1";
 
     public static final String MGF1_DIGEST_ALGORITHM = "SHA-512";
 
@@ -119,19 +119,22 @@ public class Rsa {
     }
 
     public static byte[] encrypt(byte[] sourceBytes, PublicKey publicKey) {
+        if(sourceBytes == null){
+            throw new IllegalArgumentException("Rsa encrypt error, sourceBytes must not be null");
+        }
         if(publicKey == null){
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be null");
         }
         if(publicKey.getEncoded() == null){
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be empty");
         }
-        if(publicKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Rsa encrypt error, publicKey length is not match, the length should be " + RSA_KEY_LENGTH);
+        if(publicKey.getEncoded().length <= RSA_KEY_LENGTH  / Byte.SIZE){
+            throw new IllegalArgumentException("Rsa encrypt error, the length of publicKey [" + publicKey.getEncoded().length + "] must be larger than " + ( RSA_KEY_LENGTH  / Byte.SIZE ));
         }
 
         try {
             MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
-            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgf1Spec, PSource.PSpecified.DEFAULT);
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.ENCRYPT_MODE, publicKey, oaepSpec);
             return cipher.doFinal(sourceBytes);
@@ -165,19 +168,22 @@ public class Rsa {
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, PrivateKey privateKey) {
+        if(encryptedBytes == null){
+            throw new IllegalArgumentException("Rsa decrypt error, encryptedBytes must not be null");
+        }
         if(privateKey == null){
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be null");
         }
         if(privateKey.getEncoded() == null){
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be empty");
         }
-        if(privateKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Rsa decrypt error, privateKey length is not match, the length should be " + RSA_KEY_LENGTH);
+        if(privateKey.getEncoded().length <= RSA_KEY_LENGTH  / Byte.SIZE){
+            throw new IllegalArgumentException("Rsa decrypt error, the length of privateKey [" + privateKey.getEncoded().length + "] must be larger than " + ( RSA_KEY_LENGTH  / Byte.SIZE ));
         }
 
         try {
             MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
-            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, MGF1_NAME, mgf1Spec, PSource.PSpecified.DEFAULT);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgf1Spec, PSource.PSpecified.DEFAULT);
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.DECRYPT_MODE, privateKey, oaepSpec);
             return cipher.doFinal(encryptedBytes);
