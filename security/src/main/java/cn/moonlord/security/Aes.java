@@ -18,7 +18,7 @@ public class Aes {
 
     public static final int GCM_IV_LENGTH = 96;
 
-    public static final int ENCRYPTED_MIN_SIZE = 28;
+    public static final int ENCRYPTED_MIN_SIZE = (128 + 96) / Byte.SIZE;
 
     public static SecretKeySpec generateKey() {
         return new SecretKeySpec(generateKeyBytes(), AES_KEY_ALGORITHM);
@@ -40,7 +40,7 @@ public class Aes {
             throw new IllegalArgumentException("Aes getSecretKey error, keyBytes must not be empty");
         }
         if(keyBytes.length != AES_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Aes getSecretKey error, the length of keyBytes [" + keyBytes.length + "] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
+            throw new IllegalArgumentException("Aes getSecretKey error, the length of keyBytes [ " + keyBytes.length + " ] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
         }
         return new SecretKeySpec(keyBytes, AES_KEY_ALGORITHM);
     }
@@ -60,7 +60,7 @@ public class Aes {
             throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be empty");
         }
         if(encryptKey.getEncoded().length != AES_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [" + encryptKey.getEncoded().length + "] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
+            throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [ " + encryptKey.getEncoded().length + " ] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
         }
 
         byte[] iv = Random.generate(GCM_IV_LENGTH);
@@ -109,7 +109,7 @@ public class Aes {
             throw new IllegalArgumentException("Aes decrypt error, encryptedBytes must not be null");
         }
         if(encryptedBytes.length < ENCRYPTED_MIN_SIZE){
-            throw new IllegalArgumentException("Aes decrypt error, the length of encryptedBytes [" + encryptedBytes.length + "] must not be smaller than " + ENCRYPTED_MIN_SIZE);
+            throw new IllegalArgumentException("Aes decrypt error, the length of encryptedBytes [ " + encryptedBytes.length + " ] must not be smaller than " + ENCRYPTED_MIN_SIZE);
         }
         if(decryptKey == null){
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be null");
@@ -118,7 +118,7 @@ public class Aes {
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be empty");
         }
         if(decryptKey.getEncoded().length != AES_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Aes decrypt error, the length of decryptKey [" + decryptKey.getEncoded().length + "] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
+            throw new IllegalArgumentException("Aes decrypt error, the length of decryptKey [ " + decryptKey.getEncoded().length + " ] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
         }
 
         byte[] iv = Arrays.copyOfRange(encryptedBytes, 0, GCM_IV_LENGTH / Byte.SIZE);

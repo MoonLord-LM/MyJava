@@ -45,6 +45,20 @@ public class ProviderTest {
         }
     }
 
+    public static class showSecretKeyFactorys {
+        @Test
+        public void success_1() {
+            logger.info("showSecretKeyFactorys" + "\r\n" + Provider.showSecretKeyFactorys() + "\r\n");
+        }
+    }
+
+    public static class showPBKDF2s {
+        @Test
+        public void success_1() {
+            logger.info("showPBKDF2s" + "\r\n" + Provider.showPBKDF2s() + "\r\n");
+        }
+    }
+
     public static class showSecureRandoms {
         @Test
         public void success_1() {

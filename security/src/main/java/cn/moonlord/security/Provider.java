@@ -91,6 +91,40 @@ public class Provider {
         return result.toString();
     }
 
+    public static String showSecretKeyFactorys() {
+        StringBuilder result = new StringBuilder();
+        java.security.Provider[] providers = Security.getProviders();
+        for (int i = 0; i < providers.length; i++) {
+            java.security.Provider provider = providers[i];
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+                String key = (String) e.nextElement();
+                if (key.toUpperCase(Locale.ROOT).startsWith("SecretKeyFactory.".toUpperCase(Locale.ROOT))) {
+                    result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
+                    result.append(key.substring("SecretKeyFactory.".length()) + "  -  " + provider.get(key));
+                    result.append("\r\n");
+                }
+            }
+        }
+        return result.toString();
+    }
+
+    public static String showPBKDF2s() {
+        StringBuilder result = new StringBuilder();
+        java.security.Provider[] providers = Security.getProviders();
+        for (int i = 0; i < providers.length; i++) {
+            java.security.Provider provider = providers[i];
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+                String key = (String) e.nextElement();
+                if (key.toUpperCase(Locale.ROOT).startsWith("SecretKeyFactory.PBKDF2".toUpperCase(Locale.ROOT))) {
+                    result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
+                    result.append(key.substring("SecretKeyFactory.PBKDF2".length()) + "  -  " + provider.get(key));
+                    result.append("\r\n");
+                }
+            }
+        }
+        return result.toString();
+    }
+
     public static String showSecureRandoms() {
         StringBuilder result = new StringBuilder();
         java.security.Provider[] providers = Security.getProviders();

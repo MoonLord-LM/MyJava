@@ -1,7 +1,6 @@
 package cn.moonlord.security;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class Hash {
 
@@ -13,13 +12,13 @@ public class Hash {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hash sha256 error, sourceBytes must not be null");
         }
-        MessageDigest messageDigest;
         try {
-            messageDigest =  MessageDigest.getInstance(SHA256);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
+            MessageDigest messageDigest =  MessageDigest.getInstance(SHA256);
+            return messageDigest.digest(sourceBytes);
         }
-        return messageDigest.digest(sourceBytes);
+        catch (Exception e) {
+            throw new IllegalArgumentException("Hash sha256 error, error message: " + e.getMessage(), e);
+        }
     }
 
     public static String sha256Hex(byte[] sourceBytes) {
@@ -30,13 +29,13 @@ public class Hash {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hash sha512 error, sourceBytes must not be null");
         }
-        MessageDigest messageDigest;
         try {
-            messageDigest =  MessageDigest.getInstance(SHA512);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
+            MessageDigest messageDigest =  MessageDigest.getInstance(SHA512);
+            return messageDigest.digest(sourceBytes);
         }
-        return messageDigest.digest(sourceBytes);
+        catch (Exception e) {
+            throw new IllegalArgumentException("Hash sha512 error, error message: " + e.getMessage(), e);
+        }
     }
 
     public static String sha512Hex(byte[] sourceBytes) {
