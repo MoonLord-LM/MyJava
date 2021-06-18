@@ -11,6 +11,8 @@ import java.security.spec.X509EncodedKeySpec;
 
 public class Rsa {
 
+    private static final int SOURCE_MAX_SIZE = 1790;
+
     public static final String RSA_KEY_ALGORITHM = "RSA";
 
     public static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPPadding";
@@ -121,6 +123,9 @@ public class Rsa {
     public static byte[] encrypt(byte[] sourceBytes, PublicKey publicKey) {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Rsa encrypt error, sourceBytes must not be null");
+        }
+        if(sourceBytes.length > SOURCE_MAX_SIZE){
+            throw new IllegalArgumentException("Rsa encrypt error, the length of sourceBytes [" + sourceBytes.length + "] must not be larger than " + SOURCE_MAX_SIZE);
         }
         if(publicKey == null){
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be null");

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Hex {
 
-    private static final int MAX_BYTE_SIZE = Integer.MAX_VALUE / 2;
+    private static final int SOURCE_MAX_SIZE = Integer.MAX_VALUE / 2;
 
     private static final char[] HEX_CHARS = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
@@ -35,8 +35,8 @@ public class Hex {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hex encode error, sourceBytes must not be null");
         }
-        if(sourceBytes.length > MAX_BYTE_SIZE){
-            throw new IllegalArgumentException("Hex encode error, the length of sourceBytes [" + sourceBytes.length + "] must not be larger than " + MAX_BYTE_SIZE);
+        if(sourceBytes.length > SOURCE_MAX_SIZE){
+            throw new IllegalArgumentException("Hex encode error, the length of sourceBytes [" + sourceBytes.length + "] must not be larger than " + SOURCE_MAX_SIZE);
         }
         char[] result = new char[sourceBytes.length * 2];
         int resultIndex = 0;
