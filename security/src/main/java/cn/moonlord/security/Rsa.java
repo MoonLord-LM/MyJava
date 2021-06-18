@@ -119,8 +119,14 @@ public class Rsa {
     }
 
     public static byte[] encrypt(byte[] sourceBytes, PublicKey publicKey) {
+        if(publicKey == null){
+            throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be null");
+        }
+        if(publicKey.getEncoded() == null){
+            throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be empty");
+        }
         if(publicKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("encrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
+            throw new IllegalArgumentException("Rsa encrypt error, publicKey length is not match, the length should be " + RSA_KEY_LENGTH);
         }
 
         try {
@@ -159,8 +165,14 @@ public class Rsa {
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, PrivateKey privateKey) {
+        if(privateKey == null){
+            throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be null");
+        }
+        if(privateKey.getEncoded() == null){
+            throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be empty");
+        }
         if(privateKey.getEncoded().length < RSA_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("decrypt key length is not match, the length should be " + RSA_KEY_LENGTH);
+            throw new IllegalArgumentException("Rsa decrypt error, privateKey length is not match, the length should be " + RSA_KEY_LENGTH);
         }
 
         try {
@@ -171,7 +183,7 @@ public class Rsa {
             return cipher.doFinal(encryptedBytes);
         }
         catch (Exception e) {
-            throw new IllegalArgumentException("Rsa encrypt error, error message: " + e.getMessage(), e);
+            throw new IllegalArgumentException("Rsa decrypt error, error message: " + e.getMessage(), e);
         }
     }
 
