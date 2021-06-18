@@ -90,9 +90,9 @@ public class AesTest {
             byte[] source = new byte[0];
             byte[] key = Aes.generateKeyBytes();
             byte[] result = Aes.encrypt(source, key);
-            logger.info("source" + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
-            logger.info("key" + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
-            logger.info("result" + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
+            logger.info("source：" + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
+            logger.info("key：" + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
+            logger.info("result：" + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
             Assert.assertEquals("success_1", 28, result.length);
         }
 
@@ -101,9 +101,9 @@ public class AesTest {
             byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
             byte[] key = Aes.generateKeyBytes();
             byte[] result = Aes.encrypt(source, key);
-            logger.info("source" + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
-            logger.info("key" + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
-            logger.info("result" + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
+            logger.info("source：" + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
+            logger.info("key：" + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
+            logger.info("result：" + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
             Assert.assertEquals("success_2", 34, result.length);
         }
 
@@ -166,6 +166,9 @@ public class AesTest {
             byte[] encrypt1 = Aes.encrypt(source, key1);
             byte[] encrypt2 = Aes.encrypt(source, key2);
             byte[] encrypt3 = Aes.encrypt(source, key3);
+            logger.info("encrypt1：" + " [ " + encrypt1.length + " ] " + " [ " + Base64.encode(encrypt1) + " ] ");
+            logger.info("encrypt2：" + " [ " + encrypt2.length + " ] " + " [ " + Base64.encode(encrypt2) + " ] ");
+            logger.info("encrypt3：" + " [ " + encrypt3.length + " ] " + " [ " + Base64.encode(encrypt3) + " ] ");
             String result1 = Aes.decryptString(encrypt1, key1);
             String result2 = Aes.decryptString(encrypt2, key2);
             String result3 = Aes.decryptString(encrypt3, key3);
