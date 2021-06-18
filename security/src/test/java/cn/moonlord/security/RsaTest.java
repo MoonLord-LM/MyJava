@@ -160,14 +160,14 @@ public class RsaTest {
         public void success_3() {
             String source = "测试";
             byte[] encrypt1 = Rsa.encrypt(source, publicKey);
-            byte[] encrypt2 = Rsa.encrypt(source, publicKey);
-            byte[] encrypt3 = Rsa.encrypt(source, publicKey);
+            byte[] encrypt2 = Rsa.encrypt(source, Rsa.getPublicKeyBytes(publicKey));
+            byte[] encrypt3 = Rsa.encrypt(source, Rsa.getPublicKeyBase64String(publicKey));
             logger.info("encrypt1：" + " [ " + encrypt1.length + " ] " + " [ " + Base64.encode(encrypt1) + " ] ");
             logger.info("encrypt2：" + " [ " + encrypt2.length + " ] " + " [ " + Base64.encode(encrypt2) + " ] ");
             logger.info("encrypt3：" + " [ " + encrypt3.length + " ] " + " [ " + Base64.encode(encrypt3) + " ] ");
             String result1 = Rsa.decryptString(encrypt1, privateKey);
-            String result2 = Rsa.decryptString(encrypt2, privateKey);
-            String result3 = Rsa.decryptString(encrypt3, privateKey);
+            String result2 = Rsa.decryptString(encrypt2, Rsa.getPrivateKeyBytes(privateKey));
+            String result3 = Rsa.decryptString(encrypt3, Rsa.getPrivateKeyBase64String(privateKey));
             Assert.assertEquals("success_3", source, result1);
             Assert.assertEquals("success_3", source, result2);
             Assert.assertEquals("success_3", source, result3);

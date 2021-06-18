@@ -18,6 +18,8 @@ public class Aes {
 
     public static final int GCM_IV_LENGTH = 96;
 
+    public static final int ENCRYPTED_MIN_SIZE = 28;
+
     public static SecretKeySpec generateKey() {
         return new SecretKeySpec(generateKeyBytes(), AES_KEY_ALGORITHM);
     }
@@ -105,6 +107,9 @@ public class Aes {
     public static byte[] decrypt(byte[] encryptedBytes, SecretKeySpec decryptKey) {
         if(encryptedBytes == null){
             throw new IllegalArgumentException("Aes decrypt error, encryptedBytes must not be null");
+        }
+        if(encryptedBytes.length < ENCRYPTED_MIN_SIZE){
+            throw new IllegalArgumentException("Aes decrypt error, the length of encryptedBytes [" + encryptedBytes.length + "] must not be smaller than " + ENCRYPTED_MIN_SIZE);
         }
         if(decryptKey == null){
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be null");

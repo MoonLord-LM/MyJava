@@ -184,16 +184,21 @@ public class AesTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            Aes.decrypt(new byte[0], (SecretKeySpec) null);
+            Aes.decrypt(new byte[Aes.ENCRYPTED_MIN_SIZE - 1], Aes.generateKey());
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            Aes.decrypt(new byte[0], new SecretKeySpec(Random.generate(0), Aes.AES_KEY_ALGORITHM));
+            Aes.decrypt(new byte[0], (SecretKeySpec) null);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_4() {
+            Aes.decrypt(new byte[0], new SecretKeySpec(Random.generate(0), Aes.AES_KEY_ALGORITHM));
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_5() {
             Aes.decrypt(new byte[0], new SecretKeySpec(Random.generate(128), Aes.AES_KEY_ALGORITHM));
         }
     }
