@@ -1,10 +1,11 @@
 package cn.moonlord.security;
 
+import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
+import org.bouncycastle.openssl.PEMKeyPair;
 import org.bouncycastle.openssl.PEMParser;
 
-import java.io.IOException;
 import java.io.StringReader;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -40,11 +41,25 @@ public class Pem {
     }
 
     public static String encodeRsaPublicKey(PublicKey publicKey) {
-        return BEGIN_RSA_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(publicKey.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_RSA_PUBLIC_KEY;
+        try {
+            SubjectPublicKeyInfo subjectPublicKeyInfo = SubjectPublicKeyInfo.getInstance(publicKey.getEncoded());
+            ASN1Primitive asn1Primitive = subjectPublicKeyInfo.parsePublicKey();
+            return BEGIN_RSA_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_RSA_PUBLIC_KEY;
+        }
+        catch (Exception e) {
+            throw new IllegalArgumentException("Pem encodeRsaPublicKey error, error message: " + e.getMessage(), e);
+        }
     }
 
     public static String encodeRsaPrivateKey(PrivateKey privateKey) {
-        return BEGIN_RSA_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(privateKey.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_RSA_PRIVATE_KEY;
+        try {
+            PrivateKeyInfo privateKeyInfo = PrivateKeyInfo.getInstance(privateKey.getEncoded());
+            ASN1Primitive asn1Primitive = privateKeyInfo.parsePrivateKey().toASN1Primitive();
+            return BEGIN_RSA_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_RSA_PRIVATE_KEY;
+        }
+        catch (Exception e) {
+            throw new IllegalArgumentException("Pem encodeRsaPrivateKey error, error message: " + e.getMessage(), e);
+        }
     }
 
     public static PublicKey decodeRsaPublicKey(String rsaPublicKeyBase64String) {
@@ -61,8 +76,14 @@ public class Pem {
     public static PrivateKey decodeRsaPrivateKey(String rsaPrivateKeyBase64String) {
         try {
             PEMParser pemParser = new PEMParser(new StringReader(rsaPrivateKeyBase64String));
-            PrivateKeyInfo privateKeyObject = (PrivateKeyInfo) pemParser.readObject();
-            return Rsa.getPrivateKey(privateKeyObject.getEncoded());
+            Object object = pemParser.readObject();
+            if(object instanceof PrivateKeyInfo) {
+                return Rsa.getPrivateKey(((PrivateKeyInfo) object).getEncoded());
+            }
+            else if (object instanceof PEMKeyPair) {
+                return Rsa.getPrivateKey(((PEMKeyPair) object).getPrivateKeyInfo().getEncoded());
+            }
+            throw new IllegalArgumentException("Pem decodeRsaPrivateKey error, unknown object type: " + object.getClass().getName());
         }
         catch (Exception e) {
             throw new IllegalArgumentException("Pem decodeRsaPrivateKey error, error message: " + e.getMessage(), e);
