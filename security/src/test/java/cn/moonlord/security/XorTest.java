@@ -14,54 +14,6 @@ public class XorTest {
 
     public static Logger logger = LoggerFactory.getLogger(XorTest.class);
 
-    public static class sum {
-        @Test
-        public void success_1() {
-            byte[] source = new byte[]{(byte) 0xFF};
-            byte result = Xor.sum(source);
-            Assert.assertEquals("success_1", (byte) 0xFF, result);
-        }
-
-        @Test
-        public void success_2() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF};
-            byte result = Xor.sum(source);
-            Assert.assertEquals("success_2", (byte) 0xFF, result);
-        }
-
-        @Test
-        public void success_3() {
-            byte[] source = new byte[]{(byte) 0xFF, (byte) 0xFF};
-            byte result = Xor.sum(source);
-            Assert.assertEquals("success_3", (byte) 0x00, result);
-        }
-
-        @Test
-        public void success_4() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xAA};
-            byte result = Xor.sum(source);
-            Assert.assertEquals("success_4", (byte) 0xAA, result);
-        }
-
-        @Test
-        public void success_5() {
-            byte[] source = new byte[]{(byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF};
-            byte result = Xor.sum(source);
-            Assert.assertEquals("success_5", (byte) 0x00, result);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_1() {
-            Xor.sum(null);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_2() {
-            byte[] source = new byte[0];
-            Xor.sum(source);
-        }
-    }
-
     public static class merge {
         @Test
         public void success_1() {
@@ -116,6 +68,93 @@ public class XorTest {
             byte[] source1 = new byte[2];
             byte[] source2 = new byte[3];
             Xor.merge(source1, source2);
+        }
+    }
+
+    public static class fold {
+        @Test
+        public void success_1() {
+            byte[] source = new byte[]{(byte) 0xFF, (byte) 0xFF};
+            byte[] result = Xor.fold(source);
+            Assert.assertArrayEquals("success_1", new byte[]{(byte) 0x00}, result);
+        }
+
+        @Test
+        public void success_2() {
+            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF};
+            byte[] result = Xor.fold(source);
+            Assert.assertArrayEquals("success_2", new byte[]{(byte) 0xFF}, result);
+        }
+
+        @Test
+        public void success_3() {
+            byte[] source = new byte[]{
+                    (byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00,
+                    (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0xFF
+            };
+            byte[] result = Xor.fold(source);
+            Assert.assertArrayEquals("success_5", new byte[]{
+                    (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xFF
+            }, result);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_1() {
+            Xor.fold(null);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_2() {
+            byte[] source = new byte[1];
+            Xor.fold(source);
+        }
+    }
+
+    public static class sum {
+        @Test
+        public void success_1() {
+            byte[] source = new byte[]{(byte) 0xFF};
+            byte result = Xor.sum(source);
+            Assert.assertEquals("success_1", (byte) 0xFF, result);
+        }
+
+        @Test
+        public void success_2() {
+            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF};
+            byte result = Xor.sum(source);
+            Assert.assertEquals("success_2", (byte) 0xFF, result);
+        }
+
+        @Test
+        public void success_3() {
+            byte[] source = new byte[]{(byte) 0xFF, (byte) 0xFF};
+            byte result = Xor.sum(source);
+            Assert.assertEquals("success_3", (byte) 0x00, result);
+        }
+
+        @Test
+        public void success_4() {
+            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xAA};
+            byte result = Xor.sum(source);
+            Assert.assertEquals("success_4", (byte) 0xAA, result);
+        }
+
+        @Test
+        public void success_5() {
+            byte[] source = new byte[]{(byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF};
+            byte result = Xor.sum(source);
+            Assert.assertEquals("success_5", (byte) 0x00, result);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_1() {
+            Xor.sum(null);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_2() {
+            byte[] source = new byte[0];
+            Xor.sum(source);
         }
     }
 
