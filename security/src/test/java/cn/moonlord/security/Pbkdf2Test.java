@@ -108,12 +108,12 @@ public class Pbkdf2Test {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_7() {
-            Pbkdf2.generate((String) null, new byte[64], 10000 * 10, 512);
+            Pbkdf2.generate((String) null, new byte[64], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_SIZE);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_8() {
-            Pbkdf2.generate((byte[]) null, new byte[64], 10000 * 10, 512);
+            Pbkdf2.generate((byte[]) null, new byte[64], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_SIZE);
         }
     }
 
