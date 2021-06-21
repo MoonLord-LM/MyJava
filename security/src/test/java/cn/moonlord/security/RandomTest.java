@@ -41,11 +41,11 @@ public class RandomTest {
             new PerformanceCompare(256) {
                 @Override
                 public void testMethod() {
-                    instance.nextBytes(new byte[1024]);
+                    instance.nextBytes(new byte[4096]);
                 }
                 @Override
                 public void compareMethod() {
-                    defaultInstance.nextBytes(new byte[1024]);
+                    defaultInstance.nextBytes(new byte[4096]);
                 }
                 @Override
                 public void onCompleted() {
@@ -64,11 +64,11 @@ public class RandomTest {
             new PerformanceCompare(256) {
                 @Override
                 public void testMethod() {
-                    instance.nextBytes(new byte[1024]);
+                    instance.nextBytes(new byte[4096]);
                 }
                 @Override
                 public void compareMethod() {
-                    strongInstance.nextBytes(new byte[1024]);
+                    strongInstance.nextBytes(new byte[4096]);
                 }
                 @Override
                 public void onCompleted() {

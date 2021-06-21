@@ -46,7 +46,7 @@ public class RsaTest {
 
     public static class generateKeyPair {
         @Test
-        public void success_1() {
+        public void performance_1() {
             new Performance() {
                 @Override
                 public void onStarted() {
