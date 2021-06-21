@@ -38,21 +38,25 @@ public class RandomTest {
         public void performance_1() {
             SecureRandom instance = Random.getInstance();
             SecureRandom defaultInstance = new SecureRandom();
+            byte[] tmp = new byte[4096];
+            byte[] result = new byte[4096];
             new PerformanceCompare(256) {
                 @Override
                 public void testMethod() {
-                    instance.nextBytes(new byte[4096]);
+                    instance.nextBytes(tmp);
+                    Xor.merge(result, tmp);
                 }
                 @Override
                 public void compareMethod() {
-                    defaultInstance.nextBytes(new byte[4096]);
+                    defaultInstance.nextBytes(tmp);
+                    Xor.merge(result, tmp);
                 }
                 @Override
                 public void onCompleted() {
                     logger.info("[instance] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[defaultInstance] compare time: {} ms", getCompareMethodRunTime());
                     logger.info("[instance] is {} faster than [defaultInstance]", getImprovement());
-                    Assert.assertTrue("performance_1", getImprovementPercentage() > -10);
+                    Assert.assertTrue("performance_1", getImprovementPercentage() > -20);
                 }
             }.run();
         }
@@ -61,14 +65,18 @@ public class RandomTest {
         public void performance_2() throws Exception {
             SecureRandom instance = Random.getInstance();
             SecureRandom strongInstance = SecureRandom.getInstanceStrong();
+            byte[] tmp = new byte[4096];
+            byte[] result = new byte[4096];
             new PerformanceCompare(256) {
                 @Override
                 public void testMethod() {
-                    instance.nextBytes(new byte[4096]);
+                    instance.nextBytes(tmp);
+                    Xor.merge(result, tmp);
                 }
                 @Override
                 public void compareMethod() {
-                    strongInstance.nextBytes(new byte[4096]);
+                    strongInstance.nextBytes(tmp);
+                    Xor.merge(result, tmp);
                 }
                 @Override
                 public void onCompleted() {
