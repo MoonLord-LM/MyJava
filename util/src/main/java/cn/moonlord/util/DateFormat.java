@@ -1,58 +1,49 @@
 package cn.moonlord.util;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class DateFormat {
 
-    public static final String ISO_8601_DATE_FORMAT = "yyyy-MM-dd";
+    private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
-    public static final String ISO_8601_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+    private static final String SIMPLE_DATE_FORMAT = "yyyy-MM-dd";
 
-    public static final String ISO_8601_DATE_TIME_FORMAT_WITH_MS = "yyyy-MM-dd'T'HH:mm:ss.SSS";
+    private static final String UTC_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
-    public static final String ISO_8601_DATE_TIME_FORMAT_WITH_TIMEZONE_X = ISO_8601_DATE_TIME_FORMAT + "X";
-
-    public static final String ISO_8601_DATE_TIME_FORMAT_WITH_TIMEZONE_ZZZ = ISO_8601_DATE_TIME_FORMAT + "ZZZ";
-
-    public static final String ISO_8601_DATE_TIME_FORMAT_WITH_TIMEZONE_XXX = ISO_8601_DATE_TIME_FORMAT + "XXX";
-
-    public static final String ISO_8601_DATE_TIME_FORMAT_WITH_MS_AND_TIMEZONE_X = ISO_8601_DATE_TIME_FORMAT_WITH_MS + "X";
-
-    public static final String ISO_8601_DATE_TIME_FORMAT_WITH_MS_AND_TIMEZONE_ZZZ = ISO_8601_DATE_TIME_FORMAT_WITH_MS + "ZZZ";
-
-    public static final String ISO_8601_DATE_TIME_FORMAT_WITH_MS_AND_TIMEZONE_XXX = ISO_8601_DATE_TIME_FORMAT_WITH_MS + "XXX";
-
-    public static final String JAVA_SQL_TIMESTAMP = "yyyy-MM-dd HH:mm:ss.fffffffff";
-
-    public static final String SPRING_LOG_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
-
-    public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
-
-    private final static SimpleDateFormat formateISO = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-    private final static SimpleDateFormat formateHMS = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    private final static SimpleDateFormat formateHMS1 = new SimpleDateFormat("yyyyMMddHHmmss");
-    private final static SimpleDateFormat formateHM = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-    private final static SimpleDateFormat formateH = new SimpleDateFormat("yyyy-MM-dd HH");
-    private final static SimpleDateFormat formateDate = new SimpleDateFormat("yyyy-MM-dd");
-
-    public static final String DEFAULT_DATE_FORMAT1 = "dd-MM-yyyy";
-
-    public static final String SIMPLE_FORMAT = "yyyyMMddHHmmss";
+    private static final String JAVA_DATE_FORMAT = "EEE MMM dd HH:mm:ss zzz yyyy";
 
     public static final List<String> SUPPORTED_DATE_FORMATS = Arrays.asList(
-            ISO_8601_DATE_TIME_FORMAT_WITH_MS_AND_TIMEZONE_XXX,
-            ISO_8601_DATE_TIME_FORMAT_WITH_MS_AND_TIMEZONE_ZZZ,
-            ISO_8601_DATE_TIME_FORMAT_WITH_MS_AND_TIMEZONE_X,
-            ISO_8601_DATE_TIME_FORMAT_WITH_TIMEZONE_XXX,
-            ISO_8601_DATE_TIME_FORMAT_WITH_TIMEZONE_ZZZ,
-            ISO_8601_DATE_TIME_FORMAT_WITH_TIMEZONE_X,
-            ISO_8601_DATE_TIME_FORMAT_WITH_MS,
-            ISO_8601_DATE_TIME_FORMAT,
-            ISO_8601_DATE_FORMAT
+            "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", // UTC_DATE_FORMAT
+
+            "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+            "yyyy-MM-dd'T'HH:mm:ss.SSSXX",
+            "yyyy-MM-dd'T'HH:mm:ss.SSSX",
+            "yyyy-MM-dd'T'HH:mm:ss.SSS",
+
+            "yyyy-MM-dd'T'HH:mm:ssXXX",
+            "yyyy-MM-dd'T'HH:mm:ssXX",
+            "yyyy-MM-dd'T'HH:mm:ssX",
+            "yyyy-MM-dd'T'HH:mm:ss",
+
+            "yyyy-MM-dd HH:mm:ss.SSSXXX",
+            "yyyy-MM-dd HH:mm:ss.SSSXX",
+            "yyyy-MM-dd HH:mm:ss.SSSX",
+            "yyyy-MM-dd HH:mm:ss.SSS",
+
+            "yyyy-MM-dd HH:mm:ssXXX",
+            "yyyy-MM-dd HH:mm:ssXX",
+            "yyyy-MM-dd HH:mm:ssX",
+            "yyyy-MM-dd HH:mm:ss", // DEFAULT_DATE_FORMAT
+
+            "yyyy-MM-dd HH:mm",
+            "yyyy-MM-dd HH",
+            "yyyy-MM-dd", // SIMPLE_DATE_FORMAT
+
+            "yyyyMMddHHmmss",
+            "yyyyMMdd",
+
+            "EEE MMM dd HH:mm:ss zzz yyyy" // JAVA_DATE_FORMAT
     );
 
     public static Date parse(String sourceString) {
@@ -65,15 +56,35 @@ public class DateFormat {
         for (String supportedDateFormat : SUPPORTED_DATE_FORMATS) {
             try {
                 SimpleDateFormat dateFormat = new SimpleDateFormat(supportedDateFormat, Locale.ROOT);
+                if(supportedDateFormat.equals(UTC_DATE_FORMAT)) {
+                    dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                }
                 return dateFormat.parse(sourceString);
-            } catch (Exception ignored) { ignored.printStackTrace(); }
+            } catch (Exception ignored) { }
         }
         throw new IllegalArgumentException("DateFormat parse error, the sourceString [ " + sourceString + " ] is not in supported date formats");
     }
 
-    public static String format(Date sourceDate) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(ISO_8601_DATE_TIME_FORMAT_WITH_MS_AND_TIMEZONE_XXX, Locale.ROOT);
+    public static String format(Date sourceDate, String dateFormatPattern) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(dateFormatPattern, Locale.ROOT);
+        dateFormat.setTimeZone(TimeZone.getDefault());
         return dateFormat.format(sourceDate);
+    }
+
+    public static String format(Date sourceDate) {
+        return format(sourceDate, DEFAULT_DATE_FORMAT);
+    }
+
+    public static String formatSimple(Date sourceDate) {
+        return format(sourceDate, SIMPLE_DATE_FORMAT);
+    }
+
+    public static String formatUTC(Date sourceDate) {
+        return format(sourceDate, UTC_DATE_FORMAT);
+    }
+
+    public static String formatJava(Date sourceDate) {
+        return format(sourceDate, JAVA_DATE_FORMAT);
     }
 
 }
