@@ -36,11 +36,24 @@ public class DateFormat {
             "yyyy-MM-dd HH:mm:ssX",
             "yyyy-MM-dd HH:mm:ss", // DEFAULT_DATE_FORMAT
 
+            "yyyy-MM-dd HH:mmXXX",
+            "yyyy-MM-dd HH:mmXX",
+            "yyyy-MM-dd HH:mmX",
             "yyyy-MM-dd HH:mm",
-            "yyyy-MM-dd HH",
-            "yyyy-MM-dd", // SIMPLE_DATE_FORMAT
 
+            "yyyy-MM-dd HHXXX",
+            "yyyy-MM-dd HHXX",
+            "yyyy-MM-dd HHX",
+            "yyyy-MM-dd HH",
+
+            "yyyy-MM-dd", // SIMPLE_DATE_FORMAT
+            "yyyy/MM/dd",
+            "yyyy.MM.dd",
+
+            "yyyyMMddHHmmssSSS",
             "yyyyMMddHHmmss",
+            "yyyyMMddHHmm",
+            "yyyyMMddHH",
             "yyyyMMdd",
 
             "EEE MMM dd HH:mm:ss zzz yyyy" // JAVA_DATE_FORMAT
