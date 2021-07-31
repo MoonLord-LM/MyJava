@@ -95,4 +95,15 @@ public class Random {
         return result;
     }
 
+    public static <T> T select(T[] array) {
+        if(array == null){
+            throw new IllegalArgumentException("Random select error, array must not be null");
+        }
+        if(array.length <= 0){
+            throw new IllegalArgumentException("Random select error, the length of array [ " + array.length + " ] must be larger than 0");
+        }
+        int index = Random.getInstance().nextInt(array.length);
+        return array[index];
+    }
+
 }

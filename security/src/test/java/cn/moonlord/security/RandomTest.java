@@ -147,4 +147,39 @@ public class RandomTest {
         }
     }
 
+    public static class select {
+        @Test
+        public void success_1() {
+            String result1 = Random.select(new String[] { "测试" });
+            Assert.assertEquals("success_1", "测试", result1);
+            int result2 = Random.select(new Integer[] { -1 });
+            Assert.assertEquals("success_1", -1, result2);
+            long result3 = Random.select(new Long[] { 1024L });
+            Assert.assertEquals("success_1", 1024L, result3);
+        }
+
+        @Test
+        public void success_2() {
+            String[] source = new String[]{"测试1", "测试2"};
+            String result1 = Random.select(source);
+            for (int i = 0; i < 4096; i++) {
+                String result2 = Random.select(source);
+                if(!result1.equals(result2)){
+                    return;
+                }
+            }
+            throw new IllegalArgumentException("Random select error, the implementation is not random enough");
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_1() {
+            Random.select(null);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_2() {
+            Random.select(new Integer[0]);
+        }
+    }
+
 }
