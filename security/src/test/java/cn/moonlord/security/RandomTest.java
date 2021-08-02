@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.security.SecureRandom;
+import java.util.*;
 
 @SpringBootTest
 @RunWith(Enclosed.class)
@@ -171,14 +172,70 @@ public class RandomTest {
             throw new IllegalArgumentException("Random select error, the implementation is not random enough");
         }
 
+        @Test
+        public void success_3() {
+            LinkedList<Long> source = new LinkedList<>();
+            source.add(-1L);
+            source.add(0L);
+            source.add(1L);
+            Long result1 = Random.select(source);
+            for (int i = 0; i < 4096; i++) {
+                Long result2 = Random.select(source);
+                if(!result1.equals(result2)){
+                    return;
+                }
+            }
+            throw new IllegalArgumentException("Random select error, the implementation is not random enough");
+        }
+
+        @Test
+        public void success_4() {
+            HashMap<String, String> source = new HashMap<>();
+            source.put("测试1", "测试1");
+            source.put("测试2", "测试2");
+            Map.Entry<String, String> result1 = Random.select(source);
+            for (int i = 0; i < 4096; i++) {
+                Map.Entry<String, String> result2 = Random.select(source);
+                if(!result1.equals(result2)){
+                    return;
+                }
+            }
+            throw new IllegalArgumentException("Random select error, the implementation is not random enough");
+        }
+
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Random.select(null);
+            Random.select((Integer[])null);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
+            Random.select((ArrayList<Long>)null);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_3() {
+            Random.select((HashSet<String>)null);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_4() {
+            Random.select((Hashtable<Object, Object>)null);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_5() {
             Random.select(new Integer[0]);
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_6() {
+            Random.select(new TreeSet<String>());
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_7() {
+            Random.select(new LinkedHashMap<>());
         }
     }
 
