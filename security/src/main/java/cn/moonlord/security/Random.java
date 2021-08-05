@@ -2,8 +2,7 @@ package cn.moonlord.security;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Random {
 
@@ -93,6 +92,42 @@ public class Random {
             getInstance().nextBytes(result);
         }
         return result;
+    }
+
+    public static <T> T select(T[] array) {
+        if(array == null){
+            throw new IllegalArgumentException("Random select error, array must not be null");
+        }
+        if(array.length == 0){
+            throw new IllegalArgumentException("Random select error, array must not be empty");
+        }
+        int index = Random.getInstance().nextInt(array.length);
+        return array[index];
+    }
+
+    public static <T> T select(Collection<T> collection) {
+        if(collection == null){
+            throw new IllegalArgumentException("Random select error, collection must not be null");
+        }
+        if(collection.size() == 0){
+            throw new IllegalArgumentException("Random select error, collection must not be empty");
+        }
+        int index = Random.getInstance().nextInt(collection.size());
+        if(collection instanceof List){
+            return ((List<T>) collection).get(index);
+        }
+        List<T> list = new ArrayList<>(collection);
+        return list.get(index);
+    }
+
+    public static <K,V> Map.Entry<K,V> select(Map<K,V> map) {
+        if(map == null){
+            throw new IllegalArgumentException("Random select error, map must not be null");
+        }
+        if(map.size() == 0){
+            throw new IllegalArgumentException("Random select error, map must not be empty");
+        }
+        return select(map.entrySet());
     }
 
 }
