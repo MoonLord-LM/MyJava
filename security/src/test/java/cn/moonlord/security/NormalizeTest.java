@@ -1,7 +1,5 @@
 package cn.moonlord.security;
 
-import ch.qos.logback.core.util.FileUtil;
-import org.assertj.core.internal.Files;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -57,8 +55,8 @@ public class NormalizeTest {
     public static class getFilePath {
         @Test
         public void success_1() {
-            String source = "test/test/../../test/test/../../index.html";
-            String expected = new File("index.html").getAbsolutePath();
+            String source = "test/test/../../test/test/../../测试.txt";
+            String expected = new File("测试.txt").getAbsolutePath();
             String result = Normalize.getFilePath(source);
             Assert.assertEquals("success_1", expected, result);
         }
