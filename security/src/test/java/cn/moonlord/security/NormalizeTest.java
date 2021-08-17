@@ -35,8 +35,8 @@ public class NormalizeTest {
     public static class getUriString {
         @Test
         public void success_1() {
-            String source = "http://www.baidu.com/test/../test/test/../../index.html";
-            String expected = "http://www.baidu.com/index.html";
+            String source = "/test/../test/test/../../index.html";
+            String expected = "/index.html";
             String result = Normalize.getUriString(source);
             Assert.assertEquals("success_1", expected, result);
         }
