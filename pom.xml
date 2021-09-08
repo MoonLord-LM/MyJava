@@ -13,9 +13,14 @@
     <artifactId>all-modules</artifactId>
     <packaging>pom</packaging>
 
+    <!--
+        依赖关系：
+        parent  ->  dependencies  ->  test  ->  security  ->  common
+    -->
     <modules>
         <module>parent</module> <!-- 版本定义 -->
-        <module>dependencies</module> <!-- 依赖分析 -->
+        <module>dependencies</module> <!-- 公共依赖 -->
+        <module>dependencies-analysis</module> <!-- 依赖分析 -->
         <module>test</module> <!-- 测试工具类 -->
         <module>security</module> <!-- 安全工具类 -->
         <module>common</module> <!-- 通用工具类 -->
