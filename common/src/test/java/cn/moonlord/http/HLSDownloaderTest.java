@@ -13,6 +13,7 @@ public class HLSDownloaderTest {
 
     public static Logger logger = LoggerFactory.getLogger(HLSDownloaderTest.class);
 
+    /*
     public static class run {
         @Test
         public void success_1() {
@@ -50,5 +51,6 @@ public class HLSDownloaderTest {
             )).run();
         }
     }
+    */
 
 }

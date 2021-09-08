@@ -6,18 +6,23 @@
 
     <parent>
         <groupId>cn.moonlord</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>all-modules</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
-    <artifactId>http</artifactId>
+    <artifactId>common</artifactId>
 
     <dependencies>
 
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.moonlord</groupId>
+            <artifactId>security</artifactId>
         </dependency>
 
         <dependency>

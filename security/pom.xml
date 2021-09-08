@@ -6,9 +6,8 @@
 
     <parent>
         <groupId>cn.moonlord</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>all-modules</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
     </parent>
 
     <artifactId>security</artifactId>
@@ -39,7 +38,6 @@
         <dependency>
             <groupId>cn.moonlord</groupId>
             <artifactId>test</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
 

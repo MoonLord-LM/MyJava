@@ -8,6 +8,8 @@ import java.util.Locale;
 
 public class Provider {
 
+    public static final String LINE_SEPARATOR = "\r\n";
+
     static {
         init();
     }
@@ -37,7 +39,7 @@ public class Provider {
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
             result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] " + provider.getInfo());
-            result.append("\r\n");
+            result.append(LINE_SEPARATOR);
         }
         return result.toString();
     }
@@ -51,7 +53,7 @@ public class Provider {
                 String key = (String) e.nextElement();
                 result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                 result.append(key + "  -  " + provider.get(key));
-                result.append("\r\n");
+                result.append(LINE_SEPARATOR);
             }
         }
         return result.toString();
@@ -67,7 +69,7 @@ public class Provider {
                 if (key.toUpperCase(Locale.ROOT).startsWith("MessageDigest.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                     result.append(key.substring("MessageDigest.".length()) + "  -  " + provider.get(key));
-                    result.append("\r\n");
+                    result.append(LINE_SEPARATOR);
                 }
             }
         }
@@ -84,7 +86,7 @@ public class Provider {
                 if (key.toUpperCase(Locale.ROOT).startsWith("Signature.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                     result.append(key.substring("Signature.".length()) + "  -  " + provider.get(key));
-                    result.append("\r\n");
+                    result.append(LINE_SEPARATOR);
                 }
             }
         }
@@ -101,7 +103,7 @@ public class Provider {
                 if (key.toUpperCase(Locale.ROOT).startsWith("SecretKeyFactory.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                     result.append(key.substring("SecretKeyFactory.".length()) + "  -  " + provider.get(key));
-                    result.append("\r\n");
+                    result.append(LINE_SEPARATOR);
                 }
             }
         }
@@ -118,7 +120,7 @@ public class Provider {
                 if (key.toUpperCase(Locale.ROOT).startsWith("SecretKeyFactory.PBKDF2".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                     result.append(key.substring("SecretKeyFactory.PBKDF2".length()) + "  -  " + provider.get(key));
-                    result.append("\r\n");
+                    result.append(LINE_SEPARATOR);
                 }
             }
         }
@@ -135,7 +137,7 @@ public class Provider {
                 if (key.toUpperCase(Locale.ROOT).contains("SecureRandom.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                     result.append(key.substring("SecureRandom.".length()) + "  -  " + provider.get(key));
-                    result.append("\r\n");
+                    result.append(LINE_SEPARATOR);
                 }
             }
         }
@@ -152,7 +154,7 @@ public class Provider {
                 if (key.toUpperCase(Locale.ROOT).startsWith("Cipher.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                     result.append(key.substring("Cipher.".length()) + "  -  " + provider.get(key));
-                    result.append("\r\n");
+                    result.append(LINE_SEPARATOR);
                 }
             }
         }
@@ -171,7 +173,7 @@ public class Provider {
                         if (!key.toUpperCase(Locale.ROOT).contains("With".toUpperCase(Locale.ROOT))) {
                             result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                             result.append(key.substring("Cipher.".length()) + "  -  " + provider.get(key));
-                            result.append("\r\n");
+                            result.append(LINE_SEPARATOR);
                         }
                     }
                 }
@@ -191,7 +193,7 @@ public class Provider {
                     if (key.toUpperCase(Locale.ROOT).contains("ChaCha".toUpperCase(Locale.ROOT))) {
                         result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                         result.append(key.substring("Cipher.".length()) + "  -  " + provider.get(key));
-                        result.append("\r\n");
+                        result.append(LINE_SEPARATOR);
                     }
                 }
             }
