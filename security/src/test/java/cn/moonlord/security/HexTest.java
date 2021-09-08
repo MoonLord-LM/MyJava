@@ -1,7 +1,6 @@
 package cn.moonlord.security;
 
 import cn.moonlord.test.PerformanceCompare;
-import org.apache.commons.codec.DecoderException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -143,7 +142,7 @@ public class HexTest {
                     Hex.decode(source);
                 }
                 @Override
-                public void compareMethod() throws DecoderException {
+                public void compareMethod() throws Exception {
                     org.apache.commons.codec.binary.Hex.decodeHex(source);
                 }
                 @Override
