@@ -81,7 +81,7 @@ public class ExceptionInfo {
     }
 
     public static String getFullStackTrace(Throwable exception) {
-        try ( StringWriter buffer = new StringWriter(); PrintWriter writer = new PrintWriter(buffer); ) {
+        try (StringWriter buffer = new StringWriter(); ) {
             buffer.append(exception.getClass().getName());
             StackTraceElement[] traces = exception.getStackTrace();
             for (StackTraceElement trace : traces) {
