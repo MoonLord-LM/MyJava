@@ -165,7 +165,7 @@ public class RandomTest {
             String result1 = Random.select(source);
             for (int i = 0; i < 4096; i++) {
                 String result2 = Random.select(source);
-                if(!result1.equals(result2)){
+                if (!result1.equals(result2)) {
                     return;
                 }
             }
@@ -181,7 +181,7 @@ public class RandomTest {
             Long result1 = Random.select(source);
             for (int i = 0; i < 4096; i++) {
                 Long result2 = Random.select(source);
-                if(!result1.equals(result2)){
+                if (!result1.equals(result2)) {
                     return;
                 }
             }
@@ -196,7 +196,7 @@ public class RandomTest {
             Map.Entry<String, String> result1 = Random.select(source);
             for (int i = 0; i < 4096; i++) {
                 Map.Entry<String, String> result2 = Random.select(source);
-                if(!result1.equals(result2)){
+                if (!result1.equals(result2)) {
                     return;
                 }
             }
@@ -205,22 +205,22 @@ public class RandomTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Random.select((Integer[])null);
+            Random.select((Integer[]) null);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            Random.select((ArrayList<Long>)null);
+            Random.select((ArrayList<Long>) null);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            Random.select((HashSet<String>)null);
+            Random.select((HashSet<String>) null);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_4() {
-            Random.select((Hashtable<Object, Object>)null);
+            Random.select((Hashtable<Object, Object>) null);
         }
 
         @Test(expected = IllegalArgumentException.class)

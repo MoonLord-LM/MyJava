@@ -39,9 +39,9 @@ public class SourceFileEncodingConverter implements Runnable {
             System.out.println("sourceDir: " + sourceDir.getCanonicalPath());
             Collection<File> allFileList = FileUtils.listFiles(sourceDir,  null, true);
             System.out.println("allFileListSize: " + allFileList.size());
-            Collection<File> fileList = FileUtils.listFiles(sourceDir, new String[] {"java", "xml", "properties"}, true);
-            System.out.println("fileListSize: " + fileList.size());
-            for (File file: fileList) {
+            Collection<File> sourceFileList = FileUtils.listFiles(sourceDir, new String[] {"java", "xml", "properties"}, true);
+            System.out.println("sourceFileListSize: " + sourceFileList.size());
+            for (File file: sourceFileList) {
                 String filePath = file.getCanonicalPath();
                 if(filePath.contains("\\.git\\") || filePath.contains("\\.idea\\") || filePath.contains("\\target\\")) {
                     continue;

@@ -1,4 +1,4 @@
-package cn.moonlord.util;
+package cn.moonlord.time;
 
 import org.junit.Assert;
 import org.junit.Test;
