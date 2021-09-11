@@ -100,13 +100,15 @@ public class DateFormatTest {
                     "1978-01-01T12:59:00.000Z",
                     "1978-01-01T12:00:00.000Z",
                     "1978-01-01T00:00:00.000Z",
-                    "1979-01-01T12:59:59.000Z"
+                    "1979-01-01T20:59:59.000Z"
             );
             Assert.assertEquals("success_1",sources.size(), dates.size());
             for (int i = 0; i < sources.size(); i++) {
                 Date date = DateFormat.parse(sources.get(i));
                 String utcDate = DateFormat.formatUTC(date);
-                logger.info("date UTC: {}", utcDate);
+                if(!utcDate.equals(dates.get(i))){
+                    logger.info("source: {}, UTC: {}, expect: {}", sources.get(i), utcDate, dates.get(i));
+                }
                 Assert.assertEquals("success_1",utcDate, dates.get(i));
             }
         }
@@ -125,14 +127,8 @@ public class DateFormatTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            String source = "1970-01-01T12:59:59.99Z";
-            DateFormat.parse(source);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_4() {
-            String source = "1970-01-01T12:59:59.9999Z";
-            DateFormat.parse(source);
+            String source = "1970年1月1日";
+            Date date = DateFormat.parse(source);
         }
     }
 

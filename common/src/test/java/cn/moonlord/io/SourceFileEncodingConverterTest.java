@@ -13,13 +13,15 @@ public class SourceFileEncodingConverterTest {
 
     public static Logger logger = LoggerFactory.getLogger(SourceFileEncodingConverterTest.class);
 
+    /*
     public static class run {
         @Test
         public void success_1() {
             (new SourceFileEncodingConverter(
-                    "D:\\Git Repo\\ISDP 云龙"
+                    "D:\\Git Repo"
             )).run();
         }
     }
+    */
 
 }
