@@ -34,11 +34,11 @@ public class ExceptionInfo {
             "org.apache.ibatis.exceptions."
     );
 
-    public static String getSafeMessage(Throwable throwable) {
-        if (throwable == null) {
+    public static String getSafeMessage(Throwable exception) {
+        if (exception == null) {
             return "";
         }
-        String className = throwable.getClass().getName();
+        String className = exception.getClass().getName();
         if (SENSITIVE_EXCEPTION_LIST.contains(className)) {
             return SENSITIVE_EXCEPTION_MESSAGE;
         }
@@ -47,20 +47,20 @@ public class ExceptionInfo {
                 return SENSITIVE_EXCEPTION_MESSAGE;
             }
         }
-        String message = throwable.getMessage();
+        String message = exception.getMessage();
         if(message == null) {
             message = "";
         }
         return message;
     }
 
-    public static String getFullSafeMessage(Throwable throwable) {
-        if (throwable == null) {
+    public static String getFullSafeMessage(Throwable exception) {
+        if (exception == null) {
             return "";
         }
         StringBuilder buffer = new StringBuilder();
-        buffer.append(getSafeMessage(throwable));
-        Throwable cause = throwable.getCause();
+        buffer.append(getSafeMessage(exception));
+        Throwable cause = exception.getCause();
         while (cause != null && buffer.length() < MAX_MESSAGE_SIZE) {
             buffer.append(" / ");
             buffer.append(getSafeMessage(cause));
@@ -69,9 +69,31 @@ public class ExceptionInfo {
         return buffer.toString();
     }
 
-    public static String getStackTrace(Throwable throwable) {
+    public static String getStackTrace(Throwable exception) {
         try ( StringWriter buffer = new StringWriter(); PrintWriter writer = new PrintWriter(buffer); ) {
-            throwable.printStackTrace(writer);
+            exception.printStackTrace(writer);
+            return buffer.toString();
+        } catch (IOException e) {
+            return "";
+        }
+    }
+
+    public static String getFullStackTrace(Throwable exception) {
+        try ( StringWriter buffer = new StringWriter(); PrintWriter writer = new PrintWriter(buffer); ) {
+            buffer.append(exception.getClass().getName());
+            StackTraceElement[] traces = exception.getStackTrace();
+            for (StackTraceElement trace : traces) {
+                buffer.append(System.lineSeparator());
+                buffer.append("\tat ");
+                buffer.append(trace.toString());
+            }
+            Throwable cause = exception.getCause();
+            while (cause != null && buffer.toString().length() < MAX_MESSAGE_SIZE) {
+                buffer.append(System.lineSeparator());
+                buffer.append("Caused by: ");
+                buffer.append(getFullStackTrace(cause));
+                cause = cause.getCause();
+            }
             return buffer.toString();
         } catch (IOException e) {
             return "";

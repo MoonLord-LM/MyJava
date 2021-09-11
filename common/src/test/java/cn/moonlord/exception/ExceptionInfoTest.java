@@ -71,7 +71,7 @@ public class ExceptionInfoTest {
         public void success_1() {
             Exception throwable = new IllegalArgumentException();
             String trace = ExceptionInfo.getStackTrace(throwable);
-            logger.info("success_1 trace: {}", trace);
+            logger.info("getStackTrace success_1 trace: {}", trace);
         }
 
         @Test
@@ -80,7 +80,25 @@ public class ExceptionInfoTest {
             Exception throwable2 = new IllegalArgumentException("测试异常2", throwable1);
             Exception throwable3 = new IllegalArgumentException("测试异常3", throwable2);
             String trace = ExceptionInfo.getStackTrace(throwable3);
-            logger.info("success_2 trace: {}", trace);
+            logger.info("getStackTrace success_2 trace: {}", trace);
+        }
+    }
+
+    public static class getFullStackTrace {
+        @Test
+        public void success_1() {
+            Exception throwable = new IllegalArgumentException();
+            String trace = ExceptionInfo.getFullStackTrace(throwable);
+            logger.info("getFullStackTrace success_1 trace: {}", trace);
+        }
+
+        @Test
+        public void success_2() {
+            Exception throwable1 = new IllegalArgumentException("测试异常1");
+            Exception throwable2 = new IllegalArgumentException("测试异常2", throwable1);
+            Exception throwable3 = new IllegalArgumentException("测试异常3", throwable2);
+            String trace = ExceptionInfo.getFullStackTrace(throwable3);
+            logger.info("getFullStackTrace success_2 trace: {}", trace);
         }
     }
 
