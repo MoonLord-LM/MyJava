@@ -80,7 +80,9 @@ public class DateFormat {
 
     public static String format(Date sourceDate, String dateFormatPattern) {
         SimpleDateFormat dateFormat = new SimpleDateFormat(dateFormatPattern, Locale.ROOT);
-        dateFormat.setTimeZone(TimeZone.getDefault());
+        if(dateFormatPattern.equals(UTC_DATE_FORMAT)) {
+            dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        }
         return dateFormat.format(sourceDate);
     }
 
