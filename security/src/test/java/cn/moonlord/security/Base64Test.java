@@ -108,7 +108,7 @@ public class Base64Test {
         public void success_1() {
             byte[] source = String.join("", Collections.nCopies(100, "测试")).getBytes(StandardCharsets.UTF_8);
             String result = Base64.encodeMime(source, Base64.MIME_CHUNK_SIZE);
-            logger.info("encodeMime result：\r\n{}", result);
+            logger.info("encodeMime result: \r\n{}", result);
         }
 
         @Test(expected = IllegalArgumentException.class)
