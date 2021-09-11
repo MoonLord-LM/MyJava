@@ -14,7 +14,6 @@ public class ExceptionInfo {
 
     public static final String SENSITIVE_EXCEPTION_MESSAGE = "sensitive exception, message is hidden";
 
-    // 规范：
     public static final List<String> SENSITIVE_EXCEPTION_LIST = Arrays.asList(
             "java.io.FileNotFoundException",
             "java.util.jar.JarException",
@@ -28,7 +27,6 @@ public class ExceptionInfo {
             "java.sql.SQLException"
     );
 
-    // 补充：
     public static final List<String> SENSITIVE_PACKAGE_LIST = Arrays.asList(
             "java.sql.",
             "org.springframework.jdbc.",
