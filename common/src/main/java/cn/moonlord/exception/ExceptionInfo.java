@@ -8,7 +8,9 @@ import java.util.List;
 
 public class ExceptionInfo {
 
-    private static final int MAX_MESSAGE_SIZE = 64 * 1024;
+    private static final int MAX_MESSAGE_SIZE = 4 * 1024;
+
+    private static final int MAX_STACK_TRACE_SIZE = 256 * 1024;
 
     public static final String SENSITIVE_EXCEPTION_MESSAGE = "sensitive exception, message is hidden";
 
@@ -88,7 +90,7 @@ public class ExceptionInfo {
                 buffer.append(trace.toString());
             }
             Throwable cause = exception.getCause();
-            while (cause != null && buffer.toString().length() < MAX_MESSAGE_SIZE) {
+            while (cause != null && buffer.toString().length() < MAX_STACK_TRACE_SIZE) {
                 buffer.append(System.lineSeparator());
                 buffer.append("Caused by: ");
                 buffer.append(getFullStackTrace(cause));
