@@ -72,7 +72,6 @@ public class ExceptionInfo {
     public static String getStackTrace(Throwable throwable) {
         try ( StringWriter buffer = new StringWriter(); PrintWriter writer = new PrintWriter(buffer); ) {
             throwable.printStackTrace(writer);
-            writer.flush();
             return buffer.toString();
         } catch (IOException e) {
             return "";
