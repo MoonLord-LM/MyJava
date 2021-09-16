@@ -70,6 +70,9 @@ public class ExceptionInfo {
     }
 
     public static String getStackTrace(Throwable exception) {
+        if (exception == null) {
+            return "";
+        }
         try ( StringWriter buffer = new StringWriter(); PrintWriter writer = new PrintWriter(buffer); ) {
             exception.printStackTrace(writer);
             return buffer.toString();
@@ -79,6 +82,9 @@ public class ExceptionInfo {
     }
 
     public static String getFullStackTrace(Throwable exception) {
+        if (exception == null) {
+            return "";
+        }
         try (StringWriter buffer = new StringWriter(); ) {
             buffer.append(exception.getClass().getName());
             StackTraceElement[] traces = exception.getStackTrace();
