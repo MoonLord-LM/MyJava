@@ -1,6 +1,7 @@
 package cn.moonlord.time;
 
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -23,8 +24,11 @@ public class DateFormatTest {
         init();
     }
 
+    @BeforeClass
     public static synchronized void init(){
+        logger.info("init getDefaultTimeZone: {}", TimeZone.getDefault());
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
+        logger.info("init setDefaultTimeZone: {}", TimeZone.getDefault());
     }
 
     public static class parse {

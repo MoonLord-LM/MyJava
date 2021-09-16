@@ -86,7 +86,7 @@ public class ExceptionInfo {
             return "";
         }
         try (StringWriter buffer = new StringWriter(); ) {
-            buffer.append(exception.getClass().getName());
+            buffer.append(exception.toString());
             StackTraceElement[] traces = exception.getStackTrace();
             for (StackTraceElement trace : traces) {
                 buffer.append(System.lineSeparator());
