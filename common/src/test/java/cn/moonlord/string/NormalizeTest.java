@@ -1,4 +1,4 @@
-package cn.moonlord.security;
+package cn.moonlord.string;
 
 import org.junit.Assert;
 import org.junit.Test;
