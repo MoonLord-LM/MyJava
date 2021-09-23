@@ -1,4 +1,4 @@
-package cn.moonlord.io;
+package cn.moonlord.common.io;
 
 import cn.moonlord.security.Hex;
 import org.apache.commons.io.FileUtils;

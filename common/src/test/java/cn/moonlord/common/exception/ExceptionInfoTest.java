@@ -1,4 +1,4 @@
-package cn.moonlord.exception;
+package cn.moonlord.common.exception;
 
 import org.junit.Assert;
 import org.junit.Test;

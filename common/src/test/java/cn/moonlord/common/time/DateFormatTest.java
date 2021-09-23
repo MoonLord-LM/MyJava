@@ -1,4 +1,4 @@
-package cn.moonlord.time;
+package cn.moonlord.common.time;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;

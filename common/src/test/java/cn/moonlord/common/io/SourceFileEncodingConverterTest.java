@@ -1,6 +1,5 @@
-package cn.moonlord.io;
+package cn.moonlord.common.io;
 
-import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package cn.moonlord.http;
+package cn.moonlord.common.http;
 
 import org.apache.commons.io.IOUtils;
 

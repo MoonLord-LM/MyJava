@@ -1,4 +1,4 @@
-package cn.moonlord.exception;
+package cn.moonlord.common.exception;
 
 import java.io.IOException;
 import java.io.PrintWriter;

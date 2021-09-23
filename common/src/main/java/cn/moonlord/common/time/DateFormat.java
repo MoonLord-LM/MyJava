@@ -1,4 +1,4 @@
-package cn.moonlord.time;
+package cn.moonlord.common.time;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
