@@ -7,11 +7,11 @@ public class DateFormat {
 
     private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
-    private static final String SIMPLE_DATE_FORMAT = "yyyy-MM-dd";
-
     private static final String UTC_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
     private static final String JAVA_DATE_FORMAT = "EEE MMM dd HH:mm:ss zzz yyyy";
+
+    private static final String SIMPLE_DATE_FORMAT = "yyyy-MM-dd";
 
     public static final List<String> SUPPORTED_DATE_FORMATS = Arrays.asList(
             "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", // UTC_DATE_FORMAT
@@ -79,6 +79,15 @@ public class DateFormat {
     }
 
     public static String format(Date sourceDate, String dateFormatPattern) {
+        if(sourceDate == null) {
+            throw new IllegalArgumentException("DateFormat format error, sourceDate must not be null");
+        }
+        if(dateFormatPattern == null) {
+            throw new IllegalArgumentException("DateFormat format error, dateFormatPattern must not be null");
+        }
+        if(dateFormatPattern.length() == 0) {
+            throw new IllegalArgumentException("DateFormat format error, dateFormatPattern must not be empty");
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat(dateFormatPattern, Locale.ROOT);
         if(dateFormatPattern.equals(UTC_DATE_FORMAT)) {
             dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -90,16 +99,16 @@ public class DateFormat {
         return format(sourceDate, DEFAULT_DATE_FORMAT);
     }
 
-    public static String formatSimple(Date sourceDate) {
-        return format(sourceDate, SIMPLE_DATE_FORMAT);
-    }
-
     public static String formatUTC(Date sourceDate) {
         return format(sourceDate, UTC_DATE_FORMAT);
     }
 
     public static String formatJava(Date sourceDate) {
         return format(sourceDate, JAVA_DATE_FORMAT);
+    }
+
+    public static String formatSimple(Date sourceDate) {
+        return format(sourceDate, SIMPLE_DATE_FORMAT);
     }
 
 }
