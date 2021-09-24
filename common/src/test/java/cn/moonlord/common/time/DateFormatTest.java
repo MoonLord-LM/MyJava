@@ -140,9 +140,10 @@ public class DateFormatTest {
         @Test
         public void success_1() {
             Date source = DateFormat.parse("1999-12-31T04:00:00.000Z");
+            Assert.assertEquals("source","Fri Dec 31 12:00:00 GMT+08:00 1999", source.toString());
             Assert.assertEquals("format","1999-12-31 12:00:00", DateFormat.format(source));
             Assert.assertEquals("formatUTC","1999-12-31T04:00:00.000Z", DateFormat.formatUTC(source));
-            Assert.assertEquals("formatJava","Fri Dec 31 12:00:00 CST 1999", DateFormat.formatJava(source));
+            Assert.assertEquals("formatJava","Fri Dec 31 12:00:00 GMT+08:00 1999", DateFormat.formatJava(source));
             Assert.assertEquals("formatSimple","1999-12-31", DateFormat.formatSimple(source));
         }
 

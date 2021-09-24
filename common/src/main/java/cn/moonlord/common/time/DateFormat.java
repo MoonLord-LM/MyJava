@@ -1,7 +1,11 @@
 package cn.moonlord.common.time;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class DateFormat {
 
@@ -9,7 +13,7 @@ public class DateFormat {
 
     private static final String UTC_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
-    private static final String JAVA_DATE_FORMAT = "EEE MMM dd HH:mm:ss z yyyy";
+    private static final String JAVA_DATE_FORMAT = "EEE MMM dd HH:mm:ss zzz yyyy";
 
     private static final String SIMPLE_DATE_FORMAT = "yyyy-MM-dd";
 
@@ -56,7 +60,7 @@ public class DateFormat {
             "yyyyMMddHH",
             "yyyyMMdd",
 
-            "EEE MMM dd HH:mm:ss z yyyy" // JAVA_DATE_FORMAT
+            "EEE MMM dd HH:mm:ss zzz yyyy" // JAVA_DATE_FORMAT
     );
 
     public static Date parse(String sourceString) {
