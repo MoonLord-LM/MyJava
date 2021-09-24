@@ -56,7 +56,7 @@ public class DateFormat {
             "yyyyMMddHH",
             "yyyyMMdd",
 
-            "EEE MMM dd HH:mm:ss zzz yyyy" // JAVA_DATE_FORMAT
+            "EEE MMM dd HH:mm:ss z yyyy" // JAVA_DATE_FORMAT
     );
 
     public static Date parse(String sourceString) {
