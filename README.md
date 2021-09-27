@@ -30,7 +30,8 @@ https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B
 |  AES-256-GCM  |  256 bit  |  96 bit  |  128 bit  |  128 bit  |  96 bit +  128 bit  |
 |  ChaCha20-Poly1305  |  256 bit  |  64 bit  |  512 bit  |  128 bit  |  64 bit +  512 bit  |
 
-
+#### 5. IDEA 的 Maven 在本地构建项目时，出现乱码
+修改设置，在 Maven -> Runner 的 VM Options 中，添加 -Dfile.encoding=GBK  
 
 ## 说明
 
