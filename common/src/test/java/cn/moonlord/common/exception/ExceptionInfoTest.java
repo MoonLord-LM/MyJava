@@ -95,7 +95,7 @@ public class ExceptionInfoTest {
             Exception throwable2 = new IllegalArgumentException("测试异常2", throwable1);
             Exception throwable3 = new IllegalArgumentException("测试异常3", throwable2);
             String trace = ExceptionInfo.getStackTrace(throwable3);
-            logger.info("getStackTrace success_2 trace: \n{}", trace);
+            logger.info("getStackTrace success_3 trace: \n{}", trace);
         }
     }
 
