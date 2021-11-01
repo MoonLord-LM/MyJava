@@ -15,8 +15,21 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-bom</artifactId>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-bom</artifactId>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
             <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
+            <artifactId>jetty-bom</artifactId>
+            <type>pom</type>
         </dependency>
 
         <!-- https://mvnrepository.com/search?q=spring-boot-starter -->
