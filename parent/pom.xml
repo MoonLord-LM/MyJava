@@ -27,12 +27,13 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+            <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-bom -->
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy-all</artifactId>
+                <artifactId>groovy-bom</artifactId>
                 <version>3.0.9</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/io.netty/netty-bom -->
@@ -94,6 +95,27 @@
             <!-- 以上为引入 pom，以下为直接定义版本 -->
 
 
+
+            <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>3.0.9</version>
+                <type>pom</type>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>3.0.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>3.0.9</version>
+                <classifier>indy</classifier>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core -->
             <dependency>
