@@ -33,22 +33,10 @@
                 <artifactId>groovy-bom</artifactId>
                 <version>3.0.9</version>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy-bom</artifactId>
-                <version>3.0.9</version>
-                <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/io.netty/netty-bom -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-bom</artifactId>
-                <version>4.1.69.Final</version>
-                <type>pom</type>
-            </dependency>
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
@@ -63,22 +51,10 @@
                 <artifactId>jetty-bom</artifactId>
                 <version>9.4.44.v20210927</version>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-bom</artifactId>
-                <version>9.4.44.v20210927</version>
-                <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.6.RELEASE</version>
-                <type>pom</type>
-            </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -93,12 +69,6 @@
                 <artifactId>spring-security-bom</artifactId>
                 <version>5.3.12.RELEASE</version>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-bom</artifactId>
-                <version>5.3.12.RELEASE</version>
-                <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
@@ -108,22 +78,10 @@
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>Hoxton.SR12</version>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR12</version>
-                <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.3.12.RELEASE</version>
-                <type>pom</type>
-            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
