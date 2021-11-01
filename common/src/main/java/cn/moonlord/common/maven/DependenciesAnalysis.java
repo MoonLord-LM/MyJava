@@ -1,5 +1,8 @@
 package cn.moonlord.common.maven;
 
+import org.w3c.dom.Document;
+
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -24,7 +27,12 @@ public class DependenciesAnalysis implements Runnable {
 
     @Override
     public void run() {
-
+        try {
+            Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(imputDependencyManagementFilePath);
+            System.out.println("document: " + document);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
