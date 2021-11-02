@@ -1,23 +1,26 @@
 package cn.moonlord.common.maven;
 
+import cn.moonlord.common.ssl.TrustAllCerts;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class DependenciesAnalysis implements Runnable {
 
-    private final String imputDependencyManagementFilePath;
+    private final String inputDependencyManagementFilePath;
 
     private final String outputDependencyFilePath;
 
     public DependenciesAnalysis(String imputDependencyManagementFilePath, String outputDependencyFilePath) {
-        this.imputDependencyManagementFilePath = imputDependencyManagementFilePath;
+        this.inputDependencyManagementFilePath = imputDependencyManagementFilePath;
         this.outputDependencyFilePath = outputDependencyFilePath;
         if(!Files.exists(Paths.get(imputDependencyManagementFilePath))){
             throw new IllegalArgumentException("imputDependencyManagementFilePath must be a valid File");
@@ -25,16 +28,23 @@ public class DependenciesAnalysis implements Runnable {
         if(!Files.exists(Paths.get(outputDependencyFilePath))){
             throw new IllegalArgumentException("outputDependencyFilePath must be a valid File");
         }
-        System.out.println("this.imputDependencyManagementFilePath: " + this.imputDependencyManagementFilePath);
+        System.out.println("this.inputDependencyManagementFilePath: " + this.inputDependencyManagementFilePath);
         System.out.println("this.outputDependencyFilePath: " + this.outputDependencyFilePath);
     }
 
-    @Override
-    public void run() {
-        List<String> dependencyUrls = new ArrayList<>();
-        String output = "    <dependencies>" + "\r\n"+ "\r\n";
+    private String getTagString(String inputLine, String TagString, String currentValue) {
+        String tmp = currentValue;
+        if(tmp == null && inputLine.startsWith("<" + TagString + ">")) {
+            tmp = inputLine.substring(inputLine.indexOf("<" + TagString + ">") + ("<" + TagString + ">").length());
+            tmp = tmp.substring(0, tmp.indexOf("</" + TagString + ">"));
+            System.out.println(TagString + ": " + tmp);
+        }
+        return tmp;
+    }
+
+    private void findDependencies(String inputDependencyManagementFilePath, List<String> downloadedDependenciesUrl, StringBuilder outputDependencies) {
         try {
-            List<String> inputLines = FileUtils.readLines(new File(imputDependencyManagementFilePath), StandardCharsets.UTF_8);
+            List<String> inputLines = FileUtils.readLines(new File(inputDependencyManagementFilePath), StandardCharsets.UTF_8);
             boolean isDependencyManagement = false;
             String baseUrl = null;
             String groupId = null;
@@ -62,58 +72,36 @@ public class DependenciesAnalysis implements Runnable {
                     baseUrl = inputLine;
                     System.out.println("baseUrl: " + baseUrl);
                 }
-                if(baseUrl != null && inputLine.startsWith("<groupId>")) {
-                    inputLine = inputLine.substring(inputLine.indexOf("<groupId>") + "<groupId>".length());
-                    inputLine = inputLine.substring(0, inputLine.indexOf("</groupId>"));
-                    groupId = inputLine;
-                    System.out.println("groupId: " + groupId);
-                }
-                if(baseUrl != null && inputLine.startsWith("<artifactId>")) {
-                    inputLine = inputLine.substring(inputLine.indexOf("<artifactId>") + "<artifactId>".length());
-                    inputLine = inputLine.substring(0, inputLine.indexOf("</artifactId>"));
-                    artifactId = inputLine;
-                    System.out.println("artifactId: " + artifactId);
-                }
-                if(baseUrl != null && inputLine.startsWith("<version>")) {
-                    inputLine = inputLine.substring(inputLine.indexOf("<version>") + "<version>".length());
-                    inputLine = inputLine.substring(0, inputLine.indexOf("</version>"));
-                    version = inputLine;
-                    System.out.println("version: " + version);
-                }
-                if(baseUrl != null && inputLine.startsWith("<classifier>")) {
-                    inputLine = inputLine.substring(inputLine.indexOf("<classifier>") + "<classifier>".length());
-                    inputLine = inputLine.substring(0, inputLine.indexOf("</classifier>"));
-                    classifier = inputLine;
-                    System.out.println("classifier: " + classifier);
-                }
-                if(baseUrl != null && inputLine.startsWith("<type>")) {
-                    inputLine = inputLine.substring(inputLine.indexOf("<type>") + "<type>".length());
-                    inputLine = inputLine.substring(0, inputLine.indexOf("</type>"));
-                    type = inputLine;
-                    System.out.println("type: " + type);
-                }
-                if(baseUrl != null && inputLine.startsWith("<scope>")) {
-                    inputLine = inputLine.substring(inputLine.indexOf("<scope>") + "<scope>".length());
-                    inputLine = inputLine.substring(0, inputLine.indexOf("</scope>"));
-                    scope = inputLine;
-                    System.out.println("scope: " + scope);
+                if(baseUrl != null) {
+                    groupId = getTagString(inputLine, "groupId", groupId);
+                    artifactId = getTagString(inputLine, "artifactId", artifactId);
+                    version = getTagString(inputLine, "version", version);
+                    classifier = getTagString(inputLine, "classifier", classifier);
+                    type = getTagString(inputLine, "type", type);
+                    scope = getTagString(inputLine, "scope", scope);
                 }
                 if(baseUrl != null && inputLine.isEmpty()) {
-                    String dependencyUrl = "dependencyUrl: " + baseUrl + "/" + version + "/" + artifactId  + "-" + version + ( classifier == null ? "" : "-" + classifier) + "." + ( type == null ? "jar" : type);
-                    System.out.println(dependencyUrl);
-                    dependencyUrls.add(dependencyUrl);
+                    String fileName = artifactId  + "-" + version + ( classifier == null ? "" : "-" + classifier) + "." + ( type == null ? "jar" : type);
+                    String dependencyUrl = baseUrl + "/" + version + "/" + fileName;
+                    System.out.println("dependencyUrl: " + dependencyUrl);
+                    downloadedDependenciesUrl.add(dependencyUrl);
                     if(scope == null) {
-                        output += "          <dependency>" + "\r\n";
-                        output += "              <groupId>" + groupId + "</groupId>" + "\r\n";
-                        output += "              <artifactId>" + artifactId + "</artifactId>" + "\r\n";
-                        output += (classifier == null ? "" : "              <classifier>" + classifier + "</classifier>" + "\r\n");
-                        output += (type == null ? "" : "              <type>" + type + "</type>" + "\r\n");
-                        output += "          </dependency>" + "\r\n";
-                        output += "\r\n";
+                        outputDependencies.append("          <dependency>" + "\r\n");
+                        outputDependencies.append("              <groupId>").append(groupId).append("</groupId>").append("\r\n");
+                        outputDependencies.append("              <artifactId>").append(artifactId).append("</artifactId>").append("\r\n");
+                        outputDependencies.append(classifier == null ? "" : "              <classifier>" + classifier + "</classifier>" + "\r\n");
+                        outputDependencies.append(type == null ? "" : "              <type>" + type + "</type>" + "\r\n");
+                        outputDependencies.append("          </dependency>" + "\r\n");
+                        outputDependencies.append("\r\n");
                     }
+                    if(Objects.equals(scope, "import")) {
+                        FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(dependencyUrl).openConnection()).getInputStream(), new File("target" + "/" +fileName));
+                        FileUtils.readLines(new File("target" + "/" +fileName), StandardCharsets.UTF_8);
+                    }
+                    baseUrl = null;
                     groupId = null;
                     artifactId = null;
-                    baseUrl = null;
+                    version = null;
                     classifier = null;
                     type = null;
                     scope = null;
@@ -122,8 +110,15 @@ public class DependenciesAnalysis implements Runnable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        output += "    </dependencies>";
-        System.out.println("output: " + output);
+    }
+
+    @Override
+    public void run() {
+        List<String> downloadedDependenciesUrl = new ArrayList<>();
+        StringBuilder outputDependencies = new StringBuilder("    <dependencies>" + "\r\n" + "\r\n");
+        findDependencies(inputDependencyManagementFilePath, downloadedDependenciesUrl, outputDependencies);
+        outputDependencies.append("    </dependencies>");
+        System.out.println("outputDependencies: " + outputDependencies);
         try {
             List<String> outputLines = new ArrayList<>();
             List<String> tempLines = FileUtils.readLines(new File(outputDependencyFilePath), StandardCharsets.UTF_8);
@@ -131,7 +126,7 @@ public class DependenciesAnalysis implements Runnable {
             for (String line : tempLines) {
                 if (line.trim().startsWith("<dependencies>")) {
                     isDependency = true;
-                    outputLines.add(output);
+                    outputLines.add(outputDependencies.toString());
                 }
                 if (line.trim().startsWith("</dependencies>")) {
                     isDependency = false;
