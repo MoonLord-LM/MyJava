@@ -110,6 +110,8 @@
                 <artifactId>groovy</artifactId>
                 <version>3.0.9</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy</artifactId>

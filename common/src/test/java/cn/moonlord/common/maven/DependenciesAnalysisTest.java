@@ -1,6 +1,5 @@
 package cn.moonlord.common.maven;
 
-import cn.moonlord.common.io.SourceFileEncodingConverterTest;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -18,7 +17,7 @@ public class DependenciesAnalysisTest {
         @Test
         public void success_1() {
             (new DependenciesAnalysis(
-                    "../parent/pom.xml","pom.xml"
+                    "../parent/pom.xml","../dependencies-analysis/pom.xml"
             )).run();
         }
     }

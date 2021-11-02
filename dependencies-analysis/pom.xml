@@ -13,6 +13,199 @@
     <artifactId>dependencies-analysis</artifactId>
 
     <dependencies>
+
+          <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy-all</artifactId>
+              <type>pom</type>
+          </dependency>
+
+          <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy</artifactId>
+              <classifier>indy</classifier>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.tomcat.embed</groupId>
+              <artifactId>tomcat-embed-core</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.tomcat.embed</groupId>
+              <artifactId>tomcat-embed-websocket</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.tomcat.embed</groupId>
+              <artifactId>tomcat-embed-jasper</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.tomcat.embed</groupId>
+              <artifactId>tomcat-embed-el</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>de.codecentric</groupId>
+              <artifactId>spring-boot-admin-starter-server</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>io.springfox</groupId>
+              <artifactId>springfox-boot-starter</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.springframework.retry</groupId>
+              <artifactId>spring-retry</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>io.springfox</groupId>
+              <artifactId>springfox-swagger2</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>io.springfox</groupId>
+              <artifactId>springfox-swagger-ui</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.bouncycastle</groupId>
+              <artifactId>bcprov-ext-jdk15on</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.bouncycastle</groupId>
+              <artifactId>bcprov-jdk15on</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.bouncycastle</groupId>
+              <artifactId>bcpkix-jdk15on</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>com.alibaba</groupId>
+              <artifactId>fastjson</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>com.google.code.gson</groupId>
+              <artifactId>gson</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.yaml</groupId>
+              <artifactId>snakeyaml</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.freemarker</groupId>
+              <artifactId>freemarker</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.jsoup</groupId>
+              <artifactId>jsoup</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>commons-beanutils</groupId>
+              <artifactId>commons-beanutils</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>commons-codec</groupId>
+              <artifactId>commons-codec</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-collections4</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-compress</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-csv</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>commons-fileupload</groupId>
+              <artifactId>commons-fileupload</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>commons-io</groupId>
+              <artifactId>commons-io</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-lang3</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-math3</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-pool2</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-text</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.httpcomponents</groupId>
+              <artifactId>httpclient</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.httpcomponents</groupId>
+              <artifactId>httpmime</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.httpcomponents</groupId>
+              <artifactId>httpclient-osgi</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.apache.httpcomponents</groupId>
+              <artifactId>httpclient-cache</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>com.google.guava</groupId>
+              <artifactId>guava</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>mysql</groupId>
+              <artifactId>mysql-connector-java</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.postgresql</groupId>
+              <artifactId>postgresql</artifactId>
+          </dependency>
+
     </dependencies>
 
     <build>
