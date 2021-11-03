@@ -86,10 +86,10 @@ public class DependenciesAnalysis implements Runnable {
 
         public String getDownloadUrl() {
             if(downloadUrl == null && releaseUrl != null && getFileName() != null) {
-                return releaseUrl.replace(".", "/").replace(BASE_RELEASE_URL.replace(".", "/"), BASE_DOWNLOAD_URL) + "/" + version + "/" + getFileName();
+                return releaseUrl.replace(".", "/").replace(BASE_RELEASE_URL.replace(".", "/"), BASE_DOWNLOAD_URL) + "/" + getVersion() + "/" + getFileName();
             }
             if(downloadUrl == null && groupId != null && getFileName() != null) {
-                return BASE_RELEASE_URL + groupId.replace(".", "/") + "/" + version + "/" + getFileName();
+                return BASE_RELEASE_URL + groupId.replace(".", "/") + "/" + getVersion() + "/" + getFileName();
             }
             return downloadUrl;
         }
@@ -99,8 +99,8 @@ public class DependenciesAnalysis implements Runnable {
         }
 
         public String getFileName() {
-            if(fileName == null  && artifactId != null && version != null) {
-                return artifactId  + "-" + version + ( classifier == null ? "" : "-" + classifier) + "." + ( type == null ? "jar" : type);
+            if(fileName == null  && artifactId != null && getVersion() != null) {
+                return artifactId  + "-" + getVersion() + ( classifier == null ? "" : "-" + classifier) + "." + ( type == null ? "jar" : type);
             }
             return fileName;
         }
@@ -202,6 +202,7 @@ public class DependenciesAnalysis implements Runnable {
     private static void findDependencies(String inputDependencyManagementFilePath, List<String> downloadedDependenciesUrl, StringBuilder outputDependencies) {
         try {
             List<String> inputLines = FileUtils.readLines(new File(inputDependencyManagementFilePath), StandardCharsets.UTF_8);
+            HashMap<String, String> fileProperties = new HashMap<>();
             boolean isProperties = false;
             boolean isDependencyManagement = false;
             Dependency dependency = new Dependency();
@@ -234,11 +235,15 @@ public class DependenciesAnalysis implements Runnable {
                         key = key.substring(0, key.indexOf(">"));
                         String value = StringUtils.substringBetween(inputLine, "<" + key + ">", "</" + key + ">");
                         System.out.println("property "+ key + ": " + value);
-                        dependency.getProperties().put(key, value);
+                        fileProperties.put(key, value);
                         continue;
                     }
                 }
                 if(isDependencyManagement) {
+                    if (inputLine.startsWith("<dependency>")) {
+                        dependency.getProperties().putAll(fileProperties);
+                        continue;
+                    }
                     {
                         String releaseUrl = getDependencyTagValue(inputLine, "releaseUrl");
                         String groupId = getDependencyTagValue(inputLine, "groupId");
