@@ -257,22 +257,26 @@ public class DependenciesAnalysis implements Runnable {
                     }
                     if (inputLine.startsWith("</dependency>")) {
                         if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
-                            outputDependencies.append(dependency);
-                            outputDependencies.append("\r\n");
+                            if(!outputDependencies.toString().contains(dependency.toString())) {
+                                outputDependencies.append(dependency);
+                                outputDependencies.append("\r\n");
+                            }
                         }
                         if (dependency.getScope() != null && dependency.getScope().equals("import")) {
                             String downloadUrl = dependency.getDownloadUrl();
                             String fileName = dependency.getFileName();
                             System.out.println("downloadUrl: " + downloadUrl);
                             System.out.println("fileName: " + fileName);
-                            try {
-                                FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(downloadUrl).openConnection()).getInputStream(), new File("target" + "/" + fileName));
-                                FileUtils.readLines(new File("target" + "/" + fileName), StandardCharsets.UTF_8);
-                                // recursion
-                                downloadedDependenciesUrl.add(downloadUrl);
-                                findDependencies("target" + "/" + fileName, downloadedDependenciesUrl, outputDependencies);
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                            if(!downloadedDependenciesUrl.contains(downloadUrl)) {
+                                try {
+                                    FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(downloadUrl).openConnection()).getInputStream(), new File("target" + "/" + fileName));
+                                    FileUtils.readLines(new File("target" + "/" + fileName), StandardCharsets.UTF_8);
+                                    // recursion
+                                    downloadedDependenciesUrl.add(downloadUrl);
+                                    findDependencies("target" + "/" + fileName, downloadedDependenciesUrl, outputDependencies);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
                         }
                         dependency = new Dependency();
