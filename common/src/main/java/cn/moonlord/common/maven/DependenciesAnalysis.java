@@ -182,21 +182,19 @@ public class DependenciesAnalysis implements Runnable {
             return null;
         }
         inputLine = inputLine.trim();
-        String tmp = null;
+        String value = null;
         if (inputLine.startsWith("<" + TagString + ">")) {
-            tmp = inputLine.substring(inputLine.indexOf("<" + TagString + ">") + ("<" + TagString + ">").length());
-            tmp = tmp.substring(0, tmp.indexOf("</" + TagString + ">"));
-            System.out.println(TagString + ": " + tmp);
+            value = StringUtils.substringBetween(inputLine, "<" + TagString + ">", "</" + TagString + ">");
+            System.out.println(TagString + ": " + value);
         }
         if (TagString.equals("releaseUrl")) {
             if(inputLine.startsWith("<!-- " + Dependency.BASE_RELEASE_URL)) {
-                tmp = inputLine.substring(inputLine.indexOf("<!-- ") + ("<!-- ").length());
-                tmp = tmp.substring(0, tmp.indexOf(" -->"));
-                tmp = tmp.trim();
-                System.out.println(TagString + ": " + tmp);
+                value = StringUtils.substringBetween(inputLine, "<!-- ", " -->");
+                value = value.trim();
+                System.out.println(TagString + ": " + value);
             }
         }
-        return tmp;
+        return value;
     }
 
     private static void findDependencies(String inputDependencyManagementFilePath, List<String> downloadedDependenciesUrl, StringBuilder outputDependencies) {
@@ -205,6 +203,7 @@ public class DependenciesAnalysis implements Runnable {
             HashMap<String, String> fileProperties = new HashMap<>();
             boolean isProperties = false;
             boolean isDependencyManagement = false;
+            boolean isExclusions = false;
             Dependency dependency = new Dependency();
             for (String inputLine : inputLines) {
                 inputLine = inputLine.trim();
@@ -231,8 +230,7 @@ public class DependenciesAnalysis implements Runnable {
                         continue;
                     }
                     if(inputLine.startsWith("<")) {
-                        String key = inputLine.substring(inputLine.indexOf("<") + ("<").length());
-                        key = key.substring(0, key.indexOf(">"));
+                        String key = StringUtils.substringBetween(inputLine, "<", "</");
                         String value = StringUtils.substringBetween(inputLine, "<" + key + ">", "</" + key + ">");
                         System.out.println("property "+ key + ": " + value);
                         fileProperties.put(key, value);
@@ -244,7 +242,15 @@ public class DependenciesAnalysis implements Runnable {
                         dependency.getProperties().putAll(fileProperties);
                         continue;
                     }
-                    {
+                    if (inputLine.startsWith("<exclusions>")) {
+                        isExclusions = true;
+                        continue;
+                    }
+                    if (inputLine.startsWith("</exclusions>")) {
+                        isExclusions = false;
+                        continue;
+                    }
+                    if (!isExclusions) {
                         String releaseUrl = getDependencyTagValue(inputLine, "releaseUrl");
                         String groupId = getDependencyTagValue(inputLine, "groupId");
                         String artifactId = getDependencyTagValue(inputLine, "artifactId");
@@ -263,25 +269,24 @@ public class DependenciesAnalysis implements Runnable {
                     if (inputLine.startsWith("</dependency>")) {
                         try {
                             if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
-                                dependency.getVersion();
                                 if(!outputDependencies.toString().contains(dependency.toString())) {
+                                    outputDependencies.append("        <!--" + inputDependencyManagementFilePath  + "-->" + "\r\n");
                                     outputDependencies.append(dependency);
                                     outputDependencies.append("\r\n");
                                 }
                             }
                             if (dependency.getScope() != null && dependency.getScope().equals("import")) {
-                                dependency.getVersion();
                                 String downloadUrl = dependency.getDownloadUrl();
                                 String fileName = dependency.getFileName();
                                 System.out.println("downloadUrl: " + downloadUrl);
                                 System.out.println("fileName: " + fileName);
                                 if(!downloadedDependenciesUrl.contains(downloadUrl)) {
-                                        FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(downloadUrl).openConnection()).getInputStream(), new File("target" + "/" + fileName));
-                                        FileUtils.readLines(new File("target" + "/" + fileName), StandardCharsets.UTF_8);
+                                    String cachefileName = "import" + "/" + fileName;
+                                        FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(downloadUrl).openConnection()).getInputStream(), new File(cachefileName));
+                                        FileUtils.readLines(new File(cachefileName), StandardCharsets.UTF_8);
                                         // recursion
                                         downloadedDependenciesUrl.add(downloadUrl);
-                                        findDependencies("target" + "/" + fileName, downloadedDependenciesUrl, outputDependencies);
-
+                                        findDependencies(cachefileName, downloadedDependenciesUrl, outputDependencies);
                                 }
                             }
                         } catch (Exception e) {

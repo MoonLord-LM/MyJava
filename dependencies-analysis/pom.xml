@@ -14,3613 +14,4414 @@
 
     <dependencies>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-ant</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-astbuilder</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-bsf</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-cli-commons</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-cli-picocli</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-console</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-datetime</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-dateutil</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-docgenerator</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-groovydoc</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-groovysh</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-jaxb</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-jmx</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-json</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-jsr223</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-macro</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-nio</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-servlet</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-sql</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-swing</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-templates</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-test</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-test-junit5</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-testng</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-xml</artifactId>
         </dependency>
 
+        <!--import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-yaml</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-buffer</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-dns</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-haproxy</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http2</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-memcache</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-mqtt</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-redis</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-smtp</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-socks</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-stomp</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-xml</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-common</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-dev-tools</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler-proxy</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-rxtx</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-sctp</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-udt</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-example</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
+        <!--import/netty-bom-4.1.69.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>windows-x86_64</classifier>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>apache-jsp</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>apache-jstl</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-java-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-java-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-openjdk8-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-openjdk8-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-conscrypt-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-conscrypt-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-annotations</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-ant</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-continuation</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-deploy</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-distribution</artifactId>
             <type>zip</type>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-distribution</artifactId>
             <type>tar.gz</type>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.fcgi</groupId>
             <artifactId>fcgi-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.fcgi</groupId>
             <artifactId>fcgi-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.gcloud</groupId>
             <artifactId>jetty-gcloud-session-manager</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-home</artifactId>
             <type>zip</type>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-home</artifactId>
             <type>tar.gz</type>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-http</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-common</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-hpack</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-http-client-transport</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-http-spi</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-common</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-remote-query</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-embedded-query</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-hazelcast</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-io</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jaas</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jaspi</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jmx</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jndi</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.memcached</groupId>
             <artifactId>jetty-memcached-sessions</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-nosql</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot-jsp</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot-warurl</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-httpservice</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-plus</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-proxy</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-quickstart</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-rewrite</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-security</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-openid</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlets</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-spring</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-unixsocket</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util-ajax</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>javax-websocket-client-impl</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>javax-websocket-server-impl</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-api</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-client</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-common</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-server</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-servlet</artifactId>
         </dependency>
 
+        <!--import/jetty-bom-9.4.44.v20210927.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-xml</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-config</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-core</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-parameter-flow-control</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-extension</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-apollo</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-zookeeper</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-redis</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-consul</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-web-servlet</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-zuul-adapter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-transport-simple-http</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-annotation-aspectj</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-dubbo-adapter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-apache-dubbo-adapter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-reactor-adapter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-cluster-server-default</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-cluster-client-default</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-spring-webflux-adapter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-api-gateway-adapter-common</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-spring-webmvc-adapter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-sentinel-datasource</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-circuitbreaker-sentinel</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config-server</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-rocketmq</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sidecar</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-commons</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
 
+        <!--import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.spring</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-acl</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-aspects</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-cas</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-data</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-ldap</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-messaging</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-client</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-core</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-jose</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-resource-server</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-openid</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-remoting</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-rsocket</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-saml2-service-provider</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
         </dependency>
 
+        <!--import/spring-security-bom-5.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-amqp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-blueprint</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-broker</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-camel</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-console</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-http</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-jaas</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-jdbc-store</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-jms-pool</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-kahadb-store</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-karaf</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-leveldb-store</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-log4j-appender</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-mqtt</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-openwire-generator</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-openwire-legacy</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-osgi</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-partition</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-pool</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-ra</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-run</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-runtime-config</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-shiro</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-spring</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-stomp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-web</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>antlr</groupId>
             <artifactId>antlr</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-amqp-protocol</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-json_1.0_spec</artifactId>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-commons</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-core-client</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-jms-client</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-jms-server</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-journal</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-selector</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-server</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-service-extensions</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjtools</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.atomikos</groupId>
             <artifactId>transactions-jdbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.atomikos</groupId>
             <artifactId>transactions-jms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.atomikos</groupId>
             <artifactId>transactions-jta</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility-groovy</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility-kotlin</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility-scala</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.codehaus.btm</groupId>
             <artifactId>btm</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy-agent</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>guava</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>jcache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>simulator</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
+            <groupId>com.datastax.oss</groupId>
+            <artifactId>java-driver-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.fasterxml</groupId>
             <artifactId>classmate</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>commons-pool</groupId>
             <artifactId>commons-pool</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.couchbase.client</groupId>
             <artifactId>java-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.ibm.db2</groupId>
             <artifactId>jcc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.spring.gradle</groupId>
             <artifactId>dependency-management-plugin</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.ehcache</groupId>
             <artifactId>ehcache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.ehcache</groupId>
             <artifactId>ehcache-clustered</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.ehcache</groupId>
             <artifactId>ehcache-transactions</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>transport</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client-sniffer</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.elasticsearch.distribution.integ-test-zip</groupId>
             <artifactId>elasticsearch</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.elasticsearch.plugin</groupId>
             <artifactId>transport-netty4-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>de.flapdoodle.embed</groupId>
             <artifactId>de.flapdoodle.embed.mongo</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>jakarta.el</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>codemodel</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>codemodel-annotation-compiler</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-jxc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-xjc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>txw2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>txwc2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>xsom</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-spring</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-hibernate52</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-hibernate53</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-c3p0</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-ehcache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-envers</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-hikaricp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-java8</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jcache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-micrometer</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-proxool</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-spatial</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-testing</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-vibur</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator-annotation-processor</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpasyncclient</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>fluent-hc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient-cache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient-osgi</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient-win</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpmime</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore-nio</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cachestore-jdbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cachestore-jpa</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cachestore-remote</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cachestore-rest</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cachestore-rocksdb</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cdi-common</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cdi-embedded</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-cdi-remote</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-client-hotrod</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-client-rest</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-clustered-counter</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-clustered-lock</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-commons</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-component-annotations</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-directory-provider</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-hibernate-cache-v53</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-jboss-marshalling</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-jcache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-jcache-commons</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-jcache-remote</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-key-value-store-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-lucene-directory</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-objectfilter</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-osgi</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-persistence-soft-index</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-query</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-query-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-query-dsl</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-remote-query-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-remote-query-server</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-scripting</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-server-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-server-hotrod</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-server-memcached</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-server-rest</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-server-router</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-spring5-common</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-spring5-embedded</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-spring5-remote</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-tasks</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-tasks-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-tools</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.influxdb</groupId>
             <artifactId>influxdb-java</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.sun.activation</groupId>
             <artifactId>jakarta.activation</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.activation</groupId>
             <artifactId>jakarta.activation-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.jms</groupId>
             <artifactId>jakarta.jms-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.json</groupId>
             <artifactId>jakarta.json-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.json.bind</groupId>
             <artifactId>jakarta.json.bind-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.mail</groupId>
             <artifactId>jakarta.mail-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.transaction</groupId>
             <artifactId>jakarta.transaction-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.websocket</groupId>
             <artifactId>jakarta.websocket-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.ws.rs</groupId>
             <artifactId>jakarta.ws.rs-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.xml.soap</groupId>
             <artifactId>jakarta.xml.soap-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jakarta.xml.ws</groupId>
             <artifactId>jakarta.xml.ws-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.codehaus.janino</groupId>
             <artifactId>commons-compiler</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.codehaus.janino</groupId>
             <artifactId>commons-compiler-jdk</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.codehaus.janino</groupId>
             <artifactId>janino</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.activation</groupId>
             <artifactId>javax.activation-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.cache</groupId>
             <artifactId>cache-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.xml.ws</groupId>
             <artifactId>jaxws-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.jms</groupId>
             <artifactId>javax.jms-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.json</groupId>
             <artifactId>javax.json-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.json.bind</groupId>
             <artifactId>javax.json.bind-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>javax.mail-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.money</groupId>
             <artifactId>money-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>javax.transaction-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.websocket</groupId>
             <artifactId>javax.websocket-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.firebirdsql.jdbc</groupId>
             <artifactId>jaybird-jdk17</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.firebirdsql.jdbc</groupId>
             <artifactId>jaybird-jdk18</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jboss.logging</groupId>
             <artifactId>jboss-logging</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jboss</groupId>
             <artifactId>jboss-transaction-spi</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jdom</groupId>
             <artifactId>jdom2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mortbay.jasper</groupId>
             <artifactId>apache-el</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.orbit</groupId>
             <artifactId>javax.servlet.jsp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-reactive-httpclient</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.samskivert</groupId>
             <artifactId>jmustache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.johnzon</groupId>
             <artifactId>johnzon-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.johnzon</groupId>
             <artifactId>johnzon-jaxrs</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.johnzon</groupId>
             <artifactId>johnzon-jsonb</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.johnzon</groupId>
             <artifactId>johnzon-jsonb-extras</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.johnzon</groupId>
             <artifactId>johnzon-jsonschema</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.johnzon</groupId>
             <artifactId>johnzon-mapper</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.johnzon</groupId>
             <artifactId>johnzon-websocket</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-meta</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path-assert</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>net.minidev</groupId>
             <artifactId>json-smart</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.skyscreamer</groupId>
             <artifactId>jsonassert</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>net.sourceforge.jtds</groupId>
             <artifactId>jtds</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-basic-auth-extension</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-file</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-json</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-runtime</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-transforms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-log4j-appender</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams-scala_2.12</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams-scala_2.13</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams-test-utils</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-tools</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_2.12</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_2.13</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-to-slf4j</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-access</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-stackdriver</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.jvnet.mimepull</groupId>
             <artifactId>mimepull</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-inline</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>bson</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-legacy</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-reactivestreams</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>net.sourceforge.nekohtml</groupId>
             <artifactId>nekohtml</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-bolt-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-bolt-native-types</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-embedded-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-embedded-native-types</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-http-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.synchronoss.cloud</groupId>
             <artifactId>nio-multipart-parser</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.nimbusds</groupId>
             <artifactId>oauth2-oidc-sdk</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>dms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc10</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc10_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc10dms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc10dms_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc8</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc8_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc8dms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc8dms_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ons</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>oraclepki</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>orai18n</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>osdt_cert</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>osdt_core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>simplefan</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ucp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>xdb</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>xmlparserv2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>logging-interceptor</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>mockwebserver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okcurl</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp-dnsoverhttps</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp-sse</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp-testing-support</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp-tls</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp-urlconnection</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.ha</groupId>
             <artifactId>ons</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.ha</groupId>
             <artifactId>simplefan</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc10</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc10dms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc8</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc8dms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ucp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc.debug</groupId>
             <artifactId>ojdbc10_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc.debug</groupId>
             <artifactId>ojdbc10dms_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc.debug</groupId>
             <artifactId>ojdbc8_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.jdbc.debug</groupId>
             <artifactId>ojdbc8dms_g</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.nls</groupId>
             <artifactId>orai18n</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.observability</groupId>
             <artifactId>dms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.security</groupId>
             <artifactId>oraclepki</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.security</groupId>
             <artifactId>osdt_cert</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.security</groupId>
             <artifactId>osdt_core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.xml</groupId>
             <artifactId>xdb</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.oracle.database.xml</groupId>
             <artifactId>xmlparserv2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.messaginghub</groupId>
             <artifactId>pooled-jms</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient_pushgateway</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>*</artifactId>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz-jobs</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-collections</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-mongodb</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.reactivestreams</groupId>
             <artifactId>reactive-streams</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>scala-support</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>spring-mock-mvc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>spring-web-test-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>xml-path</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.reactivex</groupId>
             <artifactId>rxjava</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.reactivex</groupId>
             <artifactId>rxjava-reactive-streams</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.reactivex.rxjava2</groupId>
             <artifactId>rxjava</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test-autoconfigure</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator-autoconfigure</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure-processor</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-buildpack-platform</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-metadata</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-jarmode-layertools</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-loader</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-loader-tools</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-properties-migrator</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-artemis</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-batch</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-cassandra</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-cassandra-reactive</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-couchbase</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-couchbase-reactive</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jdbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-ldap</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-r2dbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-neo4j</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-solr</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-groovy-templates</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-integration</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jersey</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jooq</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-json</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jta-atomikos</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jta-bitronix</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mustache</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-reactor-netty</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-rsocket</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.sun.xml.messaging.saaj</groupId>
             <artifactId>saaj-impl</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-edge-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-ie-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-opera-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-safari-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>htmlunit-driver</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.sendgrid</groupId>
             <artifactId>sendgrid-java</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-ext</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jcl</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-nop</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-analysis-extras</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-analytics</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-cell</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-clustering</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-dataimporthandler</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-dataimporthandler-extras</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-langid</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-ltr</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+        </dependency>
+
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-test-framework</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-velocity</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-amqp</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-rabbit</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-rabbit-junit</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-rabbit-test</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-infrastructure</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-integration</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-test</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.hateoas</groupId>
             <artifactId>spring-hateoas</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka-test</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ldap</groupId>
             <artifactId>spring-ldap-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ldap</groupId>
             <artifactId>spring-ldap-core-tiger</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ldap</groupId>
             <artifactId>spring-ldap-ldif-batch</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ldap</groupId>
             <artifactId>spring-ldap-ldif-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ldap</groupId>
             <artifactId>spring-ldap-odm</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ldap</groupId>
             <artifactId>spring-ldap-test</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.restdocs</groupId>
             <artifactId>spring-restdocs-asciidoctor</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.restdocs</groupId>
             <artifactId>spring-restdocs-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.restdocs</groupId>
             <artifactId>spring-restdocs-mockmvc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.restdocs</groupId>
             <artifactId>spring-restdocs-restassured</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.restdocs</groupId>
             <artifactId>spring-restdocs-webtestclient</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-ws-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-ws-security</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-ws-support</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-ws-test</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-xml</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>jakarta.mail</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf-spring5</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.github.mxab.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-data-attribute</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-java8time</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-annotations-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jdbc</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jsp-api</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-el</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-websocket</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>com.unboundid</groupId>
             <artifactId>unboundid-ldapsdk</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-servlet</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-websockets-jsr</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>hal-browser</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>wsdl4j</groupId>
             <artifactId>wsdl4j</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.xmlunit</groupId>
             <artifactId>xmlunit-assertj</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.xmlunit</groupId>
             <artifactId>xmlunit-core</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.xmlunit</groupId>
             <artifactId>xmlunit-legacy</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.xmlunit</groupId>
             <artifactId>xmlunit-matchers</artifactId>
         </dependency>
 
+        <!--import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
         <dependency>
             <groupId>org.xmlunit</groupId>
             <artifactId>xmlunit-placeholders</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
             <type>pom</type>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
             <classifier>indy</classifier>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-ext-jdk15on</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk15on</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-math3</artifactId>
         </dependency>
 
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-        </dependency>
-
+        <!--../parent/pom.xml-->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
     </dependencies>
@@ -3630,7 +4431,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.5.3</version>
             </plugin>
         </plugins>
     </build>
