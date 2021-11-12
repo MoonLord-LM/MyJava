@@ -176,312 +176,330 @@
             <artifactId>groovy-yaml</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-buffer</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-dns</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-haproxy</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http2</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-memcache</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-mqtt</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-redis</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-smtp</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-socks</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-stomp</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-xml</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-common</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-dev-tools</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler-proxy</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-rxtx</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-sctp</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-udt</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-example</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver-dns-classes-macos</artifactId>
+        </dependency>
+
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-classes-epoll</artifactId>
+        </dependency>
+
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-classes-kqueue</artifactId>
+        </dependency>
+
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.69.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
