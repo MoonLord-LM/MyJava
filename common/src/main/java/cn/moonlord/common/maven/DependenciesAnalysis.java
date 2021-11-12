@@ -230,7 +230,7 @@ public class DependenciesAnalysis implements Runnable {
                         continue;
                     }
                     if(inputLine.startsWith("<")) {
-                        String key = StringUtils.substringBetween(inputLine, "<", "</");
+                        String key = StringUtils.substringBetween(inputLine, "<", ">");
                         String value = StringUtils.substringBetween(inputLine, "<" + key + ">", "</" + key + ">");
                         System.out.println("property "+ key + ": " + value);
                         fileProperties.put(key, value);
