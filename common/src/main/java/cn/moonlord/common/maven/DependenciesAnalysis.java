@@ -281,7 +281,7 @@ public class DependenciesAnalysis implements Runnable {
                                 System.out.println("downloadUrl: " + downloadUrl);
                                 System.out.println("fileName: " + fileName);
                                 if(!downloadedDependenciesUrl.contains(downloadUrl)) {
-                                    String cachefileName = "import" + "/" + fileName;
+                                    String cachefileName = "target/import/" + fileName;
                                         FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(downloadUrl).openConnection()).getInputStream(), new File(cachefileName));
                                         FileUtils.readLines(new File(cachefileName), StandardCharsets.UTF_8);
                                         // recursion
