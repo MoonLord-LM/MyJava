@@ -451,12 +451,12 @@
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.70.Final.pom-->
+        <!--target/import/netty-bom-4.1.70.Final.pom
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-aarch_64</classifier>
-        </dependency>
+        </dependency>-->
 
         <!--target/import/netty-bom-4.1.70.Final.pom-->
         <dependency>
@@ -1720,6 +1720,8 @@
         <dependency>
             <groupId>org.elasticsearch.distribution.integ-test-zip</groupId>
             <artifactId>elasticsearch</artifactId>
+            <version>7.6.2</version>
+            <type>zip</type>
         </dependency>
 
         <!--target/import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
