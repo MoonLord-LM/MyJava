@@ -123,28 +123,28 @@
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-core</artifactId>
-                <version>9.0.54</version>
+                <version>9.0.55</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket -->
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-websocket</artifactId>
-                <version>9.0.54</version>
+                <version>9.0.55</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-jasper</artifactId>
-                <version>9.0.54</version>
+                <version>9.0.55</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-el -->
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-el</artifactId>
-                <version>9.0.54</version>
+                <version>9.0.55</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-server -->
@@ -347,7 +347,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>31.0-jre</version>
+                <version>31.0.1-jre</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
