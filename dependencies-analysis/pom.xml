@@ -906,229 +906,229 @@
             <artifactId>jetty-xml</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-config</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-core</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-parameter-flow-control</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-extension</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-apollo</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-zookeeper</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-redis</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-consul</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-web-servlet</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-zuul-adapter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-transport-simple-http</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-annotation-aspectj</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-dubbo-adapter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-apache-dubbo-adapter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-reactor-adapter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-cluster-server-default</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-cluster-client-default</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-spring-webflux-adapter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-api-gateway-adapter-common</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-spring-webmvc-adapter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-sentinel-datasource</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-circuitbreaker-sentinel</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config-server</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-rocketmq</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sidecar</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-commons</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.6.RELEASE.pom-->
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
         <dependency>
             <groupId>com.alibaba.spring</groupId>
             <artifactId>spring-context-support</artifactId>
