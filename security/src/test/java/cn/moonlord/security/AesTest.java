@@ -184,7 +184,7 @@ public class AesTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            Aes.decrypt(new byte[Aes.ENCRYPTED_MIN_SIZE - 1], Aes.generateKey());
+            Aes.decrypt(new byte[Aes.ENCRYPTED_MIN_BIT_LENGTH / Byte.SIZE - 1], Aes.generateKey());
         }
 
         @Test(expected = IllegalArgumentException.class)

@@ -12,13 +12,13 @@ public class Aes {
 
     public static final String AES_CIPHER_INSTANCE = "AES_256/GCM/NoPadding";
 
-    public static final int AES_KEY_LENGTH = 256;
+    public static final int AES_KEY_BIT_LENGTH = 256;
 
-    public static final int GCM_TAG_LENGTH = 128;
+    public static final int GCM_TAG_BIT_LENGTH = 128;
 
-    public static final int GCM_IV_LENGTH = 96;
+    public static final int GCM_IV_BIT_LENGTH = 96;
 
-    public static final int ENCRYPTED_MIN_SIZE = (128 + 96) / Byte.SIZE;
+    public static final int ENCRYPTED_MIN_BIT_LENGTH = GCM_TAG_BIT_LENGTH + GCM_IV_BIT_LENGTH;
 
     public static SecretKeySpec generateKey() {
         return new SecretKeySpec(generateKeyBytes(), AES_KEY_ALGORITHM);
@@ -39,8 +39,8 @@ public class Aes {
         if(keyBytes.length == 0){
             throw new IllegalArgumentException("Aes getSecretKey error, keyBytes must not be empty");
         }
-        if(keyBytes.length != AES_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Aes getSecretKey error, the length of keyBytes [ " + keyBytes.length + " ] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
+        if(keyBytes.length != AES_KEY_BIT_LENGTH / Byte.SIZE){
+            throw new IllegalArgumentException("Aes getSecretKey error, the length of keyBytes [ " + keyBytes.length + " ] must be " + ( AES_KEY_BIT_LENGTH / Byte.SIZE ));
         }
         return new SecretKeySpec(keyBytes, AES_KEY_ALGORITHM);
     }
@@ -59,12 +59,12 @@ public class Aes {
         if(encryptKey.getEncoded() == null){
             throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be empty");
         }
-        if(encryptKey.getEncoded().length != AES_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [ " + encryptKey.getEncoded().length + " ] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
+        if(encryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE){
+            throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [ " + encryptKey.getEncoded().length + " ] must be " + ( AES_KEY_BIT_LENGTH / Byte.SIZE ));
         }
 
-        byte[] iv = Random.generate(GCM_IV_LENGTH);
-        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
+        byte[] iv = Random.generate(GCM_IV_BIT_LENGTH);
+        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_BIT_LENGTH, iv);
 
         try {
             Cipher cipher = Cipher.getInstance(AES_CIPHER_INSTANCE);
@@ -108,8 +108,8 @@ public class Aes {
         if(encryptedBytes == null){
             throw new IllegalArgumentException("Aes decrypt error, encryptedBytes must not be null");
         }
-        if(encryptedBytes.length < ENCRYPTED_MIN_SIZE){
-            throw new IllegalArgumentException("Aes decrypt error, the length of encryptedBytes [ " + encryptedBytes.length + " ] must not be smaller than " + ENCRYPTED_MIN_SIZE);
+        if(encryptedBytes.length < ENCRYPTED_MIN_BIT_LENGTH / Byte.SIZE){
+            throw new IllegalArgumentException("Aes decrypt error, the length of encryptedBytes [ " + encryptedBytes.length + " ] must not be smaller than " + ( ENCRYPTED_MIN_BIT_LENGTH / Byte.SIZE ));
         }
         if(decryptKey == null){
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be null");
@@ -117,12 +117,12 @@ public class Aes {
         if(decryptKey.getEncoded() == null){
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be empty");
         }
-        if(decryptKey.getEncoded().length != AES_KEY_LENGTH  / Byte.SIZE){
-            throw new IllegalArgumentException("Aes decrypt error, the length of decryptKey [ " + decryptKey.getEncoded().length + " ] must be " + ( AES_KEY_LENGTH  / Byte.SIZE ));
+        if(decryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE){
+            throw new IllegalArgumentException("Aes decrypt error, the length of decryptKey [ " + decryptKey.getEncoded().length + " ] must be " + ( AES_KEY_BIT_LENGTH / Byte.SIZE ));
         }
 
-        byte[] iv = Arrays.copyOfRange(encryptedBytes, 0, GCM_IV_LENGTH / Byte.SIZE);
-        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
+        byte[] iv = Arrays.copyOfRange(encryptedBytes, 0, GCM_IV_BIT_LENGTH / Byte.SIZE);
+        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_BIT_LENGTH, iv);
 
         try {
             Cipher cipher = Cipher.getInstance(AES_CIPHER_INSTANCE);
