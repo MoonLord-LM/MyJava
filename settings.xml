@@ -63,21 +63,7 @@
           </snapshots>
         </repository>
 
-        <!-- https://maven.scijava.org/content/repositories/public/com/github/FastFilter/fastfilter_java/bf0b02297f/fastfilter_java-bf0b02297f.pom -->
-        <repository>
-          <id>scijava-mirror</id>
-          <url>https://maven.scijava.org/content/repositories/public/</url>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-          </snapshots>
-        </repository>
       </repositories>
-
       <pluginRepositories>
         <pluginRepository>
           <id>maven-plugin-mirror</id>

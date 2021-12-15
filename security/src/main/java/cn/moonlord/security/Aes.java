@@ -1,5 +1,7 @@
 package cn.moonlord.security;
 
+import com.sun.istack.internal.NotNull;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -25,7 +27,7 @@ public class Aes {
     }
 
     public static byte[] generateKeyBytes() {
-        return Random.generate(AES_KEY_LENGTH);
+        return Random.generate(AES_KEY_BIT_LENGTH);
     }
 
     public static String generateKeyBase64String() {
