@@ -21,6 +21,7 @@
     <profile>
       <id>internal</id>
       <repositories>
+
         <!-- https://repo1.maven.org/maven2/org/jsoup/jsoup/1.14.3/jsoup-1.14.3.jar -->
         <repository>
           <id>maven-mirror</id>
@@ -63,8 +64,23 @@
           </snapshots>
         </repository>
 
+        <!-- http://maven.scijava.org/content/repositories/public/org/jsoup/jsoup/1.14.3/jsoup-1.14.3.jar -->
+        <repository>
+          <id>scijava-mirror</id>
+          <url>http://maven.scijava.org/content/repositories/public/</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+
       </repositories>
       <pluginRepositories>
+
         <pluginRepository>
           <id>maven-plugin-mirror</id>
           <url>https://repo1.maven.org/maven2/</url>
@@ -103,6 +119,20 @@
             <updatePolicy>always</updatePolicy>
           </snapshots>
         </pluginRepository>
+
+        <pluginRepository>
+          <id>scijava-plugin-mirror</id>
+          <url>maven.scijava.org/content/repositories/public/</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+
       </pluginRepositories>
     </profile>
   </profiles>
