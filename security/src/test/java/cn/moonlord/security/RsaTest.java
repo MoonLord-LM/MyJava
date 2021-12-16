@@ -43,7 +43,7 @@ public class RsaTest {
         logger.info("init, privateKeyBytes: " + Hex.encode(Rsa.getPrivateKeyBytes(privateKey)));
         logger.info("init, publicKeyBase64String: " + Rsa.getPublicKeyBase64String(publicKey));
         logger.info("init, privateKeyBase64String: " + Rsa.getPrivateKeyBase64String(privateKey));
-        Assert.assertEquals("success_1", 1958, publicKey.getEncoded().length);
+        Assert.assertEquals(1958, publicKey.getEncoded().length);
     }
 
     public static class generateKeyPair {
@@ -79,8 +79,8 @@ public class RsaTest {
             String privateKeyBase64String = Rsa.getPrivateKeyBase64String(keyPair);
             logger.info("generateKeyPair, publicKeyBase64String: " + publicKeyBase64String);
             logger.info("generateKeyPair, privateKeyBase64String: " + privateKeyBase64String);
-            Assert.assertEquals("success_1", publicKeyBase64String, Rsa.getPublicKeyBase64String(publicKey));
-            Assert.assertEquals("success_1", privateKeyBase64String, Rsa.getPrivateKeyBase64String(privateKey));
+            Assert.assertEquals(publicKeyBase64String, Rsa.getPublicKeyBase64String(publicKey));
+            Assert.assertEquals(privateKeyBase64String, Rsa.getPrivateKeyBase64String(privateKey));
             Assert.assertArrayEquals("success_1", publicKey.getEncoded(), Rsa.getPublicKey(publicKeyBase64String).getEncoded());
             Assert.assertArrayEquals("success_1", privateKey.getEncoded(), Rsa.getPrivateKey(privateKeyBase64String).getEncoded());
         }
@@ -94,7 +94,7 @@ public class RsaTest {
             logger.info("source: " + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
             logger.info("key: " + " [ " + Rsa.getPublicKeyBytes(publicKey).length + " ] " + " [ " + Base64.encode(Rsa.getPublicKeyBytes(publicKey)) + " ] ");
             logger.info("result: " + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
-            Assert.assertEquals("success_1", 1920, result.length);
+            Assert.assertEquals(1920, result.length);
         }
 
         @Test
@@ -104,7 +104,7 @@ public class RsaTest {
             logger.info("source: " + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
             logger.info("key: " + " [ " + Rsa.getPublicKeyBytes(publicKey).length + " ] " + " [ " + Base64.encode(Rsa.getPublicKeyBytes(publicKey)) + " ] ");
             logger.info("result: " + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
-            Assert.assertEquals("success_2", 1920, result.length);
+            Assert.assertEquals(1920, result.length);
         }
 
         @Test
@@ -113,7 +113,7 @@ public class RsaTest {
             for (int i = 0; i <= source.length; i++) {
                 byte[] result = Rsa.encrypt(Arrays.copyOfRange(source, 0, i), publicKey);
                 logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length");
-                Assert.assertEquals("success_3", 1920, result.length);
+                Assert.assertEquals(1920, result.length);
             }
         }
 
@@ -146,7 +146,7 @@ public class RsaTest {
         public void success_1() {
             String source = "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";
             byte[] result = Rsa.decrypt(Base64.decode(source), privateKey);
-            Assert.assertEquals("success_1", 0, result.length);
+            Assert.assertEquals(0, result.length);
         }
 
         @Test
@@ -154,8 +154,8 @@ public class RsaTest {
             String source = "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";
             byte[] result = Rsa.decrypt(Base64.decode(source), privateKey);
             String resultString = new String(result, StandardCharsets.UTF_8);
-            Assert.assertEquals("success_2", 6, result.length);
-            Assert.assertEquals("success_2", "测试", resultString);
+            Assert.assertEquals(6, result.length);
+            Assert.assertEquals("测试", resultString);
         }
 
         @Test
@@ -170,9 +170,9 @@ public class RsaTest {
             String result1 = Rsa.decryptString(encrypt1, privateKey);
             String result2 = Rsa.decryptString(encrypt2, Rsa.getPrivateKeyBytes(privateKey));
             String result3 = Rsa.decryptString(encrypt3, Rsa.getPrivateKeyBase64String(privateKey));
-            Assert.assertEquals("success_3", source, result1);
-            Assert.assertEquals("success_3", source, result2);
-            Assert.assertEquals("success_3", source, result3);
+            Assert.assertEquals(source, result1);
+            Assert.assertEquals(source, result2);
+            Assert.assertEquals(source, result3);
         }
 
         @Test(expected = IllegalArgumentException.class)

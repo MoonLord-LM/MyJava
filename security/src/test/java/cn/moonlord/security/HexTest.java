@@ -23,28 +23,28 @@ public class HexTest {
         public void success_1() {
             byte[] source = new byte[0];
             String result = Hex.encode(source);
-            Assert.assertEquals("success_1", "", result);
+            Assert.assertEquals("", result);
         }
 
         @Test
         public void success_2() {
             byte[] source = new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF};
             String result = Hex.encode(source);
-            Assert.assertEquals("success_2", "00dd11ee22ff", result);
+            Assert.assertEquals("00dd11ee22ff", result);
         }
 
         @Test
         public void success_3() {
             byte[] source = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
             String result = Hex.encode(source);
-            Assert.assertEquals("success_3", "000000000000", result);
+            Assert.assertEquals("000000000000", result);
         }
 
         @Test
         public void success_4() {
             byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
             String result = Hex.encode(source);
-            Assert.assertEquals("success_4", "e6b58be8af95", result);
+            Assert.assertEquals("e6b58be8af95", result);
         }
 
         @Test
@@ -109,7 +109,7 @@ public class HexTest {
         @Test
         public void success_1() {
             byte[] result = Hex.decode("");
-            Assert.assertEquals("success_1", 0, result.length);
+            Assert.assertEquals(0, result.length);
         }
 
         @Test
@@ -130,7 +130,7 @@ public class HexTest {
         public void success_4() {
             byte[] result = Hex.decode("e6b58be8af95");
             String resultString = new String(result, StandardCharsets.UTF_8);
-            Assert.assertEquals("success_4", "测试", resultString);
+            Assert.assertEquals("测试", resultString);
         }
 
         @Test

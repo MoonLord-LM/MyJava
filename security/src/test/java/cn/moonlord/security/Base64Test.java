@@ -25,9 +25,9 @@ public class Base64Test {
             String result = Base64.encode(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            Assert.assertEquals("success_1", expected, result);
-            Assert.assertEquals("success_1", compare1, result);
-            Assert.assertEquals("success_1", compare2, result);
+            Assert.assertEquals(expected, result);
+            Assert.assertEquals(compare1, result);
+            Assert.assertEquals(compare2, result);
         }
 
         @Test
@@ -37,9 +37,9 @@ public class Base64Test {
             String result = Base64.encode(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            Assert.assertEquals("success_2", expected, result);
-            Assert.assertEquals("success_2", compare1, result);
-            Assert.assertEquals("success_2", compare2, result);
+            Assert.assertEquals(expected, result);
+            Assert.assertEquals(compare1, result);
+            Assert.assertEquals(compare2, result);
         }
 
         @Test
@@ -49,9 +49,9 @@ public class Base64Test {
             String result = Base64.encode(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            Assert.assertEquals("success_3", expected, result);
-            Assert.assertEquals("success_3", compare1, result);
-            Assert.assertEquals("success_3", compare2, result);
+            Assert.assertEquals(expected, result);
+            Assert.assertEquals(compare1, result);
+            Assert.assertEquals(compare2, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -68,9 +68,9 @@ public class Base64Test {
             String result = Base64.encodeUrlSafe(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
-            Assert.assertEquals("success_1", expected, result);
-            Assert.assertEquals("success_1", compare1, result);
-            Assert.assertEquals("success_1", compare2, result);
+            Assert.assertEquals(expected, result);
+            Assert.assertEquals(compare1, result);
+            Assert.assertEquals(compare2, result);
         }
 
         @Test
@@ -80,9 +80,9 @@ public class Base64Test {
             String result = Base64.encodeUrlSafe(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
-            Assert.assertEquals("success_2", expected, result);
-            Assert.assertEquals("success_2", compare1, result);
-            Assert.assertEquals("success_2", compare2, result);
+            Assert.assertEquals(expected, result);
+            Assert.assertEquals(compare1, result);
+            Assert.assertEquals(compare2, result);
         }
 
         @Test
@@ -92,9 +92,9 @@ public class Base64Test {
             String result = Base64.encodeUrlSafe(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
-            Assert.assertEquals("success_3", expected, result);
-            Assert.assertEquals("success_3", compare1, result);
-            Assert.assertEquals("success_3", compare2, result);
+            Assert.assertEquals(expected, result);
+            Assert.assertEquals(compare1, result);
+            Assert.assertEquals(compare2, result);
         }
 
         @Test(expected = IllegalArgumentException.class)

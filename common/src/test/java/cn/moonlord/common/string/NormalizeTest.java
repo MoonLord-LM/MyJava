@@ -23,7 +23,7 @@ public class NormalizeTest {
             String source = "\uFe64" + "﹤尖括号1﹥" + "\uFe65" + " " + "\u003C" + "<尖括号2>" + "\u003E";
             String expected = "<<尖括号1>> <<尖括号2>>";
             String result = Normalize.getString(source);
-            Assert.assertEquals("success_1", expected, result);
+            Assert.assertEquals(expected, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -38,7 +38,7 @@ public class NormalizeTest {
             String source = "/test/../test/test/../../index.html";
             String expected = "/index.html";
             String result = Normalize.getUriString(source);
-            Assert.assertEquals("success_1", expected, result);
+            Assert.assertEquals(expected, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -58,7 +58,7 @@ public class NormalizeTest {
             String source = "test/test/../../test/test/../../测试.txt";
             String expected = new File("测试.txt").getAbsolutePath();
             String result = Normalize.getFilePath(source);
-            Assert.assertEquals("success_1", expected, result);
+            Assert.assertEquals(expected, result);
         }
 
         @Test(expected = IllegalArgumentException.class)

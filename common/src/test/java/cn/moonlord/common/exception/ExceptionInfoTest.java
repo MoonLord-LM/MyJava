@@ -22,7 +22,7 @@ public class ExceptionInfoTest {
             Exception throwable = new IllegalArgumentException();
             String message = ExceptionInfo.getSafeMessage(throwable);
             logger.info("getSafeMessage success_1 message: {}", message);
-            Assert.assertEquals("success_1", "", message);
+            Assert.assertEquals("", message);
         }
 
         @Test
@@ -30,7 +30,7 @@ public class ExceptionInfoTest {
             Exception throwable = new IllegalArgumentException("测试异常");
             String message = ExceptionInfo.getSafeMessage(throwable);
             logger.info("getSafeMessage success_2 message: {}", message);
-            Assert.assertEquals("success_2", "测试异常", message);
+            Assert.assertEquals("测试异常", message);
         }
 
         @Test
@@ -38,7 +38,7 @@ public class ExceptionInfoTest {
             Exception throwable = new FileNotFoundException("敏感异常");
             String message = ExceptionInfo.getSafeMessage(throwable);
             logger.info("getSafeMessage success_3 message: {}", message);
-            Assert.assertEquals("success_3", ExceptionInfo.SENSITIVE_EXCEPTION_MESSAGE, message);
+            Assert.assertEquals(ExceptionInfo.SENSITIVE_EXCEPTION_MESSAGE, message);
         }
     }
 
@@ -48,7 +48,7 @@ public class ExceptionInfoTest {
             Exception throwable = new IllegalArgumentException();
             String message = ExceptionInfo.getFullSafeMessage(throwable);
             logger.info("getFullSafeMessage success_1 message: {}", message);
-            Assert.assertEquals("success_1", "", message);
+            Assert.assertEquals("", message);
         }
 
         @Test
@@ -58,7 +58,7 @@ public class ExceptionInfoTest {
             Exception throwable3 = new IllegalArgumentException("测试异常3", throwable2);
             String message = ExceptionInfo.getFullSafeMessage(throwable3);
             logger.info("getFullSafeMessage success_2 message: {}", message);
-            Assert.assertEquals("success_2", "测试异常3 / 测试异常2 / 测试异常1", message);
+            Assert.assertEquals("测试异常3 / 测试异常2 / 测试异常1", message);
         }
 
         @Test
@@ -68,7 +68,7 @@ public class ExceptionInfoTest {
             Exception throwable3 = new IllegalArgumentException("测试异常3", throwable2);
             String message = ExceptionInfo.getFullSafeMessage(throwable3);
             logger.info("getFullSafeMessage success_3 message: {}", message);
-            Assert.assertEquals("success_3", "测试异常3 / 测试异常2 / " + ExceptionInfo.SENSITIVE_EXCEPTION_MESSAGE, message);
+            Assert.assertEquals("测试异常3 / 测试异常2 / " + ExceptionInfo.SENSITIVE_EXCEPTION_MESSAGE, message);
         }
     }
 

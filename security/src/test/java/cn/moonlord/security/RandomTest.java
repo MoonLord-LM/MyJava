@@ -94,13 +94,13 @@ public class RandomTest {
         @Test
         public void success_1() {
             byte[] result = Random.generate(8);
-            Assert.assertEquals("success_1", 1, result.length);
+            Assert.assertEquals(1, result.length);
         }
 
         @Test
         public void success_2() {
             byte[] result = Random.generate(8 * 1024);
-            Assert.assertEquals("success_2", 1024, result.length);
+            Assert.assertEquals(1024, result.length);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -128,13 +128,13 @@ public class RandomTest {
         @Test
         public void success_1() {
             byte[] result = Random.generateBytes(1);
-            Assert.assertEquals("success_1", 1, result.length);
+            Assert.assertEquals(1, result.length);
         }
 
         @Test
         public void success_2() {
             byte[] result = Random.generateBytes(1024);
-            Assert.assertEquals("success_2", 1024, result.length);
+            Assert.assertEquals(1024, result.length);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -152,11 +152,11 @@ public class RandomTest {
         @Test
         public void success_1() {
             String result1 = Random.select(new String[] { "测试" });
-            Assert.assertEquals("success_1", "测试", result1);
+            Assert.assertEquals("测试", result1);
             int result2 = Random.select(new Integer[] { -1 });
-            Assert.assertEquals("success_1", -1, result2);
+            Assert.assertEquals(-1, result2);
             long result3 = Random.select(new Long[] { 1024L });
-            Assert.assertEquals("success_1", 1024L, result3);
+            Assert.assertEquals(1024L, result3);
         }
 
         @Test

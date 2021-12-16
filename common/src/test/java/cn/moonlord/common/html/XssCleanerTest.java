@@ -23,8 +23,8 @@ public class XssCleanerTest {
             String result2 = XssCleaner.clean(source2);
             logger.info("clean success_1 result1: {}", result1);
             logger.info("clean success_1 result2: {}", result2);
-            Assert.assertEquals("success_1", source2, result1);
-            Assert.assertEquals("success_1", source2, result2);
+            Assert.assertEquals(source2, result1);
+            Assert.assertEquals(source2, result2);
         }
 
         @Test(expected = IllegalArgumentException.class)

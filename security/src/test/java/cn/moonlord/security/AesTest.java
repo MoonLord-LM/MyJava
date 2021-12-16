@@ -22,7 +22,7 @@ public class AesTest {
         @Test
         public void success_1() {
             byte[] result = Aes.generateKey().getEncoded();
-            Assert.assertEquals("success_1", 32, result.length);
+            Assert.assertEquals(32, result.length);
         }
     }
 
@@ -30,7 +30,7 @@ public class AesTest {
         @Test
         public void success_1() {
             byte[] result = Aes.generateKeyBytes();
-            Assert.assertEquals("success_1", 32, result.length);
+            Assert.assertEquals(32, result.length);
         }
     }
 
@@ -38,7 +38,7 @@ public class AesTest {
         @Test
         public void success_1() {
             byte[] result = Base64.decode(Aes.generateKeyBase64String());
-            Assert.assertEquals("success_1", 32, result.length);
+            Assert.assertEquals(32, result.length);
         }
     }
 
@@ -93,7 +93,7 @@ public class AesTest {
             logger.info("source: " + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
             logger.info("key: " + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
             logger.info("result: " + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
-            Assert.assertEquals("success_1", 28, result.length);
+            Assert.assertEquals(28, result.length);
         }
 
         @Test
@@ -104,7 +104,7 @@ public class AesTest {
             logger.info("source: " + " [ " + source.length + " ] " + " [ " + Base64.encode(source) + " ] ");
             logger.info("key: " + " [ " + key.length + " ] " + " [ " + Base64.encode(key) + " ] ");
             logger.info("result: " + " [ " + result.length + " ] " + " [ " + Base64.encode(result) + " ] ");
-            Assert.assertEquals("success_2", 34, result.length);
+            Assert.assertEquals(34, result.length);
         }
 
         @Test
@@ -113,7 +113,7 @@ public class AesTest {
             for (int i = 0; i <= source.length; i++) {
                 byte[] result = Aes.encrypt(Arrays.copyOfRange(source, 0, i), Aes.generateKeyBytes());
                 logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length");
-                Assert.assertEquals("success_3", (i + 28), result.length);
+                Assert.assertEquals((i + 28), result.length);
             }
         }
 
@@ -144,7 +144,7 @@ public class AesTest {
             String source = "AAAAAAAAAAAAAAAAUw+K+8dFNrmpY7TxxMtziw==";
             String key = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
             byte[] result = Aes.decrypt(Base64.decode(source), key);
-            Assert.assertEquals("success_1", 0, result.length);
+            Assert.assertEquals(0, result.length);
         }
 
         @Test
@@ -153,8 +153,8 @@ public class AesTest {
             String key = "UpBpV8RICneB0uuBTOTUCP13u7OuQ2Q+tsdi5dpAYiY=";
             byte[] result = Aes.decrypt(Base64.decode(source), key);
             String resultString = new String(result, StandardCharsets.UTF_8);
-            Assert.assertEquals("success_2", 6, result.length);
-            Assert.assertEquals("success_2", "测试", resultString);
+            Assert.assertEquals(6, result.length);
+            Assert.assertEquals("测试", resultString);
         }
 
         @Test
@@ -172,9 +172,9 @@ public class AesTest {
             String result1 = Aes.decryptString(encrypt1, key1);
             String result2 = Aes.decryptString(encrypt2, key2);
             String result3 = Aes.decryptString(encrypt3, key3);
-            Assert.assertEquals("success_3", "测试", result1);
-            Assert.assertEquals("success_3", "测试", result2);
-            Assert.assertEquals("success_3", "测试", result3);
+            Assert.assertEquals("测试", result1);
+            Assert.assertEquals("测试", result2);
+            Assert.assertEquals("测试", result3);
         }
 
         @Test(expected = IllegalArgumentException.class)
