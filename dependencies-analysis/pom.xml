@@ -14,6 +14,162 @@
 
     <dependencies>
 
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-layout-template-json</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-1.2-api</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-flume-ng</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-taglib</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jmx-gui</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j18-impl</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-appserver</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-couchdb</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-mongodb4</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-mongodb3</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-cassandra</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jpa</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-iostreams</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jul</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jpl</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-liquibase</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-docker</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-kubernetes</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-spring-boot</artifactId>
+        </dependency>
+
+        <!--target/import/log4j-bom-2.16.0.pom-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-spring-cloud-config-client</artifactId>
+        </dependency>
+
         <!--target/import/groovy-bom-3.0.9.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
@@ -1259,6 +1415,384 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-indexer</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-instrument</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jcl</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-archaius</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-archaius</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-turbine-stream</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-hystrix</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-hystrix-stream</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-sidecar</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-turbine</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-turbine-stream</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-zuul</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-ribbon</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.netflix-commons</groupId>
+            <artifactId>netflix-commons-util</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.concurrency-limits</groupId>
+            <artifactId>concurrency-limits-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.concurrency-limits</groupId>
+            <artifactId>concurrency-limits-servlet</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.servo</groupId>
+            <artifactId>servo-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.eureka</groupId>
+            <artifactId>eureka-client</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.eureka</groupId>
+            <artifactId>eureka-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-serialization</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-metrics-event-stream</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon-httpclient</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon-eureka</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon-loadbalancer</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.zuul</groupId>
+            <artifactId>zuul-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-netflix-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>com.netflix.netflix-commons</groupId>
+            <artifactId>netflix-eventbus</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-openfeign-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-openfeign-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-openfeign-dependencies-2.2.10.RELEASE.pom-->
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form-spring</artifactId>
         </dependency>
 
         <!--target/import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
@@ -2785,12 +3319,6 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-        </dependency>
-
-        <!--target/import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-to-slf4j</artifactId>
         </dependency>
 
         <!--target/import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
@@ -4347,6 +4875,54 @@
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
             <classifier>indy</classifier>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-el-api</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-juli</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-coyote</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-util</artifactId>
         </dependency>
 
         <!--../parent/pom.xml-->

@@ -33,6 +33,9 @@ https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B
 #### 5. IDEA 的 Maven 在本地构建项目时，出现乱码
 修改设置，在 Maven -> Runner 的 VM Options 中，添加 -Dfile.encoding=GBK  
 
+#### 6. IDEA 使用 maven-javadoc-plugin 插件时，控制台出现乱码
+设置系统环境变量，JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8  
+
 ## 说明
 
 #### 1. 使用  spring-boot-starter-test  进行单元测试

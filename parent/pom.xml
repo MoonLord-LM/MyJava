@@ -27,6 +27,15 @@
     <dependencyManagement>
         <dependencies>
 
+            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-bom -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>2.16.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-bom -->
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
@@ -68,6 +77,33 @@
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-bom</artifactId>
                 <version>5.3.12.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-framework-bom -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>5.2.19.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-netflix-dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-netflix-dependencies</artifactId>
+                <version>2.2.10.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-openfeign-dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-openfeign-dependencies</artifactId>
+                <version>2.2.10.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -144,6 +180,83 @@
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-el</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-annotations-api -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-annotations-api</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-servlet-api</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jsp-api</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-el-api -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-el-api</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jdbc</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-juli -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-juli</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-catalina</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-coyote -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-coyote</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jasper</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-dbcp</artifactId>
+                <version>9.0.56</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-util -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-util</artifactId>
                 <version>9.0.56</version>
             </dependency>
 
