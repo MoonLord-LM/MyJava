@@ -83,7 +83,7 @@ public class XorTest {
         public void success_2() {
             byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF};
             byte[] result = Xor.fold(source);
-            Assert.assertArrayEquals("success_2", new byte[]{(byte) 0xFF}, result);
+            Assert.assertArrayEquals(new byte[]{(byte) 0xFF}, result);
         }
 
         @Test
@@ -93,7 +93,7 @@ public class XorTest {
                     (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0xFF
             };
             byte[] result = Xor.fold(source);
-            Assert.assertArrayEquals("success_3", new byte[]{
+            Assert.assertArrayEquals(new byte[]{
                     (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xFF
             }, result);
         }

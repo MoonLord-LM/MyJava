@@ -25,11 +25,9 @@ public class Base64Test {
             String result = Base64.encode(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            String compare3 = org.bouncycastle.util.encoders.Base64.toBase64String(source);
             Assert.assertEquals(expected, result);
             Assert.assertEquals(compare1, result);
             Assert.assertEquals(compare2, result);
-            Assert.assertEquals(compare3, result);
         }
 
         @Test
@@ -39,25 +37,21 @@ public class Base64Test {
             String result = Base64.encode(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            String compare3 = org.bouncycastle.util.encoders.Base64.toBase64String(source);
             Assert.assertEquals(expected, result);
             Assert.assertEquals(compare1, result);
             Assert.assertEquals(compare2, result);
-            Assert.assertEquals(compare3, result);
         }
 
         @Test
         public void success_3() {
-            byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
-            String expected = "5rWL6K+V";
+            byte[] source = "测试ABC01".getBytes(StandardCharsets.UTF_8);
+            String expected = "5rWL6K+VQUJDMDE=";
             String result = Base64.encode(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            String compare3 = org.bouncycastle.util.encoders.Base64.toBase64String(source);
             Assert.assertEquals(expected, result);
             Assert.assertEquals(compare1, result);
             Assert.assertEquals(compare2, result);
-            Assert.assertEquals(compare3, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -93,14 +87,14 @@ public class Base64Test {
 
         @Test
         public void success_3() {
-            byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
-            String expected = "5rWL6K-V";
+            byte[] source = "测试ABC01".getBytes(StandardCharsets.UTF_8);
+            String expected = "5rWL6K-VQUJDMDE=";
             String result = Base64.encodeUrlSafe(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
             Assert.assertEquals(expected, result);
-            Assert.assertEquals(compare1, result);
-            Assert.assertEquals(compare2, result);
+            Assert.assertEquals(compare1.replace("=", ""), result.replace("=", ""));
+            Assert.assertEquals(compare2.replace("=", ""), result.replace("=", ""));
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -112,14 +106,16 @@ public class Base64Test {
     public static class encodeMime {
         @Test
         public void success_1() {
-            byte[] source = String.join("", Collections.nCopies(100, "测试")).getBytes(StandardCharsets.UTF_8);
-            String result = Base64.encodeMime(source, Base64.MIME_CHUNK_SIZE);
+            byte[] source = String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8);
+            String expected = "5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V";
+            String result = Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH);
+            Assert.assertEquals(expected, result);
             logger.info("encodeMime result: \r\n{}", result);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Base64.encodeMime(null, Base64.MIME_CHUNK_SIZE);
+            Base64.encodeMime(null, Base64.MIME_CHUNK_MAX_LENGTH);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -129,7 +125,7 @@ public class Base64Test {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            Base64.encodeMime(new byte[0], Base64.MIME_CHUNK_SIZE + 1);
+            Base64.encodeMime(new byte[0], Base64.MIME_CHUNK_MAX_LENGTH + 1);
         }
     }
 
@@ -141,11 +137,9 @@ public class Base64Test {
             byte[] result = Base64.decode(source);
             byte[] compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
             byte[] compare2 = org.springframework.util.Base64Utils.decodeFromString(source);
-            byte[] compare3 = org.bouncycastle.util.encoders.Base64.decode(source);
             Assert.assertArrayEquals(expected, result);
             Assert.assertArrayEquals(compare1, result);
             Assert.assertArrayEquals(compare2, result);
-            Assert.assertArrayEquals(compare3, result);
         }
 
         @Test
@@ -155,21 +149,21 @@ public class Base64Test {
             byte[] result = Base64.decode(source);
             byte[] compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
             byte[] compare2 = org.springframework.util.Base64Utils.decodeFromString(source);
-            Assert.assertArrayEquals("success_2", expected, result);
-            Assert.assertArrayEquals("success_2", compare1, result);
-            Assert.assertArrayEquals("success_2", compare2, result);
+            Assert.assertArrayEquals(expected, result);
+            Assert.assertArrayEquals(compare1, result);
+            Assert.assertArrayEquals(compare2, result);
         }
 
         @Test
         public void success_3() {
-            String source = "5rWL6K+V";
-            byte[] expected = "测试".getBytes(StandardCharsets.UTF_8);
+            String source = "5rWL6K+VQUJDMDE=";
+            byte[] expected = "测试ABC01".getBytes(StandardCharsets.UTF_8);
             byte[] result = Base64.decode(source);
             byte[] compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
             byte[] compare2 = org.springframework.util.Base64Utils.decodeFromString(source);
-            Assert.assertArrayEquals("success_3", expected, result);
-            Assert.assertArrayEquals("success_3", compare1, result);
-            Assert.assertArrayEquals("success_3", compare2, result);
+            Assert.assertArrayEquals(expected, result);
+            Assert.assertArrayEquals(compare1, result);
+            Assert.assertArrayEquals(compare2, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -198,21 +192,28 @@ public class Base64Test {
             byte[] result = Base64.decodeUrlSafe(source);
             byte[] compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
             byte[] compare2 = org.springframework.util.Base64Utils.decodeFromUrlSafeString(source);
-            Assert.assertArrayEquals("success_2", expected, result);
-            Assert.assertArrayEquals("success_2", compare1, result);
-            Assert.assertArrayEquals("success_2", compare2, result);
+            Assert.assertArrayEquals(expected, result);
+            Assert.assertArrayEquals(compare1, result);
+            Assert.assertArrayEquals(compare2, result);
         }
 
         @Test
         public void success_3() {
-            String source = "5rWL6K-V";
-            byte[] expected = "测试".getBytes(StandardCharsets.UTF_8);
+            String source = "5rWL6K-VQUJDMDE=";
+            byte[] expected = "测试ABC01".getBytes(StandardCharsets.UTF_8);
             byte[] result = Base64.decodeUrlSafe(source);
             byte[] compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
             byte[] compare2 = org.springframework.util.Base64Utils.decodeFromUrlSafeString(source);
-            Assert.assertArrayEquals("success_3", expected, result);
-            Assert.assertArrayEquals("success_3", compare1, result);
-            Assert.assertArrayEquals("success_3", compare2, result);
+            Assert.assertArrayEquals(expected, result);
+            Assert.assertArrayEquals(compare1, result);
+            Assert.assertArrayEquals(compare2, result);
+            source = source.replace("=", "");
+            result = Base64.decodeUrlSafe(source);
+            compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
+            compare2 = org.springframework.util.Base64Utils.decodeFromUrlSafeString(source);
+            Assert.assertArrayEquals(expected, result);
+            Assert.assertArrayEquals(compare1, result);
+            Assert.assertArrayEquals(compare2, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -225,7 +226,7 @@ public class Base64Test {
         @Test
         public void success_1() {
             byte[] source = String.join("", Collections.nCopies(100, "测试")).getBytes(StandardCharsets.UTF_8);
-            byte[] result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_CHUNK_SIZE));
+            byte[] result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH));
             Assert.assertArrayEquals(source, result);
         }
 

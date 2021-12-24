@@ -116,14 +116,14 @@ public class HexTest {
         public void success_2() {
             byte[] result = Hex.decode("00dd11ee22ff");
             byte[] compare = new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF};
-            Assert.assertArrayEquals("success_2", compare, result);
+            Assert.assertArrayEquals(compare, result);
         }
 
         @Test
         public void success_3() {
             byte[] result = Hex.decode("000000000000");
             byte[] compare = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
-            Assert.assertArrayEquals("success_3", compare, result);
+            Assert.assertArrayEquals(compare, result);
         }
 
         @Test

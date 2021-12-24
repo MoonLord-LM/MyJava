@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Base64 {
 
-    public static final int MIME_CHUNK_SIZE = 76;
+    public static final int MIME_CHUNK_MAX_LENGTH = 76;
 
     public static final byte[] MIME_LINE_SEPARATOR = new byte[] {'\r', '\n'};
 
@@ -31,8 +31,8 @@ public class Base64 {
         if(lineLength <= 0){
             throw new IllegalArgumentException("Base64 encodeMime error, lineLength must be larger than 0");
         }
-        if(lineLength > MIME_CHUNK_SIZE){
-            throw new IllegalArgumentException("Base64 encodeMime error, lineLength [ " + lineLength + " ] must not be larger than " + MIME_CHUNK_SIZE);
+        if(lineLength > MIME_CHUNK_MAX_LENGTH){
+            throw new IllegalArgumentException("Base64 encodeMime error, lineLength [ " + lineLength + " ] must not be larger than " + MIME_CHUNK_MAX_LENGTH);
         }
         byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, MIME_LINE_SEPARATOR).encode(sourceBytes);
         return new String(buffer,StandardCharsets.UTF_8);

@@ -65,7 +65,7 @@ public class PemTest {
         public void success_2() {
             PublicKey result = Pem.decodeRsaPublicKey(Pem.encodeRsaPublicKey(publicKey));
             logger.info("decodeRsaPublicKey" + "\r\n" + result);
-            Assert.assertArrayEquals("success_2", publicKey.getEncoded(), result.getEncoded());
+            Assert.assertArrayEquals(publicKey.getEncoded(), result.getEncoded());
         }
     }
 
@@ -81,7 +81,7 @@ public class PemTest {
         public void success_2() {
             PrivateKey result = Pem.decodeRsaPrivateKey(Pem.encodeRsaPrivateKey(privateKey));
             logger.info("decodeRsaPrivateKey" + "\r\n" + result);
-            Assert.assertArrayEquals("success_2", privateKey.getEncoded(), result.getEncoded());
+            Assert.assertArrayEquals(privateKey.getEncoded(), result.getEncoded());
         }
     }
 
