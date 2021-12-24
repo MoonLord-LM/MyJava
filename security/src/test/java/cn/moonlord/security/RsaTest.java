@@ -71,18 +71,18 @@ public class RsaTest {
             byte[] privateKeyBytes = Rsa.getPrivateKeyBytes(keyPair);
             logger.info("generateKeyPair, publicKeyBytes: " + Hex.encode(Rsa.getPublicKeyBytes(keyPair)));
             logger.info("generateKeyPair, privateKeyBytes: " + Hex.encode(Rsa.getPrivateKeyBytes(keyPair)));
-            Assert.assertArrayEquals("success_1", publicKeyBytes, Rsa.getPublicKeyBytes(publicKey));
-            Assert.assertArrayEquals("success_1", privateKeyBytes, Rsa.getPrivateKeyBytes(privateKey));
-            Assert.assertArrayEquals("success_1", publicKey.getEncoded(), Rsa.getPublicKey(publicKeyBytes).getEncoded());
-            Assert.assertArrayEquals("success_1", privateKey.getEncoded(), Rsa.getPrivateKey(privateKeyBytes).getEncoded());
+            Assert.assertArrayEquals(publicKeyBytes, Rsa.getPublicKeyBytes(publicKey));
+            Assert.assertArrayEquals(privateKeyBytes, Rsa.getPrivateKeyBytes(privateKey));
+            Assert.assertArrayEquals(publicKey.getEncoded(), Rsa.getPublicKey(publicKeyBytes).getEncoded());
+            Assert.assertArrayEquals(privateKey.getEncoded(), Rsa.getPrivateKey(privateKeyBytes).getEncoded());
             String publicKeyBase64String = Rsa.getPublicKeyBase64String(keyPair);
             String privateKeyBase64String = Rsa.getPrivateKeyBase64String(keyPair);
             logger.info("generateKeyPair, publicKeyBase64String: " + publicKeyBase64String);
             logger.info("generateKeyPair, privateKeyBase64String: " + privateKeyBase64String);
             Assert.assertEquals(publicKeyBase64String, Rsa.getPublicKeyBase64String(publicKey));
             Assert.assertEquals(privateKeyBase64String, Rsa.getPrivateKeyBase64String(privateKey));
-            Assert.assertArrayEquals("success_1", publicKey.getEncoded(), Rsa.getPublicKey(publicKeyBase64String).getEncoded());
-            Assert.assertArrayEquals("success_1", privateKey.getEncoded(), Rsa.getPrivateKey(privateKeyBase64String).getEncoded());
+            Assert.assertArrayEquals(publicKey.getEncoded(), Rsa.getPublicKey(publicKeyBase64String).getEncoded());
+            Assert.assertArrayEquals(privateKey.getEncoded(), Rsa.getPrivateKey(privateKeyBase64String).getEncoded());
         }
     }
 

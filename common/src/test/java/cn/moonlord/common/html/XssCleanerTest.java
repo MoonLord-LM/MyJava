@@ -40,8 +40,8 @@ public class XssCleanerTest {
             String source2 = "<div><p><a>Link</a></p></div>";
             boolean result1 = ! ( XssCleaner.isValid(source1) );
             boolean result2 = XssCleaner.isValid(source2);
-            Assert.assertTrue("success_1", result1);
-            Assert.assertTrue("success_1", result2);
+            Assert.assertTrue(result1);
+            Assert.assertTrue(result2);
         }
 
         @Test(expected = IllegalArgumentException.class)

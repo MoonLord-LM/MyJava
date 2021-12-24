@@ -82,6 +82,11 @@ public class AesTest {
         public void error_6() {
             Aes.getSecretKey("AAAAAAAA");
         }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void error_7() {
+            Aes.getSecretKey("测试");
+        }
     }
 
     public static class encrypt {

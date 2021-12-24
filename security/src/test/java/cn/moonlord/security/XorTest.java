@@ -76,7 +76,7 @@ public class XorTest {
         public void success_1() {
             byte[] source = new byte[]{(byte) 0xFF, (byte) 0xFF};
             byte[] result = Xor.fold(source);
-            Assert.assertArrayEquals("success_1", new byte[]{(byte) 0x00}, result);
+            Assert.assertArrayEquals(new byte[]{(byte) 0x00}, result);
         }
 
         @Test

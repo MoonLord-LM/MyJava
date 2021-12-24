@@ -106,14 +106,14 @@ public class DateFormatTest {
                     "1978-01-01T16:00:00.000Z",
                     "1979-01-01T04:59:59.000Z"
             );
-            Assert.assertEquals("success_1",sources.size(), dates.size());
+            Assert.assertEquals(sources.size(), dates.size());
             for (int i = 0; i < sources.size(); i++) {
                 Date date = DateFormat.parse(sources.get(i));
                 String utcDate = DateFormat.formatUTC(date);
                 if(!utcDate.equals(dates.get(i))){
                     logger.info("source: {}, UTC: {}, expect: {}", sources.get(i), utcDate, dates.get(i));
                 }
-                Assert.assertEquals("success_1",utcDate, dates.get(i));
+                Assert.assertEquals(utcDate, dates.get(i));
             }
         }
 

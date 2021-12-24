@@ -24,7 +24,7 @@ public class HashTest {
             byte[] result = Hash.sha256(source);
             byte[] compare = DigestUtils.sha256(source);
             Assert.assertEquals(32, result.length);
-            Assert.assertArrayEquals("success_1", compare, result);
+            Assert.assertArrayEquals(compare, result);
         }
 
         @Test
@@ -86,7 +86,7 @@ public class HashTest {
             byte[] result = Hash.sha512(source);
             byte[] compare = DigestUtils.sha512(source);
             Assert.assertEquals(64, result.length);
-            Assert.assertArrayEquals("success_1", compare, result);
+            Assert.assertArrayEquals(compare, result);
         }
 
         @Test
