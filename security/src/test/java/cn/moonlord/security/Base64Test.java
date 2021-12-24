@@ -92,6 +92,9 @@ public class Base64Test {
             String result = Base64.encodeUrlSafe(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
+            logger.info("Base64.encodeUrlSafe: {}", result);
+            logger.info("org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString: {}", compare1);
+            logger.info("org.springframework.util.Base64Utils.encodeToUrlSafeString: {}", compare2);
             Assert.assertEquals(expected, result);
             Assert.assertEquals(compare1.replace("=", ""), result.replace("=", ""));
             Assert.assertEquals(compare2.replace("=", ""), result.replace("=", ""));
@@ -110,7 +113,6 @@ public class Base64Test {
             String expected = "5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V";
             String result = Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH);
             Assert.assertEquals(expected, result);
-            logger.info("encodeMime result: \r\n{}", result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -161,6 +163,13 @@ public class Base64Test {
             byte[] result = Base64.decode(source);
             byte[] compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
             byte[] compare2 = org.springframework.util.Base64Utils.decodeFromString(source);
+            Assert.assertArrayEquals(expected, result);
+            Assert.assertArrayEquals(compare1, result);
+            Assert.assertArrayEquals(compare2, result);
+            source = source.replace("=", "");
+            result = Base64.decode(source);
+            compare1 = org.apache.commons.codec.binary.Base64.decodeBase64(source);
+            compare2 = org.springframework.util.Base64Utils.decodeFromString(source);
             Assert.assertArrayEquals(expected, result);
             Assert.assertArrayEquals(compare1, result);
             Assert.assertArrayEquals(compare2, result);
