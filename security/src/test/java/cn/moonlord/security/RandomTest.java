@@ -57,7 +57,7 @@ public class RandomTest {
                     logger.info("[instance] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[defaultInstance] compare time: {} ms", getCompareMethodRunTime());
                     logger.info("[instance] is {} faster than [defaultInstance]", getImprovement());
-                    Assert.assertTrue("performance_1", getImprovedPercentage() > -10);
+                    Assert.assertTrue("performance_1", getImprovedPercentage() > -10L);
                 }
             }.run();
         }
@@ -84,7 +84,7 @@ public class RandomTest {
                     logger.info("[instance] cost time: {} ms", getTestMethodRunTime());
                     logger.info("[strongInstance] compare time: {} ms", getCompareMethodRunTime());
                     logger.info("[instance] is {} faster than [strongInstance]", getImprovement());
-                    Assert.assertTrue("performance_2", getImprovedPercentage() > -10);
+                    Assert.assertTrue("performance_2", getImprovedPercentage() > -10L);
                 }
             }.run();
         }
