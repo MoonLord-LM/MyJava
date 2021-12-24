@@ -50,8 +50,8 @@ public class HexTest {
 
         @Test
         public void performance_1() {
-            byte[] source = Random.generateBytes(1024 * 1024 * 64);
-            new PerformanceCompare(32) {
+            byte[] source = Random.generateBytes(1024 * 10);
+            new PerformanceCompare(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.encode(source);
@@ -73,8 +73,8 @@ public class HexTest {
 
         @Test
         public void performance_2() {
-            byte[] source = Random.generateBytes(1024 * 1024 * 64);
-            new PerformanceCompare(32) {
+            byte[] source = Random.generateBytes(1024 * 10);
+            new PerformanceCompare(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.encode(source);
@@ -136,8 +136,8 @@ public class HexTest {
 
         @Test
         public void performance_1() {
-            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 64));
-            new PerformanceCompare(16) {
+            String source = Hex.encode(Random.generateBytes(1024 * 10));
+            new PerformanceCompare(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.decode(source);
@@ -159,8 +159,8 @@ public class HexTest {
 
         @Test
         public void performance_2() {
-            String source = Hex.encode(Random.generateBytes(1024 * 1024 * 64));
-            new PerformanceCompare(16) {
+            String source = Hex.encode(Random.generateBytes(1024 * 10));
+            new PerformanceCompare(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.decode(source);
