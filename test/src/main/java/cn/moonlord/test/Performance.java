@@ -2,20 +2,20 @@ package cn.moonlord.test;
 
 public abstract class Performance implements Runnable {
 
+    public void onStarted() throws Exception { }
+
     public abstract void testMethod() throws Exception;
 
-    public abstract void onStarted() throws Exception;
+    public void onCompleted() throws Exception { }
 
-    public abstract void onCompleted() throws Exception;
-
-    private int numberOfRuns = 1;
+    private int cycleOfRuns = 1;
 
     private long testMethodRunTime = 0;
 
     public Performance() { }
 
-    public Performance(int numberOfRuns) {
-        this.numberOfRuns = numberOfRuns;
+    public Performance(int cycleOfRuns) {
+        this.cycleOfRuns = cycleOfRuns;
     }
 
     @Override
@@ -24,7 +24,7 @@ public abstract class Performance implements Runnable {
             onStarted();
 
             long beginTime = System.currentTimeMillis();
-            for (int i = 0; i < numberOfRuns; i++) {
+            for (int i = 0; i < cycleOfRuns; i++) {
                 testMethod();
             }
             long endTime = System.currentTimeMillis();
@@ -41,8 +41,8 @@ public abstract class Performance implements Runnable {
         new Thread(this).start();
     }
 
-    public Integer getNumberOfRuns() {
-        return numberOfRuns;
+    public Integer getCycleOfRuns() {
+        return cycleOfRuns;
     }
 
     public Long getTestMethodRunTime() {
