@@ -53,9 +53,9 @@ public class RandomTest {
                     Xor.merge(result, tmp);
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("[instance] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[defaultInstance] compare time: {} ms", getCompareMethodRunTime());
+                public void onFinished() {
+                    logger.info("[instance] cost time: {} ms", getTestMethodTotalRunTime());
+                    logger.info("[defaultInstance] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[instance] is {} faster than [defaultInstance]", getImprovement());
                     Assert.assertTrue("performance_1", getImprovedPercentage() > -10L);
                 }
@@ -80,9 +80,9 @@ public class RandomTest {
                     Xor.merge(result, tmp);
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("[instance] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[strongInstance] compare time: {} ms", getCompareMethodRunTime());
+                public void onFinished() {
+                    logger.info("[instance] cost time: {} ms", getTestMethodTotalRunTime());
+                    logger.info("[strongInstance] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[instance] is {} faster than [strongInstance]", getImprovement());
                     Assert.assertTrue("performance_2", getImprovedPercentage() > -10L);
                 }

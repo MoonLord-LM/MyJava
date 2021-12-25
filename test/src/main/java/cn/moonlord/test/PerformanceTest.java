@@ -6,15 +6,18 @@ public abstract class PerformanceTest implements Runnable {
 
     public abstract void testMethod() throws Exception;
 
-    public void onCompleted() throws Exception { }
+    public void onFinished() throws Exception { }
 
     private int cycleOfRuns = 1;
 
-    private long testMethodRunTime = 0;
+    private long testMethodTotalRunTime = 0;
 
     public PerformanceTest() { }
 
     public PerformanceTest(int cycleOfRuns) {
+        if(cycleOfRuns < 1) {
+            throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
+        }
         this.cycleOfRuns = cycleOfRuns;
     }
 
@@ -28,9 +31,9 @@ public abstract class PerformanceTest implements Runnable {
                 testMethod();
             }
             long endTime = System.currentTimeMillis();
-            testMethodRunTime = endTime - beginTime;
+            testMethodTotalRunTime = endTime - beginTime;
 
-            onCompleted();
+            onFinished();
         }
         catch (Exception e) {
             throw new RuntimeException(e);
@@ -41,8 +44,12 @@ public abstract class PerformanceTest implements Runnable {
         return cycleOfRuns;
     }
 
-    public Long getTestMethodRunTime() {
-        return testMethodRunTime;
+    public Long getTestMethodTotalRunTime() {
+        return testMethodTotalRunTime;
+    }
+
+    public Long getTestMethodAverageRunTime() {
+        return testMethodTotalRunTime / cycleOfRuns;
     }
 
 }

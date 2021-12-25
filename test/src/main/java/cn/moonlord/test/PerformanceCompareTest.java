@@ -8,13 +8,13 @@ public abstract class PerformanceCompareTest implements Runnable {
 
     public abstract void compareMethod() throws Exception;
 
-    public void onCompleted() throws Exception { }
+    public void onFinished() throws Exception { }
 
     private int cycleOfRuns = 1;
 
-    private long testMethodRunTime = 0;
+    private long testMethodTotalRunTime = 0;
 
-    private long compareMethodRunTime = 0;
+    private long compareMethodTotalRunTime = 0;
 
     private boolean isImproved = false;
 
@@ -38,21 +38,21 @@ public abstract class PerformanceCompareTest implements Runnable {
                 testMethod();
             }
             long endTime = System.currentTimeMillis();
-            testMethodRunTime = endTime - beginTime;
+            testMethodTotalRunTime = endTime - beginTime;
 
             beginTime = System.currentTimeMillis();
             for (int i = 0; i < cycleOfRuns; i++) {
                 compareMethod();
             }
             endTime = System.currentTimeMillis();
-            compareMethodRunTime = endTime - beginTime;
+            compareMethodTotalRunTime = endTime - beginTime;
 
-            isImproved = testMethodRunTime < compareMethodRunTime;
-            double ratio = ((1 / (double) testMethodRunTime) - (1 / (double) compareMethodRunTime)) / (1 / (double) compareMethodRunTime);
+            isImproved = testMethodTotalRunTime < compareMethodTotalRunTime;
+            double ratio = ((1 / (double) testMethodTotalRunTime) - (1 / (double) compareMethodTotalRunTime)) / (1 / (double) compareMethodTotalRunTime);
             improvedPercentage = Math.round(ratio * 100);
             improvement = "" + improvedPercentage + "%";
 
-            onCompleted();
+            onFinished();
         }
         catch (Exception e) {
             throw new RuntimeException(e);
@@ -63,12 +63,12 @@ public abstract class PerformanceCompareTest implements Runnable {
         return cycleOfRuns;
     }
 
-    public Long getTestMethodRunTime() {
-        return testMethodRunTime;
+    public Long getTestMethodTotalRunTime() {
+        return testMethodTotalRunTime;
     }
 
-    public Long getCompareMethodRunTime() {
-        return compareMethodRunTime;
+    public Long getCompareMethodTotalRunTime() {
+        return compareMethodTotalRunTime;
     }
 
     public Long getImprovedPercentage() {

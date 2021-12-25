@@ -60,9 +60,9 @@ public class HexTest {
                     org.apache.commons.codec.binary.Hex.encodeHexString(source);
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("[Hex.encode] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[Hex.encodeHexString] compare time: {} ms", getCompareMethodRunTime());
+                public void onFinished() {
+                    logger.info("[Hex.encode] cost time: {} ms", getTestMethodTotalRunTime());
+                    logger.info("[Hex.encodeHexString] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", getImprovement());
                     Assert.assertTrue("performance_1", isImproved());
                     Assert.assertTrue("performance_1", getImprovedPercentage() > -10L );
@@ -83,9 +83,9 @@ public class HexTest {
                     new String(org.springframework.security.crypto.codec.Hex.encode(source));
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("[Hex.encode] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[Hex.encode] compare time: {} ms", getCompareMethodRunTime());
+                public void onFinished() {
+                    logger.info("[Hex.encode] cost time: {} ms", getTestMethodTotalRunTime());
+                    logger.info("[Hex.encode] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encode] of Spring Security", getImprovement());
                     Assert.assertTrue("performance_2", getImprovedPercentage() > -10L );
                 }
@@ -146,9 +146,9 @@ public class HexTest {
                     org.apache.commons.codec.binary.Hex.decodeHex(source);
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("[Hex.decode] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[Hex.decodeHex] compare time: {} ms", getCompareMethodRunTime());
+                public void onFinished() {
+                    logger.info("[Hex.decode] cost time: {} ms", getTestMethodTotalRunTime());
+                    logger.info("[Hex.decodeHex] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.decode] of this project is {} faster than [Hex.decodeHex] of Apache Commons Codec", getImprovement());
                     Assert.assertTrue("performance_1", isImproved());
                     Assert.assertTrue("performance_1", getImprovedPercentage() > -10L );
@@ -169,9 +169,9 @@ public class HexTest {
                     org.springframework.security.crypto.codec.Hex.decode(source);
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("[Hex.decode] cost time: {} ms", getTestMethodRunTime());
-                    logger.info("[Hex.decode] compare time: {} ms", getCompareMethodRunTime());
+                public void onFinished() {
+                    logger.info("[Hex.decode] cost time: {} ms", getTestMethodTotalRunTime());
+                    logger.info("[Hex.decode] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.decode] of this project is {} faster than [Hex.decode] of Spring Security", getImprovement());
                     Assert.assertTrue("performance_2", isImproved());
                     Assert.assertTrue("performance_2", getImprovedPercentage() > -10L );

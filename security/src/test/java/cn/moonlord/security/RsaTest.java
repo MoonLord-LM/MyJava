@@ -59,8 +59,8 @@ public class RsaTest {
                     keyPair = Rsa.generateKeyPair();
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("end generateKeyPair, cost time: {} ms", getTestMethodRunTime());
+                public void onFinished() {
+                    logger.info("end generateKeyPair, cost time: {} ms", getTestMethodTotalRunTime());
                 }
             }.run();
             publicKey = Rsa.getPublicKey(keyPair);

@@ -46,8 +46,8 @@ public class Pbkdf2Test {
                     logger.info("result length: [ " + result.length + " ], base64: [ " + Base64.encode(result) + " ]");
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("end generate, cycle: {}, cost total time: {} ms", getCycleOfRuns(), getTestMethodRunTime());
+                public void onFinished() {
+                    logger.info("cycle: {}, cost total time: {} ms, average time: {}", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
                 }
             }.run();
         }
@@ -70,8 +70,8 @@ public class Pbkdf2Test {
                     logger.info("result length: [ " + result.length + " ], base64: [ " + Base64.encode(result) + " ]");
                 }
                 @Override
-                public void onCompleted() {
-                    logger.info("end generate, cycle: {}, cost total time: {} ms", getCycleOfRuns(), getTestMethodRunTime());
+                public void onFinished() {
+                    logger.info("cycle: {}, cost total time: {} ms, average time: {}", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
                 }
             }.run();
         }
