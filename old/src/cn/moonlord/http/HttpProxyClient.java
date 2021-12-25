@@ -14,7 +14,7 @@ public class HttpProxyClient implements Runnable {
     private String proxyHost;
     private int proxyPort;
 
-    public HttpProxyClient(String url, String proxyHost, int proxyPort){
+    public HttpProxyClient(String url, String proxyHost, int proxyPort) {
         this.url = url;
         this.proxyHost = proxyHost;
         this.proxyPort = proxyPort;

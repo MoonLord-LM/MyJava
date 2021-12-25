@@ -10,7 +10,7 @@ public class SingleThreadServerSocket implements Runnable {
 
     private int port;
 
-    public SingleThreadServerSocket(int port){
+    public SingleThreadServerSocket(int port) {
         this.port = port;
         (new Thread(this)).start();
     }

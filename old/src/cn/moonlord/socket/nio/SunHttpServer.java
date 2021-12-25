@@ -8,7 +8,7 @@ import java.net.InetSocketAddress;
 
 public class SunHttpServer {
 
-    public SunHttpServer(int port, int maxConnectionNum){
+    public SunHttpServer(int port, int maxConnectionNum) {
         try {
             HttpServer server = HttpServer.create(new InetSocketAddress(port), maxConnectionNum);
             server.createContext("/", new SunSimpleHttpHandler());

@@ -13,7 +13,7 @@ public class SimpleHttpHandler implements Runnable {
 
     private Socket client;
 
-    public SimpleHttpHandler(Socket client){
+    public SimpleHttpHandler(Socket client) {
         this.client = client;
     }
 
@@ -25,7 +25,7 @@ public class SimpleHttpHandler implements Runnable {
             String line =  in.readLine();
             Logger.info("    " + line);
             String[] requestLine = line.split(" ");
-            if(requestLine.length != 3){
+            if(requestLine.length != 3) {
                 Logger.info("[ Input Error ]");
                 client.getOutputStream().write(("HTTP/1.1 400 Bad Request" + "\r\n\r\n").getBytes());
                 client.getOutputStream().close();

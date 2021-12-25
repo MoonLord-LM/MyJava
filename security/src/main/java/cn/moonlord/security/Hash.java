@@ -9,7 +9,7 @@ public class Hash {
     public static final String SHA512 = "SHA-512";
 
     public static byte[] sha256(byte[] sourceBytes) {
-        if(sourceBytes == null){
+        if(sourceBytes == null) {
             throw new IllegalArgumentException("Hash sha256 error, sourceBytes must not be null");
         }
         try {
@@ -26,7 +26,7 @@ public class Hash {
     }
 
     public static byte[] sha512(byte[] sourceBytes) {
-        if(sourceBytes == null){
+        if(sourceBytes == null) {
             throw new IllegalArgumentException("Hash sha512 error, sourceBytes must not be null");
         }
         try {

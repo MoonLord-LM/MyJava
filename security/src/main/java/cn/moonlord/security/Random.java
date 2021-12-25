@@ -49,7 +49,7 @@ public class Random {
         init();
     }
 
-    public synchronized static void init(){
+    public synchronized static void init() {
         Provider.init();
         for (String algorithm : SECURITY_RANDOM_ALGORITHMS) {
             try {
@@ -68,10 +68,10 @@ public class Random {
     }
 
     public static byte[] generate(int bitLength) {
-        if(bitLength <= 0){
+        if(bitLength <= 0) {
             throw new IllegalArgumentException("Random generate error, bitLength [ " + bitLength + " ] must be larger than 0");
         }
-        if(bitLength % Byte.SIZE != 0){
+        if(bitLength % Byte.SIZE != 0) {
             throw new IllegalArgumentException("Random generate error, bitLength [ " + bitLength + " ] must be a multiple of " + Byte.SIZE);
         }
         int byteLength = bitLength / Byte.SIZE;
@@ -79,7 +79,7 @@ public class Random {
     }
 
     public static byte[] generateBytes(int byteLength) {
-        if(byteLength <= 0){
+        if(byteLength <= 0) {
             throw new IllegalArgumentException("Random generateBytes error, byteLength [ " + byteLength + " ] must be larger than 0");
         }
         byte[] result = new byte[byteLength];
@@ -99,10 +99,10 @@ public class Random {
     }
 
     public static <T> T select(T[] array) {
-        if(array == null){
+        if(array == null) {
             throw new IllegalArgumentException("Random select error, array must not be null");
         }
-        if(array.length == 0){
+        if(array.length == 0) {
             throw new IllegalArgumentException("Random select error, array must not be empty");
         }
         int index = Random.getInstance().nextInt(array.length);
@@ -110,14 +110,14 @@ public class Random {
     }
 
     public static <T> T select(Collection<T> collection) {
-        if(collection == null){
+        if(collection == null) {
             throw new IllegalArgumentException("Random select error, collection must not be null");
         }
-        if(collection.size() == 0){
+        if(collection.size() == 0) {
             throw new IllegalArgumentException("Random select error, collection must not be empty");
         }
         int index = Random.getInstance().nextInt(collection.size());
-        if(collection instanceof List){
+        if(collection instanceof List) {
             return ((List<T>) collection).get(index);
         }
         List<T> list = new ArrayList<>(collection);
@@ -125,10 +125,10 @@ public class Random {
     }
 
     public static <K,V> Map.Entry<K,V> select(Map<K,V> map) {
-        if(map == null){
+        if(map == null) {
             throw new IllegalArgumentException("Random select error, map must not be null");
         }
-        if(map.size() == 0){
+        if(map.size() == 0) {
             throw new IllegalArgumentException("Random select error, map must not be empty");
         }
         return select(map.entrySet());

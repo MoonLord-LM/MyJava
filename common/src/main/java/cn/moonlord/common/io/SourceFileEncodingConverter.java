@@ -21,7 +21,7 @@ public class SourceFileEncodingConverter implements Runnable {
     public SourceFileEncodingConverter(String sourceFilePath) {
         try {
             this.sourceFilePath = new File(sourceFilePath).getCanonicalPath();
-            if(!Files.exists(Paths.get(sourceFilePath))){
+            if(!Files.exists(Paths.get(sourceFilePath))) {
                 Files.createDirectories(Paths.get(sourceFilePath));
             }
         } catch (Exception e) {
@@ -46,13 +46,13 @@ public class SourceFileEncodingConverter implements Runnable {
                 if(filePath.contains("\\.git\\") || filePath.contains("\\.idea\\") || filePath.contains("\\target\\")) {
                     continue;
                 }
-                if(!file.exists() || !file.isFile() || !file.canRead() || !file.canWrite()){
+                if(!file.exists() || !file.isFile() || !file.canRead() || !file.canWrite()) {
                     continue;
                 }
                 byte[] sourceBytes = FileUtils.readFileToByteArray(file);
                 boolean isBadFile = false;
                 for (int i = 0; i < sourceBytes.length - 2; i++) {
-                    if(sourceBytes[i] == UNKNOWN_BYTES[0] && sourceBytes[i + 1] == UNKNOWN_BYTES[1] && sourceBytes[i + 2] == UNKNOWN_BYTES[2]){
+                    if(sourceBytes[i] == UNKNOWN_BYTES[0] && sourceBytes[i + 1] == UNKNOWN_BYTES[1] && sourceBytes[i + 2] == UNKNOWN_BYTES[2]) {
                         isBadFile = true;
                     }
                 }

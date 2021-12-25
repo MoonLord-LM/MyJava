@@ -16,7 +16,7 @@ public class HttpStressClient implements Runnable {
     private int totalTestNum;
     private AtomicInteger finishedTestNum;
 
-    public HttpStressClient(int workerThreadNum, String url, int totalTestNum){
+    public HttpStressClient(int workerThreadNum, String url, int totalTestNum) {
         this.pool = Executors.newFixedThreadPool(workerThreadNum);
         this.url = url;
         this.totalTestNum = totalTestNum;
@@ -38,7 +38,7 @@ public class HttpStressClient implements Runnable {
                         connection.disconnect();
                         int finished = finishedTestNum.incrementAndGet();
                         Logger.info("StressTest [ " + finished + " / " + totalTestNum + "] has got response code " + responseCode);
-                        if(finished == totalTestNum){
+                        if(finished == totalTestNum) {
                             finishedTestNum.incrementAndGet();
                             long endTime = System.currentTimeMillis();
                             Logger.warn("StressTest [ " + totalTestNum + "] is finished, total time is " + (endTime - beginTime) + " ms, average time is " + ((float)(endTime - beginTime) / totalTestNum) + " ms");

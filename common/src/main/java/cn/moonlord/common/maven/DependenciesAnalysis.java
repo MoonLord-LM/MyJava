@@ -25,10 +25,10 @@ public class DependenciesAnalysis implements Runnable {
     public DependenciesAnalysis(String inputDependencyManagementFilePath, String outputDependencyFilePath) {
         this.inputDependencyManagementFilePath = inputDependencyManagementFilePath;
         this.outputDependencyFilePath = outputDependencyFilePath;
-        if(!Files.exists(Paths.get(inputDependencyManagementFilePath))){
+        if(!Files.exists(Paths.get(inputDependencyManagementFilePath))) {
             throw new IllegalArgumentException("inputDependencyManagementFilePath must be a valid File");
         }
-        if(!Files.exists(Paths.get(outputDependencyFilePath))){
+        if(!Files.exists(Paths.get(outputDependencyFilePath))) {
             throw new IllegalArgumentException("outputDependencyFilePath must be a valid File");
         }
         System.out.println("this.inputDependencyManagementFilePath: " + this.inputDependencyManagementFilePath);
@@ -62,7 +62,7 @@ public class DependenciesAnalysis implements Runnable {
         private String scope;
 
         @Override
-        public String toString(){
+        public String toString() {
             return "" +
                     "        <dependency>" + "\r\n" +
                     "            <groupId>" + groupId + "</groupId>" + "\r\n" +
@@ -140,7 +140,7 @@ public class DependenciesAnalysis implements Runnable {
             if(version != null && version.startsWith("${") && version.endsWith("}")) {
                 String key = StringUtils.substringBetween(version, "${", "}");
                 String value = getProperties().get(key);
-                if(value != null){
+                if(value != null) {
                     return value;
                 }
                 throw new RuntimeException("getVersion error, version: " + version);

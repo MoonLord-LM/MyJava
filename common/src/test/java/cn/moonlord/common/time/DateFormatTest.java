@@ -25,7 +25,7 @@ public class DateFormatTest {
     }
 
     @BeforeClass
-    public static synchronized void init(){
+    public static synchronized void init() {
         logger.info("init getDefaultTimeZone: {}", TimeZone.getDefault());
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
         logger.info("init setDefaultTimeZone: {}", TimeZone.getDefault());
@@ -110,7 +110,7 @@ public class DateFormatTest {
             for (int i = 0; i < sources.size(); i++) {
                 Date date = DateFormat.parse(sources.get(i));
                 String utcDate = DateFormat.formatUTC(date);
-                if(!utcDate.equals(dates.get(i))){
+                if(!utcDate.equals(dates.get(i))) {
                     logger.info("source: {}, UTC: {}, expect: {}", sources.get(i), utcDate, dates.get(i));
                 }
                 Assert.assertEquals(utcDate, dates.get(i));

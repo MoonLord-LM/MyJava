@@ -10,7 +10,7 @@ public class SimpleTcpProxyHandler implements Runnable {
     private Socket inputClient;
     private Socket outputClient;
 
-    public SimpleTcpProxyHandler(Socket client){
+    public SimpleTcpProxyHandler(Socket client) {
         this.inputClient = client;
     }
 

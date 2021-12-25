@@ -19,11 +19,11 @@ public class SimpleDownloadHandler implements Runnable {
     private byte[] fileBytes;
     private AtomicInteger errorCount;
 
-    public byte[] getFileBytes(){
+    public byte[] getFileBytes() {
         return fileBytes;
     }
 
-    public SimpleDownloadHandler(String downloadURL, String refererURL, String fileSavePath){
+    public SimpleDownloadHandler(String downloadURL, String refererURL, String fileSavePath) {
         this.downloadURL = downloadURL;
         this.refererURL = refererURL;
         this.fileSavePath = fileSavePath;
@@ -60,7 +60,7 @@ public class SimpleDownloadHandler implements Runnable {
             }
         } catch (Exception e) {
             Logger.warn(e);
-            if(errorCount.incrementAndGet() < 5){
+            if(errorCount.incrementAndGet() < 5) {
                 Logger.warn("error count is " + errorCount.get() + ", retry downloading");
                 this.run();
             }

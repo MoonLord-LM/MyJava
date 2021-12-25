@@ -12,7 +12,7 @@ public class UnlimitedThreadServerSocket implements Runnable {
     private int port;
     private Class<Runnable> handler;
 
-    public UnlimitedThreadServerSocket(int port, Class<?> handler){
+    public UnlimitedThreadServerSocket(int port, Class<?> handler) {
         this.port = port;
         this.handler = (Class<Runnable>) handler;
         (new Thread(this)).start();

@@ -7,21 +7,21 @@ import java.text.Normalizer;
 public class Normalize {
 
     public static String getString(String source) {
-        if(source == null){
+        if(source == null) {
             throw new IllegalArgumentException("Normalize getString error, source must not be null");
         }
         return Normalizer.normalize(source, Normalizer.Form.NFKC);
     }
 
     public static String getUriString(URI uri) {
-        if(uri == null){
+        if(uri == null) {
             throw new IllegalArgumentException("Normalize getUriString error, uri must not be null");
         }
         return uri.normalize().toString();
     }
 
     public static String getUriString(String uriString) {
-        if(uriString == null){
+        if(uriString == null) {
             throw new IllegalArgumentException("Normalize getUriString error, uriString must not be null");
         }
         try {

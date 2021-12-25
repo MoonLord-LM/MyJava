@@ -12,7 +12,7 @@ public class Provider {
         init();
     }
 
-    public synchronized static void init(){
+    public synchronized static void init() {
         java.security.Provider[] providers = Security.getProviders();
         for (java.security.Provider provider: providers) {
             if(provider instanceof BouncyCastleProvider) {

@@ -40,7 +40,7 @@ public class HLSDownloader implements Runnable {
         }
         try {
             this.fileSavePath = new File(fileSavePath).getCanonicalPath();
-            if(!Files.exists(Paths.get(fileSavePath))){
+            if(!Files.exists(Paths.get(fileSavePath))) {
                 Files.createDirectories(Paths.get(fileSavePath));
             }
         } catch (Exception e) {
@@ -72,23 +72,23 @@ public class HLSDownloader implements Runnable {
             String encryptionKeyURI = null;
             for (int i = 0; i < lines.length; i++) {
                 String line = lines[i].trim();
-                if(!line.startsWith("#" )){
-                    if(!tsFileNames.contains(line)){
+                if(!line.startsWith("#" )) {
+                    if(!tsFileNames.contains(line)) {
                         System.out.println("ts file" + tsFileNames.size() + " -> line " + i + " : " + line);
                         tsFileNames.add(line);
                     }
                 }
                 // #EXT-X-KEY:METHOD=AES-128,URI="/xxx/ts.key"
-                if(line.startsWith("#")){
+                if(line.startsWith("#")) {
                     String[] config = line.split(":");
-                    if(config[0].equals("#EXT-X-KEY")){
+                    if(config[0].equals("#EXT-X-KEY")) {
                         String[] keyConfigValues = config[1].split(",");
                         for (int j = 0; j < keyConfigValues.length; j++) {
                             String[] keyConfigValue = keyConfigValues[j].split("=");
-                            if(keyConfigValue[0].equals("METHOD")){
+                            if(keyConfigValue[0].equals("METHOD")) {
                                 encryptionMethod = keyConfigValue[1].replace("\"", "");
                             }
-                            else if(keyConfigValue[0].equals("URI")){
+                            else if(keyConfigValue[0].equals("URI")) {
                                 encryptionKeyURI = keyConfigValue[1].replace("\"", "");
                             }
                         }
@@ -113,7 +113,7 @@ public class HLSDownloader implements Runnable {
                 IOUtils.write(output, totalFileOutputStreamStream);
             }
             // key.ts
-            if(encryptionMethod != null && encryptionMethod.equals("AES-128") && encryptionKeyURI != null){
+            if(encryptionMethod != null && encryptionMethod.equals("AES-128") && encryptionKeyURI != null) {
                 String encryptionKeyURL = new URL(new URL(downloadURL), encryptionKeyURI).toString();
                 connection = (new URL(encryptionKeyURL)).openConnection();
                 inputStream = connection.getInputStream();

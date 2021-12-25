@@ -13,7 +13,7 @@ public class ThreadPoolServerSocket implements Runnable {
     private int port;
     private ExecutorService pool;
 
-    public ThreadPoolServerSocket(int port, int workerThreadNum){
+    public ThreadPoolServerSocket(int port, int workerThreadNum) {
         this.port = port;
         this.pool = Executors.newFixedThreadPool(workerThreadNum);
         (new Thread(this)).start();
