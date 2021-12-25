@@ -237,6 +237,8 @@ public class Base64Test {
             byte[] source = String.join("", Collections.nCopies(100, "测试")).getBytes(StandardCharsets.UTF_8);
             byte[] result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH));
             Assert.assertArrayEquals(source, result);
+            result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH).replace("\r\n", "\n"));
+            Assert.assertArrayEquals(source, result);
         }
 
         @Test(expected = IllegalArgumentException.class)

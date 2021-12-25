@@ -8,11 +8,11 @@ public class Pbkdf2 {
 
     public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA512";
 
-    public static final int SALT_MIN_SIZE = 256 / Byte.SIZE;
+    public static final int SALT_MIN_BYTE_LENGTH = 256 / Byte.SIZE;
 
     public static final int ITERATION_MIN_COUNT = 10000;
 
-    public static final int OUTPUT_KEY_MIN_SIZE = 256 / Byte.SIZE;
+    public static final int GENERATED_MIN_BYTE_LENGTH = 256 / Byte.SIZE;
 
     public static byte[] generate(char[] password, byte[] salt, int iterationCount, int outputKeyLength) {
         if(password == null){
@@ -24,14 +24,14 @@ public class Pbkdf2 {
         if(salt == null){
             throw new IllegalArgumentException("Pbkdf2 generate error, salt must not be null");
         }
-        if(salt.length < SALT_MIN_SIZE){
-            throw new IllegalArgumentException("Pbkdf2 generate error, the length of salt [ " + salt.length + " ] must not be smaller than " + SALT_MIN_SIZE);
+        if(salt.length < SALT_MIN_BYTE_LENGTH){
+            throw new IllegalArgumentException("Pbkdf2 generate error, the length of salt [ " + salt.length + " ] must not be smaller than " + SALT_MIN_BYTE_LENGTH);
         }
         if(iterationCount < ITERATION_MIN_COUNT){
             throw new IllegalArgumentException("Pbkdf2 generate error, the count of iteration [ " + iterationCount + " ] must not be smaller than " + ITERATION_MIN_COUNT);
         }
-        if(outputKeyLength < OUTPUT_KEY_MIN_SIZE){
-            throw new IllegalArgumentException("Pbkdf2 generate error, the length of output key [ " + outputKeyLength + " ] must not be smaller than " + OUTPUT_KEY_MIN_SIZE);
+        if(outputKeyLength < GENERATED_MIN_BYTE_LENGTH){
+            throw new IllegalArgumentException("Pbkdf2 generate error, the length of output key [ " + outputKeyLength + " ] must not be smaller than " + GENERATED_MIN_BYTE_LENGTH);
         }
         try {
             SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance(PBKDF2_ALGORITHM);

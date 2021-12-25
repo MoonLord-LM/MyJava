@@ -37,10 +37,6 @@ public abstract class Performance implements Runnable {
         }
     }
 
-    public void startInNewThread(){
-        new Thread(this).start();
-    }
-
     public Integer getCycleOfRuns() {
         return cycleOfRuns;
     }

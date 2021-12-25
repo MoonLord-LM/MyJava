@@ -12,7 +12,7 @@ import java.security.PublicKey;
 
 public class Pem {
 
-    public static final int PEM_CHUNK_SIZE = 64;
+    public static final int PEM_CHUNK_LENGTH = 64;
 
     public static final String LINE_SEPARATOR = "\r\n";
 
@@ -33,18 +33,18 @@ public class Pem {
     public static final String END_RSA_PRIVATE_KEY = "-----END RSA PRIVATE KEY-----";
 
     public static String encodePublicKey(PublicKey publicKey) {
-        return BEGIN_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(publicKey.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_PUBLIC_KEY;
+        return BEGIN_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(publicKey.getEncoded(), PEM_CHUNK_LENGTH) + LINE_SEPARATOR + END_PUBLIC_KEY;
     }
 
     public static String encodePrivateKey(PrivateKey privateKey) {
-        return BEGIN_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(privateKey.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_PRIVATE_KEY;
+        return BEGIN_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(privateKey.getEncoded(), PEM_CHUNK_LENGTH) + LINE_SEPARATOR + END_PRIVATE_KEY;
     }
 
     public static String encodeRsaPublicKey(PublicKey publicKey) {
         try {
             SubjectPublicKeyInfo subjectPublicKeyInfo = SubjectPublicKeyInfo.getInstance(publicKey.getEncoded());
             ASN1Primitive asn1Primitive = subjectPublicKeyInfo.parsePublicKey();
-            return BEGIN_RSA_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_RSA_PUBLIC_KEY;
+            return BEGIN_RSA_PUBLIC_KEY + LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_LENGTH) + LINE_SEPARATOR + END_RSA_PUBLIC_KEY;
         }
         catch (Exception e) {
             throw new IllegalArgumentException("Pem encodeRsaPublicKey error, error message: " + e.getMessage(), e);
@@ -55,7 +55,7 @@ public class Pem {
         try {
             PrivateKeyInfo privateKeyInfo = PrivateKeyInfo.getInstance(privateKey.getEncoded());
             ASN1Primitive asn1Primitive = privateKeyInfo.parsePrivateKey().toASN1Primitive();
-            return BEGIN_RSA_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_SIZE) + LINE_SEPARATOR + END_RSA_PRIVATE_KEY;
+            return BEGIN_RSA_PRIVATE_KEY + LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_LENGTH) + LINE_SEPARATOR + END_RSA_PRIVATE_KEY;
         }
         catch (Exception e) {
             throw new IllegalArgumentException("Pem encodeRsaPrivateKey error, error message: " + e.getMessage(), e);
