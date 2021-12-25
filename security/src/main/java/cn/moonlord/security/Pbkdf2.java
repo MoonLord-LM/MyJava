@@ -12,7 +12,7 @@ public class Pbkdf2 {
 
     public static final int ITERATION_MIN_COUNT = 10000;
 
-    public static final int GENERATED_MIN_BYTE_LENGTH = 256 / Byte.SIZE;
+    public static final int OUTPUT_KEY_MIN_BYTE_LENGTH = 256 / Byte.SIZE;
 
     public static byte[] generate(char[] password, byte[] salt, int iterationCount, int outputKeyLength) {
         if(password == null){
@@ -30,8 +30,8 @@ public class Pbkdf2 {
         if(iterationCount < ITERATION_MIN_COUNT){
             throw new IllegalArgumentException("Pbkdf2 generate error, the count of iteration [ " + iterationCount + " ] must not be smaller than " + ITERATION_MIN_COUNT);
         }
-        if(outputKeyLength < GENERATED_MIN_BYTE_LENGTH){
-            throw new IllegalArgumentException("Pbkdf2 generate error, the length of output key [ " + outputKeyLength + " ] must not be smaller than " + GENERATED_MIN_BYTE_LENGTH);
+        if(outputKeyLength < OUTPUT_KEY_MIN_BYTE_LENGTH){
+            throw new IllegalArgumentException("Pbkdf2 generate error, the length of output key [ " + outputKeyLength + " ] must not be smaller than " + OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
         try {
             SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance(PBKDF2_ALGORITHM);

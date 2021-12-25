@@ -78,42 +78,42 @@ public class Pbkdf2Test {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Pbkdf2.generate((char[]) null, new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.GENERATED_MIN_BYTE_LENGTH);
+            Pbkdf2.generate((char[]) null, new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            Pbkdf2.generate(new char[0], new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.GENERATED_MIN_BYTE_LENGTH);
+            Pbkdf2.generate(new char[0], new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            Pbkdf2.generate("测试".toCharArray(), null, Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.GENERATED_MIN_BYTE_LENGTH);
+            Pbkdf2.generate("测试".toCharArray(), null, Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_4() {
-            Pbkdf2.generate("测试".toCharArray(), new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH - 1], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.GENERATED_MIN_BYTE_LENGTH);
+            Pbkdf2.generate("测试".toCharArray(), new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH - 1], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_5() {
-            Pbkdf2.generate("测试".toCharArray(), new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT - 1, Pbkdf2.GENERATED_MIN_BYTE_LENGTH);
+            Pbkdf2.generate("测试".toCharArray(), new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT - 1, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_6() {
-            Pbkdf2.generate("测试".toCharArray(), new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.GENERATED_MIN_BYTE_LENGTH - 1);
+            Pbkdf2.generate("测试".toCharArray(), new byte[Pbkdf2.SALT_MIN_BYTE_LENGTH], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH - 1);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_7() {
-            Pbkdf2.generate((String) null, new byte[64], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.GENERATED_MIN_BYTE_LENGTH);
+            Pbkdf2.generate((String) null, new byte[64], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_8() {
-            Pbkdf2.generate((byte[]) null, new byte[64], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.GENERATED_MIN_BYTE_LENGTH);
+            Pbkdf2.generate((byte[]) null, new byte[64], Pbkdf2.ITERATION_MIN_COUNT, Pbkdf2.OUTPUT_KEY_MIN_BYTE_LENGTH);
         }
     }
 
