@@ -1,6 +1,6 @@
 package cn.moonlord.security;
 
-import cn.moonlord.test.Performance;
+import cn.moonlord.test.PerformanceTest;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -49,7 +49,7 @@ public class RsaTest {
     public static class generateKeyPair {
         @Test
         public void performance_1() {
-            new Performance() {
+            new PerformanceTest() {
                 @Override
                 public void onStarted() {
                     logger.info("begin generateKeyPair");

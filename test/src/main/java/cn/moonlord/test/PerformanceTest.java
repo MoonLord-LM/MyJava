@@ -1,6 +1,6 @@
 package cn.moonlord.test;
 
-public abstract class Performance implements Runnable {
+public abstract class PerformanceTest implements Runnable {
 
     public void onStarted() throws Exception { }
 
@@ -12,9 +12,9 @@ public abstract class Performance implements Runnable {
 
     private long testMethodRunTime = 0;
 
-    public Performance() { }
+    public PerformanceTest() { }
 
-    public Performance(int cycleOfRuns) {
+    public PerformanceTest(int cycleOfRuns) {
         this.cycleOfRuns = cycleOfRuns;
     }
 

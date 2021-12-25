@@ -1,6 +1,6 @@
 package cn.moonlord.security;
 
-import cn.moonlord.test.PerformanceCompare;
+import cn.moonlord.test.PerformanceCompareTest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -41,7 +41,7 @@ public class RandomTest {
             SecureRandom defaultInstance = new SecureRandom();
             byte[] tmp = new byte[4096];
             byte[] result = new byte[4096];
-            new PerformanceCompare(256) {
+            new PerformanceCompareTest(256) {
                 @Override
                 public void testMethod() {
                     instance.nextBytes(tmp);
@@ -68,7 +68,7 @@ public class RandomTest {
             SecureRandom strongInstance = SecureRandom.getInstanceStrong();
             byte[] tmp = new byte[4096];
             byte[] result = new byte[4096];
-            new PerformanceCompare(256) {
+            new PerformanceCompareTest(256) {
                 @Override
                 public void testMethod() {
                     instance.nextBytes(tmp);

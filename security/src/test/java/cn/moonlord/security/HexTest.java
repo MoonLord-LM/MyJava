@@ -1,7 +1,6 @@
 package cn.moonlord.security;
 
-import cn.moonlord.test.PerformanceCompare;
-import org.apache.commons.codec.DecoderException;
+import cn.moonlord.test.PerformanceCompareTest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -51,7 +50,7 @@ public class HexTest {
         @Test
         public void performance_1() {
             byte[] source = Random.generateBytes(1024 * 10);
-            new PerformanceCompare(1024 * 10) {
+            new PerformanceCompareTest(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.encode(source);
@@ -74,7 +73,7 @@ public class HexTest {
         @Test
         public void performance_2() {
             byte[] source = Random.generateBytes(1024 * 10);
-            new PerformanceCompare(1024 * 10) {
+            new PerformanceCompareTest(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.encode(source);
@@ -137,7 +136,7 @@ public class HexTest {
         @Test
         public void performance_1() {
             String source = Hex.encode(Random.generateBytes(1024 * 10));
-            new PerformanceCompare(1024 * 10) {
+            new PerformanceCompareTest(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.decode(source);
@@ -160,7 +159,7 @@ public class HexTest {
         @Test
         public void performance_2() {
             String source = Hex.encode(Random.generateBytes(1024 * 10));
-            new PerformanceCompare(1024 * 10) {
+            new PerformanceCompareTest(1024 * 10) {
                 @Override
                 public void testMethod() {
                     Hex.decode(source);

@@ -1,6 +1,6 @@
 package cn.moonlord.test;
 
-public abstract class PerformanceCompare implements Runnable {
+public abstract class PerformanceCompareTest implements Runnable {
 
     public void onStarted() throws Exception { }
 
@@ -22,9 +22,9 @@ public abstract class PerformanceCompare implements Runnable {
 
     private String improvement = "" + improvedPercentage + "%";
 
-    public PerformanceCompare() { }
+    public PerformanceCompareTest() { }
 
-    public PerformanceCompare(int cycleOfRuns) {
+    public PerformanceCompareTest(int cycleOfRuns) {
         this.cycleOfRuns = cycleOfRuns;
     }
 

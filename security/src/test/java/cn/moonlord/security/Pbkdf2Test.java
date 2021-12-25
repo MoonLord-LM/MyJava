@@ -1,6 +1,6 @@
 package cn.moonlord.security;
 
-import cn.moonlord.test.Performance;
+import cn.moonlord.test.PerformanceTest;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -35,7 +35,7 @@ public class Pbkdf2Test {
             byte[] component2 = Random.generate(512);
             byte[] password = Xor.merge(component1, component2);
             byte[] salt = Random.generate(512);
-            new Performance(100) {
+            new PerformanceTest(100) {
                 @Override
                 public void onStarted() {
                     logger.info("begin generate");
@@ -59,7 +59,7 @@ public class Pbkdf2Test {
             byte[] password = Xor.merge(component1, component2);
             byte[] salt = Random.generate(512);
             byte[] tmp = new byte[64];
-            new Performance() {
+            new PerformanceTest() {
                 @Override
                 public void onStarted() {
                     logger.info("begin generate");
