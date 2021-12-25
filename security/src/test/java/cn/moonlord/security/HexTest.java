@@ -99,7 +99,7 @@ public class HexTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            byte[] source = new byte[Integer.MAX_VALUE / 2 + 1];
+            byte[] source = new byte[Hex.SOURCE_MAX_BYTE_LENGTH + 1];
             Hex.encode(source);
         }
     }

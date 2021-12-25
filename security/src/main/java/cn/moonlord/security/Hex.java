@@ -6,7 +6,7 @@ public class Hex {
 
     public static final char[] HEX_CHARS = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-    public static final int SOURCE_MAX_LENGTH = Integer.MAX_VALUE / 2;
+    public static final int SOURCE_MAX_BYTE_LENGTH = Integer.MAX_VALUE / 2;
 
     private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR = new char[512];
 
@@ -35,8 +35,8 @@ public class Hex {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Hex encode error, sourceBytes must not be null");
         }
-        if(sourceBytes.length > SOURCE_MAX_LENGTH){
-            throw new IllegalArgumentException("Hex encode error, the length of sourceBytes [ " + sourceBytes.length + " ] must not be larger than " + SOURCE_MAX_LENGTH);
+        if(sourceBytes.length > SOURCE_MAX_BYTE_LENGTH){
+            throw new IllegalArgumentException("Hex encode error, the length of sourceBytes [ " + sourceBytes.length + " ] must not be larger than " + SOURCE_MAX_BYTE_LENGTH);
         }
         char[] result = new char[sourceBytes.length * 2];
         int resultIndex = 0;
