@@ -47,7 +47,7 @@ public class Pbkdf2Test {
                 }
                 @Override
                 public void onFinished() {
-                    logger.info("cycle: {}, cost total time: {} ms, average time: {}", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
+                    logger.info("run cycle: {}, cost total time: {} ms, average time: {} ms", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
                 }
             }.run();
         }
@@ -71,7 +71,7 @@ public class Pbkdf2Test {
                 }
                 @Override
                 public void onFinished() {
-                    logger.info("cycle: {}, cost total time: {} ms, average time: {}", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
+                    logger.info("run cycle: {}, cost total time: {} ms, average time: {} ms", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
                 }
             }.run();
         }

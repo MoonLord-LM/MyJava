@@ -25,6 +25,9 @@ public abstract class PerformanceCompareTest implements Runnable {
     public PerformanceCompareTest() { }
 
     public PerformanceCompareTest(int cycleOfRuns) {
+        if(cycleOfRuns < 1) {
+            throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
+        }
         this.cycleOfRuns = cycleOfRuns;
     }
 
@@ -69,6 +72,14 @@ public abstract class PerformanceCompareTest implements Runnable {
 
     public Long getCompareMethodTotalRunTime() {
         return compareMethodTotalRunTime;
+    }
+
+    public Long getTestMethodAverageRunTime() {
+        return testMethodTotalRunTime / cycleOfRuns;
+    }
+
+    public Long getCompareMethodAverageRunTime() {
+        return compareMethodTotalRunTime / cycleOfRuns;
     }
 
     public Long getImprovedPercentage() {
