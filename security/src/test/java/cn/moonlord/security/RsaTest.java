@@ -109,7 +109,7 @@ public class RsaTest {
 
         @Test
         public void success_3() {
-            byte[] source = new byte[Rsa.SOURCE_MAX_BIT_LENGTH];
+            byte[] source = new byte[Rsa.SOURCE_MAX_BYTE_LENGTH];
             for (int i = 0; i <= source.length; i++) {
                 byte[] result = Rsa.encrypt(Arrays.copyOfRange(source, 0, i), publicKey);
                 logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length");
@@ -124,7 +124,7 @@ public class RsaTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            Rsa.encrypt(new byte[Rsa.SOURCE_MAX_BIT_LENGTH + 1], publicKey);
+            Rsa.encrypt(new byte[Rsa.SOURCE_MAX_BYTE_LENGTH + 1], publicKey);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -187,7 +187,7 @@ public class RsaTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            Rsa.decrypt(new byte[Rsa.ENCRYPTED_BIT_LENGTH + 1], privateKey);
+            Rsa.decrypt(new byte[Rsa.ENCRYPTED_BYTE_LENGTH + 1], privateKey);
         }
 
         @Test(expected = IllegalArgumentException.class)

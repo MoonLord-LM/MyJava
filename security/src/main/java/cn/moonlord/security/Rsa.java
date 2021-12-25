@@ -27,9 +27,9 @@ public class Rsa {
 
     public static final int RSA_KEY_BIT_LENGTH = 15360;
 
-    public static final int SOURCE_MAX_BIT_LENGTH = 1790;
+    public static final int SOURCE_MAX_BYTE_LENGTH = 1790;
 
-    public static final int ENCRYPTED_BIT_LENGTH = 1920;
+    public static final int ENCRYPTED_BYTE_LENGTH = 1920;
 
     public static KeyPair generateKeyPair() {
         try {
@@ -132,8 +132,8 @@ public class Rsa {
         if(sourceBytes == null){
             throw new IllegalArgumentException("Rsa encrypt error, sourceBytes must not be null");
         }
-        if(sourceBytes.length > SOURCE_MAX_BIT_LENGTH){
-            throw new IllegalArgumentException("Rsa encrypt error, the length of sourceBytes [ " + sourceBytes.length + " ] must not be larger than " + SOURCE_MAX_BIT_LENGTH);
+        if(sourceBytes.length > SOURCE_MAX_BYTE_LENGTH){
+            throw new IllegalArgumentException("Rsa encrypt error, the length of sourceBytes [ " + sourceBytes.length + " ] must not be larger than " + SOURCE_MAX_BYTE_LENGTH);
         }
         if(publicKey == null){
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be null");
@@ -184,8 +184,8 @@ public class Rsa {
         if(encryptedBytes == null){
             throw new IllegalArgumentException("Rsa decrypt error, encryptedBytes must not be null");
         }
-        if(encryptedBytes.length != ENCRYPTED_BIT_LENGTH){
-            throw new IllegalArgumentException("Rsa decrypt error, the length of encryptedBytes [ " + encryptedBytes.length + " ] must be " + ENCRYPTED_BIT_LENGTH);
+        if(encryptedBytes.length != ENCRYPTED_BYTE_LENGTH){
+            throw new IllegalArgumentException("Rsa decrypt error, the length of encryptedBytes [ " + encryptedBytes.length + " ] must be " + ENCRYPTED_BYTE_LENGTH);
         }
         if(privateKey == null){
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be null");
