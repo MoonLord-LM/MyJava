@@ -22,11 +22,11 @@ public class Pbkdf2Test {
             byte[] password = Xor.merge(component1, component2);
             byte[] salt = Random.generate(512);
             byte[] result = Pbkdf2.generate(Hex.encode(password), salt, 10000, 512);
-            logger.info("component1 length: [ " + component1.length + " ], base64: [ " + Base64.encode(component1) + " ]");
-            logger.info("component2 length: [ " + component2.length + " ], base64: [ " + Base64.encode(component2) + " ]");
-            logger.info("password length: [ " + password.length + " ], base64: [ " + Base64.encode(password) + " ]");
-            logger.info("salt length: [ " + salt.length + " ], base64: [ " + Base64.encode(salt) + " ]");
-            logger.info("result length: [ " + result.length + " ], base64: [ " + Base64.encode(result) + " ]");
+            logger.info("component1 byte length: [ " + component1.length + " ], base64: [ " + Base64.encode(component1) + " ]");
+            logger.info("component2 byte length: [ " + component2.length + " ], base64: [ " + Base64.encode(component2) + " ]");
+            logger.info("password byte length: [ " + password.length + " ], base64: [ " + Base64.encode(password) + " ]");
+            logger.info("salt byte length: [ " + salt.length + " ], base64: [ " + Base64.encode(salt) + " ]");
+            logger.info("result byte length: [ " + result.length + " ], base64: [ " + Base64.encode(result) + " ]");
         }
 
         @Test
@@ -35,6 +35,9 @@ public class Pbkdf2Test {
             byte[] component2 = Random.generate(512);
             byte[] password = Xor.merge(component1, component2);
             byte[] salt = Random.generate(512);
+            int iterationCount = 10000;
+            int keyLength = 512;
+            byte[] tmp = new byte[64];
             new PerformanceTest(100) {
                 @Override
                 public void onStarted() {
@@ -42,12 +45,11 @@ public class Pbkdf2Test {
                 }
                 @Override
                 public void testMethod() {
-                    byte[] result = Pbkdf2.generate(password, salt, 10000, 512);
-                    logger.info("result length: [ " + result.length + " ], base64: [ " + Base64.encode(result) + " ]");
+                    Xor.merge(tmp, Pbkdf2.generate(password, salt, iterationCount, keyLength));
                 }
                 @Override
                 public void onFinished() {
-                    logger.info("run cycle: {}, cost total time: {} ms, average time: {} ms", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
+                    logger.info("iterationCount: {}, run cycle: {}, cost total time: {} ms, average time: {} ms", iterationCount, getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
                 }
             }.run();
         }
@@ -58,20 +60,46 @@ public class Pbkdf2Test {
             byte[] component2 = Random.generate(512);
             byte[] password = Xor.merge(component1, component2);
             byte[] salt = Random.generate(512);
+            int iterationCount = 10000 * 10;
+            int keyLength = 512;
             byte[] tmp = new byte[64];
-            new PerformanceTest() {
+            new PerformanceTest(10) {
                 @Override
                 public void onStarted() {
                     logger.info("begin generate");
                 }
                 @Override
                 public void testMethod() {
-                    byte[] result = Xor.merge(tmp, Pbkdf2.generate(password, salt, 10000 * 10, 512));
-                    logger.info("result length: [ " + result.length + " ], base64: [ " + Base64.encode(result) + " ]");
+                    Xor.merge(tmp, Pbkdf2.generate(password, salt, iterationCount, keyLength));
                 }
                 @Override
                 public void onFinished() {
-                    logger.info("run cycle: {}, cost total time: {} ms, average time: {} ms", getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
+                    logger.info("iterationCount: {}, run cycle: {}, cost total time: {} ms, average time: {} ms", iterationCount, getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
+                }
+            }.run();
+        }
+
+        @Test
+        public void performance_3() {
+            byte[] component1 = Random.generate(512);
+            byte[] component2 = Random.generate(512);
+            byte[] password = Xor.merge(component1, component2);
+            byte[] salt = Random.generate(512);
+            int iterationCount = 10000 * 100;
+            int keyLength = 512;
+            byte[] tmp = new byte[64];
+            new PerformanceTest(1) {
+                @Override
+                public void onStarted() {
+                    logger.info("begin generate");
+                }
+                @Override
+                public void testMethod() {
+                    Xor.merge(tmp, Pbkdf2.generate(password, salt, iterationCount, keyLength));
+                }
+                @Override
+                public void onFinished() {
+                    logger.info("iterationCount: {}, run cycle: {}, cost total time: {} ms, average time: {} ms", iterationCount, getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
                 }
             }.run();
         }
