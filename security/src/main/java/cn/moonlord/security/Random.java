@@ -41,7 +41,7 @@ public class Random {
             ALGORITHM_DEFAULT
     );
 
-    public static final int DRBG_MAX_BYTE_SIZE = 262144 / Byte.SIZE;
+    public static final int DRBG_GENERATE_MAX_BYTE_SIZE = 262144 / Byte.SIZE;
 
     private static volatile SecureRandom instance;
 
@@ -83,12 +83,12 @@ public class Random {
             throw new IllegalArgumentException("Random generateBytes error, byteLength [ " + byteLength + " ] must be larger than 0");
         }
         byte[] result = new byte[byteLength];
-        if(byteLength > DRBG_MAX_BYTE_SIZE && DRBG_ALGORITHMS.contains(getInstance().getAlgorithm())) {
-            for (int i = 0; i <= byteLength / DRBG_MAX_BYTE_SIZE; i++) {
-                byte[] buffer = new byte[DRBG_MAX_BYTE_SIZE];
+        if(byteLength > DRBG_GENERATE_MAX_BYTE_SIZE && DRBG_ALGORITHMS.contains(getInstance().getAlgorithm())) {
+            for (int i = 0; i <= byteLength / DRBG_GENERATE_MAX_BYTE_SIZE; i++) {
+                byte[] buffer = new byte[DRBG_GENERATE_MAX_BYTE_SIZE];
                 getInstance().nextBytes(buffer);
-                int fillPosition = i * DRBG_MAX_BYTE_SIZE;
-                int fillLength = Math.min(byteLength - fillPosition, DRBG_MAX_BYTE_SIZE);
+                int fillPosition = i * DRBG_GENERATE_MAX_BYTE_SIZE;
+                int fillLength = Math.min(byteLength - fillPosition, DRBG_GENERATE_MAX_BYTE_SIZE);
                 System.arraycopy(buffer, 0, result, fillPosition, fillLength);
             }
         }
