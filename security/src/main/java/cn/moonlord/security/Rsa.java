@@ -23,13 +23,13 @@ public class Rsa {
 
     public static final String OAEP_MGF_ALGORITHM = "MGF1";
 
-    public static final String MGF1_DIGEST_ALGORITHM = "SHA-512";
+    public static final String MGF_DIGEST_ALGORITHM = "SHA-512";
 
     public static final int RSA_KEY_BIT_LENGTH = 15360;
 
     public static final int SOURCE_MAX_BYTE_LENGTH = 1790;
 
-    public static final int ENCRYPTED_BYTE_LENGTH = 1920;
+    public static final int ENCRYPTED_BYTE_LENGTH = RSA_KEY_BIT_LENGTH / Byte.SIZE;
 
     public static KeyPair generateKeyPair() {
         try {
@@ -146,7 +146,7 @@ public class Rsa {
         }
 
         try {
-            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF_DIGEST_ALGORITHM);
             OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgf1Spec, PSource.PSpecified.DEFAULT);
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.ENCRYPT_MODE, publicKey, oaepSpec);
@@ -198,7 +198,7 @@ public class Rsa {
         }
 
         try {
-            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF1_DIGEST_ALGORITHM);
+            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF_DIGEST_ALGORITHM);
             OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgf1Spec, PSource.PSpecified.DEFAULT);
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.DECRYPT_MODE, privateKey, oaepSpec);
