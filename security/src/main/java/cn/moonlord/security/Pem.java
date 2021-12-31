@@ -62,9 +62,9 @@ public class Pem {
         }
     }
 
-    public static PublicKey decodeRsaPublicKey(String rsaPublicKeyBase64String) {
+    public static PublicKey decodeRsaPublicKey(String rsaPublicKeyPemString) {
         try {
-            PEMParser pemParser = new PEMParser(new StringReader(rsaPublicKeyBase64String));
+            PEMParser pemParser = new PEMParser(new StringReader(rsaPublicKeyPemString));
             SubjectPublicKeyInfo publicKeyObject = (SubjectPublicKeyInfo) pemParser.readObject();
             return Rsa.getPublicKey(publicKeyObject.getEncoded());
         }
@@ -73,9 +73,9 @@ public class Pem {
         }
     }
 
-    public static PrivateKey decodeRsaPrivateKey(String rsaPrivateKeyBase64String) {
+    public static PrivateKey decodeRsaPrivateKey(String rsaPrivateKeyPemString) {
         try {
-            PEMParser pemParser = new PEMParser(new StringReader(rsaPrivateKeyBase64String));
+            PEMParser pemParser = new PEMParser(new StringReader(rsaPrivateKeyPemString));
             Object object = pemParser.readObject();
             if(object instanceof PrivateKeyInfo) {
                 return Rsa.getPrivateKey(((PrivateKeyInfo) object).getEncoded());
