@@ -52,12 +52,18 @@ public abstract class PerformanceTest implements Runnable {
         return cycleOfRuns;
     }
 
-    public boolean isRunOnWindowsOnly() {
+    public PerformanceTest setCycleOfRuns(int cycleOfRuns) {
+        this.cycleOfRuns = cycleOfRuns;
+        return this;
+    }
+
+    public Boolean isRunOnWindowsOnly() {
         return runOnWindowsOnly;
     }
 
-    public void setRunOnWindowsOnly(boolean runOnWindowsOnly) {
+    public PerformanceTest setRunOnWindowsOnly(boolean runOnWindowsOnly) {
         this.runOnWindowsOnly = runOnWindowsOnly;
+        return this;
     }
 
     public Long getTestMethodTotalRunTime() {

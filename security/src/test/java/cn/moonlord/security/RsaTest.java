@@ -62,7 +62,7 @@ public class RsaTest {
                 public void onFinished() {
                     logger.info("end generateKeyPair, cost time: {} ms", getTestMethodTotalRunTime());
                 }
-            }.run();
+            }.setRunOnWindowsOnly(true).run();
             publicKey = Rsa.getPublicKey(keyPair);
             privateKey = Rsa.getPrivateKey(keyPair);
             logger.info("generateKeyPair, publicKey algorithm: " + publicKey.getAlgorithm() + ", length: " + publicKey.getEncoded().length + ", format [ " + publicKey.getFormat() + " ]");
