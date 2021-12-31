@@ -20,8 +20,7 @@ public class XorTest {
             byte[] source1 = new byte[]{(byte) 0xFF};
             byte[] source2 = new byte[]{(byte) 0xFF};
             byte[] result = Xor.merge(source1, source2);
-            Assert.assertEquals(source1.length, result.length);
-            Assert.assertEquals((byte) 0x00, result[0]);
+            Assert.assertArrayEquals( new byte[]{ (byte) 0x00 }, result);
         }
 
         @Test
@@ -29,12 +28,7 @@ public class XorTest {
             byte[] source1 = new byte[]{(byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0x00};
             byte[] source2 = new byte[]{(byte) 0x00, (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0xAA};
             byte[] result = Xor.merge(source1, source2);
-            Assert.assertEquals(source1.length, result.length);
-            Assert.assertEquals((byte) 0xFF, result[0]);
-            Assert.assertEquals((byte) 0xFF, result[1]);
-            Assert.assertEquals((byte) 0x00, result[2]);
-            Assert.assertEquals((byte) 0x00, result[3]);
-            Assert.assertEquals((byte) 0xAA, result[4]);
+            Assert.assertArrayEquals(new byte[]{ (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0xAA }, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -76,14 +70,14 @@ public class XorTest {
         public void success_1() {
             byte[] source = new byte[]{(byte) 0xFF, (byte) 0xFF};
             byte[] result = Xor.fold(source);
-            Assert.assertArrayEquals(new byte[]{(byte) 0x00}, result);
+            Assert.assertArrayEquals( new byte[]{ (byte) 0x00 }, result);
         }
 
         @Test
         public void success_2() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0xFF};
+            byte[] source = new byte[]{(byte) 0x00, (byte) 0xAA};
             byte[] result = Xor.fold(source);
-            Assert.assertArrayEquals(new byte[]{(byte) 0xFF}, result);
+            Assert.assertArrayEquals( new byte[]{ (byte) 0xAA }, result);
         }
 
         @Test
@@ -93,9 +87,7 @@ public class XorTest {
                     (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0xFF
             };
             byte[] result = Xor.fold(source);
-            Assert.assertArrayEquals(new byte[]{
-                    (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xFF
-            }, result);
+            Assert.assertArrayEquals( new byte[]{ (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0xFF }, result);
         }
 
         @Test(expected = IllegalArgumentException.class)
@@ -110,7 +102,7 @@ public class XorTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            Xor.fold(new byte[1]);
+            Xor.fold(new byte[3]);
         }
     }
 
