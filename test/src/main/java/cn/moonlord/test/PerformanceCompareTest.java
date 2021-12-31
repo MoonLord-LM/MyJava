@@ -12,6 +12,8 @@ public abstract class PerformanceCompareTest implements Runnable {
 
     private int cycleOfRuns = 1;
 
+    private boolean runOnWindowsOnly = false;
+
     private long testMethodTotalRunTime = 0;
 
     private long compareMethodTotalRunTime = 0;
@@ -64,6 +66,14 @@ public abstract class PerformanceCompareTest implements Runnable {
 
     public Integer getCycleOfRuns() {
         return cycleOfRuns;
+    }
+
+    public boolean isRunOnWindowsOnly() {
+        return runOnWindowsOnly;
+    }
+
+    public void setRunOnWindowsOnly(boolean runOnWindowsOnly) {
+        this.runOnWindowsOnly = runOnWindowsOnly;
     }
 
     public Long getTestMethodTotalRunTime() {

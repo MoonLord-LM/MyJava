@@ -10,6 +10,8 @@ public abstract class PerformanceTest implements Runnable {
 
     private int cycleOfRuns = 1;
 
+    private boolean runOnWindowsOnly = false;
+
     private long testMethodTotalRunTime = 0;
 
     public PerformanceTest() { }
@@ -24,6 +26,12 @@ public abstract class PerformanceTest implements Runnable {
     @Override
     public void run() {
         try {
+            if(isRunOnWindowsOnly()) {
+                if(System.getProperty("os.name").startsWith("Windows")) {
+                    return;
+                }
+            }
+
             onStarted();
 
             long beginTime = System.currentTimeMillis();
@@ -42,6 +50,14 @@ public abstract class PerformanceTest implements Runnable {
 
     public Integer getCycleOfRuns() {
         return cycleOfRuns;
+    }
+
+    public boolean isRunOnWindowsOnly() {
+        return runOnWindowsOnly;
+    }
+
+    public void setRunOnWindowsOnly(boolean runOnWindowsOnly) {
+        this.runOnWindowsOnly = runOnWindowsOnly;
     }
 
     public Long getTestMethodTotalRunTime() {
