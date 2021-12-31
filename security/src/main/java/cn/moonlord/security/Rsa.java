@@ -50,7 +50,7 @@ public class Rsa {
         if(publicKey == null) {
             throw new IllegalArgumentException("Rsa getPublicKey error, publicKey must not be null");
         }
-        if(publicKey.getEncoded() == null) {
+        if(publicKey.getEncoded() == null || publicKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa getPublicKey error, publicKey must not be empty");
         }
         return publicKey;
@@ -64,10 +64,10 @@ public class Rsa {
         if(privateKey == null) {
             throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be null");
         }
-        if(privateKey.getEncoded() == null) {
+        if(privateKey.getEncoded() == null || privateKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be empty");
         }
-        return keyPair.getPrivate();
+        return privateKey;
     }
 
     public static byte[] getPublicKeyBytes(KeyPair keyPair) {
@@ -79,11 +79,11 @@ public class Rsa {
     }
 
     public static byte[] getPublicKeyBytes(PublicKey publicKey) {
-        return publicKey.getEncoded();
+        return getPublicKeyBytes(new KeyPair(publicKey,null));
     }
 
     public static byte[] getPrivateKeyBytes(PrivateKey privateKey) {
-        return privateKey.getEncoded();
+        return getPrivateKeyBytes(new KeyPair(null, privateKey));
     }
 
     public static String getPublicKeyBase64String(KeyPair keyPair) {

@@ -56,7 +56,7 @@ public class Aes {
         if(encryptKey == null) {
             throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be null");
         }
-        if(encryptKey.getEncoded() == null) {
+        if(encryptKey.getEncoded() == null || encryptKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be empty");
         }
         if(encryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
@@ -114,7 +114,7 @@ public class Aes {
         if(decryptKey == null) {
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be null");
         }
-        if(decryptKey.getEncoded() == null) {
+        if(decryptKey.getEncoded() == null || decryptKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be empty");
         }
         if(decryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
