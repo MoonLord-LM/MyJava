@@ -146,8 +146,8 @@ public class Rsa {
         }
 
         try {
-            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF_DIGEST_ALGORITHM);
-            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgf1Spec, PSource.PSpecified.DEFAULT);
+            MGF1ParameterSpec mgfSpec = new MGF1ParameterSpec(MGF_DIGEST_ALGORITHM);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgfSpec, PSource.PSpecified.DEFAULT);
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.ENCRYPT_MODE, publicKey, oaepSpec);
             return cipher.doFinal(sourceBytes);
@@ -198,8 +198,8 @@ public class Rsa {
         }
 
         try {
-            MGF1ParameterSpec mgf1Spec = new MGF1ParameterSpec(MGF_DIGEST_ALGORITHM);
-            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgf1Spec, PSource.PSpecified.DEFAULT);
+            MGF1ParameterSpec mgfSpec = new MGF1ParameterSpec(MGF_DIGEST_ALGORITHM);
+            OAEPParameterSpec oaepSpec = new OAEPParameterSpec(OAEP_DIGEST_ALGORITHM, OAEP_MGF_ALGORITHM, mgfSpec, PSource.PSpecified.DEFAULT);
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.DECRYPT_MODE, privateKey, oaepSpec);
             return cipher.doFinal(encryptedBytes);
