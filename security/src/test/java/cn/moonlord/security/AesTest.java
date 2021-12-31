@@ -96,7 +96,7 @@ public class AesTest {
             byte[] key = Aes.generateKeyBytes();
             byte[] result = Aes.encrypt(source, key);
             Assert.assertEquals(32, key.length);
-            Assert.assertEquals(28, result.length);
+            Assert.assertEquals(Aes.ENCRYPTED_MIN_BYTE_LENGTH, result.length);
         }
 
         @Test
@@ -105,7 +105,7 @@ public class AesTest {
             byte[] key = Aes.generateKeyBytes();
             byte[] result = Aes.encrypt(source, key);
             Assert.assertEquals(32, key.length);
-            Assert.assertEquals(34, result.length);
+            Assert.assertEquals(Aes.ENCRYPTED_MIN_BYTE_LENGTH + source.length, result.length);
         }
 
         @Test
@@ -116,7 +116,7 @@ public class AesTest {
                 if(i % 256 == 0) {
                     logger.info("encrypt " + " [ " + i + " ] bytes to " + " [ " + result.length + " ]  bytes length");
                 }
-                Assert.assertEquals((i + 28), result.length);
+                Assert.assertEquals((Aes.ENCRYPTED_MIN_BYTE_LENGTH + i), result.length);
             }
         }
 
