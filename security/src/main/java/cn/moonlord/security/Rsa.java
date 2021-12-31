@@ -138,7 +138,7 @@ public class Rsa {
         if(publicKey == null) {
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be null");
         }
-        if(publicKey.getEncoded() == null) {
+        if(publicKey.getEncoded() == null || publicKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be empty");
         }
         if(publicKey.getEncoded().length <= RSA_KEY_BIT_LENGTH / Byte.SIZE) {
@@ -190,7 +190,7 @@ public class Rsa {
         if(privateKey == null) {
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be null");
         }
-        if(privateKey.getEncoded() == null) {
+        if(privateKey.getEncoded() == null || privateKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be empty");
         }
         if(privateKey.getEncoded().length <= RSA_KEY_BIT_LENGTH / Byte.SIZE) {
