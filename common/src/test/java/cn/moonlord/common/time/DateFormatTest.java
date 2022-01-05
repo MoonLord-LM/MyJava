@@ -20,10 +20,6 @@ public class DateFormatTest {
 
     public static Logger logger = LoggerFactory.getLogger(DateFormatTest.class);
 
-    static {
-        init();
-    }
-
     @BeforeClass
     public static synchronized void init() {
         logger.info("init getDefaultTimeZone: {}", TimeZone.getDefault());

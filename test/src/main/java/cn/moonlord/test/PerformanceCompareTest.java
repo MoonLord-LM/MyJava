@@ -82,15 +82,14 @@ public abstract class PerformanceCompareTest implements Runnable {
     }
 
     public PerformanceCompareTest setRunOnSystemProperty(String property, String value) {
-        if(!System.getProperty(property).equals(value)) {
+        if(System.getProperty(property) == null || !System.getProperty(property).equals(value)) {
             shouldRun = false;
         }
         return this;
     }
 
     public PerformanceCompareTest setRunOnWindowsOnly() {
-        setRunOnSystemProperty("os.name", "Windows");
-        return this;
+        return setRunOnSystemProperty("os.name", "Windows");
     }
 
     public Long getTestMethodTotalRunTime() {
