@@ -45,7 +45,6 @@ public class AesTest {
         public void encrypt() {
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((byte[]) null, Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[0], (SecretKeySpec) null));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[0], new SecretKeySpec(Random.generate(0), Aes.AES_KEY_ALGORITHM)));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[0], new SecretKeySpec(Random.generate(128), Aes.AES_KEY_ALGORITHM)));
             Assert.assertEquals(Aes.ENCRYPTED_MIN_BYTE_LENGTH, Aes.encrypt(new byte[0], Aes.generateKey()).length);
             byte[] source = Random.generateBytes(1024);
@@ -65,9 +64,8 @@ public class AesTest {
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(null, Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[0], Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[Aes.ENCRYPTED_MIN_BYTE_LENGTH - 1], Aes.generateKey()));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[0], (SecretKeySpec) null));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[0], new SecretKeySpec(Random.generate(0), Aes.AES_KEY_ALGORITHM)));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[0], new SecretKeySpec(Random.generate(128), Aes.AES_KEY_ALGORITHM)));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[32], (SecretKeySpec) null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[32], new SecretKeySpec(Random.generate(128), Aes.AES_KEY_ALGORITHM)));
             SecretKeySpec key1 = Aes.generateKey();
             byte[] key2 = Aes.generateKeyBytes();
             String key3 = Aes.generateKeyBase64String();
