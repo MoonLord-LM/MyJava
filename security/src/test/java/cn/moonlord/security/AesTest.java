@@ -15,7 +15,7 @@ import java.util.Arrays;
 @RunWith(Enclosed.class)
 public class AesTest {
 
-    public static Logger logger = LoggerFactory.getLogger(AesTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(AesTest.class);
 
     public static class GenerateKeyTest {
         @Test
