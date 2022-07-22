@@ -86,16 +86,25 @@ public class Aes {
     }
 
     public static byte[] encrypt(String sourceString, SecretKeySpec encryptKey) {
+        if (sourceString == null) {
+            throw new IllegalArgumentException("Aes encrypt error, sourceString must not be null");
+        }
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         return encrypt(sourceBytes, encryptKey);
     }
 
     public static byte[] encrypt(String sourceString, byte[] encryptKeyBytes) {
+        if (sourceString == null) {
+            throw new IllegalArgumentException("Aes encrypt error, sourceString must not be null");
+        }
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         return encrypt(sourceBytes, encryptKeyBytes);
     }
 
     public static byte[] encrypt(String sourceString, String encryptKeyBase64String) {
+        if (sourceString == null) {
+            throw new IllegalArgumentException("Aes encrypt error, sourceString must not be null");
+        }
         byte[] sourceBytes = sourceString.getBytes(StandardCharsets.UTF_8);
         return encrypt(sourceBytes, encryptKeyBase64String);
     }

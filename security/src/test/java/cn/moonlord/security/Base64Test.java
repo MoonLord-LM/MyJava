@@ -20,118 +20,34 @@ public class Base64Test {
     public static class EncodeTest {
         @Test
         public void encode() {
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encode((byte[]) null));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeUrlSafe((byte[]) null));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime((byte[]) null, 0));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime((byte[]) null, Base64.MIME_CHUNK_MAX_LENGTH + 1));
-            byte[] source = new byte[0];
-            String expected = "";
-            String result = Base64.encode(source);
-            String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
-            String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encode(null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeUrlSafe(null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, 0));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, Base64.MIME_CHUNK_MAX_LENGTH + 1));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null));
+
             Assert.assertEquals("", Base64.encode(new byte[0]));
-            Assert.assertEquals(compare1, result);
-            Assert.assertEquals(compare2, result);
-        }
+            Assert.assertEquals("", Base64.encodeUrlSafe(new byte[0]));
+            Assert.assertEquals("", Base64.encodeMime(new byte[0],Base64.MIME_CHUNK_MAX_LENGTH));
 
-        @Test
-        public void success_2() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
-            String expected = "AAAAAAAA";
-            String result = Base64.encode(source);
-            String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
-            String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            Assert.assertEquals(expected, result);
-            Assert.assertEquals(compare1, result);
-            Assert.assertEquals(compare2, result);
-        }
+            Assert.assertEquals("AAAAAAAA", Base64.encode(new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00}));
+            Assert.assertEquals("5rWL6K-VQUJDMDE=", Base64.encodeUrlSafe("测试ABC01".getBytes(StandardCharsets.UTF_8)));
+            Assert.assertEquals("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V", Base64.encodeMime(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8),Base64.MIME_CHUNK_MAX_LENGTH));
 
-        @Test
-        public void success_3() {
-            byte[] source = "测试ABC01".getBytes(StandardCharsets.UTF_8);
-            String expected = "5rWL6K+VQUJDMDE=";
-            String result = Base64.encode(source);
-            String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
-            String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            Assert.assertEquals(expected, result);
-            Assert.assertEquals(compare1, result);
-            Assert.assertEquals(compare2, result);
-        }
+            byte[] source = Random.generateBytes(1024);
+            Assert.assertEquals(org.apache.commons.codec.binary.Base64.encodeBase64String(source), Base64.encode(source));
+            Assert.assertEquals(org.springframework.util.Base64Utils.encodeToString(source), Base64.encode(source));
 
-        @Test(expected = IllegalArgumentException.class)
-        public void error_1() {
-            Base64.encode(null);
-        }
-    }
+            Assert.assertEquals(org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source), Base64.encodeUrlSafe(source).replace("=", ""));
+            Assert.assertEquals(org.springframework.util.Base64Utils.encodeToUrlSafeString(source), Base64.encodeUrlSafe(source));
+            if (org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source).length() > Base64.encodeUrlSafe(source).length()) {
+                logger.info("org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString remove [ = ] at the end of result");
+            }
 
-    public static class encodeUrlSafe {
-        @Test
-        public void success_1() {
-            byte[] source = new byte[0];
-            String expected = "";
-            String result = Base64.encodeUrlSafe(source);
-            String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
-            String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
-            Assert.assertEquals(expected, result);
-            Assert.assertEquals(compare1, result);
-            Assert.assertEquals(compare2, result);
-        }
-
-        @Test
-        public void success_2() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
-            String expected = "AAAAAAAA";
-            String result = Base64.encodeUrlSafe(source);
-            String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
-            String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
-            Assert.assertEquals(expected, result);
-            Assert.assertEquals(compare1, result);
-            Assert.assertEquals(compare2, result);
-        }
-
-        @Test
-        public void success_3() {
-            byte[] source = "测试ABC01".getBytes(StandardCharsets.UTF_8);
-            String expected = "5rWL6K-VQUJDMDE=";
-            String result = Base64.encodeUrlSafe(source);
-            String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(source);
-            String compare2 = org.springframework.util.Base64Utils.encodeToUrlSafeString(source);
-            logger.info("Base64.encodeUrlSafe: {}", result);
-            logger.info("org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString: {}", compare1);
-            logger.info("org.springframework.util.Base64Utils.encodeToUrlSafeString: {}", compare2);
-            Assert.assertEquals(expected, result);
-            Assert.assertEquals(compare1.replace("=", ""), result.replace("=", ""));
-            Assert.assertEquals(compare2.replace("=", ""), result.replace("=", ""));
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_1() {
-            Base64.encodeUrlSafe(null);
-        }
-    }
-
-    public static class encodeMime {
-        @Test
-        public void success_1() {
-            byte[] source = String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8);
-            String expected = "5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V";
-            String result = Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH);
-            Assert.assertEquals(expected, result);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_1() {
-            Base64.encodeMime(null, Base64.MIME_CHUNK_MAX_LENGTH);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_2() {
-            Base64.encodeMime(new byte[0], 0);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_3() {
-            Base64.encodeMime(new byte[0], Base64.MIME_CHUNK_MAX_LENGTH + 1);
+            Assert.assertEquals(new String(org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source),StandardCharsets.UTF_8).trim(), Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH));
+            if (org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source).length == Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH).length() + 2) {
+                logger.info("org.apache.commons.codec.binary.Base64.encodeBase64Chunked add [ \\r\\n ] at the end of result");
+            }
         }
     }
 
