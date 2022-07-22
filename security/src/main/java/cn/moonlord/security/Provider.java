@@ -14,8 +14,8 @@ public class Provider {
 
     public synchronized static void init() {
         java.security.Provider[] providers = Security.getProviders();
-        for (java.security.Provider provider: providers) {
-            if(provider instanceof BouncyCastleProvider) {
+        for (java.security.Provider provider : providers) {
+            if (provider instanceof BouncyCastleProvider) {
                 return;
             }
         }
@@ -24,8 +24,8 @@ public class Provider {
 
     public synchronized static void destroy() {
         java.security.Provider[] providers = Security.getProviders();
-        for (java.security.Provider provider: providers) {
-            if(provider instanceof BouncyCastleProvider) {
+        for (java.security.Provider provider : providers) {
+            if (provider instanceof BouncyCastleProvider) {
                 Security.removeProvider(provider.getName());
             }
         }
@@ -47,7 +47,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
                 result.append(key + "  -  " + provider.get(key));
@@ -62,7 +62,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("MessageDigest.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
@@ -79,7 +79,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("Signature.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
@@ -96,7 +96,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("SecretKeyFactory.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
@@ -113,7 +113,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("SecretKeyFactory.PBKDF2".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
@@ -130,7 +130,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).contains("SecureRandom.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
@@ -147,7 +147,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("Cipher.".toUpperCase(Locale.ROOT))) {
                     result.append("Provider" + " [ " + i + " ] " + " [ " + provider.getName() + " ] ");
@@ -164,7 +164,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("Cipher.".toUpperCase(Locale.ROOT))) {
                     if (key.toUpperCase(Locale.ROOT).contains("AES".toUpperCase(Locale.ROOT))) {
@@ -185,7 +185,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements();) {
+            for (Enumeration<Object> e = provider.keys(); e.hasMoreElements(); ) {
                 String key = (String) e.nextElement();
                 if (key.toUpperCase(Locale.ROOT).startsWith("Cipher.".toUpperCase(Locale.ROOT))) {
                     if (key.toUpperCase(Locale.ROOT).contains("ChaCha".toUpperCase(Locale.ROOT))) {

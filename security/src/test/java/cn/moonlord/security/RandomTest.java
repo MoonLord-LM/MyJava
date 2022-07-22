@@ -47,11 +47,13 @@ public class RandomTest {
                     instance.nextBytes(tmp);
                     Xor.merge(result, tmp);
                 }
+
                 @Override
                 public void compareMethod() {
                     defaultInstance.nextBytes(tmp);
                     Xor.merge(result, tmp);
                 }
+
                 @Override
                 public void onFinished() {
                     logger.info("[instance] cost time: {} ms", getTestMethodTotalRunTime());
@@ -74,11 +76,13 @@ public class RandomTest {
                     instance.nextBytes(tmp);
                     Xor.merge(result, tmp);
                 }
+
                 @Override
                 public void compareMethod() {
                     strongInstance.nextBytes(tmp);
                     Xor.merge(result, tmp);
                 }
+
                 @Override
                 public void onFinished() {
                     logger.info("[instance] cost time: {} ms", getTestMethodTotalRunTime());
@@ -151,11 +155,11 @@ public class RandomTest {
     public static class select {
         @Test
         public void success_1() {
-            String result1 = Random.select(new String[] { "测试" });
+            String result1 = Random.select(new String[]{"测试"});
             Assert.assertEquals("测试", result1);
-            int result2 = Random.select(new Integer[] { -1 });
+            int result2 = Random.select(new Integer[]{-1});
             Assert.assertEquals(-1, result2);
-            long result3 = Random.select(new Long[] { 1024L });
+            long result3 = Random.select(new Long[]{1024L});
             Assert.assertEquals(1024L, result3);
         }
 

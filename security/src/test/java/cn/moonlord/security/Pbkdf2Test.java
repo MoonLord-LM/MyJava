@@ -43,10 +43,12 @@ public class Pbkdf2Test {
                 public void onStarted() {
                     logger.info("begin generate");
                 }
+
                 @Override
                 public void testMethod() {
                     Xor.merge(tmp, Pbkdf2.generate(password, salt, iterationCount, keyLength));
                 }
+
                 @Override
                 public void onFinished() {
                     logger.info("iterationCount: {}, run cycle: {}, cost total time: {} ms, average time: {} ms", iterationCount, getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
@@ -68,10 +70,12 @@ public class Pbkdf2Test {
                 public void onStarted() {
                     logger.info("begin generate");
                 }
+
                 @Override
                 public void testMethod() {
                     Xor.merge(tmp, Pbkdf2.generate(password, salt, iterationCount, keyLength));
                 }
+
                 @Override
                 public void onFinished() {
                     logger.info("iterationCount: {}, run cycle: {}, cost total time: {} ms, average time: {} ms", iterationCount, getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());
@@ -93,10 +97,12 @@ public class Pbkdf2Test {
                 public void onStarted() {
                     logger.info("begin generate");
                 }
+
                 @Override
                 public void testMethod() {
                     Xor.merge(tmp, Pbkdf2.generate(password, salt, iterationCount, keyLength));
                 }
+
                 @Override
                 public void onFinished() {
                     logger.info("iterationCount: {}, run cycle: {}, cost total time: {} ms, average time: {} ms", iterationCount, getCycleOfRuns(), getTestMethodTotalRunTime(), getTestMethodAverageRunTime());

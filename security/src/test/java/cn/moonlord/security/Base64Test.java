@@ -17,15 +17,19 @@ public class Base64Test {
 
     public static Logger logger = LoggerFactory.getLogger(Base64Test.class);
 
-    public static class encode {
+    public static class EncodeTest {
         @Test
-        public void success_1() {
+        public void encode() {
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encode((byte[]) null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeUrlSafe((byte[]) null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime((byte[]) null, 0));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime((byte[]) null, Base64.MIME_CHUNK_MAX_LENGTH + 1));
             byte[] source = new byte[0];
             String expected = "";
             String result = Base64.encode(source);
             String compare1 = org.apache.commons.codec.binary.Base64.encodeBase64String(source);
             String compare2 = org.springframework.util.Base64Utils.encodeToString(source);
-            Assert.assertEquals(expected, result);
+            Assert.assertEquals("", Base64.encode(new byte[0]));
             Assert.assertEquals(compare1, result);
             Assert.assertEquals(compare2, result);
         }

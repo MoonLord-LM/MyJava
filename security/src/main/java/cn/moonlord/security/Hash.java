@@ -9,14 +9,13 @@ public class Hash {
     public static final String SHA512 = "SHA-512";
 
     public static byte[] sha256(byte[] sourceBytes) {
-        if(sourceBytes == null) {
+        if (sourceBytes == null) {
             throw new IllegalArgumentException("Hash sha256 error, sourceBytes must not be null");
         }
         try {
-            MessageDigest messageDigest =  MessageDigest.getInstance(SHA256);
+            MessageDigest messageDigest = MessageDigest.getInstance(SHA256);
             return messageDigest.digest(sourceBytes);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Hash sha256 error, error message: " + e.getMessage(), e);
         }
     }
@@ -26,14 +25,13 @@ public class Hash {
     }
 
     public static byte[] sha512(byte[] sourceBytes) {
-        if(sourceBytes == null) {
+        if (sourceBytes == null) {
             throw new IllegalArgumentException("Hash sha512 error, sourceBytes must not be null");
         }
         try {
-            MessageDigest messageDigest =  MessageDigest.getInstance(SHA512);
+            MessageDigest messageDigest = MessageDigest.getInstance(SHA512);
             return messageDigest.digest(sourceBytes);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Hash sha512 error, error message: " + e.getMessage(), e);
         }
     }

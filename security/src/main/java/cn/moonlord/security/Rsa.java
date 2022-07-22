@@ -36,35 +36,34 @@ public class Rsa {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA_KEY_ALGORITHM);
             keyPairGenerator.initialize(RSA_KEY_BIT_LENGTH);
             return keyPairGenerator.generateKeyPair();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Rsa generateKeyPair error, error message: " + e.getMessage(), e);
         }
     }
 
     public static PublicKey getPublicKey(KeyPair keyPair) {
-        if(keyPair == null) {
+        if (keyPair == null) {
             throw new IllegalArgumentException("Rsa getPublicKey error, keyPair must not be null");
         }
         PublicKey publicKey = keyPair.getPublic();
-        if(publicKey == null) {
+        if (publicKey == null) {
             throw new IllegalArgumentException("Rsa getPublicKey error, publicKey must not be null");
         }
-        if(publicKey.getEncoded() == null || publicKey.getEncoded().length == 0) {
+        if (publicKey.getEncoded() == null || publicKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa getPublicKey error, publicKey must not be empty");
         }
         return publicKey;
     }
 
     public static PrivateKey getPrivateKey(KeyPair keyPair) {
-        if(keyPair == null) {
+        if (keyPair == null) {
             throw new IllegalArgumentException("Rsa getPrivateKey error, keyPair must not be null");
         }
         PrivateKey privateKey = keyPair.getPrivate();
-        if(privateKey == null) {
+        if (privateKey == null) {
             throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be null");
         }
-        if(privateKey.getEncoded() == null || privateKey.getEncoded().length == 0) {
+        if (privateKey.getEncoded() == null || privateKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa getPrivateKey error, privateKey must not be empty");
         }
         return privateKey;
@@ -79,7 +78,7 @@ public class Rsa {
     }
 
     public static byte[] getPublicKeyBytes(PublicKey publicKey) {
-        return getPublicKeyBytes(new KeyPair(publicKey,null));
+        return getPublicKeyBytes(new KeyPair(publicKey, null));
     }
 
     public static byte[] getPrivateKeyBytes(PrivateKey privateKey) {
@@ -105,8 +104,7 @@ public class Rsa {
     public static PublicKey getPublicKey(byte[] publicKeyBytes) {
         try {
             return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePublic(new X509EncodedKeySpec(publicKeyBytes));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Rsa getPublicKey error, error message: " + e.getMessage(), e);
         }
     }
@@ -114,8 +112,7 @@ public class Rsa {
     public static PrivateKey getPrivateKey(byte[] privateKeyBytes) {
         try {
             return KeyFactory.getInstance(RSA_KEY_ALGORITHM).generatePrivate(new PKCS8EncodedKeySpec(privateKeyBytes));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Rsa getPrivateKey error, error message: " + e.getMessage(), e);
         }
     }
@@ -129,20 +126,20 @@ public class Rsa {
     }
 
     public static byte[] encrypt(byte[] sourceBytes, PublicKey publicKey) {
-        if(sourceBytes == null) {
+        if (sourceBytes == null) {
             throw new IllegalArgumentException("Rsa encrypt error, sourceBytes must not be null");
         }
-        if(sourceBytes.length > SOURCE_MAX_BYTE_LENGTH) {
+        if (sourceBytes.length > SOURCE_MAX_BYTE_LENGTH) {
             throw new IllegalArgumentException("Rsa encrypt error, the length of sourceBytes [ " + sourceBytes.length + " ] must not be larger than " + SOURCE_MAX_BYTE_LENGTH);
         }
-        if(publicKey == null) {
+        if (publicKey == null) {
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be null");
         }
-        if(publicKey.getEncoded() == null || publicKey.getEncoded().length == 0) {
+        if (publicKey.getEncoded() == null || publicKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa encrypt error, publicKey must not be empty");
         }
-        if(publicKey.getEncoded().length <= RSA_KEY_BIT_LENGTH / Byte.SIZE) {
-            throw new IllegalArgumentException("Rsa encrypt error, the length of publicKey [ " + publicKey.getEncoded().length + " ] must be larger than " + ( RSA_KEY_BIT_LENGTH / Byte.SIZE ));
+        if (publicKey.getEncoded().length <= RSA_KEY_BIT_LENGTH / Byte.SIZE) {
+            throw new IllegalArgumentException("Rsa encrypt error, the length of publicKey [ " + publicKey.getEncoded().length + " ] must be larger than " + (RSA_KEY_BIT_LENGTH / Byte.SIZE));
         }
 
         try {
@@ -151,8 +148,7 @@ public class Rsa {
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.ENCRYPT_MODE, publicKey, oaepSpec);
             return cipher.doFinal(sourceBytes);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Rsa encrypt error, error message: " + e.getMessage(), e);
         }
     }
@@ -181,20 +177,20 @@ public class Rsa {
     }
 
     public static byte[] decrypt(byte[] encryptedBytes, PrivateKey privateKey) {
-        if(encryptedBytes == null) {
+        if (encryptedBytes == null) {
             throw new IllegalArgumentException("Rsa decrypt error, encryptedBytes must not be null");
         }
-        if(encryptedBytes.length != ENCRYPTED_BYTE_LENGTH) {
+        if (encryptedBytes.length != ENCRYPTED_BYTE_LENGTH) {
             throw new IllegalArgumentException("Rsa decrypt error, the length of encryptedBytes [ " + encryptedBytes.length + " ] must be " + ENCRYPTED_BYTE_LENGTH);
         }
-        if(privateKey == null) {
+        if (privateKey == null) {
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be null");
         }
-        if(privateKey.getEncoded() == null || privateKey.getEncoded().length == 0) {
+        if (privateKey.getEncoded() == null || privateKey.getEncoded().length == 0) {
             throw new IllegalArgumentException("Rsa decrypt error, privateKey must not be empty");
         }
-        if(privateKey.getEncoded().length <= RSA_KEY_BIT_LENGTH / Byte.SIZE) {
-            throw new IllegalArgumentException("Rsa decrypt error, the length of privateKey [ " + privateKey.getEncoded().length + " ] must be larger than " + ( RSA_KEY_BIT_LENGTH / Byte.SIZE ));
+        if (privateKey.getEncoded().length <= RSA_KEY_BIT_LENGTH / Byte.SIZE) {
+            throw new IllegalArgumentException("Rsa decrypt error, the length of privateKey [ " + privateKey.getEncoded().length + " ] must be larger than " + (RSA_KEY_BIT_LENGTH / Byte.SIZE));
         }
 
         try {
@@ -203,8 +199,7 @@ public class Rsa {
             Cipher cipher = Cipher.getInstance(RSA_CIPHER_INSTANCE);
             cipher.init(Cipher.DECRYPT_MODE, privateKey, oaepSpec);
             return cipher.doFinal(encryptedBytes);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Rsa decrypt error, error message: " + e.getMessage(), e);
         }
     }

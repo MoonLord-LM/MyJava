@@ -45,8 +45,7 @@ public class Pem {
             SubjectPublicKeyInfo subjectPublicKeyInfo = SubjectPublicKeyInfo.getInstance(publicKey.getEncoded());
             ASN1Primitive asn1Primitive = subjectPublicKeyInfo.parsePublicKey();
             return BEGIN_RSA_PUBLIC_KEY + PEM_LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_LENGTH) + PEM_LINE_SEPARATOR + END_RSA_PUBLIC_KEY;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Pem encodeRsaPublicKey error, error message: " + e.getMessage(), e);
         }
     }
@@ -56,8 +55,7 @@ public class Pem {
             PrivateKeyInfo privateKeyInfo = PrivateKeyInfo.getInstance(privateKey.getEncoded());
             ASN1Primitive asn1Primitive = privateKeyInfo.parsePrivateKey().toASN1Primitive();
             return BEGIN_RSA_PRIVATE_KEY + PEM_LINE_SEPARATOR + Base64.encodeMime(asn1Primitive.getEncoded(), PEM_CHUNK_LENGTH) + PEM_LINE_SEPARATOR + END_RSA_PRIVATE_KEY;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Pem encodeRsaPrivateKey error, error message: " + e.getMessage(), e);
         }
     }
@@ -67,8 +65,7 @@ public class Pem {
             PEMParser pemParser = new PEMParser(new StringReader(rsaPublicKeyPemString));
             SubjectPublicKeyInfo publicKeyObject = (SubjectPublicKeyInfo) pemParser.readObject();
             return Rsa.getPublicKey(publicKeyObject.getEncoded());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Pem decodeRsaPublicKey error, error message: " + e.getMessage(), e);
         }
     }
@@ -77,15 +74,13 @@ public class Pem {
         try {
             PEMParser pemParser = new PEMParser(new StringReader(rsaPrivateKeyPemString));
             Object object = pemParser.readObject();
-            if(object instanceof PrivateKeyInfo) {
+            if (object instanceof PrivateKeyInfo) {
                 return Rsa.getPrivateKey(((PrivateKeyInfo) object).getEncoded());
-            }
-            else if (object instanceof PEMKeyPair) {
+            } else if (object instanceof PEMKeyPair) {
                 return Rsa.getPrivateKey(((PEMKeyPair) object).getPrivateKeyInfo().getEncoded());
             }
             throw new IllegalArgumentException("Pem decodeRsaPrivateKey error, unknown object type: " + object.getClass().getName());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Pem decodeRsaPrivateKey error, error message: " + e.getMessage(), e);
         }
     }
