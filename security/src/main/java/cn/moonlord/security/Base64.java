@@ -6,7 +6,9 @@ public class Base64 {
 
     public static final int MIME_LINE_MAX_LENGTH = 76;
 
-    public static final byte[] MIME_LINE_SEPARATOR = new byte[]{'\r', '\n'};
+    public static final byte[] MIME_LINE_SEPARATOR_BYTES = new byte[]{'\r', '\n'};
+
+    public static final String MIME_LINE_SEPARATOR_STRING = "\r\n";
 
     public static String encode(byte[] sourceBytes) {
         if (sourceBytes == null) {
@@ -34,7 +36,7 @@ public class Base64 {
         if (lineLength > MIME_LINE_MAX_LENGTH) {
             throw new IllegalArgumentException("Base64 encodeMime error, lineLength [ " + lineLength + " ] must not be larger than " + MIME_LINE_MAX_LENGTH);
         }
-        byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, MIME_LINE_SEPARATOR).encode(sourceBytes);
+        byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, MIME_LINE_SEPARATOR_BYTES).encode(sourceBytes);
         return new String(buffer, StandardCharsets.UTF_8);
     }
 
@@ -46,21 +48,10 @@ public class Base64 {
         if (sourceString == null) {
             throw new IllegalArgumentException("Base64 decode error, sourceString must not be null");
         }
+        sourceString = sourceString.replace(MIME_LINE_SEPARATOR_STRING, "");
+        sourceString = sourceString.replace("-", "+");
+        sourceString = sourceString.replace("_", "/");
         return java.util.Base64.getDecoder().decode(sourceString.getBytes(StandardCharsets.UTF_8));
-    }
-
-    public static byte[] decodeUrlSafe(String sourceString) {
-        if (sourceString == null) {
-            throw new IllegalArgumentException("Base64 decodeUrlSafe error, sourceString must not be null");
-        }
-        return java.util.Base64.getUrlDecoder().decode(sourceString.getBytes(StandardCharsets.UTF_8));
-    }
-
-    public static byte[] decodeMime(String sourceString) {
-        if (sourceString == null) {
-            throw new IllegalArgumentException("Base64 decodeMime error, sourceString must not be null");
-        }
-        return java.util.Base64.getMimeDecoder().decode(sourceString.getBytes(StandardCharsets.UTF_8));
     }
 
 }
