@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Base64 {
 
-    public static final int MIME_CHUNK_MAX_LENGTH = 76;
+    public static final int MIME_LINE_MAX_LENGTH = 76;
 
     public static final byte[] MIME_LINE_SEPARATOR = new byte[]{'\r', '\n'};
 
@@ -24,22 +24,22 @@ public class Base64 {
         return new String(buffer, StandardCharsets.UTF_8);
     }
 
-    public static String encodeMime(byte[] sourceBytes, int chunkLength) {
+    public static String encodeMime(byte[] sourceBytes, int lineLength) {
         if (sourceBytes == null) {
             throw new IllegalArgumentException("Base64 encodeMime error, sourceBytes must not be null");
         }
-        if (chunkLength <= 0) {
-            throw new IllegalArgumentException("Base64 encodeMime error, chunkLength must be larger than 0");
+        if (lineLength <= 0) {
+            throw new IllegalArgumentException("Base64 encodeMime error, lineLength must be larger than 0");
         }
-        if (chunkLength > MIME_CHUNK_MAX_LENGTH) {
-            throw new IllegalArgumentException("Base64 encodeMime error, chunkLength [ " + chunkLength + " ] must not be larger than " + MIME_CHUNK_MAX_LENGTH);
+        if (lineLength > MIME_LINE_MAX_LENGTH) {
+            throw new IllegalArgumentException("Base64 encodeMime error, lineLength [ " + lineLength + " ] must not be larger than " + MIME_LINE_MAX_LENGTH);
         }
-        byte[] buffer = java.util.Base64.getMimeEncoder(chunkLength, MIME_LINE_SEPARATOR).encode(sourceBytes);
+        byte[] buffer = java.util.Base64.getMimeEncoder(lineLength, MIME_LINE_SEPARATOR).encode(sourceBytes);
         return new String(buffer, StandardCharsets.UTF_8);
     }
 
     public static String encodeMime(byte[] sourceBytes) {
-        return encodeMime(sourceBytes, Base64.MIME_CHUNK_MAX_LENGTH);
+        return encodeMime(sourceBytes, Base64.MIME_LINE_MAX_LENGTH);
     }
 
     public static byte[] decode(String sourceString) {

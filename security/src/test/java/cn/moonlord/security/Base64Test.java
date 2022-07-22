@@ -23,17 +23,17 @@ public class Base64Test {
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encode(null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeUrlSafe(null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, 0));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, Base64.MIME_CHUNK_MAX_LENGTH + 1));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, Base64.MIME_LINE_MAX_LENGTH + 1));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null));
 
             Assert.assertEquals("", Base64.encode(new byte[0]));
             Assert.assertEquals("", Base64.encodeUrlSafe(new byte[0]));
-            Assert.assertEquals("", Base64.encodeMime(new byte[0], Base64.MIME_CHUNK_MAX_LENGTH));
+            Assert.assertEquals("", Base64.encodeMime(new byte[0], Base64.MIME_LINE_MAX_LENGTH));
             Assert.assertEquals("", Base64.encodeMime(new byte[0]));
 
             Assert.assertEquals("AAAAAAAA", Base64.encode(new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00}));
             Assert.assertEquals("5rWL6K-VQUJDMDE=", Base64.encodeUrlSafe("测试ABC01".getBytes(StandardCharsets.UTF_8)));
-            Assert.assertEquals("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V", Base64.encodeMime(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8), Base64.MIME_CHUNK_MAX_LENGTH));
+            Assert.assertEquals("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V", Base64.encodeMime(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8), Base64.MIME_LINE_MAX_LENGTH));
             Assert.assertEquals("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V", Base64.encodeMime(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8)));
 
             byte[] source = Random.generateBytes(1024);
@@ -46,16 +46,20 @@ public class Base64Test {
                 logger.info("org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString remove [ = ] at the end of result");
             }
 
-            Assert.assertEquals(new String(org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source), StandardCharsets.UTF_8).trim(), Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH));
-            if (org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source).length == Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH).length() + 2) {
+            Assert.assertEquals(new String(org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source), StandardCharsets.UTF_8).trim(), Base64.encodeMime(source, Base64.MIME_LINE_MAX_LENGTH));
+            if (org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source).length == Base64.encodeMime(source, Base64.MIME_LINE_MAX_LENGTH).length() + 2) {
                 logger.info("org.apache.commons.codec.binary.Base64.encodeBase64Chunked add [ \\r\\n ] at the end of result");
             }
         }
     }
 
-    public static class decode {
+    public static class DecodeTest {
         @Test
-        public void success_1() {
+        public void decode() {
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.decode(null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.decodeUrlSafe(null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.decodeMime(null));
+
             String source = "";
             byte[] expected = new byte[0];
             byte[] result = Base64.decode(source);
@@ -157,9 +161,9 @@ public class Base64Test {
         @Test
         public void success_1() {
             byte[] source = String.join("", Collections.nCopies(100, "测试")).getBytes(StandardCharsets.UTF_8);
-            byte[] result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH));
+            byte[] result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_LINE_MAX_LENGTH));
             Assert.assertArrayEquals(source, result);
-            result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH).replace("\r\n", "\n"));
+            result = Base64.decodeMime(Base64.encodeMime(source, Base64.MIME_LINE_MAX_LENGTH).replace("\r\n", "\n"));
             Assert.assertArrayEquals(source, result);
         }
 
