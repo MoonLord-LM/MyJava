@@ -28,11 +28,13 @@ public class Base64Test {
 
             Assert.assertEquals("", Base64.encode(new byte[0]));
             Assert.assertEquals("", Base64.encodeUrlSafe(new byte[0]));
-            Assert.assertEquals("", Base64.encodeMime(new byte[0],Base64.MIME_CHUNK_MAX_LENGTH));
+            Assert.assertEquals("", Base64.encodeMime(new byte[0], Base64.MIME_CHUNK_MAX_LENGTH));
+            Assert.assertEquals("", Base64.encodeMime(new byte[0]));
 
             Assert.assertEquals("AAAAAAAA", Base64.encode(new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00}));
             Assert.assertEquals("5rWL6K-VQUJDMDE=", Base64.encodeUrlSafe("测试ABC01".getBytes(StandardCharsets.UTF_8)));
-            Assert.assertEquals("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V", Base64.encodeMime(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8),Base64.MIME_CHUNK_MAX_LENGTH));
+            Assert.assertEquals("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V", Base64.encodeMime(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8), Base64.MIME_CHUNK_MAX_LENGTH));
+            Assert.assertEquals("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V", Base64.encodeMime(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8)));
 
             byte[] source = Random.generateBytes(1024);
             Assert.assertEquals(org.apache.commons.codec.binary.Base64.encodeBase64String(source), Base64.encode(source));
@@ -44,7 +46,7 @@ public class Base64Test {
                 logger.info("org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString remove [ = ] at the end of result");
             }
 
-            Assert.assertEquals(new String(org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source),StandardCharsets.UTF_8).trim(), Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH));
+            Assert.assertEquals(new String(org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source), StandardCharsets.UTF_8).trim(), Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH));
             if (org.apache.commons.codec.binary.Base64.encodeBase64Chunked(source).length == Base64.encodeMime(source, Base64.MIME_CHUNK_MAX_LENGTH).length() + 2) {
                 logger.info("org.apache.commons.codec.binary.Base64.encodeBase64Chunked add [ \\r\\n ] at the end of result");
             }
