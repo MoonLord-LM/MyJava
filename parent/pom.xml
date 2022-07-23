@@ -171,21 +171,21 @@
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-core</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket -->
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-websocket</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-jasper</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-el -->
@@ -199,42 +199,42 @@
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-annotations-api</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-servlet-api</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api -->
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-jsp-api</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-el-api -->
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-el-api</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc -->
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-jdbc</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-juli -->
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-juli</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
@@ -248,21 +248,21 @@
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-coyote</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper -->
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-jasper</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp -->
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-dbcp</artifactId>
-                <version>9.0.65</version>
+                <version>10.0.22</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-util -->
