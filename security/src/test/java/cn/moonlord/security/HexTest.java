@@ -60,7 +60,7 @@ public class HexTest {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodTotalRunTime());
                     logger.info("[Hex.encode] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encode] of Spring Security", getImprovement());
-                    Assert.assertTrue(getImprovedPercentage() > 50L);
+                    Assert.assertTrue(getImprovedPercentage() > -50L);
                 }
             }.run();
         }
