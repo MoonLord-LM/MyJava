@@ -8,22 +8,22 @@ public class Hex {
 
     public static final int SOURCE_MAX_BYTE_LENGTH = Integer.MAX_VALUE / 2;
 
-    private static final char[][] UNSIGNED_BYTE_TO_HEX_CHAR = new char[16 * 16][2];
-
-    private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[128];
+    private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[getMaxHexChar() + 1];
 
     static {
         init();
     }
 
-    public static synchronized void init() {
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                int mappingIndex = (i * 16 + j);
-                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][0] = HEX_CHARS[i];
-                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][1] = HEX_CHARS[j];
-            }
+    private static int getMaxHexChar() {
+        int maxChar = -1;
+        for (char hexChar : HEX_CHARS) {
+            maxChar = Math.max(maxChar, hexChar);
+            maxChar = Math.max(maxChar, Character.toUpperCase(hexChar));
         }
+        return maxChar;
+    }
+
+    public static synchronized void init() {
         Arrays.fill(HEX_CHAR_TO_UNSIGNED_BYTE, (byte) 0xFF);
         for (int i = 0; i < HEX_CHARS.length; i++) {
             HEX_CHAR_TO_UNSIGNED_BYTE[HEX_CHARS[i]] = (byte) i;
@@ -42,8 +42,8 @@ public class Hex {
         int resultIndex = 0;
         for (byte sourceByte : sourceBytes) {
             int mappingIndex = Byte.toUnsignedInt(sourceByte);
-            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][0];
-            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][1];
+            result[resultIndex++] = HEX_CHARS[mappingIndex / 16];
+            result[resultIndex++] = HEX_CHARS[mappingIndex % 16];
         }
         return new String(result);
     }
