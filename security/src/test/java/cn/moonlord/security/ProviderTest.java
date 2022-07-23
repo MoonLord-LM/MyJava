@@ -87,12 +87,6 @@ public class ProviderTest {
             logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getProvider().getName());
             logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getProvider().getInfo());
         }
-
-        @Test(expected = NoSuchAlgorithmException.class)
-        public void error_1() throws NoSuchPaddingException, NoSuchAlgorithmException {
-            Provider.destroy();
-            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getAlgorithm());
-        }
     }
 
     public static class showChaChaCiphers {
