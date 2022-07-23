@@ -8,9 +8,9 @@ public class Hex {
 
     public static final int SOURCE_MAX_BYTE_LENGTH = Integer.MAX_VALUE / 2;
 
-    private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR = new char[16 * 16 * 2];
+    private static final char[][] UNSIGNED_BYTE_TO_HEX_CHAR = new char[16 * 16][2];
 
-    private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[128];;
+    private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[128];
 
     static {
         init();
@@ -19,9 +19,9 @@ public class Hex {
     public static synchronized void init() {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                int mappingIndex = (i * 16 + j) * 2;
-                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex] = HEX_CHARS[i];
-                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex + 1] = HEX_CHARS[j];
+                int mappingIndex = (i * 16 + j);
+                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][0] = HEX_CHARS[i];
+                UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][1] = HEX_CHARS[j];
             }
         }
         Arrays.fill(HEX_CHAR_TO_UNSIGNED_BYTE, (byte) 0xFF);
@@ -41,9 +41,9 @@ public class Hex {
         char[] result = new char[sourceBytes.length * 2];
         int resultIndex = 0;
         for (byte sourceByte : sourceBytes) {
-            int mappingIndex = Byte.toUnsignedInt(sourceByte) * 2;
-            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex++];
-            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex];
+            int mappingIndex = Byte.toUnsignedInt(sourceByte);
+            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][0];
+            result[resultIndex++] = UNSIGNED_BYTE_TO_HEX_CHAR[mappingIndex][1];
         }
         return new String(result);
     }
@@ -58,15 +58,23 @@ public class Hex {
         char[] sourceChars = sourceString.toCharArray();
         byte[] result = new byte[sourceString.length() / 2];
         for (int i = 0; i < result.length; i++) {
-            byte firstDigitIndex = HEX_CHAR_TO_UNSIGNED_BYTE[sourceChars[i * 2]];
-            byte secondDigitIndex = HEX_CHAR_TO_UNSIGNED_BYTE[sourceChars[i * 2 + 1]];
-            if (firstDigitIndex == (byte) 0xFF) {
-                throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + sourceChars[i * 2] + " ] must only contain hexadecimal characters");
+            char firstChar = sourceChars[i * 2];
+            if(firstChar >= HEX_CHAR_TO_UNSIGNED_BYTE.length){
+                throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + firstChar + " ] must only contain ASCII characters");
             }
-            if (secondDigitIndex == (byte) 0xFF) {
-                throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2 + 1) + " : " + sourceChars[i * 2 + 1] + " ] must only contain hexadecimal characters");
+            byte firstCharIndex = HEX_CHAR_TO_UNSIGNED_BYTE[firstChar];
+            if (firstCharIndex == (byte) 0xFF) {
+                throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + firstChar + " ] must only contain hexadecimal characters");
             }
-            result[i] = (byte) (firstDigitIndex * 16 + secondDigitIndex);
+            char secondChar = sourceChars[i * 2 + 1];
+            if(secondChar >= HEX_CHAR_TO_UNSIGNED_BYTE.length){
+                throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + secondChar + " ] must only contain ASCII characters");
+            }
+            byte secondCharIndex = HEX_CHAR_TO_UNSIGNED_BYTE[secondChar];
+            if (secondCharIndex == (byte) 0xFF) {
+                throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2 + 1) + " : " + secondChar + " ] must only contain hexadecimal characters");
+            }
+            result[i] = (byte) (firstCharIndex * 16 + secondCharIndex);
         }
         return result;
     }

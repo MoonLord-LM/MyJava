@@ -1,6 +1,7 @@
 package cn.moonlord.security;
 
 import cn.moonlord.test.PerformanceCompareTest;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -17,34 +18,21 @@ public class HexTest {
 
     public static Logger logger = LoggerFactory.getLogger(HexTest.class);
 
-    public static class encode {
+    public static class EncodeTest {
 
         @Test
-        public void success_1() {
-            byte[] source = new byte[0];
-            String result = Hex.encode(source);
-            Assert.assertEquals("", result);
-        }
+        public void encode() {
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.encode(null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.encode(new byte[Hex.SOURCE_MAX_BYTE_LENGTH + 1]));
 
-        @Test
-        public void success_2() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF};
-            String result = Hex.encode(source);
-            Assert.assertEquals("00dd11ee22ff", result);
-        }
+            Assert.assertEquals("", Hex.encode(new byte[0]));
+            Assert.assertEquals("00dd11ee22ff", Hex.encode(new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF}));
+            Assert.assertEquals("e6b58be8af95", Hex.encode("测试".getBytes(StandardCharsets.UTF_8)));
 
-        @Test
-        public void success_3() {
-            byte[] source = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
-            String result = Hex.encode(source);
-            Assert.assertEquals("000000000000", result);
-        }
-
-        @Test
-        public void success_4() {
-            byte[] source = "测试".getBytes(StandardCharsets.UTF_8);
-            String result = Hex.encode(source);
-            Assert.assertEquals("e6b58be8af95", result);
+            byte[] source = Random.generateBytes(1024);
+            Assert.assertEquals(org.bouncycastle.util.encoders.Hex.toHexString(source), Hex.encode(source));
+            Assert.assertEquals(org.apache.commons.codec.binary.Hex.encodeHexString(source), Hex.encode(source));
+            Assert.assertEquals(new String(org.springframework.security.crypto.codec.Hex.encode(source)), Hex.encode(source));
         }
 
         @Test
@@ -95,20 +83,9 @@ public class HexTest {
                 }
             }.run();
         }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_1() {
-            Hex.encode(null);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_2() {
-            byte[] source = new byte[Hex.SOURCE_MAX_BYTE_LENGTH + 1];
-            Hex.encode(source);
-        }
     }
 
-    public static class decode {
+    public static class DecodeTest {
 
         @Test
         public void success_1() {
