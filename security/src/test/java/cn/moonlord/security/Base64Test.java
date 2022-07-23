@@ -22,8 +22,9 @@ public class Base64Test {
         public void encode() {
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encode(null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeUrlSafe(null));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, 0));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, Base64.MIME_LINE_MAX_LENGTH + 1));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, Base64.MIME_LINE_MAX_LENGTH));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(new byte[0], 1));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(new byte[0], Base64.MIME_LINE_MAX_LENGTH + 1));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null));
 
             Assert.assertEquals("", Base64.encode(new byte[0]));
@@ -59,6 +60,10 @@ public class Base64Test {
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.decode(null));
 
             Assert.assertArrayEquals(new byte[0], Base64.decode(""));
+
+            Assert.assertArrayEquals(new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00}, Base64.decode("AAAAAAAA"));
+            Assert.assertArrayEquals("测试ABC01".getBytes(StandardCharsets.UTF_8), Base64.decode("5rWL6K-VQUJDMDE="));
+            Assert.assertArrayEquals(String.join("", Collections.nCopies(10, "测试")).getBytes(StandardCharsets.UTF_8), Base64.decode("5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL6K+V5rWL" + "\r\n" + "6K+V"));
 
             byte[] source = Random.generateBytes(1024);
             Assert.assertArrayEquals(source, Base64.decode(Base64.encode(source)));
