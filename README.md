@@ -18,7 +18,7 @@ Windows 环境上是 Windows-PRNG 算法，使用 CryptGenRandom 系统接口
 
 #### 3. 常用的 AEAD（Authenticated Encryption with Associated Data）算法：
 AEAD 加密算法，在内部逻辑中，同时实现了保密性，完整性和可认证性  
-常用的 AEAD 算法：AES-256-GCM、ChaCha20-Poly1305  
+常用的 AEAD 算法：AES-256-GCM、ChaCha20-Poly1305、XChaCha20-Poly1305   
 https://www.google.com/search?q=AEAD+%E6%9C%89%E5%93%AA%E4%BA%9B  
 
 #### 4. IDEA 使用 maven-javadoc-plugin 插件时，控制台出现乱码
