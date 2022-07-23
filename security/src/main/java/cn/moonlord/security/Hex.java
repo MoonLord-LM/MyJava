@@ -8,9 +8,9 @@ public class Hex {
 
     public static final int SOURCE_MAX_BYTE_LENGTH = Integer.MAX_VALUE / 2;
 
-    private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR = new char[512];
+    private static final char[] UNSIGNED_BYTE_TO_HEX_CHAR = new char[16 * 16 * 2];
 
-    private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[128];
+    private static final byte[] HEX_CHAR_TO_UNSIGNED_BYTE = new byte[128];;
 
     static {
         init();
@@ -60,10 +60,10 @@ public class Hex {
         for (int i = 0; i < result.length; i++) {
             byte firstDigitIndex = HEX_CHAR_TO_UNSIGNED_BYTE[sourceChars[i * 2]];
             byte secondDigitIndex = HEX_CHAR_TO_UNSIGNED_BYTE[sourceChars[i * 2 + 1]];
-            if (firstDigitIndex == -1) {
+            if (firstDigitIndex == (byte) 0xFF) {
                 throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + sourceChars[i * 2] + " ] must only contain hexadecimal characters");
             }
-            if (secondDigitIndex == -1) {
+            if (secondDigitIndex == (byte) 0xFF) {
                 throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2 + 1) + " : " + sourceChars[i * 2 + 1] + " ] must only contain hexadecimal characters");
             }
             result[i] = (byte) (firstDigitIndex * 16 + secondDigitIndex);

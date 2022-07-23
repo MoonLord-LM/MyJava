@@ -207,7 +207,7 @@ public class HexTest {
 
         @Test(expected = IllegalArgumentException.class)
         public void error_4() {
-            String source = "A!@#$";
+            String source = "测试";
             Hex.decode(source);
         }
     }
