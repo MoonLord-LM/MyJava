@@ -49,7 +49,7 @@ public class Random {
         init();
     }
 
-    public synchronized static void init() {
+    private synchronized static void init() {
         Provider.init();
         for (String algorithm : SECURITY_RANDOM_ALGORITHMS) {
             try {

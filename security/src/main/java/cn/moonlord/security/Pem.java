@@ -32,6 +32,14 @@ public class Pem {
 
     public static final String END_RSA_PRIVATE_KEY = "-----END RSA PRIVATE KEY-----";
 
+    static {
+        init();
+    }
+
+    private synchronized static void init() {
+        Provider.init();
+    }
+
     public static String encodePublicKey(PublicKey publicKey) {
         return BEGIN_PUBLIC_KEY + PEM_LINE_SEPARATOR + Base64.encodeMime(publicKey.getEncoded(), PEM_CHUNK_LENGTH) + PEM_LINE_SEPARATOR + END_PUBLIC_KEY;
     }

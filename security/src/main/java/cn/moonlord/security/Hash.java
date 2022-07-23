@@ -8,6 +8,14 @@ public class Hash {
 
     public static final String SHA512 = "SHA-512";
 
+    static {
+        init();
+    }
+
+    private synchronized static void init() {
+        Provider.init();
+    }
+
     public static byte[] sha256(byte[] sourceBytes) {
         if (sourceBytes == null) {
             throw new IllegalArgumentException("Hash sha256 error, sourceBytes must not be null");

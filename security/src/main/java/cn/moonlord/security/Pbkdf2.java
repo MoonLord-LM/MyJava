@@ -6,6 +6,14 @@ import java.security.spec.KeySpec;
 
 public class Pbkdf2 {
 
+    static {
+        init();
+    }
+
+    private synchronized static void init() {
+        Provider.init();
+    }
+
     public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA512";
 
     public static final int SALT_MIN_BYTE_LENGTH = 256 / Byte.SIZE;

@@ -23,7 +23,7 @@ public class Hex {
         return maxChar;
     }
 
-    public static synchronized void init() {
+    private static synchronized void init() {
         Arrays.fill(HEX_CHAR_TO_UNSIGNED_BYTE, (byte) 0xFF);
         for (int i = 0; i < HEX_CHARS.length; i++) {
             HEX_CHAR_TO_UNSIGNED_BYTE[HEX_CHARS[i]] = (byte) i;

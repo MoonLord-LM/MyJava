@@ -31,6 +31,14 @@ public class Rsa {
 
     public static final int ENCRYPTED_BYTE_LENGTH = RSA_KEY_BIT_LENGTH / Byte.SIZE;
 
+    static {
+        init();
+    }
+
+    private synchronized static void init() {
+        Provider.init();
+    }
+
     public static KeyPair generateKeyPair() {
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA_KEY_ALGORITHM);

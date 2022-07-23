@@ -20,6 +20,14 @@ public class Aes {
 
     public static final int ENCRYPTED_MIN_BYTE_LENGTH = (GCM_TAG_BIT_LENGTH + GCM_IV_BIT_LENGTH) / Byte.SIZE;
 
+    static {
+        init();
+    }
+
+    private synchronized static void init() {
+        Provider.init();
+    }
+
     public static SecretKeySpec generateKey() {
         return new SecretKeySpec(generateKeyBytes(), AES_KEY_ALGORITHM);
     }
