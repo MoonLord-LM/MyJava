@@ -35,32 +35,32 @@ public class HexTest {
 
         @Test
         public void performance() {
-            byte[] source = Random.generateBytes(1024 * 128);
-            new PerformanceCompareTest(1024, () -> Hex.encode(source), () -> org.bouncycastle.util.encoders.Hex.toHexString(source)) {
+            byte[] source = Random.generateBytes(1024 * 4);
+            new PerformanceCompareTest(1024 * 4, () -> Hex.encode(source), () -> org.bouncycastle.util.encoders.Hex.toHexString(source)) {
                 @Override
                 public void onFinished() {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodTotalRunTime());
                     logger.info("[Hex.toHexString] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.toHexString] of Bouncy Castle", getImprovement());
-                    Assert.assertTrue( isImproved());
+                    Assert.assertTrue(isImproved());
                 }
             }.run();
-            new PerformanceCompareTest(1024, () -> Hex.encode(source), () ->  org.apache.commons.codec.binary.Hex.encodeHexString(source)) {
+            new PerformanceCompareTest(1024 * 4, () -> Hex.encode(source), () -> org.apache.commons.codec.binary.Hex.encodeHexString(source)) {
                 @Override
                 public void onFinished() {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodTotalRunTime());
                     logger.info("[Hex.encodeHexString] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", getImprovement());
-                    Assert.assertTrue( isImproved());
+                    Assert.assertTrue(isImproved());
                 }
             }.run();
-            new PerformanceCompareTest(1024, () -> Hex.encode(source), () -> new String(org.springframework.security.crypto.codec.Hex.encode(source))) {
+            new PerformanceCompareTest(1024 * 4, () -> Hex.encode(source), () -> new String(org.springframework.security.crypto.codec.Hex.encode(source))) {
                 @Override
                 public void onFinished() {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodTotalRunTime());
                     logger.info("[Hex.encode] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encode] of Spring Security", getImprovement());
-                    Assert.assertTrue( getImprovedPercentage() > -50L);
+                    Assert.assertTrue(getImprovedPercentage() > 50L);
                 }
             }.run();
         }
@@ -85,8 +85,8 @@ public class HexTest {
 
         @Test
         public void performance() {
-            String source = Hex.encode(Random.generateBytes(1024 * 128));
-            new PerformanceCompareTest(1024, () -> Hex.decode(source), () -> org.bouncycastle.util.encoders.Hex.decode(source)) {
+            String source = Hex.encode(Random.generateBytes(1024 * 4));
+            new PerformanceCompareTest(1024 * 4, () -> Hex.decode(source), () -> org.bouncycastle.util.encoders.Hex.decode(source)) {
                 @Override
                 public void onFinished() {
                     logger.info("[Hex.decode] cost time: {} ms", getTestMethodTotalRunTime());
@@ -95,7 +95,7 @@ public class HexTest {
                     Assert.assertTrue(isImproved());
                 }
             }.run();
-            new PerformanceCompareTest(1024, () -> Hex.decode(source), () -> org.apache.commons.codec.binary.Hex.decodeHex(source)) {
+            new PerformanceCompareTest(1024 * 4, () -> Hex.decode(source), () -> org.apache.commons.codec.binary.Hex.decodeHex(source)) {
                 @Override
                 public void onFinished() {
                     logger.info("[Hex.decode] cost time: {} ms", getTestMethodTotalRunTime());
@@ -104,7 +104,7 @@ public class HexTest {
                     Assert.assertTrue(isImproved());
                 }
             }.run();
-            new PerformanceCompareTest(1024, () -> Hex.decode(source), () -> new String(org.springframework.security.crypto.codec.Hex.decode(source))) {
+            new PerformanceCompareTest(1024 * 4, () -> Hex.decode(source), () -> new String(org.springframework.security.crypto.codec.Hex.decode(source))) {
                 @Override
                 public void onFinished() {
                     logger.info("[Hex.decode] cost time: {} ms", getTestMethodTotalRunTime());
