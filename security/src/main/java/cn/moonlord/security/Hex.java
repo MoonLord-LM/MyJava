@@ -59,7 +59,7 @@ public class Hex {
         byte[] result = new byte[sourceString.length() / 2];
         for (int i = 0; i < result.length; i++) {
             char firstChar = sourceChars[i * 2];
-            if(firstChar >= HEX_CHAR_TO_UNSIGNED_BYTE.length){
+            if (firstChar >= HEX_CHAR_TO_UNSIGNED_BYTE.length) {
                 throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + firstChar + " ] must only contain ASCII characters");
             }
             byte firstCharIndex = HEX_CHAR_TO_UNSIGNED_BYTE[firstChar];
@@ -67,7 +67,7 @@ public class Hex {
                 throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + firstChar + " ] must only contain hexadecimal characters");
             }
             char secondChar = sourceChars[i * 2 + 1];
-            if(secondChar >= HEX_CHAR_TO_UNSIGNED_BYTE.length){
+            if (secondChar >= HEX_CHAR_TO_UNSIGNED_BYTE.length) {
                 throw new IllegalArgumentException("Hex decode error, sourceString  [ " + (i * 2) + " : " + secondChar + " ] must only contain ASCII characters");
             }
             byte secondCharIndex = HEX_CHAR_TO_UNSIGNED_BYTE[secondChar];

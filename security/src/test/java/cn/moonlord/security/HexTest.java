@@ -1,7 +1,6 @@
 package cn.moonlord.security;
 
 import cn.moonlord.test.PerformanceCompareTest;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -19,7 +18,6 @@ public class HexTest {
     public static Logger logger = LoggerFactory.getLogger(HexTest.class);
 
     public static class EncodeTest {
-
         @Test
         public void encode() {
             Assert.assertThrows(IllegalArgumentException.class, () -> Hex.encode(null));
@@ -86,32 +84,20 @@ public class HexTest {
     }
 
     public static class DecodeTest {
-
         @Test
-        public void success_1() {
-            byte[] result = Hex.decode("");
-            Assert.assertEquals(0, result.length);
-        }
+        public void decode() {
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode(null));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode("123"));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode("FG"));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode("GH"));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode("0!"));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode("!@"));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode("测试"));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hex.decode("ABC测试"));
 
-        @Test
-        public void success_2() {
-            byte[] result = Hex.decode("00dd11ee22ff");
-            byte[] compare = new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF};
-            Assert.assertArrayEquals(compare, result);
-        }
-
-        @Test
-        public void success_3() {
-            byte[] result = Hex.decode("000000000000");
-            byte[] compare = new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00};
-            Assert.assertArrayEquals(compare, result);
-        }
-
-        @Test
-        public void success_4() {
-            byte[] result = Hex.decode("e6b58be8af95");
-            String resultString = new String(result, StandardCharsets.UTF_8);
-            Assert.assertEquals("测试", resultString);
+            Assert.assertArrayEquals(new byte[0], Hex.decode(""));
+            Assert.assertArrayEquals(new byte[]{(byte) 0x00, (byte) 0xDD, (byte) 0x11, (byte) 0xEE, (byte) 0x22, (byte) 0xFF}, Hex.decode("00dd11ee22ff"));
+            Assert.assertEquals("测试", new String(Hex.decode("e6b58be8af95"), StandardCharsets.UTF_8));
         }
 
         @Test
@@ -162,30 +148,6 @@ public class HexTest {
                     Assert.assertTrue("performance_2", getImprovedPercentage() > -10L);
                 }
             }.run();
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_1() {
-            String source = null;
-            Hex.decode(source);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_2() {
-            String source = "123";
-            Hex.decode(source);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_3() {
-            String source = "GH";
-            Hex.decode(source);
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void error_4() {
-            String source = "测试";
-            Hex.decode(source);
         }
     }
 
