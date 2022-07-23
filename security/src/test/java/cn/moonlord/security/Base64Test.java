@@ -23,7 +23,7 @@ public class Base64Test {
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encode(null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeUrlSafe(null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null, Base64.MIME_LINE_MAX_LENGTH));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(new byte[0], 1));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(new byte[0], 0));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(new byte[0], Base64.MIME_LINE_MAX_LENGTH + 1));
             Assert.assertThrows(IllegalArgumentException.class, () -> Base64.encodeMime(null));
 
