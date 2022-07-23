@@ -2,11 +2,21 @@ package cn.moonlord.test;
 
 public abstract class PerformanceCompareTest implements Runnable {
 
+    private static final TestRunnable EMPTY_RUNNABLE = () -> null;
+
+    private TestRunnable testMethod = EMPTY_RUNNABLE;
+
+    private TestRunnable compareMethod = EMPTY_RUNNABLE;
+
     public void onStarted() throws Exception { }
 
-    public abstract void testMethod() throws Exception;
+    public void testMethod() throws Exception {
+        testMethod.run();
+    }
 
-    public abstract void compareMethod() throws Exception;
+    public void compareMethod() throws Exception {
+        compareMethod.run();
+    }
 
     public void onFinished() throws Exception { }
 
@@ -33,6 +43,15 @@ public abstract class PerformanceCompareTest implements Runnable {
         this.cycleOfRuns = cycleOfRuns;
     }
 
+    public PerformanceCompareTest(int cycleOfRuns, TestRunnable testMethod, TestRunnable compareMethod) {
+        if(cycleOfRuns < 1) {
+            throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
+        }
+        this.cycleOfRuns = cycleOfRuns;
+        this.testMethod = testMethod;
+        this.compareMethod = compareMethod;
+    }
+
     @Override
     public void run() {
         try {
@@ -42,19 +61,20 @@ public abstract class PerformanceCompareTest implements Runnable {
 
             onStarted();
 
-            long beginTime = System.currentTimeMillis();
-            for (int i = 0; i < cycleOfRuns; i++) {
-                testMethod();
-            }
-            long endTime = System.currentTimeMillis();
-            testMethodTotalRunTime = endTime - beginTime;
+            long beginTime;
+            long endTime;
 
-            beginTime = System.currentTimeMillis();
             for (int i = 0; i < cycleOfRuns; i++) {
+                beginTime = System.currentTimeMillis();
+                testMethod();
+                endTime = System.currentTimeMillis();
+                testMethodTotalRunTime += (endTime - beginTime);
+
+                beginTime = System.currentTimeMillis();
                 compareMethod();
+                endTime = System.currentTimeMillis();
+                compareMethodTotalRunTime += (endTime - beginTime);
             }
-            endTime = System.currentTimeMillis();
-            compareMethodTotalRunTime = endTime - beginTime;
 
             isImproved = testMethodTotalRunTime < compareMethodTotalRunTime;
             double ratio = ((1 / (double) testMethodTotalRunTime) - (1 / (double) compareMethodTotalRunTime)) / (1 / (double) compareMethodTotalRunTime);
