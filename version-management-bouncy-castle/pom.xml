@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.moonlord</groupId>
+    <artifactId>version-management-bouncy-castle</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!-- https://mvnrepository.com/search?q=jdk18on&d=org.bouncycastle -->
+        <bc-jdk18on.version>1.71</bc-jdk18on.version>
+
+        <!-- https://mvnrepository.com/search?q=jdk15to18&d=org.bouncycastle -->
+        <bc-jdk15to18.version>1.71</bc-jdk15to18.version>
+
+        <!-- https://mvnrepository.com/search?q=jdk15on&d=org.bouncycastle -->
+        <bc-jdk15on.version>1.70</bc-jdk15on.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-ext-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcutil-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcutil-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpg-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bctls-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bctls-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcmail-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcjmail-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcjmail-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-debug-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-debug-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-debug-jdk18on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-ext-debug-jdk18on</artifactId>
+                <version>${bc-jdk18on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-ext-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcutil-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcutil-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpg-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bctls-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bctls-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcmail-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcjmail-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcjmail-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-debug-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-debug-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-debug-jdk15to18 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-ext-debug-jdk15to18</artifactId>
+                <version>${bc-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-ext-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcutil-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcutil-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpg-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bctls-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bctls-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcmail-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcjmail-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcjmail-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-debug-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-debug-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-debug-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-ext-debug-jdk15on</artifactId>
+                <version>${bc-jdk15on.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
