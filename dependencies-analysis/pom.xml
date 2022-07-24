@@ -14,1530 +14,1302 @@
 
     <dependencies>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-layout-template-json</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-1.2-api</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-jcl</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-flume-ng</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-taglib</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-jmx-gui</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j18-impl</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-to-slf4j</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-appserver</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-couchdb</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-mongodb4</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-mongodb3</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-cassandra</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-jpa</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-iostreams</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-jul</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-jpl</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-liquibase</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-docker</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-kubernetes</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-spring-boot</artifactId>
         </dependency>
 
-        <!--target/import/log4j-bom-2.16.0.pom-->
+        <!--target/import/log4j-bom-2.18.0.pom-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-spring-cloud-config-client</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-ant</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-astbuilder</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-bsf</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-cli-commons</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-cli-picocli</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-console</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-datetime</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-dateutil</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-docgenerator</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-groovydoc</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-groovysh</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-jaxb</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-jmx</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-json</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-jsr223</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-macro</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-nio</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-servlet</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-sql</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-swing</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-templates</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-test</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-test-junit5</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-testng</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-xml</artifactId>
         </dependency>
 
-        <!--target/import/groovy-bom-3.0.9.pom-->
+        <!--target/import/groovy-bom-3.0.12.pom-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-yaml</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-buffer</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-dns</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-haproxy</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http2</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-memcache</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-mqtt</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-redis</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-smtp</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-socks</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-stomp</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-xml</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-common</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-dev-tools</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler-proxy</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-rxtx</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-sctp</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-udt</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-example</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-classes-macos</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-unix-common</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-classes-epoll</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-classes-kqueue</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-classes</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-x86_64-fedora</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>linux-aarch_64-fedora</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>linux-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>osx-x86_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>osx-aarch_64</classifier>
         </dependency>
 
-        <!--target/import/netty-bom-4.1.72.Final.pom-->
+        <!--target/import/netty-bom-4.1.79.Final.pom-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-tcnative-boringssl-static</artifactId>
             <classifier>windows-x86_64</classifier>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>apache-jsp</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>apache-jstl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-java-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-java-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-openjdk8-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-openjdk8-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-conscrypt-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-conscrypt-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-annotations</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-ant</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-continuation</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-deploy</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-distribution</artifactId>
             <type>zip</type>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-distribution</artifactId>
             <type>tar.gz</type>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.fcgi</groupId>
             <artifactId>fcgi-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.fcgi</groupId>
             <artifactId>fcgi-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.gcloud</groupId>
             <artifactId>jetty-gcloud-session-manager</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-home</artifactId>
             <type>zip</type>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-home</artifactId>
             <type>tar.gz</type>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-http</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-common</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-hpack</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-http-client-transport</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-http-spi</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-common</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-remote-query</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-embedded-query</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-hazelcast</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-io</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jaas</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jaspi</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jmx</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jndi</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.memcached</groupId>
             <artifactId>jetty-memcached-sessions</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-nosql</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot-jsp</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot-warurl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-httpservice</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-plus</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-proxy</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-quickstart</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-rewrite</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-security</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-openid</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlets</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-spring</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-unixsocket</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util-ajax</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>javax-websocket-client-impl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>javax-websocket-server-impl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-api</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-common</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-servlet</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-9.4.44.v20210927.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-xml</artifactId>
         </dependency>
 
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-config</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-parameter-flow-control</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-extension</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-apollo</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-zookeeper</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-nacos</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-redis</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-consul</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-web-servlet</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-zuul-adapter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-transport-simple-http</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-annotation-aspectj</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-dubbo-adapter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-apache-dubbo-adapter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-reactor-adapter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-cluster-server-default</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-cluster-client-default</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-spring-webflux-adapter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-api-gateway-adapter-common</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-spring-webmvc-adapter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>io.seata</groupId>
-            <artifactId>seata-spring-boot-starter</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-sentinel-datasource</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-circuitbreaker-sentinel</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config-server</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-rocketmq</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sidecar</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-commons</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
-        </dependency>
-
-        <!--target/import/spring-cloud-alibaba-dependencies-2.2.7.RELEASE.pom-->
-        <dependency>
-            <groupId>com.alibaba.spring</groupId>
-            <artifactId>spring-context-support</artifactId>
-        </dependency>
-
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-acl</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-aspects</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-cas</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-data</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-ldap</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-messaging</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-client</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-core</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-jose</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-resource-server</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-openid</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-remoting</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-rsocket</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-saml2-service-provider</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
         </dependency>
 
-        <!--target/import/spring-security-bom-5.3.12.RELEASE.pom-->
+        <!--target/import/spring-security-bom-5.3.13.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-indexer</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-instrument</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jcl</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webflux</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.2.19.RELEASE.pom-->
+        <!--target/import/spring-framework-bom-5.2.22.RELEASE.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-websocket</artifactId>
@@ -2261,8 +2033,6 @@
         <dependency>
             <groupId>org.elasticsearch.distribution.integ-test-zip</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>7.6.2</version>
-            <type>zip</type>
         </dependency>
 
         <!--target/import/spring-boot-dependencies-2.3.12.RELEASE.pom-->
@@ -4863,6 +4633,270 @@
             <artifactId>xmlunit-placeholders</artifactId>
         </dependency>
 
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis.scripting</groupId>
+            <artifactId>mybatis-freemarker</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis.scripting</groupId>
+            <artifactId>mybatis-velocity</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis.scripting</groupId>
+            <artifactId>mybatis-thymeleaf</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-test-autoconfigure</artifactId>
+        </dependency>
+
+        <!--target/import/mybatis-spring-boot-2.2.2.pom-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-config</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-parameter-flow-control</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-extension</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-apollo</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-zookeeper</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-redis</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-consul</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-web-servlet</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-zuul-adapter</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-annotation-aspectj</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-reactor-adapter</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-cluster-server-default</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-cluster-client-default</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-spring-webflux-adapter</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-api-gateway-adapter-common</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-spring-webmvc-adapter</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-datasource</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-circuitbreaker-sentinel</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config-server</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-rocketmq</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sidecar</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-commons</artifactId>
+        </dependency>
+
+        <!--target/import/spring-cloud-alibaba-dependencies-2.2.8.RELEASE.pom-->
+        <dependency>
+            <groupId>com.alibaba.spring</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
         <!--../parent/pom.xml-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
@@ -4951,24 +4985,6 @@
 
         <!--../parent/pom.xml-->
         <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-ext-jdk15on</artifactId>
-        </dependency>
-
-        <!--../parent/pom.xml-->
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-        </dependency>
-
-        <!--../parent/pom.xml-->
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcpkix-jdk15on</artifactId>
-        </dependency>
-
-        <!--../parent/pom.xml-->
-        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
@@ -5043,6 +5059,96 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>com.oracle.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-core</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-simple</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-security</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-policy</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-bindings-soap</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-databinding-jaxb</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-client</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-service-description</artifactId>
+        </dependency>
+
+        <!--../parent/pom.xml-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-extension-providers</artifactId>
         </dependency>
 
     </dependencies>
