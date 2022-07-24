@@ -194,6 +194,83 @@
                 <version>${tomcat.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-ssi -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-ssi</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-storeconfig -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-storeconfig</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-fr -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-fr</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-ja -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-ja</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-es -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-es</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-de -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-de</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-zh-CN -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-zh-CN</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-pt-BR -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-pt-BR</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-ko -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-ko</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-ru -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-ru</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-i18n-cs -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-i18n-cs</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
