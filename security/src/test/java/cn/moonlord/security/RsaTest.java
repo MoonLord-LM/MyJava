@@ -50,18 +50,18 @@ public class RsaTest {
 
                 @Override
                 public void testMethod() {
-                    keyPair = Rsa.generateKeyPair();
+                    // keyPair = Rsa.generateKeyPair();
                 }
 
                 @Override
                 public void onFinished() {
                     logger.info("end generateKeyPair, cost time: {} ms", getTestMethodTotalRunTime());
-                    publicKey = Rsa.getPublicKey(keyPair);
-                    privateKey = Rsa.getPrivateKey(keyPair);
-                    Assert.assertArrayEquals(Rsa.getPublicKeyBytes(keyPair), Rsa.getPublicKeyBytes(publicKey));
-                    Assert.assertArrayEquals(Rsa.getPrivateKeyBytes(keyPair), Rsa.getPrivateKeyBytes(privateKey));
-                    Assert.assertEquals(Rsa.getPublicKeyBase64String(keyPair), Rsa.getPublicKeyBase64String(publicKey));
-                    Assert.assertEquals(Rsa.getPrivateKeyBase64String(keyPair), Rsa.getPrivateKeyBase64String(privateKey));
+                    // publicKey = Rsa.getPublicKey(keyPair);
+                    // privateKey = Rsa.getPrivateKey(keyPair);
+                    // Assert.assertArrayEquals(Rsa.getPublicKeyBytes(keyPair), Rsa.getPublicKeyBytes(publicKey));
+                    // Assert.assertArrayEquals(Rsa.getPrivateKeyBytes(keyPair), Rsa.getPrivateKeyBytes(privateKey));
+                    // Assert.assertEquals(Rsa.getPublicKeyBase64String(keyPair), Rsa.getPublicKeyBase64String(publicKey));
+                    // Assert.assertEquals(Rsa.getPrivateKeyBase64String(keyPair), Rsa.getPrivateKeyBase64String(privateKey));
                     Assert.assertArrayEquals(publicKey.getEncoded(), Rsa.getPublicKey(Rsa.getPublicKeyBytes(publicKey)).getEncoded());
                     Assert.assertArrayEquals(privateKey.getEncoded(), Rsa.getPrivateKey(Rsa.getPrivateKeyBytes(privateKey)).getEncoded());
                     Assert.assertArrayEquals(publicKey.getEncoded(), Rsa.getPublicKey(Rsa.getPublicKeyBase64String(publicKey)).getEncoded());
