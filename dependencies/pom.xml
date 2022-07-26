@@ -13,31 +13,4 @@
     <artifactId>dependencies</artifactId>
     <packaging>pom</packaging>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>parent</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>test</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>security</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
 </project>

@@ -158,6 +158,22 @@
             <!-- 定义指定软件的版本，较小的软件需要写在靠前的位置 -->
 
 
+            <dependency>
+                <groupId>cn.moonlord</groupId>
+                <artifactId>test</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.moonlord</groupId>
+                <artifactId>security</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.moonlord</groupId>
+                <artifactId>common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>

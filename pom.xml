@@ -28,24 +28,4 @@
         <module>common</module> <!-- 通用工具类 -->
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>test</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>security</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
 </project>
