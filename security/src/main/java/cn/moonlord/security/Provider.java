@@ -28,7 +28,7 @@ public class Provider {
         java.security.Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             java.security.Provider provider = providers[i];
-            result.append("Provider [ " + i + " ]  [ " + provider.getName() + " ] "+ " [ version " + provider.getVersion() + " ]  [ size " + provider.size() + " ] " + provider.getInfo());
+            result.append("Provider [ " + i + " ]  [ " + provider.getName() + " ] " + " [ version " + provider.getVersion() + " ]  [ size " + provider.size() + " ] " + provider.getInfo());
             result.append(System.lineSeparator());
         }
         return result.toString();

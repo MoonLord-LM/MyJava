@@ -25,9 +25,7 @@
         <dependencies>
 
 
-
             <!-- 引入 pom 作为软件的默认版本，较小的软件需要写在靠前的位置 -->
-
 
 
             <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-bom -->
@@ -157,9 +155,7 @@
             </dependency>
 
 
-
             <!-- 定义指定软件的版本，较小的软件需要写在靠前的位置 -->
-
 
 
             <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->

@@ -18,7 +18,8 @@ public class SunSimpleHttpHandler implements HttpHandler {
             httpExchange.getResponseHeaders().set("Content-Type", "text/plain");
             httpExchange.sendResponseHeaders(200, contentBody.getBytes().length);
             httpExchange.getResponseBody().write(contentBody.getBytes());
-            httpExchange.getResponseBody().flush();;
+            httpExchange.getResponseBody().flush();
+            ;
             httpExchange.getResponseBody().close();
             Logger.info(contentBody);
         } catch (IOException e) {

@@ -25,10 +25,10 @@ public class DependenciesAnalysis implements Runnable {
     public DependenciesAnalysis(String inputDependencyManagementFilePath, String outputDependencyFilePath) {
         this.inputDependencyManagementFilePath = inputDependencyManagementFilePath;
         this.outputDependencyFilePath = outputDependencyFilePath;
-        if(!Files.exists(Paths.get(inputDependencyManagementFilePath))) {
+        if (!Files.exists(Paths.get(inputDependencyManagementFilePath))) {
             throw new IllegalArgumentException("inputDependencyManagementFilePath must be a valid File");
         }
-        if(!Files.exists(Paths.get(outputDependencyFilePath))) {
+        if (!Files.exists(Paths.get(outputDependencyFilePath))) {
             throw new IllegalArgumentException("outputDependencyFilePath must be a valid File");
         }
         System.out.println("this.inputDependencyManagementFilePath: " + this.inputDependencyManagementFilePath);
@@ -67,11 +67,11 @@ public class DependenciesAnalysis implements Runnable {
                     "        <dependency>" + "\r\n" +
                     "            <groupId>" + groupId + "</groupId>" + "\r\n" +
                     "            <artifactId>" + artifactId + "</artifactId>" + "\r\n" +
-                    ( classifier == null ? "" : (
-                    "            <classifier>" + classifier + "</classifier>" + "\r\n"
+                    (classifier == null ? "" : (
+                            "            <classifier>" + classifier + "</classifier>" + "\r\n"
                     )) +
-                    ( type == null ? "" : (
-                    "            <type>" + type + "</type>" + "\r\n"
+                    (type == null ? "" : (
+                            "            <type>" + type + "</type>" + "\r\n"
                     )) +
                     "        </dependency>" + "\r\n";
         }
@@ -85,10 +85,10 @@ public class DependenciesAnalysis implements Runnable {
         }
 
         public String getDownloadUrl() {
-            if(downloadUrl == null && releaseUrl != null && getFileName() != null) {
+            if (downloadUrl == null && releaseUrl != null && getFileName() != null) {
                 return releaseUrl.replace(".", "/").replace(BASE_RELEASE_URL.replace(".", "/"), BASE_DOWNLOAD_URL) + "/" + getVersion() + "/" + getFileName();
             }
-            if(downloadUrl == null && groupId != null && getFileName() != null) {
+            if (downloadUrl == null && groupId != null && getFileName() != null) {
                 return BASE_RELEASE_URL + groupId.replace(".", "/") + "/" + getVersion() + "/" + getFileName();
             }
             return downloadUrl;
@@ -99,8 +99,8 @@ public class DependenciesAnalysis implements Runnable {
         }
 
         public String getFileName() {
-            if(fileName == null  && artifactId != null && getVersion() != null) {
-                return artifactId  + "-" + getVersion() + ( classifier == null ? "" : "-" + classifier) + "." + ( type == null ? "jar" : type);
+            if (fileName == null && artifactId != null && getVersion() != null) {
+                return artifactId + "-" + getVersion() + (classifier == null ? "" : "-" + classifier) + "." + (type == null ? "jar" : type);
             }
             return fileName;
         }
@@ -110,7 +110,7 @@ public class DependenciesAnalysis implements Runnable {
         }
 
         public Map<String, String> getProperties() {
-            if(properties == null) {
+            if (properties == null) {
                 return new HashMap<>();
             }
             return properties;
@@ -137,10 +137,10 @@ public class DependenciesAnalysis implements Runnable {
         }
 
         public String getVersion() {
-            if(version != null && version.startsWith("${") && version.endsWith("}")) {
+            if (version != null && version.startsWith("${") && version.endsWith("}")) {
                 String key = StringUtils.substringBetween(version, "${", "}");
                 String value = getProperties().get(key);
-                if(value != null) {
+                if (value != null) {
                     return value;
                 }
                 throw new RuntimeException("getVersion error, version: " + version);
@@ -188,7 +188,7 @@ public class DependenciesAnalysis implements Runnable {
             System.out.println(TagString + ": " + value);
         }
         if (TagString.equals("releaseUrl")) {
-            if(inputLine.startsWith("<!-- " + Dependency.BASE_RELEASE_URL)) {
+            if (inputLine.startsWith("<!-- " + Dependency.BASE_RELEASE_URL)) {
                 value = StringUtils.substringBetween(inputLine, "<!-- ", " -->");
                 value = value.trim();
                 System.out.println(TagString + ": " + value);
@@ -225,19 +225,19 @@ public class DependenciesAnalysis implements Runnable {
                         continue;
                     }
                 }
-                if(isProperties) {
-                    if(inputLine.startsWith("<!-- ")) {
+                if (isProperties) {
+                    if (inputLine.startsWith("<!-- ")) {
                         continue;
                     }
-                    if(inputLine.startsWith("<")) {
+                    if (inputLine.startsWith("<")) {
                         String key = StringUtils.substringBetween(inputLine, "<", ">");
                         String value = StringUtils.substringBetween(inputLine, "<" + key + ">", "</" + key + ">");
-                        System.out.println("property "+ key + ": " + value);
+                        System.out.println("property " + key + ": " + value);
                         fileProperties.put(key, value);
                         continue;
                     }
                 }
-                if(isDependencyManagement) {
+                if (isDependencyManagement) {
                     if (inputLine.startsWith("<dependency>")) {
                         dependency.getProperties().putAll(fileProperties);
                         continue;
@@ -269,8 +269,8 @@ public class DependenciesAnalysis implements Runnable {
                     if (inputLine.startsWith("</dependency>")) {
                         try {
                             if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
-                                if(!outputDependencies.toString().contains(dependency.toString())) {
-                                    outputDependencies.append("        <!--" + inputDependencyManagementFilePath  + "-->" + "\r\n");
+                                if (!outputDependencies.toString().contains(dependency.toString())) {
+                                    outputDependencies.append("        <!--" + inputDependencyManagementFilePath + "-->" + "\r\n");
                                     outputDependencies.append(dependency);
                                     outputDependencies.append("\r\n");
                                 }
@@ -280,13 +280,13 @@ public class DependenciesAnalysis implements Runnable {
                                 String fileName = dependency.getFileName();
                                 System.out.println("downloadUrl: " + downloadUrl);
                                 System.out.println("fileName: " + fileName);
-                                if(!downloadedDependenciesUrl.contains(downloadUrl)) {
+                                if (!downloadedDependenciesUrl.contains(downloadUrl)) {
                                     String cachefileName = "target/import/" + fileName;
-                                        FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(downloadUrl).openConnection()).getInputStream(), new File(cachefileName));
-                                        FileUtils.readLines(new File(cachefileName), StandardCharsets.UTF_8);
-                                        // recursion
-                                        downloadedDependenciesUrl.add(downloadUrl);
-                                        findDependencies(cachefileName, downloadedDependenciesUrl, outputDependencies);
+                                    FileUtils.copyInputStreamToFile(TrustAllCerts.setTrusted(new URL(downloadUrl).openConnection()).getInputStream(), new File(cachefileName));
+                                    FileUtils.readLines(new File(cachefileName), StandardCharsets.UTF_8);
+                                    // recursion
+                                    downloadedDependenciesUrl.add(downloadUrl);
+                                    findDependencies(cachefileName, downloadedDependenciesUrl, outputDependencies);
                                 }
                             }
                         } catch (Exception e) {

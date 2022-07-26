@@ -30,7 +30,7 @@ public class TrustAllCerts {
         }
     };
 
-    public static final TrustManager[] TRUST_ALL_TRUST_MANAGERS = new TrustManager[] { TRUST_ALL_TRUST_MANAGER };
+    public static final TrustManager[] TRUST_ALL_TRUST_MANAGERS = new TrustManager[]{TRUST_ALL_TRUST_MANAGER};
 
     public static final SSLContext TRUST_ALL_SSL_CONTEXT;
 
@@ -47,7 +47,7 @@ public class TrustAllCerts {
     }
 
     public static URLConnection setTrusted(URLConnection connection) {
-        if(connection instanceof HttpsURLConnection) {
+        if (connection instanceof HttpsURLConnection) {
             ((HttpsURLConnection) connection).setHostnameVerifier(TRUST_ALL_HOSTNAME_VERIFIER);
             ((HttpsURLConnection) connection).setSSLSocketFactory(TRUST_ALL_SSL_SOCKET_FACTORY);
         }

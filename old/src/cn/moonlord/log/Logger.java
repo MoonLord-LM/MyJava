@@ -7,12 +7,12 @@ public class Logger {
     public static boolean infoEnabled = true;
 
     public static void info(Object message) {
-        if(infoEnabled == false) {
+        if (infoEnabled == false) {
             return;
         }
         System.out.println("[ " + LocalDateTime.now() + " ] " + "[ " + Thread.currentThread().getName() + " ] " + message);
-        if(message != null) {
-            if(message instanceof Exception) {
+        if (message != null) {
+            if (message instanceof Exception) {
                 ((Exception) message).printStackTrace(System.out);
             }
         }
@@ -20,8 +20,8 @@ public class Logger {
 
     public static void warn(Object message) {
         System.err.println("[ " + LocalDateTime.now() + " ] " + "[ " + Thread.currentThread().getName() + " ] " + message);
-        if(message != null) {
-            if(message instanceof Exception) {
+        if (message != null) {
+            if (message instanceof Exception) {
                 ((Exception) message).printStackTrace(System.err);
             }
         }

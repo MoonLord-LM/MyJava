@@ -34,8 +34,8 @@ public class SimpleDownloadHandler implements Runnable {
     public void run() {
         try {
             URLConnection connection = (new URL(downloadURL)).openConnection();
-            connection.setConnectTimeout(60 * 1000 * ( 1 + errorCount.get() ) );
-            connection.setReadTimeout(60 * 1000 * ( 1 + errorCount.get() ) );
+            connection.setConnectTimeout(60 * 1000 * (1 + errorCount.get()));
+            connection.setReadTimeout(60 * 1000 * (1 + errorCount.get()));
             connection.setRequestProperty("Referer", refererURL);
             InputStream inputStream = connection.getInputStream();
             FileOutputStream outputStream = new FileOutputStream(fileSavePath);
@@ -60,11 +60,10 @@ public class SimpleDownloadHandler implements Runnable {
             }
         } catch (Exception e) {
             Logger.warn(e);
-            if(errorCount.incrementAndGet() < 5) {
+            if (errorCount.incrementAndGet() < 5) {
                 Logger.warn("error count is " + errorCount.get() + ", retry downloading");
                 this.run();
-            }
-            else{
+            } else {
                 Logger.warn("error count is " + errorCount.get() + ", abort downloading");
             }
         }

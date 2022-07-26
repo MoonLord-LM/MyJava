@@ -21,11 +21,11 @@ public class SimpleTcpProxyHandler implements Runnable {
             Logger.info("outputClient " + outputClient.toString());
         } catch (Exception e) {
             Logger.warn(e);
-        }
-        finally {
+        } finally {
             try {
                 inputClient.close();
-            } catch (IOException e) { }
+            } catch (IOException e) {
+            }
         }
     }
 

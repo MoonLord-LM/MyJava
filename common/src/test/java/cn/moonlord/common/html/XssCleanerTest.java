@@ -38,7 +38,7 @@ public class XssCleanerTest {
         public void success_1() {
             String source1 = "<div><p><a href='javascript:void(0)' onclick='stealCookies()'>Link</a></p></div>";
             String source2 = "<div><p><a>Link</a></p></div>";
-            boolean result1 = ! ( XssCleaner.isValid(source1) );
+            boolean result1 = !(XssCleaner.isValid(source1));
             boolean result2 = XssCleaner.isValid(source2);
             Assert.assertTrue(result1);
             Assert.assertTrue(result2);

@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 public class XssCleaner {
 
     public static String clean(String source) {
-        if(source == null) {
+        if (source == null) {
             throw new IllegalArgumentException("XssCleaner clean error, source must not be null");
         }
         String baseUri = "";
@@ -19,7 +19,7 @@ public class XssCleaner {
     }
 
     public static boolean isValid(String source) {
-        if(source == null) {
+        if (source == null) {
             throw new IllegalArgumentException("XssCleaner isValid error, source must not be null");
         }
         Safelist safelist = Safelist.relaxed();

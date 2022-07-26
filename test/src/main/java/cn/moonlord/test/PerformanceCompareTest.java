@@ -8,7 +8,8 @@ public abstract class PerformanceCompareTest implements Runnable {
 
     private TestRunnable compareMethod = EMPTY_RUNNABLE;
 
-    public void onStarted() throws Exception { }
+    public void onStarted() throws Exception {
+    }
 
     public void testMethod() throws Exception {
         testMethod.run();
@@ -18,7 +19,8 @@ public abstract class PerformanceCompareTest implements Runnable {
         compareMethod.run();
     }
 
-    public void onFinished() throws Exception { }
+    public void onFinished() throws Exception {
+    }
 
     private int cycleOfRuns = 1;
 
@@ -34,17 +36,18 @@ public abstract class PerformanceCompareTest implements Runnable {
 
     private String improvement = "" + improvedPercentage + "%";
 
-    public PerformanceCompareTest() { }
+    public PerformanceCompareTest() {
+    }
 
     public PerformanceCompareTest(int cycleOfRuns) {
-        if(cycleOfRuns < 1) {
+        if (cycleOfRuns < 1) {
             throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
         }
         this.cycleOfRuns = cycleOfRuns;
     }
 
     public PerformanceCompareTest(int cycleOfRuns, TestRunnable testMethod, TestRunnable compareMethod) {
-        if(cycleOfRuns < 1) {
+        if (cycleOfRuns < 1) {
             throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
         }
         this.cycleOfRuns = cycleOfRuns;
@@ -55,7 +58,7 @@ public abstract class PerformanceCompareTest implements Runnable {
     @Override
     public void run() {
         try {
-            if(!shouldRun()) {
+            if (!shouldRun()) {
                 return;
             }
 
@@ -82,8 +85,7 @@ public abstract class PerformanceCompareTest implements Runnable {
             improvement = "" + improvedPercentage + "%";
 
             onFinished();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -97,12 +99,12 @@ public abstract class PerformanceCompareTest implements Runnable {
         return this;
     }
 
-    public Boolean shouldRun(){
+    public Boolean shouldRun() {
         return shouldRun;
     }
 
     public PerformanceCompareTest setRunOnSystemProperty(String property, String value) {
-        if(System.getProperty(property) == null || !System.getProperty(property).equals(value)) {
+        if (System.getProperty(property) == null || !System.getProperty(property).equals(value)) {
             shouldRun = false;
         }
         return this;

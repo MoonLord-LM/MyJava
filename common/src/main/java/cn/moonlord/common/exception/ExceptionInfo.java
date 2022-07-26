@@ -43,12 +43,12 @@ public class ExceptionInfo {
             return SENSITIVE_EXCEPTION_MESSAGE;
         }
         for (String sensitivePackage : SENSITIVE_PACKAGE_LIST) {
-            if(className.startsWith(sensitivePackage)) {
+            if (className.startsWith(sensitivePackage)) {
                 return SENSITIVE_EXCEPTION_MESSAGE;
             }
         }
         String message = exception.getMessage();
-        if(message == null) {
+        if (message == null) {
             message = "";
         }
         return message;
@@ -73,7 +73,7 @@ public class ExceptionInfo {
         if (exception == null) {
             return "";
         }
-        try ( StringWriter buffer = new StringWriter(); PrintWriter writer = new PrintWriter(buffer); ) {
+        try (StringWriter buffer = new StringWriter(); PrintWriter writer = new PrintWriter(buffer);) {
             exception.printStackTrace(writer);
             return buffer.toString();
         } catch (IOException e) {
@@ -85,7 +85,7 @@ public class ExceptionInfo {
         if (exception == null) {
             return "";
         }
-        try (StringWriter buffer = new StringWriter(); ) {
+        try (StringWriter buffer = new StringWriter();) {
             buffer.append(exception.toString());
             StackTraceElement[] traces = exception.getStackTrace();
             for (StackTraceElement trace : traces) {

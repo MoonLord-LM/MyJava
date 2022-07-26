@@ -38,10 +38,10 @@ public class HttpStressClient implements Runnable {
                         connection.disconnect();
                         int finished = finishedTestNum.incrementAndGet();
                         Logger.info("StressTest [ " + finished + " / " + totalTestNum + "] has got response code " + responseCode);
-                        if(finished == totalTestNum) {
+                        if (finished == totalTestNum) {
                             finishedTestNum.incrementAndGet();
                             long endTime = System.currentTimeMillis();
-                            Logger.warn("StressTest [ " + totalTestNum + "] is finished, total time is " + (endTime - beginTime) + " ms, average time is " + ((float)(endTime - beginTime) / totalTestNum) + " ms");
+                            Logger.warn("StressTest [ " + totalTestNum + "] is finished, total time is " + (endTime - beginTime) + " ms, average time is " + ((float) (endTime - beginTime) / totalTestNum) + " ms");
                             pool.shutdown();
                         }
                     } catch (IOException e) {

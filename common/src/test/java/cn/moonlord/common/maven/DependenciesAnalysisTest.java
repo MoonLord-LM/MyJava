@@ -17,7 +17,7 @@ public class DependenciesAnalysisTest {
         @Test
         public void success_1() {
             (new DependenciesAnalysis(
-                    "../parent/pom.xml","../dependencies-analysis/pom.xml"
+                    "../parent/pom.xml", "../dependencies-analysis/pom.xml"
             )).run();
         }
     }

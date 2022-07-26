@@ -21,7 +21,7 @@ public class SourceFileEncodingConverter implements Runnable {
     public SourceFileEncodingConverter(String sourceFilePath) {
         try {
             this.sourceFilePath = new File(sourceFilePath).getCanonicalPath();
-            if(!Files.exists(Paths.get(sourceFilePath))) {
+            if (!Files.exists(Paths.get(sourceFilePath))) {
                 Files.createDirectories(Paths.get(sourceFilePath));
             }
         } catch (Exception e) {
@@ -37,43 +37,41 @@ public class SourceFileEncodingConverter implements Runnable {
 
             File sourceDir = new File(sourceFilePath);
             System.out.println("sourceDir: " + sourceDir.getCanonicalPath());
-            Collection<File> allFileList = FileUtils.listFiles(sourceDir,  null, true);
+            Collection<File> allFileList = FileUtils.listFiles(sourceDir, null, true);
             System.out.println("allFileListSize: " + allFileList.size());
-            Collection<File> sourceFileList = FileUtils.listFiles(sourceDir, new String[] {"java", "xml", "properties"}, true);
+            Collection<File> sourceFileList = FileUtils.listFiles(sourceDir, new String[]{"java", "xml", "properties"}, true);
             System.out.println("sourceFileListSize: " + sourceFileList.size());
-            for (File file: sourceFileList) {
+            for (File file : sourceFileList) {
                 String filePath = file.getCanonicalPath();
-                if(filePath.contains("\\.git\\") || filePath.contains("\\.idea\\") || filePath.contains("\\target\\")) {
+                if (filePath.contains("\\.git\\") || filePath.contains("\\.idea\\") || filePath.contains("\\target\\")) {
                     continue;
                 }
-                if(!file.exists() || !file.isFile() || !file.canRead() || !file.canWrite()) {
+                if (!file.exists() || !file.isFile() || !file.canRead() || !file.canWrite()) {
                     continue;
                 }
                 byte[] sourceBytes = FileUtils.readFileToByteArray(file);
                 boolean isBadFile = false;
                 for (int i = 0; i < sourceBytes.length - 2; i++) {
-                    if(sourceBytes[i] == UNKNOWN_BYTES[0] && sourceBytes[i + 1] == UNKNOWN_BYTES[1] && sourceBytes[i + 2] == UNKNOWN_BYTES[2]) {
+                    if (sourceBytes[i] == UNKNOWN_BYTES[0] && sourceBytes[i + 1] == UNKNOWN_BYTES[1] && sourceBytes[i + 2] == UNKNOWN_BYTES[2]) {
                         isBadFile = true;
                     }
                 }
-                if(isBadFile) {
+                if (isBadFile) {
                     System.out.println("file encoding is bad: " + file.getCanonicalPath());
                     continue;
                 }
                 String sourceString = new String(sourceBytes, StandardCharsets.UTF_8);
-                if(sourceString.contains(UNKNOWN_STRING)) {
+                if (sourceString.contains(UNKNOWN_STRING)) {
                     sourceString = new String(sourceBytes, Charset.forName("GB2312"));
-                    if(!sourceString.contains(UNKNOWN_STRING)) {
+                    if (!sourceString.contains(UNKNOWN_STRING)) {
                         System.out.println("convert from GB2312 to UTF-8: " + file.getCanonicalPath());
                         FileUtils.write(file, sourceString, StandardCharsets.UTF_8);
-                    }
-                    else {
+                    } else {
                         System.out.println("file encoding is unknown: " + file.getCanonicalPath());
                     }
                 }
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

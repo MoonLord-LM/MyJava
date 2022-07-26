@@ -22,10 +22,10 @@ public class SimpleHttpHandler implements Runnable {
         try {
             Logger.info("[ Input Begin ]");
             BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-            String line =  in.readLine();
+            String line = in.readLine();
             Logger.info("    " + line);
             String[] requestLine = line.split(" ");
-            if(requestLine.length != 3) {
+            if (requestLine.length != 3) {
                 Logger.info("[ Input Error ]");
                 client.getOutputStream().write(("HTTP/1.1 400 Bad Request" + "\r\n\r\n").getBytes());
                 client.getOutputStream().close();
@@ -33,7 +33,7 @@ public class SimpleHttpHandler implements Runnable {
             }
             String requestMethod = requestLine[0];
             String requestURL = requestLine[1];
-            String requestProtocol= requestLine[2];
+            String requestProtocol = requestLine[2];
             while (line != null && line.length() > 0) {
                 line = in.readLine();
                 Logger.info("    " + line);
@@ -60,11 +60,11 @@ public class SimpleHttpHandler implements Runnable {
             Logger.info("[ Output End ]");
         } catch (Exception e) {
             Logger.warn(e);
-        }
-        finally {
+        } finally {
             try {
                 client.close();
-            } catch (IOException e) { }
+            } catch (IOException e) {
+            }
         }
     }
 

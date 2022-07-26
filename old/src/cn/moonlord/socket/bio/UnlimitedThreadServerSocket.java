@@ -24,7 +24,7 @@ public class UnlimitedThreadServerSocket implements Runnable {
             ServerSocket server = new ServerSocket(port);
             Logger.info("ServerSocket has started to listen at " + server.getLocalSocketAddress());
 
-            while(!Thread.interrupted()) {
+            while (!Thread.interrupted()) {
                 Logger.info("ServerSocket is waiting for a new client connection ...");
                 Socket client = server.accept();
 
