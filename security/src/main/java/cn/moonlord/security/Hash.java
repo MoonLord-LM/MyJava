@@ -2,6 +2,9 @@ package cn.moonlord.security;
 
 import java.security.MessageDigest;
 
+/**
+ * Hash
+ */
 public class Hash {
 
     public static final String SHA256 = "SHA-256";

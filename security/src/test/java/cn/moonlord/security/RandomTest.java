@@ -97,34 +97,34 @@ public class RandomTest {
     public static class generate {
         @Test
         public void success_1() {
-            byte[] result = Random.generate(8);
+            byte[] result = Random.generateBits(8);
             Assert.assertEquals(1, result.length);
         }
 
         @Test
         public void success_2() {
-            byte[] result = Random.generate(8 * 1024);
+            byte[] result = Random.generateBits(8 * 1024);
             Assert.assertEquals(1024, result.length);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_1() {
-            Random.generate(0);
+            Random.generateBits(0);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_2() {
-            Random.generate(-1);
+            Random.generateBits(-1);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_3() {
-            Random.generate(1);
+            Random.generateBits(1);
         }
 
         @Test(expected = IllegalArgumentException.class)
         public void error_4() {
-            Random.generate(1024 + 1);
+            Random.generateBits(1024 + 1);
         }
     }
 

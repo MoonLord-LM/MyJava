@@ -4,6 +4,9 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.security.Security;
 
+/**
+ * Provider
+ */
 public class Provider {
 
     public static final BouncyCastleProvider PROVIDER_BOUNCY_CASTLE = new BouncyCastleProvider();

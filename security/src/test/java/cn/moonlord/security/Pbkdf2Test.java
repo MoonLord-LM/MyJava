@@ -17,10 +17,10 @@ public class Pbkdf2Test {
     public static class generate {
         @Test
         public void success_1() {
-            byte[] component1 = Random.generate(512);
-            byte[] component2 = Random.generate(512);
+            byte[] component1 = Random.generateBits(512);
+            byte[] component2 = Random.generateBits(512);
             byte[] password = Xor.merge(component1, component2);
-            byte[] salt = Random.generate(512);
+            byte[] salt = Random.generateBits(512);
             byte[] result = Pbkdf2.generate(Hex.encode(password), salt, 10000, 512);
             logger.info("component1 byte length: [ " + component1.length + " ], base64: [ " + Base64.encode(component1) + " ]");
             logger.info("component2 byte length: [ " + component2.length + " ], base64: [ " + Base64.encode(component2) + " ]");
@@ -31,10 +31,10 @@ public class Pbkdf2Test {
 
         @Test
         public void performance_1() {
-            byte[] component1 = Random.generate(512);
-            byte[] component2 = Random.generate(512);
+            byte[] component1 = Random.generateBits(512);
+            byte[] component2 = Random.generateBits(512);
             byte[] password = Xor.merge(component1, component2);
-            byte[] salt = Random.generate(512);
+            byte[] salt = Random.generateBits(512);
             int iterationCount = 10000;
             int keyLength = 512;
             byte[] tmp = new byte[64];
@@ -58,10 +58,10 @@ public class Pbkdf2Test {
 
         @Test
         public void performance_2() {
-            byte[] component1 = Random.generate(512);
-            byte[] component2 = Random.generate(512);
+            byte[] component1 = Random.generateBits(512);
+            byte[] component2 = Random.generateBits(512);
             byte[] password = Xor.merge(component1, component2);
-            byte[] salt = Random.generate(512);
+            byte[] salt = Random.generateBits(512);
             int iterationCount = 10000 * 10;
             int keyLength = 512;
             byte[] tmp = new byte[64];
@@ -85,10 +85,10 @@ public class Pbkdf2Test {
 
         @Test
         public void performance_3() {
-            byte[] component1 = Random.generate(512);
-            byte[] component2 = Random.generate(512);
+            byte[] component1 = Random.generateBits(512);
+            byte[] component2 = Random.generateBits(512);
             byte[] password = Xor.merge(component1, component2);
-            byte[] salt = Random.generate(512);
+            byte[] salt = Random.generateBits(512);
             int iterationCount = 10000 * 100;
             int keyLength = 512;
             byte[] tmp = new byte[64];

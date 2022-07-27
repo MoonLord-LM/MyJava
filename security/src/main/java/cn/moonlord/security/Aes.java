@@ -6,6 +6,9 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
+/**
+ * Aes
+ */
 public class Aes {
 
     public static final String AES_KEY_ALGORITHM = "AES";
@@ -33,7 +36,7 @@ public class Aes {
     }
 
     public static byte[] generateKeyBytes() {
-        return Random.generate(AES_KEY_BIT_LENGTH);
+        return Random.generateBits(AES_KEY_BIT_LENGTH);
     }
 
     public static String generateKeyBase64String() {
@@ -68,7 +71,7 @@ public class Aes {
             throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [ " + encryptKey.getEncoded().length + " ] must be " + (AES_KEY_BIT_LENGTH / Byte.SIZE));
         }
 
-        byte[] iv = Random.generate(GCM_IV_BIT_LENGTH);
+        byte[] iv = Random.generateBits(GCM_IV_BIT_LENGTH);
         GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_BIT_LENGTH, iv);
 
         try {

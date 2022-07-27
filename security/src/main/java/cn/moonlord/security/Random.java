@@ -55,7 +55,7 @@ public class Random {
             try {
                 instance = SecureRandom.getInstance(algorithm);
                 break;
-            } catch (NoSuchAlgorithmException ignore) {
+            } catch (NoSuchAlgorithmException ignored) {
             }
         }
         if (instance == null) {
@@ -67,7 +67,7 @@ public class Random {
         return instance;
     }
 
-    public static byte[] generate(int bitLength) {
+    public static byte[] generateBits(int bitLength) {
         if (bitLength <= 0) {
             throw new IllegalArgumentException("Random generate error, bitLength [ " + bitLength + " ] must be larger than 0");
         }

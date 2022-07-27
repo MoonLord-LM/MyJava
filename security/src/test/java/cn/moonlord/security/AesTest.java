@@ -31,12 +31,12 @@ public class AesTest {
         public void getSecretKey() {
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey((byte[]) null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey(new byte[0]));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey(Random.generate(128)));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey(Random.generateBits(128)));
             Assert.assertEquals(32, Aes.getSecretKey(Aes.generateKeyBytes()).getEncoded().length);
 
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey((String) null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey(""));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey(Base64.encode(Random.generate(128))));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.getSecretKey(Base64.encode(Random.generateBits(128))));
             Assert.assertEquals(32, Aes.getSecretKey(Aes.generateKeyBase64String()).getEncoded().length);
         }
     }
@@ -46,7 +46,7 @@ public class AesTest {
         public void encrypt() {
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((byte[]) null, Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[0], (SecretKeySpec) null));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[0], new SecretKeySpec(Random.generate(128), Aes.AES_KEY_ALGORITHM)));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[0], new SecretKeySpec(Random.generateBits(128), Aes.AES_KEY_ALGORITHM)));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKeyBytes()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKeyBase64String()));
@@ -71,7 +71,7 @@ public class AesTest {
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[0], Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[Aes.ENCRYPTED_MIN_BYTE_LENGTH - 1], Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[32], (SecretKeySpec) null));
-            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[32], new SecretKeySpec(Random.generate(128), Aes.AES_KEY_ALGORITHM)));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(new byte[32], new SecretKeySpec(Random.generateBits(128), Aes.AES_KEY_ALGORITHM)));
 
             SecretKeySpec key1 = Aes.generateKey();
             byte[] key2 = Aes.generateKeyBytes();

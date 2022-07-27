@@ -2,6 +2,9 @@ package cn.moonlord.security;
 
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Base64
+ */
 public class Base64 {
 
     public static final int MIME_LINE_MAX_LENGTH = 76;
