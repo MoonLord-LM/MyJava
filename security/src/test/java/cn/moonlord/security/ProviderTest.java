@@ -9,8 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.crypto.Cipher;
-import java.security.NoSuchAlgorithmException;
-import java.security.Security;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKeyFactory;
+import java.security.*;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
@@ -46,12 +48,28 @@ public class ProviderTest {
                     }
                 }
             }
+        }
+
+        @Test
+        public void test() throws NoSuchPaddingException, NoSuchAlgorithmException {
             Provider.removeBouncyCastleProvider();
-            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("AES/CBC/PKCS7Padding"));
-            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("ChaCha20-Poly1305"));
-            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("ChaCha20-IETF-Poly1305"));
-            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("XChaCha20-IETF-Poly1305"));
+            Assert.assertThrows(NoSuchAlgorithmException.class, () -> SecureRandom.getInstance(Random.ALGORITHM_NONCE_AND_IV));
+            Assert.assertThrows(NoSuchAlgorithmException.class, () -> SecureRandom.getInstance(Random.ALGORITHM_DEFAULT));
+            Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("AES/CBC/PKCS7Padding"));
+            Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("ChaCha20-Poly1305"));
+            Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("ChaCha20-IETF-Poly1305"));
+            Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("XChaCha20-IETF-Poly1305"));
+            MessageDigest.getInstance(Hash.SHA256);
+            MessageDigest.getInstance(Hash.SHA512);
+            Cipher.getInstance(Aes.AES_CIPHER_INSTANCE);
+            Cipher.getInstance(Rsa.RSA_CIPHER_INSTANCE);
+            KeyGenerator.getInstance(Aes.AES_KEY_ALGORITHM);
+            KeyPairGenerator.getInstance(Rsa.RSA_KEY_ALGORITHM);
+            SecretKeyFactory.getInstance(Pbkdf2.PBKDF2_ALGORITHM);
+
             Provider.addBouncyCastleProvider();
+            SecureRandom.getInstance(Random.ALGORITHM_NONCE_AND_IV);
+            SecureRandom.getInstance(Random.ALGORITHM_DEFAULT);
         }
     }
 
