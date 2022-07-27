@@ -6,6 +6,8 @@ import java.security.Security;
 
 public class Provider {
 
+    public static final BouncyCastleProvider PROVIDER_BOUNCY_CASTLE = new BouncyCastleProvider();
+
     static {
         init();
     }
@@ -21,7 +23,7 @@ public class Provider {
     public synchronized static void addBouncyCastleProvider() {
         if (!hasBouncyCastleProvider()) {
             try {
-                Security.addProvider(new BouncyCastleProvider());
+                Security.addProvider(PROVIDER_BOUNCY_CASTLE);
             } catch (Exception e) {
                 throw new IllegalArgumentException("Provider addBouncyCastleProvider error, error message: " + e.getMessage(), e);
             }

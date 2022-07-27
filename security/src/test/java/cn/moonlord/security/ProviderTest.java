@@ -1,5 +1,6 @@
 package cn.moonlord.security;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -8,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.crypto.Cipher;
-import javax.crypto.NoSuchPaddingException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 import java.util.Arrays;
@@ -46,40 +46,12 @@ public class ProviderTest {
                     }
                 }
             }
-        }
-    }
-
-    public static class showAesCiphers {
-        @Test()
-        public void success_2() throws NoSuchPaddingException, NoSuchAlgorithmException {
-            Provider.init();
-            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").toString());
-            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getAlgorithm());
-            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getProvider().getName());
-            logger.info(Cipher.getInstance("AES/CBC/PKCS7Padding").getProvider().getInfo());
-        }
-    }
-
-    public static class showChaChaCiphers {
-        @Test()
-        public void success_2() throws NoSuchPaddingException, NoSuchAlgorithmException {
-            Provider.init();
-            logger.info(Cipher.getInstance("ChaCha20-Poly1305").toString());
-            logger.info(Cipher.getInstance("ChaCha20-Poly1305").getAlgorithm());
-            logger.info(Cipher.getInstance("ChaCha20-Poly1305").getProvider().getName());
-            logger.info(Cipher.getInstance("ChaCha20-Poly1305").getProvider().getInfo());
-        }
-
-        @Test(expected = NoSuchAlgorithmException.class)
-        public void error_3() throws NoSuchPaddingException, NoSuchAlgorithmException {
-            Provider.init();
-            logger.info(Cipher.getInstance("ChaCha20-IETF-Poly1305").getAlgorithm());
-        }
-
-        @Test(expected = NoSuchAlgorithmException.class)
-        public void error_4() throws NoSuchPaddingException, NoSuchAlgorithmException {
-            Provider.init();
-            logger.info(Cipher.getInstance("XChaCha20-IETF-Poly1305").getAlgorithm());
+            Provider.removeBouncyCastleProvider();
+            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("AES/CBC/PKCS7Padding"));
+            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("ChaCha20-Poly1305"));
+            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("ChaCha20-IETF-Poly1305"));
+            Assert.assertThrows(NoSuchAlgorithmException.class, ()->Cipher.getInstance("XChaCha20-IETF-Poly1305"));
+            Provider.addBouncyCastleProvider();
         }
     }
 
