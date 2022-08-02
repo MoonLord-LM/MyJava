@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Random {
 
-    public static final String ALGORITHM_DRBG = "DRBG"; // sun.security.provider.DRBG（>= JDK 9）
+    public static final String ALGORITHM_DRBG = "DRBG"; // sun.security.provider.DRBG（require JDK 9+）
 
     public static final String ALGORITHM_NONCE_AND_IV = "NonceAndIV"; // org.bouncycastle.jcajce.provider.drbg.DRBG$NonceAndIV
 
