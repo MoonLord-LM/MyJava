@@ -7,7 +7,6 @@
         <groupId>cn.moonlord</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
     </parent>
 
     <artifactId>all-modules</artifactId>
@@ -15,14 +14,18 @@
 
     <!--
         依赖关系：
-        parent  ->  dependencies  ->  test  ->  security  ->  common
+        super-parent  ->  parent  ->  dependencies  ->  test  ->  security  ->  common
     -->
     <modules>
+        <module>super-parent</module>
         <module>version-management-bouncy-castle</module> <!-- 开源软件版本定义 -->
+        <module>version-management-groovy</module> <!-- 开源软件版本定义 -->
         <module>version-management-tomcat</module> <!-- 开源软件版本定义 -->
+
         <module>parent</module> <!-- 版本定义汇总 -->
         <module>dependencies</module> <!-- 公共依赖 -->
-        <!--<module>dependencies-analysis</module>--> <!-- 依赖分析 -->
+        <module>dependencies-analysis</module> <!-- 依赖分析 -->
+
         <module>test</module> <!-- 测试工具类 -->
         <module>security</module> <!-- 安全工具类 -->
         <module>common</module> <!-- 通用工具类 -->
