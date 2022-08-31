@@ -278,9 +278,10 @@ public class DependenciesAnalysis implements Runnable {
                                 // TO DO
                             }
                             else if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
-                                if(dependency.getGroupId().equals("jetty-slf4j-impl")){
+                                if(dependency.getGroupId().equals("http3-common")){
                                     // TO DO
-                                    dependency.setVersion("11.0.11");
+                                    // Could not find artifact org.eclipse.jetty:jetty-slf4j-impl:jar:10.0.8-SNAPSHOT
+                                    // dependency.setVersion("11.0.11");
                                 }
                                 else {
                                     dependency.setVersion(null);
