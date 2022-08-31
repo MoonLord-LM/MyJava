@@ -14,471 +14,401 @@
 
     <dependencies>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>apache-jsp</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
-            <artifactId>glassfish-jstl</artifactId>
+            <artifactId>apache-jstl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-java-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-java-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-alpn-openjdk8-client</artifactId>
+        </dependency>
+
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-alpn-openjdk8-server</artifactId>
+        </dependency>
+
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-conscrypt-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-conscrypt-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-annotations</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-ant</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-cdi</artifactId>
+            <artifactId>jetty-continuation</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-deploy</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-distribution</artifactId>
+            <type>zip</type>
+        </dependency>
+
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-distribution</artifactId>
+            <type>tar.gz</type>
+        </dependency>
+
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.fcgi</groupId>
             <artifactId>fcgi-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.fcgi</groupId>
             <artifactId>fcgi-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.gcloud</groupId>
             <artifactId>jetty-gcloud-session-manager</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-home</artifactId>
             <type>zip</type>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-home</artifactId>
             <type>tar.gz</type>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-http</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-common</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-hpack</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-http-client-transport</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.http3</groupId>
-            <artifactId>http3-client</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.http3</groupId>
-            <artifactId>http3-common</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.http3</groupId>
-            <artifactId>http3-http-client-transport</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.http3</groupId>
-            <artifactId>http3-qpack</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.http3</groupId>
-            <artifactId>http3-server</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-http-spi</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-common</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-remote-query</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>infinispan-embedded-query</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-hazelcast</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-io</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jaas</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jaspi</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jmx</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jndi</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.memcached</groupId>
             <artifactId>jetty-memcached-sessions</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-nosql</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot-jsp</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-osgi-boot-warurl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.quic</groupId>
-            <artifactId>quic-client</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.quic</groupId>
-            <artifactId>quic-common</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.quic</groupId>
-            <artifactId>quic-quiche-common</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.quic</groupId>
-            <artifactId>quic-quiche-jna</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.quic</groupId>
-            <artifactId>quic-server</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.osgi</groupId>
             <artifactId>jetty-httpservice</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-plus</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-proxy</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-quickstart</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-rewrite</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-security</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-openid</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlets</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-unixdomain-server</artifactId>
+            <artifactId>jetty-spring</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-unixsocket-common</artifactId>
+            <artifactId>jetty-unixsocket</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-unixsocket-client</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-unixsocket-server</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util-ajax</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jakarta-client</artifactId>
+            <artifactId>javax-websocket-client-impl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jakarta-server</artifactId>
+            <artifactId>javax-websocket-server-impl</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jakarta-common</artifactId>
+            <artifactId>websocket-api</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jetty-api</artifactId>
+            <artifactId>websocket-client</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jetty-client</artifactId>
+            <artifactId>websocket-common</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jetty-common</artifactId>
+            <artifactId>websocket-server</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jetty-server</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-servlet</artifactId>
         </dependency>
 
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-core-common</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-core-client</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
-        <dependency>
-            <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-core-server</artifactId>
-        </dependency>
-
-        <!--target/import/jetty-bom-11.0.11.pom-->
+        <!--target/import/jetty-bom-9.4.48.v20220622.pom-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-xml</artifactId>
