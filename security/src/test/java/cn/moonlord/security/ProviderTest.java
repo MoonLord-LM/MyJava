@@ -62,7 +62,6 @@ public class ProviderTest {
             MessageDigest.getInstance(Hash.SHA256);
             MessageDigest.getInstance(Hash.SHA512);
             Cipher.getInstance(Aes.AES_CIPHER_INSTANCE);
-            Cipher.getInstance(Rsa.RSA_CIPHER_INSTANCE);
             KeyGenerator.getInstance(Aes.AES_KEY_ALGORITHM);
             KeyPairGenerator.getInstance(Rsa.RSA_KEY_ALGORITHM);
             SecretKeyFactory.getInstance(Pbkdf2.PBKDF2_ALGORITHM);
@@ -70,6 +69,7 @@ public class ProviderTest {
             Provider.addBouncyCastleProvider();
             SecureRandom.getInstance(Random.ALGORITHM_NONCE_AND_IV);
             SecureRandom.getInstance(Random.ALGORITHM_DEFAULT);
+            Cipher.getInstance(Rsa.RSA_CIPHER_INSTANCE);
         }
     }
 

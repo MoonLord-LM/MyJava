@@ -142,11 +142,7 @@ public class DependenciesAnalysis implements Runnable {
         public String getVersion() {
             if (version != null && version.startsWith("${") && version.endsWith("}")) {
                 String key = StringUtils.substringBetween(version, "${", "}");
-                String value = getProperties().get(key);
-                if (value != null) {
-                    return value;
-                }
-                throw new RuntimeException("getVersion error, version: " + version);
+                return getProperties().get(key);
             }
             return version;
         }
@@ -274,7 +270,7 @@ public class DependenciesAnalysis implements Runnable {
                             if(dependency.getGroupId().contains("${") || dependency.getVersion().contains("${")){
                                 // TO DO
                             }
-                            else if(dependency.getVersion().endsWith("-SNAPSHOT")){
+                            else if(dependency.getVersion() == null || dependency.getVersion().endsWith("-SNAPSHOT")){
                                 // TO DO
                             }
                             else if(dependency.getGroupId().contains("org.eclipse.jetty")){
