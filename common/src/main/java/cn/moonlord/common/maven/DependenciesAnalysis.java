@@ -268,14 +268,23 @@ public class DependenciesAnalysis implements Runnable {
                     }
                     if (inputLine.startsWith("</dependency>")) {
                         try {
-                            if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
+                            if(dependency.getGroupId().contains("${") || dependency.getVersion().contains("${")){
+                                // TO DO
+                            }
+                            else if(dependency.getVersion().endsWith("-SNAPSHOT")){
+                                // TO DO
+                            }
+                            else if(dependency.getArtifactId().contains("http3-common")){
+                                // TO DO
+                            }
+                            else if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
                                 if (!outputDependencies.toString().contains(dependency.toString())) {
                                     outputDependencies.append("        <!--" + inputDependencyManagementFilePath + "-->" + "\r\n");
                                     outputDependencies.append(dependency);
                                     outputDependencies.append("\r\n");
                                 }
                             }
-                            if (dependency.getScope() != null && dependency.getScope().equals("import")) {
+                            else if (dependency.getScope() != null && dependency.getScope().equals("import")) {
                                 String downloadUrl = dependency.getDownloadUrl();
                                 String fileName = dependency.getFileName();
                                 System.out.println("downloadUrl: " + downloadUrl);
