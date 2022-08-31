@@ -12,18 +12,6 @@
 
     <artifactId>dependencies-analysis</artifactId>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>cn.moonlord</groupId>
-                <artifactId>parent</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
 
         <!--target/import/jetty-bom-11.0.11.pom-->

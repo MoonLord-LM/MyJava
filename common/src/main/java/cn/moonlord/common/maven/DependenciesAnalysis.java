@@ -73,6 +73,9 @@ public class DependenciesAnalysis implements Runnable {
                     (type == null ? "" : (
                             "            <type>" + type + "</type>" + "\r\n"
                     )) +
+                    (version == null ? "" : (
+                            "            <version>" + version + "</version>" + "\r\n"
+                    )) +
                     "        </dependency>" + "\r\n";
         }
 
@@ -274,10 +277,14 @@ public class DependenciesAnalysis implements Runnable {
                             else if(dependency.getVersion().endsWith("-SNAPSHOT")){
                                 // TO DO
                             }
-                            else if(dependency.getArtifactId().contains("http3-common")){
-                                // TO DO
-                            }
                             else if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
+                                if(dependency.getGroupId().equals("jetty-slf4j-impl")){
+                                    // TO DO
+                                    dependency.setVersion("11.0.11");
+                                }
+                                else {
+                                    dependency.setVersion(null);
+                                }
                                 if (!outputDependencies.toString().contains(dependency.toString())) {
                                     outputDependencies.append("        <!--" + inputDependencyManagementFilePath + "-->" + "\r\n");
                                     outputDependencies.append(dependency);
