@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'microsoft'
-          java-version: 11.0.15
+          java-version: 11
 
       - name: Build with Maven - super-parent
         run: mvn -B -U -e install --file "super-parent/pom.xml"
