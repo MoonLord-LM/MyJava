@@ -17,7 +17,7 @@ public class Rsa {
 
     public static final String RSA_KEY_ALGORITHM = "RSA";
 
-    public static final String RSA_CIPHER_INSTANCE = "RSA/None/OAEPPadding";
+    public static final String RSA_CIPHER_INSTANCE = "RSA/ECB/OAEPPadding";
 
     public static final String OAEP_DIGEST_ALGORITHM = "SHA-512";
 

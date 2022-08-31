@@ -1,0 +1,61 @@
+# Details on CodeQL's query packs refer to : https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
+# queries: security-extended,security-and-quality
+
+name: "Code check with CodeQL"
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'java' ]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build with Maven - super-parent
+      run: mvn -B -U -e install --file "super-parent/pom.xml"
+
+    - name: Build with Maven - version-management-bouncy-castle
+      run: mvn -B -U -e install --file "version-management-bouncy-castle/pom.xml"
+
+    - name: Build with Maven - version-management-groovy
+      run: mvn -B -U -e install --file "version-management-groovy/pom.xml"
+
+    - name: Build with Maven - version-management-tomcat
+      run: mvn -B -U -e install --file "version-management-tomcat/pom.xml"
+
+    - name: Build with Maven - parent
+      run: mvn -B -U -e install --file "parent/pom.xml"
+
+    - name: Build with Maven - dependencies
+      run: mvn -B -U -e install --file "dependencies/pom.xml"
+
+    - name: Build with Maven - all-modules
+      run: mvn -B -U -e install --file "pom.xml"
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
