@@ -56,7 +56,7 @@ public class ProviderTest {
             Assert.assertThrows(NoSuchAlgorithmException.class, () -> SecureRandom.getInstance(Random.ALGORITHM_NONCE_AND_IV));
             Assert.assertThrows(NoSuchAlgorithmException.class, () -> SecureRandom.getInstance(Random.ALGORITHM_DEFAULT));
             Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("AES/CBC/PKCS7Padding"));
-            Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("ChaCha20-Poly1305"));
+            // Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("ChaCha20-Poly1305"));
             Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("ChaCha20-IETF-Poly1305"));
             Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("XChaCha20-IETF-Poly1305"));
             MessageDigest.getInstance(Hash.SHA256);
