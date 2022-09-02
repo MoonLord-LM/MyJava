@@ -273,11 +273,6 @@ public class DependenciesAnalysis implements Runnable {
                             else if(dependency.getVersion() == null || dependency.getVersion().endsWith("-SNAPSHOT")){
                                 // TO DO
                             }
-                            else if(dependency.getGroupId().contains("org.eclipse.jetty")){
-                                // https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-bom/11.0.11
-                                // Could not find artifact org.eclipse.jetty:jetty-slf4j-impl:pom:10.0.8-SNAPSHOT
-                                // TO DO
-                            }
                             else if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
                                 dependency.setVersion(null);
                                 if (!outputDependencies.toString().contains(dependency.toString())) {
