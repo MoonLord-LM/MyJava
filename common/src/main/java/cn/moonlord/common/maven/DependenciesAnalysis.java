@@ -267,21 +267,20 @@ public class DependenciesAnalysis implements Runnable {
                     }
                     if (inputLine.startsWith("</dependency>")) {
                         try {
-                            if(dependency.getGroupId().contains("${") || dependency.getVersion().contains("${")){
+                            if (dependency.getGroupId().contains("${")) {
                                 // TO DO
-                            }
-                            else if(dependency.getVersion() == null || dependency.getVersion().endsWith("-SNAPSHOT")){
+                            } else if (dependency.getVersion() != null && dependency.getVersion().contains("${")) {
                                 // TO DO
-                            }
-                            else if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
+                            } else if (dependency.getVersion() == null || dependency.getVersion().endsWith("-SNAPSHOT")) {
+                                // TO DO
+                            } else if (dependency.getScope() == null || dependency.getScope().equals("compile")) {
                                 dependency.setVersion(null);
                                 if (!outputDependencies.toString().contains(dependency.toString())) {
                                     outputDependencies.append("        <!--" + inputDependencyManagementFilePath + "-->" + "\r\n");
                                     outputDependencies.append(dependency);
                                     outputDependencies.append("\r\n");
                                 }
-                            }
-                            else if (dependency.getScope() != null && dependency.getScope().equals("import")) {
+                            } else if (dependency.getScope() != null && dependency.getScope().equals("import")) {
                                 String downloadUrl = dependency.getDownloadUrl();
                                 String fileName = dependency.getFileName();
                                 System.out.println("downloadUrl: " + downloadUrl);
