@@ -51,7 +51,7 @@ public class HexTest {
                     logger.info("[Hex.encode] cost time: {} ms", getTestMethodTotalRunTime());
                     logger.info("[Hex.encodeHexString] compare time: {} ms", getCompareMethodTotalRunTime());
                     logger.info("[Hex.encode] of this project is {} faster than [Hex.encodeHexString] of Apache Commons Codec", getImprovement());
-                    Assert.assertTrue(isImproved());
+                    Assert.assertTrue(getImprovedPercentage() > -50L);
                 }
             }.run();
             new PerformanceCompareTest(1024 * 4, () -> Hex.encode(source), () -> new String(org.springframework.security.crypto.codec.Hex.encode(source))) {
