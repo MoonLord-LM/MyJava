@@ -16,7 +16,7 @@
 
     <properties>
         <!-- https://mvnrepository.com/artifact/org.codehaus.groovy -->
-        <groovy.version>3.0.12</groovy.version>
+        <groovy.version>3.0.13</groovy.version>
     </properties>
 
     <dependencyManagement>
