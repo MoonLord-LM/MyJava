@@ -534,133 +534,133 @@
             <artifactId>spring-security-web</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-indexer</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-instrument</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jcl</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-r2dbc</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webflux</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
-        <!--target/import/spring-framework-bom-5.3.22.pom-->
+        <!--target/import/spring-framework-bom-5.3.23.pom-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-websocket</artifactId>
