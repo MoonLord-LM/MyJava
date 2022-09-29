@@ -67,7 +67,10 @@ public class Aes {
         if (encryptKey == null) {
             throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be null");
         }
-        if (encryptKey.getEncoded() == null || encryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
+        if (encryptKey.getEncoded() == null) {
+            throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be empty");
+        }
+        if (encryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
             throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [ " + encryptKey.getEncoded().length + " ] must be " + (AES_KEY_BIT_LENGTH / Byte.SIZE));
         }
 
@@ -133,7 +136,10 @@ public class Aes {
         if (decryptKey == null) {
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be null");
         }
-        if (decryptKey.getEncoded() == null || decryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
+        if (decryptKey.getEncoded() == null) {
+            throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be empty");
+        }
+        if (decryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
             throw new IllegalArgumentException("Aes decrypt error, the length of decryptKey [ " + decryptKey.getEncoded().length + " ] must be " + (AES_KEY_BIT_LENGTH / Byte.SIZE));
         }
 
