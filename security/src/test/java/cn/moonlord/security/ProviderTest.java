@@ -110,6 +110,7 @@ public class ProviderTest {
             }
             Provider.addBouncyCastleProvider(); //TODO
             Provider.removeBouncyCastleProvider(); //TODO
+            Provider.addBouncyCastleProvider(); //TODO
         }
     }
 
