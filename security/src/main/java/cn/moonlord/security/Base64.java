@@ -3,7 +3,7 @@ package cn.moonlord.security;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Base64
+ * 100% test
  */
 public class Base64 {
 
