@@ -50,7 +50,7 @@ public class AesTest {
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKeyBytes()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKeyBase64String()));
-            if(Runtime.getRuntime().maxMemory() > Integer.MAX_VALUE){
+            if (Runtime.getRuntime().maxMemory() - (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) > Integer.MAX_VALUE) {
                 Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[Aes.SOURCE_MAX_BYTE_LENGTH + 1], Aes.generateKeyBase64String()));
             }
 
