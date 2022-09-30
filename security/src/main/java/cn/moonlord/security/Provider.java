@@ -1,6 +1,5 @@
 package cn.moonlord.security;
 
-import com.sun.crypto.provider.SunJCE;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.security.Security;
@@ -10,13 +9,13 @@ import java.security.Security;
  */
 public class Provider {
 
-    public static final BouncyCastleProvider BOUNCY_CASTLE_PROVIDER = new BouncyCastleProvider();
-
     public static final String BOUNCY_CASTLE_PROVIDER_NAME = BouncyCastleProvider.PROVIDER_NAME;
 
-    public static final SunJCE SUN_JCE_PROVIDER = new SunJCE();
+    public static final BouncyCastleProvider BOUNCY_CASTLE_PROVIDER = new BouncyCastleProvider();
 
-    public static final String SUN_JCE_PROVIDER_NAME = SunJCE.class.getSimpleName();
+    public static final String SUN_JCE_PROVIDER_NAME = "SunJCE";
+
+    public static final java.security.Provider SUN_JCE_PROVIDER = Security.getProvider(SUN_JCE_PROVIDER_NAME);
 
     static {
         init();
