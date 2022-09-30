@@ -59,7 +59,7 @@ public class Provider {
             try {
                 Security.addProvider(SUN_JCE_PROVIDER);
             } catch (Exception e) {
-                throw new IllegalArgumentException("Provider addBouncyCastleProvider error, error message: " + e.getMessage(), e);
+                throw new IllegalArgumentException("Provider addSunJCEProvider error, error message: " + e.getMessage(), e);
             }
         }
     }
@@ -69,7 +69,7 @@ public class Provider {
             try {
                 Security.removeProvider(SUN_JCE_PROVIDER_NAME);
             } catch (Exception e) {
-                throw new IllegalArgumentException("Provider removeBouncyCastleProvider error, error message: " + e.getMessage(), e);
+                throw new IllegalArgumentException("Provider removeSunJCEProvider error, error message: " + e.getMessage(), e);
             }
         }
     }
