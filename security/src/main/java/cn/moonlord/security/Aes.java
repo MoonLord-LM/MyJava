@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 /**
- * Aes
+ * 100% test
  */
 public class Aes {
 
@@ -20,6 +20,8 @@ public class Aes {
     public static final int GCM_TAG_BIT_LENGTH = 128;
 
     public static final int GCM_IV_BIT_LENGTH = 96;
+
+    public static final int SOURCE_MAX_BYTE_LENGTH = Integer.MAX_VALUE - (GCM_IV_BIT_LENGTH / Byte.SIZE);
 
     public static final int ENCRYPTED_MIN_BYTE_LENGTH = (GCM_TAG_BIT_LENGTH + GCM_IV_BIT_LENGTH) / Byte.SIZE;
 
@@ -64,14 +66,14 @@ public class Aes {
         if (sourceBytes == null) {
             throw new IllegalArgumentException("Aes encrypt error, sourceBytes must not be null");
         }
+        if (sourceBytes.length > SOURCE_MAX_BYTE_LENGTH) {
+            throw new IllegalArgumentException("Aes encrypt error, the length of sourceBytes [ " + sourceBytes.length + " ] must not be larger than " + SOURCE_MAX_BYTE_LENGTH);
+        }
         if (encryptKey == null) {
             throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be null");
         }
-        if (encryptKey.getEncoded() == null) {
-            throw new IllegalArgumentException("Aes encrypt error, encryptKey must not be empty");
-        }
-        if (encryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
-            throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [ " + encryptKey.getEncoded().length + " ] must be " + (AES_KEY_BIT_LENGTH / Byte.SIZE));
+        if (encryptKey.getEncoded() == null || encryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
+            throw new IllegalArgumentException("Aes encrypt error, the length of encryptKey [ " + (encryptKey.getEncoded() != null ? encryptKey.getEncoded().length : null) + " ] must be " + (AES_KEY_BIT_LENGTH / Byte.SIZE));
         }
 
         byte[] iv = Random.generateBits(GCM_IV_BIT_LENGTH);
@@ -136,11 +138,8 @@ public class Aes {
         if (decryptKey == null) {
             throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be null");
         }
-        if (decryptKey.getEncoded() == null) {
-            throw new IllegalArgumentException("Aes decrypt error, decryptKey must not be empty");
-        }
-        if (decryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
-            throw new IllegalArgumentException("Aes decrypt error, the length of decryptKey [ " + decryptKey.getEncoded().length + " ] must be " + (AES_KEY_BIT_LENGTH / Byte.SIZE));
+        if (decryptKey.getEncoded() == null || decryptKey.getEncoded().length != AES_KEY_BIT_LENGTH / Byte.SIZE) {
+            throw new IllegalArgumentException("Aes decrypt error, the length of decryptKey [ " + (decryptKey.getEncoded() != null ? decryptKey.getEncoded().length : null) + " ] must be " + (AES_KEY_BIT_LENGTH / Byte.SIZE));
         }
 
         byte[] iv = Arrays.copyOfRange(encryptedBytes, 0, GCM_IV_BIT_LENGTH / Byte.SIZE);

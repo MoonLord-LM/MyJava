@@ -26,7 +26,7 @@ public class ProviderTest {
 
     public static Logger logger = LoggerFactory.getLogger(ProviderTest.class);
 
-    public static class BouncyCastleProviderTest {
+    public static class ShowTest {
         @Test
         public void show() {
             Provider.addBouncyCastleProvider();
@@ -51,9 +51,11 @@ public class ProviderTest {
                 }
             }
         }
+    }
 
+    public static class BouncyCastleProviderTest {
         @Test
-        public void test() throws NoSuchPaddingException, NoSuchAlgorithmException {
+        public void removeAndAdd() throws NoSuchPaddingException, NoSuchAlgorithmException {
             Provider.removeBouncyCastleProvider();
 
             // Random
@@ -94,23 +96,6 @@ public class ProviderTest {
             Cipher.getInstance("ChaCha20-Poly1305");
             Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("ChaCha20-IETF-Poly1305"));
             Assert.assertThrows(NoSuchAlgorithmException.class, () -> Cipher.getInstance("XChaCha20-IETF-Poly1305"));
-        }
-
-        @Test
-        public void exception() {
-            try {
-                Field field = Provider.PROVIDER_BOUNCY_CASTLE.getClass().getDeclaredField("PROVIDER_NAME");
-                Field modifiersField = Field.class.getDeclaredField("modifiers");
-                modifiersField.setAccessible(true);
-                modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
-                field.setAccessible(true);
-                field.set(Provider.PROVIDER_BOUNCY_CASTLE.getClass(), "UNKNOWN");
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-            Provider.addBouncyCastleProvider(); //TODO
-            Provider.removeBouncyCastleProvider(); //TODO
-            Provider.addBouncyCastleProvider(); //TODO
         }
     }
 

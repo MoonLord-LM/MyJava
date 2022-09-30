@@ -50,6 +50,13 @@ public class AesTest {
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKey()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKeyBytes()));
             Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt((String) null, Aes.generateKeyBase64String()));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[Aes.SOURCE_MAX_BYTE_LENGTH + 1], Aes.generateKeyBase64String()));
+
+            Aes.encrypt(new byte[0], Aes.generateKey());
+            Provider.removeSunJCEProvider();
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.encrypt(new byte[0], Aes.generateKey()));
+            Provider.addSunJCEProvider();
+            Aes.encrypt(new byte[0], Aes.generateKey());
 
             Assert.assertEquals(Aes.ENCRYPTED_MIN_BYTE_LENGTH, Aes.encrypt(new byte[0], Aes.generateKey()).length);
 
@@ -77,20 +84,33 @@ public class AesTest {
             byte[] key2 = Aes.generateKeyBytes();
             String key3 = Aes.generateKeyBase64String();
 
+            byte[] encrypt1 = Aes.encrypt(Random.generateBytes(256), key1);
+            Aes.decrypt(encrypt1, key1);
+            Provider.removeSunJCEProvider();
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(encrypt1, key1));
+            Provider.addSunJCEProvider();
+            Aes.decrypt(encrypt1, key1);
+
             byte[] source1 = new byte[0];
             Assert.assertArrayEquals(source1, Aes.decrypt(Aes.encrypt(source1, key1), key1));
             Assert.assertArrayEquals(source1, Aes.decrypt(Aes.encrypt(source1, key2), key2));
             Assert.assertArrayEquals(source1, Aes.decrypt(Aes.encrypt(source1, key3), key3));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(Aes.encrypt(source1, key1), key2));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(Aes.encrypt(source1, key1), key3));
 
             String source2 = "测试";
             Assert.assertEquals(source2, Aes.decryptString(Aes.encrypt(source2, key1), key1));
             Assert.assertEquals(source2, Aes.decryptString(Aes.encrypt(source2, key2), key2));
             Assert.assertEquals(source2, Aes.decryptString(Aes.encrypt(source2, key3), key3));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(Aes.encrypt(source1, key1), key2));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(Aes.encrypt(source1, key1), key3));
 
             byte[] source3 = Random.generateBytes(1024);
             Assert.assertArrayEquals(source3, Aes.decrypt(Aes.encrypt(source3, key1), key1));
             Assert.assertArrayEquals(source3, Aes.decrypt(Aes.encrypt(source3, key2), key2));
             Assert.assertArrayEquals(source3, Aes.decrypt(Aes.encrypt(source3, key3), key3));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(Aes.encrypt(source1, key1), key2));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Aes.decrypt(Aes.encrypt(source1, key1), key3));
         }
     }
 
