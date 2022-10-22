@@ -16,10 +16,10 @@
 
     <properties>
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed -->
-        <tomcat-embed.version>9.0.65</tomcat-embed.version>
+        <tomcat-embed.version>9.0.68</tomcat-embed.version>
 
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat -->
-        <tomcat.version>9.0.65</tomcat.version>
+        <tomcat.version>9.0.68</tomcat.version>
     </properties>
 
     <dependencyManagement>
