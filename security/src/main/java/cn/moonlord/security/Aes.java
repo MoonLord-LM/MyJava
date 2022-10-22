@@ -21,9 +21,9 @@ public class Aes {
 
     public static final int GCM_IV_BIT_LENGTH = 96;
 
-    public static final int SOURCE_MAX_BYTE_LENGTH = Integer.MAX_VALUE - (GCM_IV_BIT_LENGTH / Byte.SIZE);
-
     public static final int ENCRYPTED_MIN_BYTE_LENGTH = (GCM_TAG_BIT_LENGTH + GCM_IV_BIT_LENGTH) / Byte.SIZE;
+
+    public static final int SOURCE_MAX_BYTE_LENGTH = Integer.MAX_VALUE - ENCRYPTED_MIN_BYTE_LENGTH;
 
     static {
         init();
