@@ -9,9 +9,13 @@ import java.security.Security;
  */
 public class Provider {
 
-    public static final String BOUNCY_CASTLE_PROVIDER_NAME = BouncyCastleProvider.PROVIDER_NAME;
+    public static final String BOUNCY_CASTLE_PROVIDER_NAME = "BC";
 
     public static final BouncyCastleProvider BOUNCY_CASTLE_PROVIDER = new BouncyCastleProvider();
+
+    public static final String SUN_PROVIDER_NAME = "SUN";
+
+    public static final java.security.Provider SUN_PROVIDER = Security.getProvider(SUN_PROVIDER_NAME);
 
     public static final String SUN_JCE_PROVIDER_NAME = "SunJCE";
 
@@ -25,52 +29,64 @@ public class Provider {
         addBouncyCastleProvider();
     }
 
+    public synchronized static boolean hasProvider(String providerName) {
+        return Security.getProvider(providerName) != null;
+    }
+
+    public synchronized static boolean hasProvider(java.security.Provider provider) {
+        return Security.getProvider(provider.getName()) != null;
+    }
+
     public synchronized static boolean hasBouncyCastleProvider() {
-        return Security.getProvider(BOUNCY_CASTLE_PROVIDER_NAME) != null;
+        return hasProvider(BOUNCY_CASTLE_PROVIDER_NAME);
+    }
+
+    public synchronized static boolean hasSunProvider() {
+        return hasProvider(SUN_PROVIDER_NAME);
+    }
+
+    public synchronized static boolean hasSunJCEProvider() {
+        return hasProvider(SUN_JCE_PROVIDER_NAME);
+    }
+
+    public synchronized static void addProvider(java.security.Provider provider) {
+        try {
+            Security.addProvider(provider);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Provider addBouncyCastleProvider error, error message: " + e.getMessage(), e);
+        }
     }
 
     public synchronized static void addBouncyCastleProvider() {
-        if (!hasBouncyCastleProvider()) {
-            try {
-                Security.addProvider(BOUNCY_CASTLE_PROVIDER);
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Provider addBouncyCastleProvider error, error message: " + e.getMessage(), e);
-            }
+        addProvider(BOUNCY_CASTLE_PROVIDER);
+    }
+
+    public synchronized static void addSunProvider() {
+        addProvider(SUN_PROVIDER);
+    }
+
+    public synchronized static void addSunJCEProvider() {
+        addProvider(SUN_JCE_PROVIDER);
+    }
+
+    public synchronized static void removeProvider(String providerName) {
+        try {
+            Security.removeProvider(providerName);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Provider removeBouncyCastleProvider error, error message: " + e.getMessage(), e);
         }
     }
 
     public synchronized static void removeBouncyCastleProvider() {
-        if (hasBouncyCastleProvider()) {
-            try {
-                Security.removeProvider(BOUNCY_CASTLE_PROVIDER_NAME);
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Provider removeBouncyCastleProvider error, error message: " + e.getMessage(), e);
-            }
-        }
+        removeProvider(BOUNCY_CASTLE_PROVIDER_NAME);
     }
 
-    public synchronized static boolean hasSunJCEProvider() {
-        return Security.getProvider(SUN_JCE_PROVIDER_NAME) != null;
-    }
-
-    public synchronized static void addSunJCEProvider() {
-        if (!hasSunJCEProvider()) {
-            try {
-                Security.addProvider(SUN_JCE_PROVIDER);
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Provider addSunJCEProvider error, error message: " + e.getMessage(), e);
-            }
-        }
+    public synchronized static void removeSunProvider() {
+        removeProvider(SUN_PROVIDER_NAME);
     }
 
     public synchronized static void removeSunJCEProvider() {
-        if (hasSunJCEProvider()) {
-            try {
-                Security.removeProvider(SUN_JCE_PROVIDER_NAME);
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Provider removeSunJCEProvider error, error message: " + e.getMessage(), e);
-            }
-        }
+        removeProvider(SUN_JCE_PROVIDER_NAME);
     }
 
 }

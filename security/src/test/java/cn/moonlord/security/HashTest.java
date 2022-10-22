@@ -23,6 +23,17 @@ public class HashTest {
             Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha256(null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha256Hex(null));
 
+            Hash.sha256(new byte[0]);
+            Hash.sha256Hex(new byte[0]);
+            Provider.removeSunProvider();
+            Provider.removeBouncyCastleProvider();
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha256(new byte[0]));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha256Hex(new byte[0]));
+            Provider.addSunProvider();
+            Provider.addBouncyCastleProvider();
+            Hash.sha256(new byte[0]);
+            Hash.sha256Hex(new byte[0]);
+
             byte[] source1 = new byte[0];
             Assert.assertArrayEquals(DigestUtils.sha256(source1), Hash.sha256(source1));
             Assert.assertEquals(DigestUtils.sha256Hex(source1), Hash.sha256Hex(source1));
@@ -43,6 +54,17 @@ public class HashTest {
         public void sha512() {
             Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha512(null));
             Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha512Hex(null));
+
+            Hash.sha512(new byte[0]);
+            Hash.sha512Hex(new byte[0]);
+            Provider.removeSunProvider();
+            Provider.removeBouncyCastleProvider();
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha512(new byte[0]));
+            Assert.assertThrows(IllegalArgumentException.class, () -> Hash.sha512Hex(new byte[0]));
+            Provider.addSunProvider();
+            Provider.addBouncyCastleProvider();
+            Hash.sha512(new byte[0]);
+            Hash.sha512Hex(new byte[0]);
 
             byte[] source1 = new byte[0];
             Assert.assertArrayEquals(DigestUtils.sha512(source1), Hash.sha512(source1));
