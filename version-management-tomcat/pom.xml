@@ -19,7 +19,7 @@
         <tomcat-embed.version>9.0.68</tomcat-embed.version>
 
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat -->
-        <tomcat.version>9.0.68</tomcat.version>
+        <tomcat.version>10.1.2</tomcat.version>
     </properties>
 
     <dependencyManagement>
