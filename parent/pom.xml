@@ -445,7 +445,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>2.7.5</version>
+                    <version>3.0.0</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
