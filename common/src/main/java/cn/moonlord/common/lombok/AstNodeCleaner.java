@@ -7,9 +7,11 @@ import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.expr.MarkerAnnotationExpr;
 import com.github.javaparser.ast.expr.SimpleName;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class AstNodeCleaner {
@@ -74,7 +76,7 @@ public class AstNodeCleaner {
             this.sourceNode = sourceNode;
             this.children = sourceNode.getChildNodes();
         }
-        
+
         public boolean containsChildType(Class<?> clazz){
             for (Node child : children) {
                 if (child.getClass() == clazz) {
@@ -126,16 +128,24 @@ public class AstNodeCleaner {
             // 类的变量
             for (Node child : children) {
                 if (child instanceof FieldDeclaration) {
-                    if(((FieldDeclaration) child).isStatic()) {
+                    FieldDeclaration field = (FieldDeclaration) child;
+                    if(field.isStatic()) {
                         newSource.append("    ");
                         newSource.append(child.toString().trim().replace("\n", "\n" + SPACE_INDENT));
                         newSource.append(NEW_LINE);
                     }
                 }
             }
+            HashMap<String, VariableDeclarator> fields = new HashMap<>();
             for (Node child : children) {
                 if (child instanceof FieldDeclaration) {
-                    if(!((FieldDeclaration) child).isStatic()) {
+                    FieldDeclaration field = (FieldDeclaration) child;
+                    if(!field.isStatic()) {
+                        VariableDeclarator variable = field.getVariable(0);
+                        String fieldName = variable.getNameAsString();
+                        String fieldNameUpper = fieldName.toUpperCase().substring(0, 1) + fieldName.substring(1, fieldName.length());
+                        fields.put("get" + fieldNameUpper, variable);
+                        fields.put("set" + fieldNameUpper, variable);
                         newSource.append("    ");
                         newSource.append(child.toString().trim().replace("\n", "\n" + SPACE_INDENT));
                         newSource.append(NEW_LINE);
@@ -149,6 +159,9 @@ public class AstNodeCleaner {
             // 类的方法
             for (Node child : children) {
                 if (child instanceof MethodDeclaration) {
+                    MethodDeclaration method = (MethodDeclaration) child;
+                    SimpleName methodName = method.getName();
+                    System.out.println("methodName: " + methodName + " " + fields.get(methodName));
                     newSource.append("    ");
                     newSource.append(child.toString().trim().replace("\n", "\n" + SPACE_INDENT));
                     newSource.append(NEW_LINE);
