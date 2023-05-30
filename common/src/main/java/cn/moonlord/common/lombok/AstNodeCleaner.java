@@ -6,6 +6,7 @@ import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
+import com.github.javaparser.ast.body.EnumDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
@@ -188,6 +189,15 @@ public class AstNodeCleaner {
             newSource.append("{");
             newSource.append(NEW_LINE);
             newSource.append(NEW_LINE);
+
+            // 类的枚举
+            for (Node child : children) {
+                if (child instanceof EnumDeclaration) {
+                    newSource.append(SPACE_INDENT);
+                    newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
+                    newSource.append(NEW_LINE);
+                }
+            }
 
             // 类的变量
             for (Node child : children) {
