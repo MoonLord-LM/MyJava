@@ -5,6 +5,7 @@ import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
+import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
@@ -54,11 +55,11 @@ public class AstNodeCleaner {
             }
         }
         // 补充 lombok 的引用
-        if(!newSource.toString().contains("import lombok.Getter;")){
+        if (!newSource.toString().contains("import lombok.Getter;")) {
             newSource.append("import lombok.Getter;");
             newSource.append(NEW_LINE);
         }
-        if(!newSource.toString().contains("import lombok.Setter;")){
+        if (!newSource.toString().contains("import lombok.Setter;")) {
             newSource.append("import lombok.Setter;");
             newSource.append(NEW_LINE);
         }
@@ -72,7 +73,12 @@ public class AstNodeCleaner {
         }
         newSource.append(NEW_LINE);
 
-        return newSource.toString();
+        // 多余的空格处理
+        String result = newSource.toString();
+        while (result.contains(NEW_LINE + SPACE_INDENT + NEW_LINE)) {
+            result = result.replace(NEW_LINE + SPACE_INDENT + NEW_LINE, NEW_LINE + NEW_LINE);
+        }
+        return result;
     }
 
     public static class ClassNodeCleaner {
@@ -85,7 +91,7 @@ public class AstNodeCleaner {
             this.children = sourceNode.getChildNodes();
         }
 
-        public boolean containsChildType(Class<?> clazz){
+        public boolean containsChildType(Class<?> clazz) {
             for (Node child : children) {
                 if (child.getClass() == clazz) {
                     return true;
@@ -111,11 +117,11 @@ public class AstNodeCleaner {
                 }
             }
             // 补充 lombok 的注解
-            if(!newSource.toString().contains("@Getter")){
+            if (!newSource.toString().contains("@Getter")) {
                 newSource.append("@Getter");
                 newSource.append(NEW_LINE);
             }
-            if(!newSource.toString().contains("@Setter")){
+            if (!newSource.toString().contains("@Setter")) {
                 newSource.append("@Setter");
                 newSource.append(NEW_LINE);
             }
@@ -187,9 +193,9 @@ public class AstNodeCleaner {
             for (Node child : children) {
                 if (child instanceof FieldDeclaration) {
                     FieldDeclaration field = (FieldDeclaration) child;
-                    if(field.isStatic()) {
-                        newSource.append("    ");
-                        newSource.append(child.toString().trim().replace("\n", "\n" + SPACE_INDENT));
+                    if (field.isStatic()) {
+                        newSource.append(SPACE_INDENT);
+                        newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                         newSource.append(NEW_LINE);
                     }
                 }
@@ -198,53 +204,68 @@ public class AstNodeCleaner {
             for (Node child : children) {
                 if (child instanceof FieldDeclaration) {
                     FieldDeclaration field = (FieldDeclaration) child;
-                    if(!field.isStatic()) {
+                    if (!field.isStatic()) {
                         VariableDeclarator variable = field.getVariable(0);
                         String fieldName = variable.getNameAsString();
                         String fieldNameUpper = fieldName.toUpperCase().charAt(0) + fieldName.substring(1);
                         System.out.println("variable: " + variable.getType() + " " + variable);
-                        if(variable.getType().toString().equals("boolean")){
+                        if (variable.getType().toString().equals("boolean")) {
                             fields.put("is" + fieldNameUpper, variable);
-                        }
-                        else{
+                        } else {
                             fields.put("get" + fieldNameUpper, variable);
                         }
                         fields.put("set" + fieldNameUpper, variable);
-                        newSource.append("    ");
-                        newSource.append(child.toString().trim().replace("\n", "\n" + SPACE_INDENT));
+                        newSource.append(SPACE_INDENT);
+                        newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                         newSource.append(NEW_LINE);
                     }
                 }
             }
-            if(containsChildType(FieldDeclaration.class)) {
+            if (containsChildType(FieldDeclaration.class)) {
+                newSource.append(NEW_LINE);
+            }
+
+            // 类的构造函数
+            boolean constructorAdded = false;
+            for (Node child : children) {
+                if (child instanceof ConstructorDeclaration) {
+                    ConstructorDeclaration constructor = (ConstructorDeclaration) child;
+                    System.out.println("constructor: " + constructor);
+                    newSource.append(SPACE_INDENT);
+                    newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
+                    newSource.append(NEW_LINE);
+                    constructorAdded = true;
+                }
+            }
+            if (constructorAdded) {
                 newSource.append(NEW_LINE);
             }
 
             // 类的方法
+            boolean methodAdded = false;
             for (Node child : children) {
                 if (child instanceof MethodDeclaration) {
                     MethodDeclaration method = (MethodDeclaration) child;
                     String methodName = method.getName().asString();
                     System.out.println("methodName: " + methodName + " " + fields.get(methodName));
                     VariableDeclarator variable = fields.get(methodName);
-                    if(variable == null){
-                        newSource.append("    ");
-                        newSource.append(child.toString().trim().replace("\n", "\n" + SPACE_INDENT));
+                    if (variable == null) {
+                        newSource.append(SPACE_INDENT);
+                        newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                         newSource.append(NEW_LINE);
-                        newSource.append(NEW_LINE);
-                    }
-                    else {
+                        methodAdded = true;
+                    } else {
                         String fieldName = variable.getNameAsString();
                         String fieldType = variable.getType().toString();
                         String blockStmt = method.getBody().get().toString().trim();
                         System.out.println("blockStmt: " + blockStmt);
                         // 是否冗余
                         boolean redundant = false;
-                        if(blockStmt.startsWith("{") && blockStmt.endsWith("}")){
+                        if (blockStmt.startsWith("{") && blockStmt.endsWith("}")) {
                             blockStmt = blockStmt.substring(1, blockStmt.length() - 1).trim();
                         }
-                        if(( methodName.startsWith("is") && fieldType.equals("boolean") ) ||
-                            ( methodName.startsWith("get") && !fieldType.equals("boolean") )) {
+                        if ((methodName.startsWith("is") && fieldType.equals("boolean")) ||
+                            (methodName.startsWith("get") && !fieldType.equals("boolean"))) {
                             if (blockStmt.startsWith("return")) {
                                 blockStmt = blockStmt.substring("return".length()).trim();
                             }
@@ -257,8 +278,7 @@ public class AstNodeCleaner {
                             if (blockStmt.startsWith(";")) {
                                 blockStmt = blockStmt.substring(";".length()).trim();
                             }
-                        }
-                        else if (methodName.startsWith("set")) {
+                        } else if (methodName.startsWith("set")) {
                             if (blockStmt.startsWith("this.")) {
                                 blockStmt = blockStmt.substring("this.".length()).trim();
                             }
@@ -275,16 +295,28 @@ public class AstNodeCleaner {
                                 blockStmt = blockStmt.substring(";".length()).trim();
                             }
                         }
-                        if(blockStmt.isEmpty()){
+                        if (blockStmt.isEmpty()) {
                             redundant = true;
-                        }
-                        else{
-                            newSource.append("    ");
-                            newSource.append(child.toString().trim().replace("\n", "\n" + SPACE_INDENT));
+                        } else {
+                            newSource.append(SPACE_INDENT);
+                            newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                             newSource.append(NEW_LINE);
-                            newSource.append(NEW_LINE);
+                            methodAdded = true;
                         }
                     }
+                }
+            }
+            if (methodAdded) {
+                newSource.append(NEW_LINE);
+            }
+
+            // 类的递归处理
+            for (Node child : children) {
+                if (child instanceof ClassOrInterfaceDeclaration) {
+                    newSource.append(SPACE_INDENT);
+                    newSource.append(new ClassNodeCleaner((ClassOrInterfaceDeclaration) child).toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
+                    newSource.append(NEW_LINE);
+                    newSource.append(NEW_LINE);
                 }
             }
 
