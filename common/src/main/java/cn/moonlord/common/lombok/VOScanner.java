@@ -20,7 +20,7 @@ public class VOScanner implements Runnable {
     public VOScanner(String inputScanFilePath) {
         this.inputScanDirPath = inputScanFilePath;
         if (!Files.exists(Paths.get(inputScanFilePath))) {
-            throw new IllegalArgumentException("inputScanDirPath must be a valid File");
+            throw new IllegalArgumentException("inputScanDirPath must be a valid Dir Path");
         }
         System.out.println("this.inputScanDirPath: " + this.inputScanDirPath);
     }
@@ -46,7 +46,7 @@ public class VOScanner implements Runnable {
                 ParseResult<CompilationUnit> source = new JavaParser().parse(new FileInputStream(file));
                 if (source.getResult().isPresent()) {
                     AstNodeCleaner newSource = new AstNodeCleaner(source.getResult().get());
-                    FileUtils.write(new File(file.getAbsolutePath() + ".new.java"), newSource.toString(), StandardCharsets.UTF_8);
+                    FileUtils.write(new File(file.getAbsolutePath()), newSource.toString(), StandardCharsets.UTF_8);
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
