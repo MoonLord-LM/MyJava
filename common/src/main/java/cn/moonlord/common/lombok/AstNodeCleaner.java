@@ -73,6 +73,7 @@ public class AstNodeCleaner {
             if (child instanceof ClassOrInterfaceDeclaration) {
                 newSource.append(new ClassNodeCleaner((ClassOrInterfaceDeclaration) child).toString().trim());
                 newSource.append(NEW_LINE);
+                newSource.append(NEW_LINE);
             }
         }
 
@@ -229,8 +230,9 @@ public class AstNodeCleaner {
                         // 记录大小写不同的重名变量，这种不能删除方法
                         if(fieldNames.contains(fieldName.toLowerCase(Locale.ROOT))){
                             duplicateFieldNames.add(fieldName.toLowerCase(Locale.ROOT));
+                            System.out.println("duplicate: " + fieldName.toLowerCase(Locale.ROOT));
                         }
-                        fieldNames.add(fieldName);
+                        fieldNames.add(fieldName.toLowerCase(Locale.ROOT));
 
                         String fieldNameUpper = fieldName.toUpperCase().charAt(0) + fieldName.substring(1);
                         System.out.println("variable: " + variable.getType() + " " + variable);
