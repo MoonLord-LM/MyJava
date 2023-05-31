@@ -138,7 +138,12 @@ public class AstNodeCleaner {
             // 类的名称
             for (Node child : children) {
                 if (child instanceof SimpleName) {
-                    newSource.append("class");
+                    if(sourceNode.isInterface()){
+                        newSource.append("interface");
+                    }
+                    else{
+                        newSource.append("class");
+                    }
                     newSource.append(" ");
                     newSource.append(child.toString().trim());
                 }
