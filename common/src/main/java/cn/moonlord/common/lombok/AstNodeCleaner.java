@@ -72,9 +72,9 @@ public class AstNodeCleaner {
         for (Node child : children) {
             if (child instanceof ClassOrInterfaceDeclaration) {
                 newSource.append(new ClassNodeCleaner((ClassOrInterfaceDeclaration) child).toString().trim());
+                newSource.append(NEW_LINE);
             }
         }
-        newSource.append(NEW_LINE);
 
         // 多余的空格处理
         String result = newSource.toString();
@@ -346,7 +346,6 @@ public class AstNodeCleaner {
             }
 
             newSource.append("}");
-            newSource.append(NEW_LINE);
             return newSource.toString();
         }
     }
