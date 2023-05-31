@@ -14,7 +14,9 @@ import com.github.javaparser.ast.expr.MarkerAnnotationExpr;
 import com.github.javaparser.ast.expr.SimpleName;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 
 public class AstNodeCleaner {
 
@@ -103,6 +105,10 @@ public class AstNodeCleaner {
 
         @Override
         public String toString() {
+            if(sourceNode.isInterface()){
+                return sourceNode.toString();
+            }
+
             StringBuilder newSource = new StringBuilder();
 
             // 注释
@@ -138,12 +144,7 @@ public class AstNodeCleaner {
             // 类的名称
             for (Node child : children) {
                 if (child instanceof SimpleName) {
-                    if(sourceNode.isInterface()){
-                        newSource.append("interface");
-                    }
-                    else{
-                        newSource.append("class");
-                    }
+                    newSource.append("class");
                     newSource.append(" ");
                     newSource.append(child.toString().trim());
                 }
@@ -216,12 +217,21 @@ public class AstNodeCleaner {
                 }
             }
             HashMap<String, VariableDeclarator> fields = new HashMap<>();
+            HashSet<String> fieldNames = new HashSet<>();
+            HashSet<String> duplicateFieldNames = new HashSet<>();
             for (Node child : children) {
                 if (child instanceof FieldDeclaration) {
                     FieldDeclaration field = (FieldDeclaration) child;
                     if (!field.isStatic()) {
                         VariableDeclarator variable = field.getVariable(0);
                         String fieldName = variable.getNameAsString();
+
+                        // 记录大小写不同的重名变量，这种不能删除方法
+                        if(fieldNames.contains(fieldName.toLowerCase(Locale.ROOT))){
+                            duplicateFieldNames.add(fieldName.toLowerCase(Locale.ROOT));
+                        }
+                        fieldNames.add(fieldName);
+
                         String fieldNameUpper = fieldName.toUpperCase().charAt(0) + fieldName.substring(1);
                         System.out.println("variable: " + variable.getType() + " " + variable);
                         if (variable.getType().toString().equals("boolean")) {
@@ -264,7 +274,7 @@ public class AstNodeCleaner {
                     String methodName = method.getName().asString();
                     System.out.println("methodName: " + methodName + " " + fields.get(methodName));
                     VariableDeclarator variable = fields.get(methodName);
-                    if (variable == null) {
+                    if (variable == null || duplicateFieldNames.contains(variable.getNameAsString().toLowerCase(Locale.ROOT))) {
                         newSource.append(SPACE_INDENT);
                         newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                         newSource.append(NEW_LINE);
