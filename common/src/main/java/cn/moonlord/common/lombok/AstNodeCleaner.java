@@ -67,13 +67,12 @@ public class AstNodeCleaner {
             newSource.append("import lombok.Setter;");
             newSource.append(NEW_LINE);
         }
-        newSource.append(NEW_LINE);
 
         // 类的递归处理
         for (Node child : children) {
             if (child instanceof ClassOrInterfaceDeclaration) {
-                newSource.append(new ClassNodeCleaner((ClassOrInterfaceDeclaration) child).toString().trim());
                 newSource.append(NEW_LINE);
+                newSource.append(new ClassNodeCleaner((ClassOrInterfaceDeclaration) child).toString().trim());
                 newSource.append(NEW_LINE);
             }
         }
