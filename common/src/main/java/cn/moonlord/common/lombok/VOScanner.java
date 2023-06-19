@@ -31,7 +31,7 @@ public class VOScanner implements Runnable {
         Collection<File> files = FileUtils.listFiles(new File(inputScanDirPath), new AbstractFileFilter() {
             @Override
             public boolean accept(File file) {
-                return file.getName().endsWith("VO.java");
+                return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java");
             }
         }, new AbstractFileFilter() {
             @Override
