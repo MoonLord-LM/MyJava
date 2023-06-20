@@ -28,17 +28,20 @@ public class VOScanner implements Runnable {
     @Override
     public void run() {
         System.out.println("run begin");
-        Collection<File> files = FileUtils.listFiles(new File(inputScanDirPath), new AbstractFileFilter() {
-            @Override
-            public boolean accept(File file) {
-                return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java");
+        Collection<File> files = FileUtils.listFiles(new File(inputScanDirPath),
+            new AbstractFileFilter() {
+                @Override
+                public boolean accept(File file) {
+                    return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java");
+                }
+            },
+            new AbstractFileFilter() {
+                @Override
+                public boolean accept(File dir) {
+                    return !dir.getName().equals(".git") && !dir.getName().equals("target") && !dir.getName().equals("test");
+                }
             }
-        }, new AbstractFileFilter() {
-            @Override
-            public boolean accept(File dir) {
-                return !dir.getName().equals(".git") && !dir.getName().equals("target") && !dir.getName().equals("test");
-            }
-        });
+        );
         System.out.println("files size: " + files.size());
         for (File file : files) {
             System.out.println("files path: " + file.getAbsolutePath());
