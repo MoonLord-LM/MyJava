@@ -22,14 +22,14 @@ import java.util.Locale;
 public class AstNodeCleaner {
 
     private static final String SPACE_INDENT = "    ";
-    private static String NEW_LINE = "\r\n";
+    private static String NEW_LINE = "\n";
 
     private final Node sourceNode;
 
     public AstNodeCleaner(Node sourceNode) {
         this.sourceNode = sourceNode;
-        if (!this.sourceNode.getLineEndingStyle().toString().contains("\r")) {
-            NEW_LINE = "\n";
+        if (!this.sourceNode.getLineEndingStyle().toString().contains("\r\n")) {
+            NEW_LINE = "\r\n";
         }
     }
 
