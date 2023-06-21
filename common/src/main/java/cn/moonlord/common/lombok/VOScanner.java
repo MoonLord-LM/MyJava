@@ -11,45 +11,48 @@ import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class VOScanner implements Runnable {
 
-    private final String inputScanDirPath;
+    private Collection<File> files = new ArrayList<>();
 
     public VOScanner(String inputScanFilePath) {
-        this.inputScanDirPath = inputScanFilePath;
-        if (!Files.exists(Paths.get(inputScanFilePath))) {
-            throw new IllegalArgumentException("inputScanDirPath must be a valid Dir Path");
+        if(!Files.isDirectory(Paths.get(inputScanFilePath))){
+            files.add(new File(inputScanFilePath));
         }
-        System.out.println("this.inputScanDirPath: " + this.inputScanDirPath);
+        else if(Files.isDirectory(Paths.get(inputScanFilePath))){
+            files = FileUtils.listFiles(new File(inputScanFilePath),
+                new AbstractFileFilter() {
+                    @Override
+                    public boolean accept(File file) {
+                        return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java") || file.getName().endsWith(".java");
+                    }
+                },
+                new AbstractFileFilter() {
+                    @Override
+                    public boolean accept(File dir) {
+                        return !dir.getName().equals(".git") && !dir.getName().equals("target") && !dir.getName().equals("test");
+                    }
+                }
+            );
+        }
+        System.out.println("inputScanDirPath: " + inputScanFilePath + "files size: " + files.size());
     }
 
     @Override
     public void run() {
         System.out.println("run begin");
-        Collection<File> files = FileUtils.listFiles(new File(inputScanDirPath),
-            new AbstractFileFilter() {
-                @Override
-                public boolean accept(File file) {
-                    return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java");
-                }
-            },
-            new AbstractFileFilter() {
-                @Override
-                public boolean accept(File dir) {
-                    return !dir.getName().equals(".git") && !dir.getName().equals("target") && !dir.getName().equals("test");
-                }
-            }
-        );
-        System.out.println("files size: " + files.size());
         for (File file : files) {
             System.out.println("files path: " + file.getAbsolutePath());
             try {
                 ParseResult<CompilationUnit> source = new JavaParser().parse(new FileInputStream(file));
                 if (source.getResult().isPresent()) {
-                    AstNodeCleaner newSource = new AstNodeCleaner(source.getResult().get());
-                    FileUtils.write(new File(file.getAbsolutePath()), newSource.toString(), StandardCharsets.UTF_8);
+                    if(source.getResult().get().toString().contains(" get") && source.getResult().get().toString().contains(" set")) {
+                        AstNodeCleaner newSource = new AstNodeCleaner(source.getResult().get());
+                        FileUtils.write(new File(file.getAbsolutePath()), newSource.toString(), StandardCharsets.UTF_8);
+                    }
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
