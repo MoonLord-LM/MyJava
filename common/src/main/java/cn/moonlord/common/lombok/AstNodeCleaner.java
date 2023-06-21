@@ -10,8 +10,7 @@ import com.github.javaparser.ast.body.EnumDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
-import com.github.javaparser.ast.expr.MarkerAnnotationExpr;
-import com.github.javaparser.ast.expr.NormalAnnotationExpr;
+import com.github.javaparser.ast.expr.AnnotationExpr;
 import com.github.javaparser.ast.expr.SimpleName;
 
 import java.util.HashMap;
@@ -119,11 +118,7 @@ public class AstNodeCleaner {
 
             // 类的注解
             for (Node child : children) {
-                if (child instanceof MarkerAnnotationExpr) {
-                    newSource.append(child);
-                    newSource.append(NEW_LINE);
-                }
-                if (child instanceof NormalAnnotationExpr) {
+                if (child instanceof AnnotationExpr) {
                     newSource.append(child);
                     newSource.append(NEW_LINE);
                 }
