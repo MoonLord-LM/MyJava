@@ -26,7 +26,7 @@ public class VOScanner implements Runnable {
                 new AbstractFileFilter() {
                     @Override
                     public boolean accept(File file) {
-                        return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java") || file.getName().endsWith("Config.java");
+                        return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java");
                     }
                 },
                 new AbstractFileFilter() {
