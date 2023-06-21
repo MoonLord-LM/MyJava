@@ -19,15 +19,14 @@ public class VOScanner implements Runnable {
     private Collection<File> files = new ArrayList<>();
 
     public VOScanner(String inputScanFilePath) {
-        if(!Files.isDirectory(Paths.get(inputScanFilePath))){
+        if (!Files.isDirectory(Paths.get(inputScanFilePath))) {
             files.add(new File(inputScanFilePath));
-        }
-        else if(Files.isDirectory(Paths.get(inputScanFilePath))){
+        } else if (Files.isDirectory(Paths.get(inputScanFilePath))) {
             files = FileUtils.listFiles(new File(inputScanFilePath),
                 new AbstractFileFilter() {
                     @Override
                     public boolean accept(File file) {
-                        return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java") || file.getName().endsWith(".java");
+                        return file.getName().endsWith("VO.java") || file.getName().endsWith("Model.java") || file.getName().endsWith("Config.java");
                     }
                 },
                 new AbstractFileFilter() {
@@ -49,10 +48,8 @@ public class VOScanner implements Runnable {
             try {
                 ParseResult<CompilationUnit> source = new JavaParser().parse(new FileInputStream(file));
                 if (source.getResult().isPresent()) {
-                    if(source.getResult().get().toString().contains(" get") && source.getResult().get().toString().contains(" set")) {
-                        AstNodeCleaner newSource = new AstNodeCleaner(source.getResult().get());
-                        FileUtils.write(new File(file.getAbsolutePath()), newSource.toString(), StandardCharsets.UTF_8);
-                    }
+                    AstNodeCleaner newSource = new AstNodeCleaner(source.getResult().get());
+                    FileUtils.write(new File(file.getAbsolutePath()), newSource.toString(), StandardCharsets.UTF_8);
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
