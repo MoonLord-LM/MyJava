@@ -8,6 +8,7 @@ import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.EnumDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
+import com.github.javaparser.ast.body.InitializerDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.expr.AnnotationExpr;
@@ -20,13 +21,16 @@ import java.util.Locale;
 
 public class AstNodeCleaner {
 
-    private static final String NEW_LINE = "\r\n";
     private static final String SPACE_INDENT = "    ";
+    private static String NEW_LINE = "\r\n";
 
     private final Node sourceNode;
 
     public AstNodeCleaner(Node sourceNode) {
         this.sourceNode = sourceNode;
+        if(!this.sourceNode.getLineEndingStyle().toString().contains("\r")){
+            NEW_LINE = "\r";
+        }
     }
 
     @Override
@@ -196,9 +200,9 @@ public class AstNodeCleaner {
             newSource.append(NEW_LINE);
             newSource.append(NEW_LINE);
 
-            // 类的枚举
+            // 类的枚举、静态代码段
             for (Node child : children) {
-                if (child instanceof EnumDeclaration) {
+                if (child instanceof EnumDeclaration || child instanceof InitializerDeclaration) {
                     newSource.append(SPACE_INDENT);
                     newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                     newSource.append(NEW_LINE);
