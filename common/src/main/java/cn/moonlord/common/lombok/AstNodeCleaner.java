@@ -28,8 +28,8 @@ public class AstNodeCleaner {
 
     public AstNodeCleaner(Node sourceNode) {
         this.sourceNode = sourceNode;
-        if(!this.sourceNode.getLineEndingStyle().toString().contains("\r")){
-            NEW_LINE = "\r";
+        if (!this.sourceNode.getLineEndingStyle().toString().contains("\r")) {
+            NEW_LINE = "\n";
         }
     }
 
@@ -109,7 +109,7 @@ public class AstNodeCleaner {
 
         @Override
         public String toString() {
-            if(sourceNode.isInterface()){
+            if (sourceNode.isInterface()) {
                 return sourceNode.toString();
             }
 
@@ -206,6 +206,7 @@ public class AstNodeCleaner {
                     newSource.append(SPACE_INDENT);
                     newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                     newSource.append(NEW_LINE);
+                    newSource.append(NEW_LINE);
                 }
             }
 
@@ -231,7 +232,7 @@ public class AstNodeCleaner {
                         String fieldName = variable.getNameAsString();
 
                         // 记录大小写不同的重名变量，这种不能删除方法
-                        if(fieldNames.contains(fieldName.toLowerCase(Locale.ROOT))){
+                        if (fieldNames.contains(fieldName.toLowerCase(Locale.ROOT))) {
                             duplicateFieldNames.add(fieldName.toLowerCase(Locale.ROOT));
                             System.out.println("duplicate: " + fieldName.toLowerCase(Locale.ROOT));
                         }
