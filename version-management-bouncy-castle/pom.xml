@@ -19,7 +19,7 @@
         <bc-jdk18on.version>1.74</bc-jdk18on.version>
 
         <!-- https://mvnrepository.com/search?q=jdk15to18&d=org.bouncycastle -->
-        <bc-jdk15to18.version>1.74</bc-jdk15to18.version>
+        <bc-jdk15to18.version>1.75</bc-jdk15to18.version>
 
         <!-- https://mvnrepository.com/search?q=jdk15on&d=org.bouncycastle -->
         <bc-jdk15on.version>1.70</bc-jdk15on.version>
