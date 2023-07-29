@@ -13,9 +13,11 @@ import java.util.List;
 public class SingleFileCommitter implements Runnable {
 
     private final String repoPath;
+    private final Boolean commitToNewBranch;
 
-    public SingleFileCommitter(String repoPath) {
+    public SingleFileCommitter(String repoPath, Boolean commitToNewBranch) {
         this.repoPath = repoPath;
+        this.commitToNewBranch = commitToNewBranch;
         if (!Files.exists(Paths.get(repoPath))) {
             throw new IllegalArgumentException("repoPath must be a valid Dir Path");
         }
@@ -58,7 +60,7 @@ public class SingleFileCommitter implements Runnable {
                 return;
             }
             // branch
-            String newBranch = branch + "-liming-" + "20230602" + RandomUtils.nextInt(1000, 10000);
+            String newBranch = commitToNewBranch ? (branch + "-liming-" + "20230602" + RandomUtils.nextInt(1000, 10000)) : branch;
             runCmd("git stash");
             runCmd("git checkout -b \"" + newBranch + "\"");
             runCmd("git stash pop");
