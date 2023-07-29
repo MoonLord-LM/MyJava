@@ -22,15 +22,12 @@ import java.util.Locale;
 public class AstNodeCleaner {
 
     private static final String SPACE_INDENT = "    ";
-    private static String NEW_LINE = "\n";
+    private static final String NEW_LINE = "\n";
 
     private final Node sourceNode;
 
     public AstNodeCleaner(Node sourceNode) {
         this.sourceNode = sourceNode;
-        if (!this.sourceNode.getLineEndingStyle().toString().contains("\r\n")) {
-            NEW_LINE = "\r\n";
-        }
     }
 
     @Override
@@ -80,10 +77,19 @@ public class AstNodeCleaner {
             }
         }
 
-        // 多余的空格处理
+        // 换行符统一
         String result = newSource.toString();
-        while (result.contains(NEW_LINE + SPACE_INDENT + NEW_LINE)) {
-            result = result.replace(NEW_LINE + SPACE_INDENT + NEW_LINE, NEW_LINE + NEW_LINE);
+        if (sourceNode.toString().contains("\r\n")) {
+            result = result.replace("\r", "").replace("\n", "\r\n");
+        }
+        else {
+            result = result.replace("\r\n", "\n");
+        }
+
+        // 去除多余的行尾空格
+        while (result.contains(SPACE_INDENT + "\n") || result.contains(SPACE_INDENT + "\r\n")) {
+            result = result.replace(SPACE_INDENT + "\n", "\n");
+            result = result.replace(SPACE_INDENT + "\r\n", "\r\n");
         }
         return result;
     }
