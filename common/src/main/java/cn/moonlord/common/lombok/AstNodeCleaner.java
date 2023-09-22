@@ -233,9 +233,14 @@ public class AstNodeCleaner {
             for (Node child : children) {
                 if (child instanceof FieldDeclaration) {
                     FieldDeclaration field = (FieldDeclaration) child;
+
                     if (!field.isStatic()) {
                         VariableDeclarator variable = field.getVariable(0);
                         String fieldName = variable.getNameAsString();
+
+                        // TODO 将 /**/ 的注释改为标准文档注释
+                        // field.getComment();
+                        //field.setComment();
 
                         // 记录大小写不同的重名变量，这种不能删除方法
                         if (fieldNames.contains(fieldName.toLowerCase(Locale.ROOT))) {

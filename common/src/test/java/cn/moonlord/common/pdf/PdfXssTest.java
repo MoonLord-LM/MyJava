@@ -13,10 +13,10 @@ public class PdfXssTest {
     public static class CheckContainsJavaScript {
         @Test
         public void checkContainsJavaScript() {
-            PdfXss.createJavaScriptFile("/tmp/tmp-xss-test.pdf");
-            Assert.assertTrue(PdfXss.checkContainsJavaScript("/tmp/tmp-xss-test.pdf"));
-            PdfXss.createNormalFile("/tmp/tmp-xss-test.pdf");
-            Assert.assertFalse(PdfXss.checkContainsJavaScript("/tmp/tmp-xss-test.pdf"));
+            PdfXss.createJavaScriptFile("/tmp/tmp-xss-test1.pdf");
+            Assert.assertTrue(PdfXss.checkContainsJavaScript("/tmp/tmp-xss-test1.pdf"));
+            PdfXss.createNormalFile("/tmp/tmp-xss-test2.pdf");
+            Assert.assertFalse(PdfXss.checkContainsJavaScript("/tmp/tmp-xss-test2.pdf"));
         }
     }
 
