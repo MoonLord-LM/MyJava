@@ -55,7 +55,7 @@ public class PdfXss {
             PDDocument document = PDDocument.load(new File(fileSavePath));
             PDDocumentCatalog pdDocumentCatalog = document.getDocumentCatalog();
             String catalog = pdDocumentCatalog.getCOSObject().toString();
-            // check: COSName{S}:COSName{JavaScript};COSName{JS}:COSString{ ... }:
+            // example: COSName{S}:COSName{JavaScript};COSName{JS}:COSString{ ... }:
             if (catalog.contains(COSName.JAVA_SCRIPT.toString()) || catalog.contains(COSName.JS.toString())) {
                 return true;
             }
