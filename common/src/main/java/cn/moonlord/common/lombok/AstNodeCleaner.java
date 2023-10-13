@@ -11,6 +11,7 @@ import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.InitializerDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.comments.Comment;
 import com.github.javaparser.ast.expr.AnnotationExpr;
 import com.github.javaparser.ast.expr.SimpleName;
 
@@ -134,6 +135,7 @@ public class AstNodeCleaner {
                 }
             }
             // 补充 lombok 的注解
+            // TODO 处理 @Data 重复注解问题
             if (!newSource.toString().contains("@Getter")) {
                 newSource.append("@Getter");
                 newSource.append(NEW_LINE);
@@ -206,9 +208,9 @@ public class AstNodeCleaner {
             newSource.append(NEW_LINE);
             newSource.append(NEW_LINE);
 
-            // 类的枚举、静态代码段
+            // 类的枚举
             for (Node child : children) {
-                if (child instanceof EnumDeclaration || child instanceof InitializerDeclaration) {
+                if (child instanceof EnumDeclaration) {
                     newSource.append(SPACE_INDENT);
                     newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
                     newSource.append(NEW_LINE);
@@ -241,6 +243,20 @@ public class AstNodeCleaner {
                         // TODO 将 /**/ 的注释改为标准文档注释
                         // field.getComment();
                         //field.setComment();
+                        if(field.getComment().isPresent()) {
+                            Comment comment = field.getComment().get();
+                            String commentSource = comment.asString().trim();
+                            String conmentContent = comment.getContent().trim();
+                            System.out.println("commentSource1 " + commentSource);
+                            System.out.println("conmentContent1 " + conmentContent);
+
+                            if (!commentSource.startsWith("/**") && commentSource.startsWith("/*") && commentSource.endsWith("*/") && commentSource.contains("\n")) {
+                                System.out.println("commentSource2 " + commentSource);
+                                System.out.println("conmentContent2 " + conmentContent);
+                                conmentContent = conmentContent.trim();
+                                comment.setContent(conmentContent);
+                            }
+                        }
 
                         // 记录大小写不同的重名变量，这种不能删除方法
                         if (fieldNames.contains(fieldName.toLowerCase(Locale.ROOT))) {
@@ -265,6 +281,16 @@ public class AstNodeCleaner {
             }
             if (containsChildType(FieldDeclaration.class)) {
                 newSource.append(NEW_LINE);
+            }
+
+            // 类的静态代码段（静态代码段要在变量声明的后面）
+            for (Node child : children) {
+                if (child instanceof InitializerDeclaration) {
+                    newSource.append(SPACE_INDENT);
+                    newSource.append(child.toString().trim().replace(NEW_LINE, NEW_LINE + SPACE_INDENT));
+                    newSource.append(NEW_LINE);
+                    newSource.append(NEW_LINE);
+                }
             }
 
             // 类的构造函数
