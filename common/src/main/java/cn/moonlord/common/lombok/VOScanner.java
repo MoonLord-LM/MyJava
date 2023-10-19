@@ -51,6 +51,7 @@ public class VOScanner implements Runnable {
                     AstNodeCleaner newSource = new AstNodeCleaner(source.getResult().get());
                     FileUtils.write(new File(file.getAbsolutePath()), newSource.toString(), StandardCharsets.UTF_8);
                 }
+            } catch (IllegalArgumentException ignored) {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

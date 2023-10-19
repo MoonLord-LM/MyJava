@@ -70,8 +70,8 @@ public class SingleFileCommitter implements Runnable {
                 System.out.println("commit: " + (i+1) + " / " + filePaths.size());
                 runCmd("git add " + "\"" + filePaths.get(i) + "\"");
                 runCmd("git commit -m \"Update\"");
-                runCmd("git push origin \"" + newBranch + "\"");
             }
+            runCmd("git push origin \"" + newBranch + "\"");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

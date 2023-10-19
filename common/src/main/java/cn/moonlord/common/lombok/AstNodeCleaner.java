@@ -60,11 +60,11 @@ public class AstNodeCleaner {
             }
         }
         // 补充 lombok 的引用
-        if (!newSource.toString().contains("import lombok.Getter;")) {
+        if (!newSource.toString().contains("import lombok.Data;") && !newSource.toString().contains("import lombok.Getter;")) {
             newSource.append("import lombok.Getter;");
             newSource.append(NEW_LINE);
         }
-        if (!newSource.toString().contains("import lombok.Setter;")) {
+        if (!newSource.toString().contains("import lombok.Data;") && !newSource.toString().contains("import lombok.Setter;")) {
             newSource.append("import lombok.Setter;");
             newSource.append(NEW_LINE);
         }
@@ -82,8 +82,7 @@ public class AstNodeCleaner {
         String result = newSource.toString();
         if (sourceNode.toString().contains("\r\n")) {
             result = result.replace("\r", "").replace("\n", "\r\n");
-        }
-        else {
+        } else {
             result = result.replace("\r\n", "\n");
         }
 
@@ -135,12 +134,11 @@ public class AstNodeCleaner {
                 }
             }
             // 补充 lombok 的注解
-            // TODO 处理 @Data 重复注解问题
-            if (!newSource.toString().contains("@Getter")) {
+            if (!newSource.toString().contains("@Data") && !newSource.toString().contains("@Getter")) {
                 newSource.append("@Getter");
                 newSource.append(NEW_LINE);
             }
-            if (!newSource.toString().contains("@Setter")) {
+            if (!newSource.toString().contains("@Data") && !newSource.toString().contains("@Setter")) {
                 newSource.append("@Setter");
                 newSource.append(NEW_LINE);
             }
@@ -181,6 +179,10 @@ public class AstNodeCleaner {
                 newSource.append("extends");
             }
             for (Node extended : sourceNode.getExtendedTypes()) {
+                // 排除一些类，不做处理
+                if (extended.toString().endsWith("MessageHandler") || extended.toString().endsWith("Controller") || extended.toString().endsWith("Service") || extended.toString().endsWith("Dao")) {
+                    throw new IllegalArgumentException("this class should be ignored");
+                }
                 newSource.append(" ");
                 newSource.append(extended.toString());
                 newSource.append(",");
@@ -243,7 +245,7 @@ public class AstNodeCleaner {
                         // TODO 将 /**/ 的注释改为标准文档注释
                         // field.getComment();
                         //field.setComment();
-                        if(field.getComment().isPresent()) {
+                        if (field.getComment().isPresent()) {
                             Comment comment = field.getComment().get();
                             String commentSource = comment.asString().trim();
                             String conmentContent = comment.getContent().trim();
