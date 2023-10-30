@@ -16,7 +16,7 @@
     <modules>
         <module>0-maven-management</module>
 
-        <module>dependencies-analysis</module> <!-- 依赖分析 -->
+        <!-- <module>dependencies-analysis</module> 依赖分析 -->
 
         <module>test</module> <!-- 测试工具类 -->
         <module>security</module> <!-- 安全工具类 -->
