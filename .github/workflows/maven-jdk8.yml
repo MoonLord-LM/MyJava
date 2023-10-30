@@ -24,22 +24,10 @@ jobs:
           java-version: 8
 
       - name: Build with Maven - super-parent
-        run: mvn -B -U -e install --file "super-parent/pom.xml"
-
-      - name: Build with Maven - version-management-bouncy-castle
-        run: mvn -B -U -e install --file "version-management-bouncy-castle/pom.xml"
-
-      - name: Build with Maven - version-management-groovy
-        run: mvn -B -U -e install --file "version-management-groovy/pom.xml"
-
-      - name: Build with Maven - version-management-tomcat
-        run: mvn -B -U -e install --file "version-management-tomcat/pom.xml"
+        run: mvn -B -U -e install --file "0-maven-management/super-parent/pom.xml"
 
       - name: Build with Maven - parent
-        run: mvn -B -U -e install --file "parent/pom.xml"
-
-      - name: Build with Maven - dependencies
-        run: mvn -B -U -e install --file "dependencies/pom.xml"
+        run: mvn -B -U -e install --file "0-maven-management/pom.xml"
 
       - name: Build with Maven - all-modules
         run: mvn -B -U -e install --file "pom.xml"
