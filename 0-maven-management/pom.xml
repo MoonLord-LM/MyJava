@@ -11,6 +11,7 @@
 
     <modules>
         <module>super-parent</module>
+        <module>version-of-apache-httpclient</module>
         <module>version-of-bouncy-castle</module>
         <module>version-of-groovy</module>
         <module>version-of-tomcat</module>
