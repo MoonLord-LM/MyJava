@@ -16,10 +16,10 @@
     <packaging>pom</packaging>
 
     <properties>
-        <!-- https://mvnrepository.com/search?q=org.apache.httpcomponents.client5 -->
+        <!-- https://mvnrepository.com/search?q=org.apache.httpcomponents.client5&d=org.apache -->
         <httpclient5.version>5.2.1</httpclient5.version>
 
-        <!-- https://mvnrepository.com/search?q=org.apache.httpcomponents -->
+        <!-- https://mvnrepository.com/search?q=org.apache.httpcomponents&d=org.apache -->
         <httpclient.version>4.5.14</httpclient.version>
     </properties>
 
