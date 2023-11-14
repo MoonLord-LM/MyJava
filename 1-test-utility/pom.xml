@@ -5,17 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.moonlord</groupId>
-    <artifactId>0-maven-management</artifactId>
+    <artifactId>1-test-utility</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>0-super-parent</module>
-        <module>0-version-of-apache-httpclient</module>
-        <module>0-version-of-bouncy-castle</module>
-        <module>0-version-of-groovy</module>
-        <module>0-version-of-tomcat</module>
-        <module>0-parent</module>
+        <module>1-unit-test</module>
     </modules>
 
 </project>

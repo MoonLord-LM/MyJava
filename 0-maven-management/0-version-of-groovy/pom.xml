@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>cn.moonlord</groupId>
-        <artifactId>super-parent</artifactId>
+        <artifactId>0-super-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
-    <artifactId>version-of-groovy</artifactId>
+    <artifactId>0-version-of-groovy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 

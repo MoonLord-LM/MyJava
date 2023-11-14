@@ -18,7 +18,7 @@
 
         <!-- <module>dependencies-analysis</module> 依赖分析 -->
 
-        <module>test</module> <!-- 测试工具类 -->
+        <module>1-test-utility</module> <!-- 测试工具类 -->
         <module>security</module> <!-- 安全工具类 -->
         <module>common</module> <!-- 通用工具类 -->
 

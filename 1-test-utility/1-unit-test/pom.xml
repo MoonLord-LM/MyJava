@@ -5,12 +5,12 @@
 
     <parent>
         <groupId>cn.moonlord</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>0-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
-    <artifactId>test</artifactId>
+    <artifactId>1-unit-test</artifactId>
 
     <dependencies>
 
