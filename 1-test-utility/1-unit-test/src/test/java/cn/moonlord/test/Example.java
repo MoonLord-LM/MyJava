@@ -20,7 +20,7 @@ public class Example {
                 logger.info("freeMemory: " + Runtime.getRuntime().freeMemory() / 1024 / 1024 + " MB");
                 logger.info("totalMemory: " + Runtime.getRuntime().totalMemory() / 1024 / 1024 + " MB");
                 logger.info("maxMemory: " + Runtime.getRuntime().maxMemory() / 1024 / 1024 + " MB");
-                return Runtime.getRuntime().freeMemory() / Runtime.getRuntime().maxMemory();
+                return (double) Runtime.getRuntime().freeMemory() / (double) Runtime.getRuntime().maxMemory();
             };
             logger.info("freeMemory / maxMemory: " + result.run());
         }
