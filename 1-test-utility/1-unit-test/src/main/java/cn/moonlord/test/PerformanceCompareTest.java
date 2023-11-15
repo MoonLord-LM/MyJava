@@ -2,11 +2,9 @@ package cn.moonlord.test;
 
 public abstract class PerformanceCompareTest implements Runnable {
 
-    private static final TestRunnable EMPTY_RUNNABLE = () -> null;
+    private TestRunnable testMethod = TestRunnable.EMPTY;
 
-    private TestRunnable testMethod = EMPTY_RUNNABLE;
-
-    private TestRunnable compareMethod = EMPTY_RUNNABLE;
+    private TestRunnable compareMethod = TestRunnable.EMPTY;
 
     public void onStarted() throws Exception {
     }

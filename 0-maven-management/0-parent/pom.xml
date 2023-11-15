@@ -24,7 +24,7 @@
 
             <dependency>
                 <groupId>cn.moonlord</groupId>
-                <artifactId>version-of-apache-httpclient</artifactId>
+                <artifactId>0-version-of-apache-httpclient</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -32,7 +32,7 @@
 
             <dependency>
                 <groupId>cn.moonlord</groupId>
-                <artifactId>version-of-bouncy-castle</artifactId>
+                <artifactId>0-version-of-bouncy-castle</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -40,7 +40,7 @@
 
             <dependency>
                 <groupId>cn.moonlord</groupId>
-                <artifactId>version-of-groovy</artifactId>
+                <artifactId>0-version-of-groovy</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -48,7 +48,7 @@
 
             <dependency>
                 <groupId>cn.moonlord</groupId>
-                <artifactId>version-of-tomcat</artifactId>
+                <artifactId>0-version-of-tomcat</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

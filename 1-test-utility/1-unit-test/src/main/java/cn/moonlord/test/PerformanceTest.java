@@ -2,10 +2,14 @@ package cn.moonlord.test;
 
 public abstract class PerformanceTest implements Runnable {
 
+    private TestRunnable testMethod = TestRunnable.EMPTY;
+
     public void onStarted() throws Exception {
     }
 
-    public abstract void testMethod() throws Exception;
+    public void testMethod() throws Exception {
+        testMethod.run();
+    }
 
     public void onFinished() throws Exception {
     }
@@ -26,6 +30,14 @@ public abstract class PerformanceTest implements Runnable {
         this.cycleOfRuns = cycleOfRuns;
     }
 
+    public PerformanceTest(int cycleOfRuns, TestRunnable testMethod) {
+        if (cycleOfRuns < 1) {
+            throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
+        }
+        this.cycleOfRuns = cycleOfRuns;
+        this.testMethod = testMethod;
+    }
+
     @Override
     public void run() {
         try {
@@ -35,12 +47,15 @@ public abstract class PerformanceTest implements Runnable {
 
             onStarted();
 
-            long beginTime = System.currentTimeMillis();
+            long beginTime;
+            long endTime;
+
             for (int i = 0; i < cycleOfRuns; i++) {
+                beginTime = System.currentTimeMillis();
                 testMethod();
+                endTime = System.currentTimeMillis();
+                testMethodTotalRunTime += (endTime - beginTime);
             }
-            long endTime = System.currentTimeMillis();
-            testMethodTotalRunTime = endTime - beginTime;
 
             onFinished();
         } catch (Exception e) {
