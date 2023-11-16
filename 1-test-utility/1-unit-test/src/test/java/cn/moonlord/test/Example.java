@@ -37,6 +37,7 @@ public class Example {
                     logger.info("maxMemory: " + Runtime.getRuntime().maxMemory() / 1024 / 1024 + " MB");
                 }
             };
+            logger.info("getTestMethodTotalRunTime: " + result.getTestMethodAverageRunTime());
             logger.info("getTestMethodTotalRunTime: " + result.getTestMethodTotalRunTime());
         }
     }
@@ -65,6 +66,7 @@ public class Example {
                 }) {
             };
             result.run();
+            logger.info("isImproved: " + result.isImproved());
             logger.info("getImprovement: " + result.getImprovement());
         }
     }
