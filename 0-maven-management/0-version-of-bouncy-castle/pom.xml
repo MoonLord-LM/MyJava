@@ -17,7 +17,7 @@
 
     <properties>
         <!-- https://mvnrepository.com/search?q=jdk18on&d=org.bouncycastle -->
-        <bc-jdk18on.version>1.76</bc-jdk18on.version>
+        <bc-jdk18on.version>1.77</bc-jdk18on.version>
 
         <!-- https://mvnrepository.com/search?q=jdk15to18&d=org.bouncycastle -->
         <bc-jdk15to18.version>1.76</bc-jdk15to18.version>
