@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.moonlord</groupId>
-    <artifactId>1-test-utility</artifactId>
+    <artifactId>project-check</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>1-unit-test</module>
+        <module>unit-test</module>
     </modules>
 
 </project>

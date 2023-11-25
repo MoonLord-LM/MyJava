@@ -99,10 +99,12 @@
         </dependency>
 
         <!--target/import/log4j-bom-2.21.1.pom-->
+        <!--
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-jmx-gui</artifactId>
         </dependency>
+        -->
 
         <!--target/import/log4j-bom-2.21.1.pom-->
         <dependency>
