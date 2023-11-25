@@ -5,17 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.moonlord</groupId>
-    <artifactId>0-maven-management</artifactId>
+    <artifactId>maven-management</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>0-super-parent</module>
-        <module>0-version-of-apache-httpclient</module>
-        <module>0-version-of-bouncy-castle</module>
-        <module>0-version-of-groovy</module>
-        <module>0-version-of-tomcat</module>
-        <module>0-parent</module>
+        <module>super-parent</module>
+        <module>version-of-apache-httpclient</module>
+        <module>version-of-bouncy-castle</module>
+        <module>version-of-groovy</module>
+        <module>version-of-tomcat</module>
+        <module>parent</module>
     </modules>
 
 </project>
