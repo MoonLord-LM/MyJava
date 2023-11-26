@@ -63,7 +63,6 @@ public class DependenciesAnalysis implements Runnable {
         }
     }
 
-
     private static String getDependencyTagValue(String inputLine, String TagString) {
         if (inputLine == null || TagString == null) {
             return null;
