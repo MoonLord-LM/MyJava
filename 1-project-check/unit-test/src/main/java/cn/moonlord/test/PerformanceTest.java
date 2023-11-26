@@ -1,8 +1,8 @@
 package cn.moonlord.test;
 
-public abstract class PerformanceTest implements Runnable {
+public abstract class PerformanceTest implements java.lang.Runnable {
 
-    private TestRunnable testMethod = TestRunnable.EMPTY;
+    private Runnable testMethod = Runnable.EMPTY;
 
     public void onStarted() throws Exception {
     }
@@ -30,7 +30,7 @@ public abstract class PerformanceTest implements Runnable {
         this.cycleOfRuns = cycleOfRuns;
     }
 
-    public PerformanceTest(int cycleOfRuns, TestRunnable testMethod) {
+    public PerformanceTest(int cycleOfRuns, Runnable testMethod) {
         if (cycleOfRuns < 1) {
             throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
         }

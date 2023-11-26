@@ -1,10 +1,10 @@
 package cn.moonlord.test;
 
-public abstract class PerformanceCompareTest implements Runnable {
+public abstract class PerformanceCompareTest implements java.lang.Runnable {
 
-    private TestRunnable testMethod = TestRunnable.EMPTY;
+    private Runnable testMethod = Runnable.EMPTY;
 
-    private TestRunnable compareMethod = TestRunnable.EMPTY;
+    private Runnable compareMethod = Runnable.EMPTY;
 
     public void onStarted() throws Exception {
     }
@@ -32,7 +32,7 @@ public abstract class PerformanceCompareTest implements Runnable {
 
     private long improvedPercentage = 0;
 
-    private String improvement = "" + improvedPercentage + "%";
+    private String improvement = improvedPercentage + "%";
 
     public PerformanceCompareTest() {
     }
@@ -44,7 +44,7 @@ public abstract class PerformanceCompareTest implements Runnable {
         this.cycleOfRuns = cycleOfRuns;
     }
 
-    public PerformanceCompareTest(int cycleOfRuns, TestRunnable testMethod, TestRunnable compareMethod) {
+    public PerformanceCompareTest(int cycleOfRuns, Runnable testMethod, Runnable compareMethod) {
         if (cycleOfRuns < 1) {
             throw new IllegalArgumentException("cycleOfRuns must not be smaller than 1");
         }
