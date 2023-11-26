@@ -88,7 +88,7 @@ public class DependencyModel implements Serializable {
         if (version != null) {
             tmp.append(INDENT).append(INDENT).append("<version>").append(version).append("</version>").append("\r\n");
         }
-        tmp.append(INDENT).append("<dependency>").append("\r\n");
+        tmp.append(INDENT).append("</dependency>").append("\r\n");
         return tmp.toString();
     }
 
