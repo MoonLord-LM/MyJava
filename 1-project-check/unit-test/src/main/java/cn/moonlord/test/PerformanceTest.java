@@ -1,17 +1,18 @@
 package cn.moonlord.test;
 
-public class PerformanceTest implements ExceptionRunnable {
+public abstract class PerformanceTest implements ExceptionRunnable {
 
-    public final int cycleOfRuns;
+    private int cycleOfRuns = 1;
 
-    public final ExceptionRunnable testMethod;
+    public int getCycleOfRuns() {
+        return cycleOfRuns;
+    }
 
-    public PerformanceTest(int cycleOfRuns, ExceptionRunnable testMethod) {
+    public void setCycleOfRuns(int cycleOfRuns) {
         if (cycleOfRuns < 1) {
             throw new IllegalArgumentException("cycleOfRuns must be larger than 0");
         }
         this.cycleOfRuns = cycleOfRuns;
-        this.testMethod = testMethod;
     }
 
     public long beginTime;
@@ -22,8 +23,8 @@ public class PerformanceTest implements ExceptionRunnable {
     public void run() {
         try {
             beginTime = System.currentTimeMillis();
-            for (int i = 0; i < cycleOfRuns; i++) {
-                testMethod.run();
+            for (int i = 0; i < getCycleOfRuns(); i++) {
+                test();
             }
             endTime = System.currentTimeMillis();
         } catch (Exception e) {
@@ -36,7 +37,7 @@ public class PerformanceTest implements ExceptionRunnable {
     }
 
     public Long getAverageRunTime() {
-        return getTotalRunTime() / cycleOfRuns;
+        return getTotalRunTime() / getCycleOfRuns();
     }
 
 }

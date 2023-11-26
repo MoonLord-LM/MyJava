@@ -16,35 +16,47 @@ public class ExampleTest {
     public static class ExceptionRunnableTest {
         @Test
         public void success_1() {
-            Runnable result = () -> {
-                long totalMemory = Runtime.getRuntime().totalMemory();
-                long freeMemory = Runtime.getRuntime().freeMemory();
-                long maxMemory = Runtime.getRuntime().maxMemory();
-                logger.info(
-                        "totalMemory: {}, freeMemory: {}, maxMemory: {}",
-                        totalMemory / 1024 / 1024 + " MB",
-                        freeMemory / 1024 / 1024 + " MB",
-                        maxMemory / 1024 / 1024 + " MB"
-                );
-                logger.info("used memory: {}", (totalMemory - freeMemory) / 1024 / 1024 + " MB");
+            ExceptionRunnable test = new ExceptionRunnable() {
+                @Override
+                public void test() {
+                    long totalMemory = Runtime.getRuntime().totalMemory();
+                    long freeMemory = Runtime.getRuntime().freeMemory();
+                    long maxMemory = Runtime.getRuntime().maxMemory();
+                    logger.info(
+                            "totalMemory: {}, freeMemory: {}, maxMemory: {}",
+                            totalMemory / 1024 / 1024 + " MB",
+                            freeMemory / 1024 / 1024 + " MB",
+                            maxMemory / 1024 / 1024 + " MB"
+                    );
+                    logger.info("used memory: {} MB", (totalMemory - freeMemory) / 1024 / 1024);
+                }
             };
+            test.run();
         }
     }
 
     public static class PerformanceTestTest {
         @Test
         public void success_1() {
-            PerformanceTest result = new PerformanceTest(10, new ExceptionRunnable() {
+            PerformanceTest test = new PerformanceTest() {
                 @Override
-                public void run() {
-                    int sum = 0;
-                    for (int i = 0; i < 10000; i++) {
-                        sum += i;
+                public void test() {
+                    int tmp = 0;
+                    for (int i = 0; i < 1024 * 1024; i++) {
+                        tmp += i;
                     }
-                    logger.info("sum: {}", sum);
+                    for (int i = 0; i < 1024 * 1024; i++) {
+                        tmp -= i;
+                    }
+                    if (tmp != 0) {
+                        throw new IllegalArgumentException(String.valueOf(tmp));
+                    }
                 }
-            });
-            logger.info("used time: " + result.getAverageRunTime());
+            };
+            test.setCycleOfRuns(10);
+            test.run();
+            logger.info("used total time: {} ms", test.getTotalRunTime());
+            logger.info("used average time: {} ms", test.getAverageRunTime());
         }
     }
 
