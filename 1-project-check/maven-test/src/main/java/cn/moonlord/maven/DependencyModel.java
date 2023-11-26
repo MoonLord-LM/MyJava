@@ -76,20 +76,20 @@ public class DependencyModel implements Serializable {
     @Override
     public String toString() {
         StringBuilder tmp = new StringBuilder();
-        tmp.append("<dependency>").append("\r\n");
-        tmp.append(INDENT).append("<groupId>").append(groupId).append("</groupId>").append("\r\n");
-        tmp.append(INDENT).append("<artifactId>").append(artifactId).append("</artifactId>").append("\r\n");
+        tmp.append(INDENT).append(INDENT).append("<dependency>").append("\r\n");
+        tmp.append(INDENT).append(INDENT).append(INDENT).append("<groupId>").append(groupId).append("</groupId>").append("\r\n");
+        tmp.append(INDENT).append(INDENT).append(INDENT).append("<artifactId>").append(artifactId).append("</artifactId>").append("\r\n");
         if (classifier != null) {
-            tmp.append(INDENT).append("<classifier>").append(classifier).append("</classifier>").append("\r\n");
+            tmp.append(INDENT).append(INDENT).append(INDENT).append("<classifier>").append(classifier).append("</classifier>").append("\r\n");
         }
         if (type != null) {
-            tmp.append(INDENT).append("<type>").append(type).append("</type>").append("\r\n");
+            tmp.append(INDENT).append(INDENT).append(INDENT).append("<type>").append(type).append("</type>").append("\r\n");
         }
         if (version != null) {
-            tmp.append(INDENT).append("<version>").append(version).append("</version>").append("\r\n");
+            tmp.append(INDENT).append(INDENT).append(INDENT).append("<version>").append(version).append("</version>").append("\r\n");
         }
-        tmp.append("</dependency>").append("\r\n");
-        return tmp.toString().replace("<", INDENT + INDENT + "<");
+        tmp.append(INDENT).append(INDENT).append("</dependency>").append("\r\n");
+        return tmp.toString();
     }
 
 }
