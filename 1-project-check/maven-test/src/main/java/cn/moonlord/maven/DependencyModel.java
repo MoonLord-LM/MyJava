@@ -12,6 +12,8 @@ import java.util.Map;
 @Getter
 public class DependencyModel implements Serializable {
 
+    public static final String INDENT = "        ";
+
     public static final String BASE_RELEASE_URL = "https://mvnrepository.com/artifact/";
 
     public static final String BASE_DOWNLOAD_URL = "https://repo1.maven.org/maven2/";
@@ -36,32 +38,32 @@ public class DependencyModel implements Serializable {
 
     private String scope;
 
-    @Override
-    public String toString() {
-        return "" +
-                "        <dependency>" + "\r\n" +
-                "            <groupId>" + groupId + "</groupId>" + "\r\n" +
-                "            <artifactId>" + artifactId + "</artifactId>" + "\r\n" +
-                (classifier == null ? "" : (
-                        "            <classifier>" + classifier + "</classifier>" + "\r\n"
-                )) +
-                (type == null ? "" : (
-                        "            <type>" + type + "</type>" + "\r\n"
-                )) +
-                (version == null ? "" : (
-                        "            <version>" + version + "</version>" + "\r\n"
-                )) +
-                "        </dependency>" + "\r\n";
-    }
-
+    /**
+     * <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+     * <dependency>
+     * <groupId>javax.servlet</groupId>
+     * <artifactId>javax.servlet-api</artifactId>
+     * <version>4.0.1</version>
+     * <scope>provided</scope>
+     * </dependency>
+     * <!-- https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar -->
+     */
     public String getDownloadUrl() {
-        if (downloadUrl == null && releaseUrl != null && getFileName() != null) {
-            return releaseUrl.replace(".", "/").replace(BASE_RELEASE_URL.replace(".", "/"), BASE_DOWNLOAD_URL) + "/" + getVersion() + "/" + getFileName();
+        if (downloadUrl == null && groupId != null && artifactId != null && getVersion() != null && getFileName() != null) {
+            return BASE_DOWNLOAD_URL + groupId.replace(".", "/") + "/" + artifactId + "/" + getVersion() + "/" + getFileName();
         }
-        if (downloadUrl == null && groupId != null && getFileName() != null) {
-            return BASE_RELEASE_URL + groupId.replace(".", "/") + "/" + getVersion() + "/" + getFileName();
+        if (downloadUrl == null && releaseUrl != null && getVersion() != null && getFileName() != null) {
+            return BASE_DOWNLOAD_URL + releaseUrl.replace(BASE_RELEASE_URL, "") + "/" + getVersion() + "/" + getFileName();
         }
         return downloadUrl;
+    }
+
+    public String getVersion() {
+        if (version != null && version.startsWith("${") && version.endsWith("}")) {
+            String key = StringUtils.substringBetween(version, "${", "}");
+            return getProperties().get(key);
+        }
+        return version;
     }
 
     public String getFileName() {
@@ -71,12 +73,23 @@ public class DependencyModel implements Serializable {
         return fileName;
     }
 
-    public String getVersion() {
-        if (version != null && version.startsWith("${") && version.endsWith("}")) {
-            String key = StringUtils.substringBetween(version, "${", "}");
-            return getProperties().get(key);
+    @Override
+    public String toString() {
+        StringBuilder tmp = new StringBuilder();
+        tmp.append(INDENT).append("<dependency>").append("\r\n");
+        tmp.append(INDENT).append(INDENT).append("<groupId>").append(groupId).append("</groupId>").append("\r\n");
+        tmp.append(INDENT).append(INDENT).append("<artifactId>").append(artifactId).append("</artifactId>").append("\r\n");
+        if (classifier != null) {
+            tmp.append(INDENT).append(INDENT).append("<classifier>").append(classifier).append("</classifier>").append("\r\n");
         }
-        return version;
+        if (type != null) {
+            tmp.append(INDENT).append(INDENT).append("<type>").append(type).append("</type>").append("\r\n");
+        }
+        if (version != null) {
+            tmp.append(INDENT).append(INDENT).append("<version>").append(version).append("</version>").append("\r\n");
+        }
+        tmp.append(INDENT).append("<dependency>").append("\r\n");
+        return tmp.toString();
     }
 
 }
