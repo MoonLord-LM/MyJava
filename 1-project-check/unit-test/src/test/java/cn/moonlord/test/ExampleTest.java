@@ -33,6 +33,17 @@ public class ExampleTest {
             };
             test.run();
         }
+
+        @Test(expected = RuntimeException.class)
+        public void error_1() {
+            ExceptionRunnable test = new ExceptionRunnable() {
+                @Override
+                public void test() {
+                    throw new RuntimeException("error");
+                }
+            };
+            test.run();
+        }
     }
 
     public static class PerformanceTestTest {
@@ -49,7 +60,7 @@ public class ExampleTest {
                         tmp -= i;
                     }
                     if (tmp != 0) {
-                        throw new IllegalArgumentException(String.valueOf(tmp));
+                        throw new RuntimeException("error");
                     }
                 }
             };
@@ -57,6 +68,28 @@ public class ExampleTest {
             test.run();
             logger.info("used total time: {} ms", test.getTotalRunTime());
             logger.info("used average time: {} ms", test.getAverageRunTime());
+        }
+
+        @Test(expected = RuntimeException.class)
+        public void error_1() {
+            PerformanceTest test = new PerformanceTest() {
+                @Override
+                public void test() {
+                    throw new RuntimeException("error");
+                }
+            };
+            test.setCycleOfRuns(Integer.MIN_VALUE);
+        }
+
+        @Test(expected = RuntimeException.class)
+        public void error_2() {
+            PerformanceTest test = new PerformanceTest() {
+                @Override
+                public void test() {
+                    throw new RuntimeException("error");
+                }
+            };
+            test.run();
         }
     }
 
