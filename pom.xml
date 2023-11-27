@@ -9,20 +9,11 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
-    <!--
-        依赖关系：
-        super-parent  ->  parent  ->  dependencies  ->  test  ->  security  ->  common
-    -->
     <modules>
         <module>0-maven-management</module>
-
-        <!-- <module>dependencies-analysis</module> 依赖分析 -->
-
-        <module>1-test-utility</module> <!-- 测试工具类 -->
-        <module>security</module> <!-- 安全工具类 -->
-        <module>common</module> <!-- 通用工具类 -->
-
-        <module>dependencies</module> <!-- 公共依赖 -->
+        <module>1-project-check</module>
+        <module>2-common-utilities</module>
+        <module>common</module>
     </modules>
 
 </project>
