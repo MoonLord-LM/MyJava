@@ -40,12 +40,14 @@ public class DependencyModel implements Serializable {
 
     /**
      * <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+     * <!--
      * <dependency>
-     * <groupId>javax.servlet</groupId>
-     * <artifactId>javax.servlet-api</artifactId>
-     * <version>4.0.1</version>
-     * <scope>provided</scope>
+     *     <groupId>javax.servlet</groupId>
+     *     <artifactId>javax.servlet-api</artifactId>
+     *     <version>4.0.1</version>
+     *     <scope>provided</scope>
      * </dependency>
+     *  -->
      * <!-- https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar -->
      */
     public String getDownloadUrl() {
