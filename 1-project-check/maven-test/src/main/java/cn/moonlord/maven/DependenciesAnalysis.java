@@ -2,6 +2,8 @@ package cn.moonlord.maven;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DependenciesAnalysis implements Runnable {
+
+    public static Logger logger = LoggerFactory.getLogger(DependenciesAnalysis.class);
 
     private final String inputDependencyManagementFilePath;
 
@@ -28,8 +32,8 @@ public class DependenciesAnalysis implements Runnable {
         if (!Files.exists(Paths.get(outputDependencyFilePath))) {
             throw new IllegalArgumentException("outputDependencyFilePath must be a valid File");
         }
-        System.out.println("this.inputDependencyManagementFilePath: " + this.inputDependencyManagementFilePath);
-        System.out.println("this.outputDependencyFilePath: " + this.outputDependencyFilePath);
+        logger.info("this.inputDependencyManagementFilePath: " + this.inputDependencyManagementFilePath);
+        logger.info("this.outputDependencyFilePath: " + this.outputDependencyFilePath);
     }
 
     @Override
@@ -38,7 +42,7 @@ public class DependenciesAnalysis implements Runnable {
         StringBuilder outputDependencies = new StringBuilder("    <dependencies>" + "\r\n" + "\r\n");
         findDependencies(inputDependencyManagementFilePath, downloadedDependenciesUrl, outputDependencies);
         outputDependencies.append("    </dependencies>");
-        System.out.println("outputDependencies: " + outputDependencies);
+        logger.info("outputDependencies: " + outputDependencies);
         try {
             List<String> outputLines = new ArrayList<>();
             List<String> tempLines = FileUtils.readLines(new File(outputDependencyFilePath), StandardCharsets.UTF_8);
@@ -71,13 +75,13 @@ public class DependenciesAnalysis implements Runnable {
         String value = null;
         if (inputLine.startsWith("<" + TagString + ">")) {
             value = StringUtils.substringBetween(inputLine, "<" + TagString + ">", "</" + TagString + ">");
-            System.out.println(TagString + ": " + value);
+            logger.info(TagString + ": " + value);
         }
         if (TagString.equals("releaseUrl")) {
             if (inputLine.startsWith("<!-- " + DependencyModel.BASE_RELEASE_URL)) {
                 value = StringUtils.substringBetween(inputLine, "<!-- ", " -->");
                 value = value.trim();
-                System.out.println(TagString + ": " + value);
+                logger.info(TagString + ": " + value);
             }
         }
         return value;
@@ -118,7 +122,7 @@ public class DependenciesAnalysis implements Runnable {
                     if (inputLine.startsWith("<")) {
                         String key = StringUtils.substringBetween(inputLine, "<", ">");
                         String value = StringUtils.substringBetween(inputLine, "<" + key + ">", "</" + key + ">");
-                        System.out.println("property " + key + ": " + value);
+                        logger.info("property " + key + ": " + value);
                         fileProperties.put(key, value);
                         continue;
                     }
@@ -170,8 +174,8 @@ public class DependenciesAnalysis implements Runnable {
                             } else if (dependencyModel.getScope() != null && dependencyModel.getScope().equals("import")) {
                                 String downloadUrl = dependencyModel.getDownloadUrl();
                                 String fileName = dependencyModel.getFileName();
-                                System.out.println("downloadUrl: " + downloadUrl);
-                                System.out.println("fileName: " + fileName);
+                                logger.info("downloadUrl: " + downloadUrl);
+                                logger.info("fileName: " + fileName);
                                 if (!downloadedDependenciesUrl.contains(downloadUrl)) {
                                     String cachefileName = "target/import/" + fileName;
                                     FileUtils.copyInputStreamToFile(new URL(downloadUrl).openConnection().getInputStream(), new File(cachefileName));
@@ -182,7 +186,7 @@ public class DependenciesAnalysis implements Runnable {
                                 }
                             }
                         } catch (Exception e) {
-                            e.printStackTrace();
+                            logger.error("error", e);
                         }
                         dependencyModel = new DependencyModel();
                     }
