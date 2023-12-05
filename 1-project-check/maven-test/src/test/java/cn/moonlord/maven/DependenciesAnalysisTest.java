@@ -17,7 +17,7 @@ public class DependenciesAnalysisTest {
         @Test
         public void success_1() {
             (new DependenciesAnalysis(
-                    "../../0-maven-management/parent/pom.xml", "../../dependencies-analysis/pom.xml"
+                    "../../0-maven-management/parent/pom.xml", "../maven-test-dependencies/pom.xml"
             )).run();
         }
     }

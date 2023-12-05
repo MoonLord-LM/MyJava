@@ -12,6 +12,7 @@
     <modules>
         <module>unit-test</module>
         <module>maven-test</module>
+        <module>maven-test-dependencies</module>
     </modules>
 
 </project>
