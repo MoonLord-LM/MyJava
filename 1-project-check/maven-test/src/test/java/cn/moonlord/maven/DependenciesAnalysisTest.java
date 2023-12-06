@@ -16,6 +16,7 @@ public class DependenciesAnalysisTest {
     public static class run {
         @Test
         public void success_1() {
+            System.setProperty("javax.net.ssl.verify", "false");
             (new DependenciesAnalysis(
                     "../../0-maven-management/parent/pom.xml", "../maven-test-dependencies/pom.xml"
             )).run();
