@@ -8,11 +8,12 @@ public abstract class PerformanceTest implements ExceptionRunnable {
         return cycleOfRuns;
     }
 
-    public void setCycleOfRuns(int cycleOfRuns) {
+    public PerformanceTest setCycleOfRuns(int cycleOfRuns) {
         if (cycleOfRuns < 1) {
             throw new IllegalArgumentException("cycleOfRuns must be larger than 0");
         }
         this.cycleOfRuns = cycleOfRuns;
+        return this;
     }
 
     public long beginTime;
@@ -20,7 +21,7 @@ public abstract class PerformanceTest implements ExceptionRunnable {
     public long endTime;
 
     @Override
-    public void run() {
+    public PerformanceTest run() {
         try {
             beginTime = System.currentTimeMillis();
             for (int i = 0; i < getCycleOfRuns(); i++) {
@@ -30,6 +31,7 @@ public abstract class PerformanceTest implements ExceptionRunnable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        return this;
     }
 
     public Long getTotalRunTime() {

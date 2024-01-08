@@ -63,9 +63,7 @@ public class ExampleTest {
                         throw new RuntimeException("error");
                     }
                 }
-            };
-            test.setCycleOfRuns(10);
-            test.run();
+            }.setCycleOfRuns(10).run();
             logger.info("used total time: {} ms", test.getTotalRunTime());
             logger.info("used average time: {} ms", test.getAverageRunTime());
         }

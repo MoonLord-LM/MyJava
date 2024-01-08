@@ -1,14 +1,14 @@
 package cn.moonlord.test;
 
 @FunctionalInterface
-public interface ExceptionRunnable extends Runnable {
+public interface ExceptionRunnable {
 
     void test() throws Exception;
 
-    @Override
-    default void run() {
+    default Object run() {
         try {
             test();
+            return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
