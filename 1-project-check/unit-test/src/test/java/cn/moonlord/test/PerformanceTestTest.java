@@ -9,46 +9,32 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @RunWith(Enclosed.class)
-public class ExampleTest {
+public class PerformanceTestTest {
 
-    public static Logger logger = LoggerFactory.getLogger(ExampleTest.class);
+    public static Logger logger = LoggerFactory.getLogger(PerformanceTestTest.class);
 
-    public static class ExceptionRunnableTest {
+    public static class run {
         @Test
         public void success_1() {
-            ExceptionRunnable test = new ExceptionRunnable() {
+            PerformanceTest test = new PerformanceTest() {
                 @Override
                 public void test() {
                     long totalMemory = Runtime.getRuntime().totalMemory();
                     long freeMemory = Runtime.getRuntime().freeMemory();
                     long maxMemory = Runtime.getRuntime().maxMemory();
                     logger.info(
-                            "totalMemory: {}, freeMemory: {}, maxMemory: {}",
-                            totalMemory / 1024 / 1024 + " MB",
-                            freeMemory / 1024 / 1024 + " MB",
-                            maxMemory / 1024 / 1024 + " MB"
+                        "totalMemory: {}, freeMemory: {}, maxMemory: {}",
+                        totalMemory / 1024 / 1024 + " MB",
+                        freeMemory / 1024 / 1024 + " MB",
+                        maxMemory / 1024 / 1024 + " MB"
                     );
                     logger.info("used memory: {} MB", (totalMemory - freeMemory) / 1024 / 1024);
                 }
-            };
-            test.run();
+            }.run();
         }
 
-        @Test(expected = RuntimeException.class)
-        public void error_1() {
-            ExceptionRunnable test = new ExceptionRunnable() {
-                @Override
-                public void test() {
-                    throw new RuntimeException("error");
-                }
-            };
-            test.run();
-        }
-    }
-
-    public static class PerformanceTestTest {
         @Test
-        public void success_1() {
+        public void success_2() {
             PerformanceTest test = new PerformanceTest() {
                 @Override
                 public void test() {
@@ -64,8 +50,8 @@ public class ExampleTest {
                     }
                 }
             }.setCycleOfRuns(10).run();
-            logger.info("used total time: {} ms", test.getTotalRunTime());
-            logger.info("used average time: {} ms", test.getAverageRunTime());
+            logger.info("used total time: {} ms", test.getTotalRunTimeMs());
+            logger.info("used average time: {} ms", test.getAverageRunTimeMs());
         }
 
         @Test(expected = RuntimeException.class)
@@ -75,8 +61,7 @@ public class ExampleTest {
                 public void test() {
                     throw new RuntimeException("error");
                 }
-            };
-            test.setCycleOfRuns(Integer.MIN_VALUE);
+            }.run();
         }
 
         @Test(expected = RuntimeException.class)
@@ -87,7 +72,7 @@ public class ExampleTest {
                     throw new RuntimeException("error");
                 }
             };
-            test.run();
+            test.setCycleOfRuns(0);
         }
     }
 
