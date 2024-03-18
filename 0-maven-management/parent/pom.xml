@@ -327,7 +327,7 @@
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
-                <version>3.24.4</version>
+                <version>4.26.0</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
