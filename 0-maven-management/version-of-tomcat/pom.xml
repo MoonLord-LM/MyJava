@@ -17,7 +17,7 @@
 
     <properties>
         <!-- https://mvnrepository.com/search?q=org.apache.tomcat.embed&d=org.apache -->
-        <tomcat-embed.version>10.1.41</tomcat-embed.version>
+        <tomcat-embed.version>11.0.8</tomcat-embed.version>
     </properties>
 
     <dependencyManagement>
