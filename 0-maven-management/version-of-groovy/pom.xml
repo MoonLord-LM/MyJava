@@ -17,7 +17,7 @@
 
     <properties>
         <!-- https://mvnrepository.com/search?q=org.apache.groovy&d=org.apache -->
-        <groovy.version>4.0.15</groovy.version>
+        <groovy.version>4.0.27</groovy.version>
     </properties>
 
     <dependencyManagement>
